@@ -1,8 +1,11 @@
 import { Request, Response } from "express";
 import { IUser } from "./user.model";
 import { UserService } from "./user.service";
+import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
 
 const userService = new UserService();
+const store = asyncLocalStorage.getStore();
+
 export const createUser = async (req: Request, res: Response) => {
   try {
     const userData: IUser = req.body;
@@ -18,29 +21,29 @@ export const createUser = async (req: Request, res: Response) => {
 
     const newUser = await userService.createUser(userData);
 
-    res.status(201).json(newUser);
+    return res.status(201).json(newUser);
   } catch (error) {
-    res.status(400).json({ message: "Failed to create user", error });
+    return res.status(400).json({ message: "Failed to create user", error });
   }
 };
 
 export const getUserById = async (req: Request, res: Response) => {
   try {
-    const { id } = req.params;
+    const id = store?.loggedinUser?.id;
 
     if (!id) {
-      res.status(400).json({ message: "User ID is required" });
+      return res.status(400).json({ message: "User ID is required" });
     }
 
     const user = await userService.getUserById(id);
 
     if (!user) {
-      res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
 
-    res.json(user);
+    return res.json(user);
   } catch (error) {
-    res.status(500).json({ message: "Failed to retrieve user", error });
+    return res.status(500).json({ message: "Failed to retrieve user", error });
   }
 };
 
@@ -55,33 +58,33 @@ export const getUserByEmail = async (req: Request, res: Response) => {
     const user = await userService.getUserByEmail(email);
 
     if (!user) {
-      res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
 
-    res.json(user);
+    return res.json(user);
   } catch (error) {
-    res.status(500).json({ message: "Failed to retrieve user", error });
+    return res.status(500).json({ message: "Failed to retrieve user", error });
   }
 };
 
 export const updateUser = async (req: Request, res: Response) => {
   try {
-    const { id } = req.params;
+    const id = store?.loggedinUser?.id;
     const userData: Partial<IUser> = req.body;
 
     if (!id) {
-      res.status(400).json({ message: "User ID is required" });
+      return res.status(400).json({ message: "User ID is required" });
     }
 
     const updatedUser = await userService.updateUser(id, userData);
 
     if (!updatedUser) {
-      res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
 
-    res.json(updatedUser);
+    return res.json(updatedUser);
   } catch (error) {
-    res.status(400).json({ message: "Failed to update user", error });
+    return res.status(400).json({ message: "Failed to update user", error });
   }
 };
 
@@ -90,18 +93,18 @@ export const deleteUser = async (req: Request, res: Response) => {
     const { id } = req.params;
 
     if (!id) {
-      res.status(400).json({ message: "User ID is required" });
+      return res.status(400).json({ message: "User ID is required" });
     }
 
     const result = await userService.deleteUser(id);
 
     if (!result) {
-      res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
 
-    res.status(204).send();
+    return res.status(204).send();
   } catch (error) {
-    res.status(500).json({ message: "Failed to delete user", error });
+    return res.status(500).json({ message: "Failed to delete user", error });
   }
 };
 
@@ -122,14 +125,14 @@ export const getAllUsers = async (req: Request, res: Response) => {
 
     const { users, total } = await userService.getAllUsers(filters);
 
-    res.json({
+    return res.json({
       users,
       total,
       page: filters.page || 1,
       limit: filters.limit || 10,
     });
   } catch (error) {
-    res.status(500).json({ message: "Failed to retrieve users", error });
+    return res.status(500).json({ message: "Failed to retrieve users", error });
   }
 };
 
@@ -147,8 +150,8 @@ export const getDetailedUser = async (req: Request, res: Response) => {
       res.status(404).json({ message: "User not found" });
     }
 
-    res.json(user);
+    return res.json(user);
   } catch (error) {
-    res.status(500).json({ message: "Failed to retrieve user", error });
+    return res.status(500).json({ message: "Failed to retrieve user", error });
   }
 };

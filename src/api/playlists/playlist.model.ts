@@ -1,3 +1,4 @@
+import { ISong } from "../songs/song.model";
 import { IUser } from "../users/user.model";
 
 export interface IPlaylist {
@@ -7,26 +8,21 @@ export interface IPlaylist {
   isPublic: boolean;
   createdAt: Date;
   imgUrl: string;
-  likes?: {
-    isLikedByUser: boolean;
-  };
+  isLikedByUser?: boolean;
 }
 
 export interface IDetailedPlaylist extends IPlaylist {
-  songs: {
-    id: string;
-    youtubeId: string;
-    title: string;
-    artist: string | null;
-    thumbnail: string | null;
-    duration: number | null;
-    order: number;
-    isLikedByUser: boolean;
-  }[];
-
+  songs: ISong[];
   shares: {
     count: number;
-    sharedWith: IUser[];
   };
   owner: IUser;
+}
+
+export interface IPlaylistFilters {
+  name?: string;
+  isPublic?: boolean;
+  page?: number;
+  limit?: number;
+  userId?: string;
 }

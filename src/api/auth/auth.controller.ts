@@ -18,6 +18,7 @@ export const signUp = async (req: Request, res: Response) => {
       username,
       email,
       password,
+      avatarUrl: "",
     });
     res.cookie("loginToken", result.token, {
       httpOnly: true,

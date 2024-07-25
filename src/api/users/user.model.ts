@@ -4,7 +4,7 @@ import { ISongLike } from "../songs/songLike.model";
 export interface IUser {
   username: string;
   password?: string;
-  avatarUrl?: string;
+  avatarUrl: string;
   isAdmin?: boolean;
   email: string;
   id: string;

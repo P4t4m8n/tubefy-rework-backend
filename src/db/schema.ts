@@ -56,25 +56,24 @@ export const songs = pgTable(
 
 export const playlists = pgTable("playlists", {
   id: uuid("id").defaultRandom().primaryKey(),
-  name: text("name").notNull(),
+  name: text("name").default("").notNull(),
   ownerId: uuid("owner_id")
     .references(() => users.id)
     .notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   isPublic: boolean("is_public").default(false).notNull(),
-  imgUrl: text("img_url").notNull(),
+  imgUrl: text("img_url").default("").notNull(),
 });
 
 export const playlistSongs = pgTable("playlist_songs", {
   id: uuid("id").defaultRandom().primaryKey(),
-  playlistId: integer("playlist_id")
+  playlistId: uuid("playlist_id")
     .references(() => playlists.id)
     .notNull(),
-  songId: integer("song_id")
+  songId: uuid("song_id")
     .references(() => songs.id)
     .notNull(),
   addedAt: timestamp("added_at").defaultNow().notNull(),
-  order: integer("order").notNull(),
 });
 
 export const songLikes = pgTable("song_likes", {
@@ -102,10 +101,10 @@ export const friends = pgTable("friends", {
 
 export const playlistLikes = pgTable("playlist_likes", {
   id: uuid("id").defaultRandom().primaryKey(),
-  userId: integer("user_id")
+  userId: uuid("user_id")
     .references(() => users.id)
     .notNull(),
-  playlistId: integer("playlist_id")
+  playlistId: uuid("playlist_id")
     .references(() => playlists.id)
     .notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
@@ -115,10 +114,10 @@ export const playlistShares = pgTable(
   "playlist_shares",
   {
     id: uuid("id").defaultRandom().primaryKey(),
-    playlistId: integer("playlist_id")
+    playlistId: uuid("playlist_id")
       .references(() => playlists.id)
       .notNull(),
-    userId: integer("user_id")
+    userId: uuid("user_id")
       .references(() => users.id)
       .notNull(),
     sharedAt: timestamp("shared_at").defaultNow().notNull(),
