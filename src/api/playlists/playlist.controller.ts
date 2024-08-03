@@ -45,7 +45,6 @@ export const getPlaylistById = async (req: Request, res: Response) => {
 };
 
 export const getPlaylists = async (req: Request, res: Response) => {
-  console.log("req:", req)
   try {
     const filter: IPlaylistFilters = req.body;
     const id = store?.loggedinUser?.id;

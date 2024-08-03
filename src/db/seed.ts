@@ -1,4 +1,5 @@
 // import { PlaylistType } from "../api/playlists/playlist.enum";
+import { PlaylistType } from "../api/playlists/playlist.enum";
 import { IPlaylist, IPlaylistDTO } from "../api/playlists/playlist.model";
 import { PlaylistService } from "../api/playlists/playlist.service";
 import { ISong, ISongDTO } from "../api/songs/song.model";
@@ -7,7 +8,7 @@ import { IUser } from "../api/users/user.model";
 import { UserService } from "../api/users/user.service";
 import { playlistJson, songsJson, usersJson } from "./demo-data/consts";
 
-// const playlistTypes: PlaylistType[] = Object.values(PlaylistType).splice(0, 7);
+const playlistTypes: PlaylistType[] = Object.values(PlaylistType).splice(0, 7);
 const userServices = new UserService();
 const playlistsServices = new PlaylistService();
 const songService = new SongService();
@@ -51,7 +52,16 @@ async function seed() {
     //     playlistsServices.addSongToPlaylist(playlist.id!, song.id!);
     //   });
     // }
-    console.log("playlists:", playlists.length);
+
+    const updatedPLaylists = playlists.map(async (playlist, idx) => {
+      const a = await playlistsServices.updatePlaylist(playlist.id!, {
+        ...playlist,
+        type: playlistTypes[idx % playlistTypes.length],
+      });
+      console.log("a:", a?.type);
+      return a;
+    });
+    console.log("updatedPLaylists:", updatedPLaylists);
   } catch (error) {
     console.error("Error during seeding:", error);
   }

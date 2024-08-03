@@ -11,18 +11,17 @@ import {
 import { PlaylistType } from "../api/playlists/playlist.enum";
 import { Genres } from "../api/songs/song.enum";
 
-const genresStr = Object.values(Genres).map((genre) => genre) as string[];
 export const genreEnum = pgEnum(
   "genre",
   Object.values(Genres) as [string, ...string[]]
 );
-
 export const friendStatusEnum = pgEnum("friend_status", [
   "PENDING",
   "ACCEPTED",
   "BLOCKED",
   "REJECTED",
 ]);
+
 
 export const users = pgTable(
   "users",

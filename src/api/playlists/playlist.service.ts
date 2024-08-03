@@ -18,6 +18,7 @@ import {
 import { IUser } from "../users/user.model";
 import { ISong } from "../songs/song.model";
 import { Genres } from "../songs/song.enum";
+import { PlaylistType } from "./playlist.enum";
 
 export class PlaylistService {
   async createPlaylist(
@@ -27,7 +28,12 @@ export class PlaylistService {
       .insert(playlists)
       .values(playlistData)
       .returning();
-    return newPlaylist;
+
+    const updatedPlaylist = {
+      ...newPlaylist,
+      type: newPlaylist.type as PlaylistType,
+    };
+    return updatedPlaylist;
   }
 
   async getPlaylistById(
@@ -42,6 +48,7 @@ export class PlaylistService {
         isPublic: playlists.isPublic,
         createdAt: playlists.createdAt,
         imgUrl: playlists.imgUrl,
+        type: playlists.type,
         isLikedByUser: sql<boolean>`
           CASE WHEN EXISTS (
             SELECT 1 FROM ${playlistLikes}
@@ -113,6 +120,7 @@ export class PlaylistService {
       },
       owner,
       duration: this.getTotalDuration(fixedPlaylistsSongs),
+      type: playlist.type as PlaylistType,
     };
   }
 
@@ -222,6 +230,7 @@ export class PlaylistService {
             },
             owner,
             duration: this.getTotalDuration(fixedPlaylistsSongs),
+            type: playlist.type as PlaylistType,
           };
         })
       );
@@ -242,7 +251,12 @@ export class PlaylistService {
       .set(updateData)
       .where(eq(playlists.id, id))
       .returning();
-    return updatedPlaylist || null;
+
+    const fixedPlaylist = {
+      ...updatedPlaylist,
+      type: updatedPlaylist.type as PlaylistType,
+    };
+    return fixedPlaylist || null;
   }
 
   async deletePlaylist(id: string): Promise<boolean> {
@@ -309,8 +323,14 @@ export class PlaylistService {
         .where(and(...whereConditions)),
     ]);
 
+    const fixedPlaylistsResults = playlistsResult.map((playlist) => ({
+      ...playlist,
+      type: playlist.type as PlaylistType,
+    }));
+
+    
     return {
-      playlists: playlistsResult,
+      playlists: fixedPlaylistsResults,
       total: Number(countResult[0].count),
     };
   }

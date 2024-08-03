@@ -1,5 +1,6 @@
 import { ISong } from "../songs/song.model";
 import { IUser } from "../users/user.model";
+import { PlaylistType } from "./playlist.enum";
 
 export interface IPlaylist {
   id?: string;
@@ -9,6 +10,7 @@ export interface IPlaylist {
   createdAt: Date;
   imgUrl: string;
   isLikedByUser?: boolean;
+  type: PlaylistType;
 }
 
 export interface IPlaylistDTO {

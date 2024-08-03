@@ -5,6 +5,7 @@ import { IDetailedUser, IUser, IUserFilters } from "./user.model";
 import { db } from "../../db";
 import { friends, playlists, songLikes, songs, users } from "../../db/schema";
 import { IPlaylist } from "../playlists/playlist.model";
+import { PlaylistType } from "../playlists/playlist.enum";
 
 export class UserService {
   async createUser(userData: Omit<IUser, "id">): Promise<IUser> {
@@ -61,7 +62,6 @@ export class UserService {
   async getAllUsers(
     filters: IUserFilters = {}
   ): Promise<{ users: IUser[]; total: number }> {
-
     const { username, email, isAdmin, page = 1, limit = 10 } = filters;
     const offset = (page - 1) * limit;
 
@@ -107,10 +107,15 @@ export class UserService {
 
     if (!user) return null;
 
-    const userPlaylists: IPlaylist[] = await db
+    const userPlaylistsData = await db
       .select()
       .from(playlists)
       .where(eq(playlists.ownerId, id));
+
+    const userPlaylists: IPlaylist[] = userPlaylistsData.map((playlist) => ({
+      ...playlist,
+      type: playlist.type as PlaylistType,
+    }));
 
     const userFriends: IUser[] = await db
       .select({
