@@ -1,6 +1,5 @@
 import {
   pgTable,
-  serial,
   text,
   timestamp,
   integer,
@@ -9,6 +8,14 @@ import {
   pgEnum,
   uuid,
 } from "drizzle-orm/pg-core";
+import { PlaylistType } from "../api/playlists/playlist.enum";
+import { Genres } from "../api/songs/song.enum";
+
+const genresStr = Object.values(Genres).map((genre) => genre) as string[];
+export const genreEnum = pgEnum(
+  "genre",
+  Object.values(Genres) as [string, ...string[]]
+);
 
 export const friendStatusEnum = pgEnum("friend_status", [
   "PENDING",
@@ -25,7 +32,7 @@ export const users = pgTable(
     email: text("email").notNull(),
     password: text("password_hash").notNull(),
     createdAt: timestamp("created_at").defaultNow().notNull(),
-    avatarUrl: text("avatar_url").notNull(),
+    avatarUrl: text("avatar_url"),
     isAdmin: boolean("is_admin").default(false).notNull(),
   },
   (users) => {
@@ -41,10 +48,14 @@ export const songs = pgTable(
   {
     id: uuid("id").defaultRandom().primaryKey(),
     youtubeId: text("youtube_id").notNull(),
-    title: text("title").notNull(),
+    name: text("name").notNull(),
     artist: text("artist"),
     thumbnail: text("thumbnail"),
-    duration: integer("duration"),
+    duration: text("duration"),
+    genres: genreEnum("genres").array().default(['{OTHER}']).notNull(),
+    addByUserId: uuid("added_by_user_id")
+      .references(() => users.id)
+      .notNull(),
     addedAt: timestamp("added_at").defaultNow().notNull(),
   },
   (songs) => {
@@ -60,9 +71,11 @@ export const playlists = pgTable("playlists", {
   ownerId: uuid("owner_id")
     .references(() => users.id)
     .notNull(),
+  type: text("type").default(PlaylistType.EMPTY),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   isPublic: boolean("is_public").default(false).notNull(),
   imgUrl: text("img_url").default("").notNull(),
+  description: text("description"),
 });
 
 export const playlistSongs = pgTable("playlist_songs", {
