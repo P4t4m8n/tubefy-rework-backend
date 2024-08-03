@@ -4,7 +4,7 @@ import path from "path";
 import http from "http";
 import cookieParser from "cookie-parser";
 import { loggerService } from "./services/logger.service";
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -35,6 +35,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Routes
+import { playlistRoutes } from "./api/playlists/playlist.routes";
+app.use("/api/playlist", playlistRoutes);
 
 // Setup WebSocket
 
