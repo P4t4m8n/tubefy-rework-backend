@@ -13,7 +13,7 @@ import {
 } from "./playlist.controller";
 import { log } from "../../middlewares/logger.middleware";
 
-const playlistRoutes = express.Router();
+export const playlistRoutes = express.Router();
 
 playlistRoutes.post("/", requireAuth, log, createPlaylist);
 playlistRoutes.get("/:id", log, getPlaylistById);

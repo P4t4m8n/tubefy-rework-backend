@@ -3,6 +3,7 @@ import {
   IPlaylist,
   IDetailedPlaylist,
   IPlaylistFilters,
+  IPlaylistDTO,
 } from "./playlist.model";
 import { db } from "../../db";
 import {
@@ -14,11 +15,13 @@ import {
   users,
   songLikes,
 } from "../../db/schema";
-
+import { IUser } from "../users/user.model";
+import { ISong } from "../songs/song.model";
+import { Genres } from "../songs/song.enum";
 
 export class PlaylistService {
   async createPlaylist(
-    playlistData: Omit<IPlaylist, "id">
+    playlistData: Omit<IPlaylistDTO, "id">
   ): Promise<IPlaylist> {
     const [newPlaylist] = await db
       .insert(playlists)
@@ -57,10 +60,14 @@ export class PlaylistService {
       .select({
         id: songs.id,
         youtubeId: songs.youtubeId,
-        title: songs.title,
+        name: songs.name,
         artist: songs.artist,
         thumbnail: songs.thumbnail,
         duration: songs.duration,
+        genres: songs.genres,
+        addBy: sql<IUser>`
+          (SELECT ${users.id}, ${users.username}, ${users.email}, ${users.avatarUrl}, ${users.isAdmin}`,
+        addedAt: songs.addedAt,
         isLikedByUser: sql<boolean>`
           CASE WHEN EXISTS (
             SELECT 1 FROM ${songLikes}
@@ -72,6 +79,11 @@ export class PlaylistService {
       .from(playlistSongs)
       .innerJoin(songs, eq(playlistSongs.songId, songs.id))
       .where(eq(playlistSongs.playlistId, id));
+
+    const fixedPlaylistsSongs = playlistSongsData.map((song) => ({
+      ...song,
+      genres: song.genres as Genres[],
+    }));
 
     const sharesData = await db
       .select({
@@ -95,11 +107,12 @@ export class PlaylistService {
 
     return {
       ...playlist,
-      songs: playlistSongsData,
+      songs: fixedPlaylistsSongs,
       shares: {
         count: sharesData.length,
       },
       owner,
+      duration: this.getTotalDuration(fixedPlaylistsSongs),
     };
   }
 
@@ -107,92 +120,117 @@ export class PlaylistService {
     userId?: string,
     filters: IPlaylistFilters = {}
   ): Promise<IDetailedPlaylist[]> {
-    const { name, isPublic, page = 1, limit = 10 } = filters;
-    const offset = (page - 1) * limit;
-  
-    const whereConditions: SQL[] = [];
-    if (name) {
-      whereConditions.push(sql`${playlists.name} ILIKE ${`%${name}%`}`);
-    }
-    if (isPublic !== undefined) {
-      whereConditions.push(eq(playlists.isPublic, isPublic));
-    }
-  
-    const playlistsResult = await db
-      .select({
-        id: playlists.id,
-        name: playlists.name,
-        ownerId: playlists.ownerId,
-        isPublic: playlists.isPublic,
-        createdAt: playlists.createdAt,
-        imgUrl: playlists.imgUrl,
-        isLikedByUser: sql<boolean>`
+    try {
+      const { name, isPublic, page = 1, limit = 76 } = filters;
+      const offset = (page - 1) * limit;
+
+      const whereConditions: SQL[] = [];
+      if (name) {
+        whereConditions.push(sql`${playlists.name} ILIKE ${`%${name}%`}`);
+      }
+      if (isPublic !== undefined) {
+        whereConditions.push(eq(playlists.isPublic, isPublic));
+      }
+
+      const playlistsResult = await db
+        .select({
+          id: playlists.id,
+          name: playlists.name,
+          ownerId: playlists.ownerId,
+          isPublic: playlists.isPublic,
+          createdAt: playlists.createdAt,
+          imgUrl: playlists.imgUrl,
+          type: playlists.type,
+          isLikedByUser: sql<boolean>`
           CASE WHEN EXISTS (
             SELECT 1 FROM ${playlistLikes}
             WHERE ${playlistLikes.playlistId} = ${playlists.id}
-            AND ${playlistLikes.userId} = ${userId}
+            AND ${playlistLikes.userId} = ${userId ?? null}
           ) THEN true ELSE false END
         `.as("isLikedByUser"),
-      })
-      .from(playlists)
-      .where(and(...whereConditions))
-      .limit(limit)
-      .offset(offset);
-  
-    const detailedPlaylists = await Promise.all(
-      playlistsResult.map(async (playlist) => {
-        const playlistSongsData = await db
-          .select({
-            id: songs.id,
-            youtubeId: songs.youtubeId,
-            title: songs.title,
-            artist: songs.artist,
-            thumbnail: songs.thumbnail,
-            duration: songs.duration,
-            isLikedByUser: sql<boolean>`
-              CASE WHEN EXISTS (
-                SELECT 1 FROM ${songLikes}
-                WHERE ${songLikes.songId} = ${songs.id}
-                AND ${songLikes.userId} = ${userId}
-              ) THEN true ELSE false END
-            `.as("isLikedByUser"),
-          })
-          .from(playlistSongs)
-          .innerJoin(songs, eq(playlistSongs.songId, songs.id))
-          .where(eq(playlistSongs.playlistId, playlist.id));
-  
-        const sharesData = await db
-          .select({
-            id: playlistShares.id,
-            userId: playlistShares.userId,
-          })
-          .from(playlistShares)
-          .where(eq(playlistShares.playlistId, playlist.id));
-  
-        const [owner] = await db
-          .select({
-            id: users.id,
-            username: users.username,
-            email: users.email,
-            avatarUrl: users.avatarUrl,
-            isAdmin: users.isAdmin,
-          })
-          .from(users)
-          .where(eq(users.id, playlist.ownerId))
-          .limit(1);
-  
-        return {
-          ...playlist,
-          songs: playlistSongsData,
-          shares: {
-            count: sharesData.length,
-          },
-          owner,
-        };
-      })
-    );
-  
-    return detailedPlaylists;
+        })
+        .from(playlists)
+        .where(and(...whereConditions))
+        .limit(limit)
+        .offset(offset);
+
+      const detailedPlaylists = await Promise.all(
+        playlistsResult.map(async (playlist) => {
+          const playlistSongsData = await db
+            .select({
+              id: songs.id,
+              youtubeId: songs.youtubeId,
+              name: songs.name,
+              artist: songs.artist,
+              thumbnail: songs.thumbnail,
+              genres: songs.genres,
+              duration: songs.duration,
+              addBy: sql<IUser>`
+              (SELECT json_build_object(
+                'id', ${users.id},
+                'username', ${users.username},
+                'email', ${users.email},
+                'avatarUrl', ${users.avatarUrl},
+                'isAdmin', ${users.isAdmin}
+              )
+              FROM ${users}
+              WHERE ${users.id} = ${songs.addByUserId}
+              LIMIT 1)
+            `.as("addBy"),
+              addedAt: songs.addedAt,
+              isLikedByUser: sql<boolean>`
+                CASE WHEN EXISTS (
+                  SELECT 1 FROM ${songLikes}
+                  WHERE ${songLikes.songId} = ${songs.id}
+                  AND ${songLikes.userId} = ${userId ?? null}
+                ) THEN true ELSE false END
+              `.as("isLikedByUser"),
+            })
+            .from(playlistSongs)
+            .innerJoin(songs, eq(playlistSongs.songId, songs.id))
+            .where(eq(playlistSongs.playlistId, playlist.id));
+
+          const fixedPlaylistsSongs = playlistSongsData.map((song) => ({
+            ...song,
+            genres: song.genres as Genres[],
+          }));
+          const sharesData = await db
+            .select({
+              id: playlistShares.id,
+              userId: playlistShares.userId,
+            })
+            .from(playlistShares)
+            .where(eq(playlistShares.playlistId, playlist.id));
+
+          const [owner] = await db
+            .select({
+              id: users.id,
+              username: users.username,
+              email: users.email,
+              avatarUrl: users.avatarUrl,
+              isAdmin: users.isAdmin,
+            })
+            .from(users)
+            .where(eq(users.id, playlist.ownerId))
+            .limit(1);
+
+          return {
+            ...playlist,
+            songs: fixedPlaylistsSongs,
+            shares: {
+              count: sharesData.length,
+            },
+            owner,
+            duration: this.getTotalDuration(fixedPlaylistsSongs),
+          };
+        })
+      );
+
+      return detailedPlaylists;
+    } catch (error) {
+      console.error("Error in getPlaylists function:", error);
+      throw error;
+    }
   }
 
   async updatePlaylist(
@@ -337,5 +375,28 @@ export class PlaylistService {
     }
 
     return true;
+  }
+
+  getTotalDuration(songs: ISong[]): string {
+    let totalSeconds = songs.reduce((total, song) => {
+      const duration = song.duration || "00:00";
+      const [minutes, seconds] = duration.split(":").map(Number);
+      return total + minutes * 60 + seconds;
+    }, 0);
+
+    const hours = Math.floor(totalSeconds / 3600);
+    totalSeconds %= 3600;
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+
+    const days = Math.floor(hours / 24);
+    const effectiveHours = hours % 24;
+
+    const pad = (num: number) => String(num).padStart(2, "0");
+
+    const hoursString =
+      days > 0 ? String(days * 24 + effectiveHours) : pad(effectiveHours);
+
+    return `${hoursString}:${pad(minutes)}:${pad(seconds)}`;
   }
 }

@@ -1,0 +1,17 @@
+export enum PlaylistType {
+  NEW_MUSIC = "New Music",
+  DAILY_MIX = "Daily mix",
+  CHILL = "Chill",
+  WORKOUT = "Workout",
+  PARTY = "Party",
+  FOCUS = "Focus",
+  SLEEP = "Sleep",
+  TRAVEL = "Travel",
+  KIDS = "Kids",
+  COOKING = "Cooking",
+  WELLNESS = "Wellness",
+  STUDY = "Study",
+  CHILLOUT = "Chillout",
+  NEW_WAVE = "New Wave",
+  EMPTY = "",
+}
