@@ -45,23 +45,26 @@ async function seed() {
       await songService.get({}),
     ]);
 
-    // for (let i = 0; i < playlists.length - 1; i++) {
-    //   const playlist = playlists[i];
-    //   const songsToAdd = songs.slice((i * 5) % 145, ((i * 5) % 145) + 5);
-    //   songsToAdd.forEach((song) => {
-    //     playlistsServices.addSongToPlaylist(playlist.id!, song.id!);
-    //   });
-    // }
-
-    const updatedPLaylists = playlists.map(async (playlist, idx) => {
-      const a = await playlistsServices.updatePlaylist(playlist.id!, {
-        ...playlist,
-        type: playlistTypes[idx % playlistTypes.length],
+    for (let i = 0; i < playlists.length - 1; i++) {
+      const playlist = playlists[i];
+      const songsToAdd = songs.slice(0, 15);
+      console.log("playlist.songs:", playlist.songs.length);
+      if (playlist.songs) continue;
+      console.log("playlist:", playlist);
+      songsToAdd.forEach((song) => {
+        playlistsServices.addSongToPlaylist(playlist.id!, song.id!);
       });
-      console.log("a:", a?.type);
-      return a;
-    });
-    console.log("updatedPLaylists:", updatedPLaylists);
+    }
+
+    // const updatedPLaylists = playlists.map(async (playlist, idx) => {
+    //   const a = await playlistsServices.updatePlaylist(playlist.id!, {
+    //     ...playlist,
+    //     type: playlistTypes[idx % playlistTypes.length],
+    //   });
+    //   console.log("a:", a?.type);
+    //   return a;
+    // });
+    // console.log("updatedPLaylists:", updatedPLaylists);
   } catch (error) {
     console.error("Error during seeding:", error);
   }

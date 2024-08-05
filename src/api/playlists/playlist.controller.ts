@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { PlaylistService } from "./playlist.service";
 import { IPlaylist, IPlaylistFilters } from "./playlist.model";
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
+import { loggerService } from "../../services/logger.service";
 
 const playlistService = new PlaylistService();
 const store = asyncLocalStorage.getStore();
@@ -35,11 +36,13 @@ export const getPlaylistById = async (req: Request, res: Response) => {
     const playlist = await playlistService.getPlaylistById(id, userId);
 
     if (!playlist) {
+      loggerService.error("Playlist not found", { id });
       res.status(404).json({ message: "Playlist not found" });
     }
 
     res.json(playlist);
   } catch (error) {
+    loggerService.error("Failed to retrieve playlist", error as Error);
     res.status(500).json({ message: "Failed to retrieve playlist", error });
   }
 };

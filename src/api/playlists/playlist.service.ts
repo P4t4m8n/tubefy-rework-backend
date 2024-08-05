@@ -50,12 +50,12 @@ export class PlaylistService {
         imgUrl: playlists.imgUrl,
         type: playlists.type,
         isLikedByUser: sql<boolean>`
-          CASE WHEN EXISTS (
-            SELECT 1 FROM ${playlistLikes}
-            WHERE ${playlistLikes.playlistId} = ${playlists.id}
-            AND ${playlistLikes.userId} = ${currentUserId}
-          ) THEN true ELSE false END
-        `.as("isLikedByUser"),
+        CASE WHEN EXISTS (
+          SELECT 1 FROM ${playlistLikes}
+          WHERE ${playlistLikes.playlistId} = ${playlists.id}
+          AND ${playlistLikes.userId} = ${currentUserId ?? null}
+        ) THEN true ELSE false END
+      `.as("isLikedByUser"),
       })
       .from(playlists)
       .where(eq(playlists.id, id))
@@ -73,16 +73,26 @@ export class PlaylistService {
         duration: songs.duration,
         genres: songs.genres,
         addBy: sql<IUser>`
-          (SELECT ${users.id}, ${users.username}, ${users.email}, ${users.avatarUrl}, ${users.isAdmin}`,
+              (SELECT json_build_object(
+                'id', ${users.id},
+                'username', ${users.username},
+                'email', ${users.email},
+                'avatarUrl', ${users.avatarUrl},
+                'isAdmin', ${users.isAdmin}
+              )
+              FROM ${users}
+              WHERE ${users.id} = ${songs.addByUserId}
+              LIMIT 1)
+            `.as("addBy"),
         addedAt: songs.addedAt,
         isLikedByUser: sql<boolean>`
-          CASE WHEN EXISTS (
-            SELECT 1 FROM ${songLikes}
-            WHERE ${songLikes.songId} = ${songs.id}
-            AND ${songLikes.userId} = ${currentUserId}
-          ) THEN true ELSE false END
-        `.as("isLikedByUser"),
-      })
+        CASE WHEN EXISTS (
+          SELECT 1 FROM ${songLikes}
+          WHERE ${songLikes.songId} = ${songs.id}
+          AND ${songLikes.userId} = ${currentUserId ?? null}
+        ) THEN true ELSE false END
+      `.as("isLikedByUser"),
+    })
       .from(playlistSongs)
       .innerJoin(songs, eq(playlistSongs.songId, songs.id))
       .where(eq(playlistSongs.playlistId, id));
@@ -328,7 +338,6 @@ export class PlaylistService {
       type: playlist.type as PlaylistType,
     }));
 
-    
     return {
       playlists: fixedPlaylistsResults,
       total: Number(countResult[0].count),
