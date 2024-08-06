@@ -92,7 +92,7 @@ export class PlaylistService {
           AND ${songLikes.userId} = ${currentUserId ?? null}
         ) THEN true ELSE false END
       `.as("isLikedByUser"),
-    })
+      })
       .from(playlistSongs)
       .innerJoin(songs, eq(playlistSongs.songId, songs.id))
       .where(eq(playlistSongs.playlistId, id));
@@ -122,6 +122,7 @@ export class PlaylistService {
       .where(eq(users.id, playlist.ownerId))
       .limit(1);
 
+    delete (playlist as { ownerId?: string }).ownerId;
     return {
       ...playlist,
       songs: fixedPlaylistsSongs,
@@ -139,9 +140,17 @@ export class PlaylistService {
     filters: IPlaylistFilters = {}
   ): Promise<IDetailedPlaylist[]> {
     try {
-      const { name, isPublic, page = 1, limit = 76 } = filters;
+      const {
+        name,
+        isPublic,
+        page = 1,
+        limit = 76,
+        ownerId,
+        artist,
+        genres,
+      } = filters;
       const offset = (page - 1) * limit;
-
+  
       const whereConditions: SQL[] = [];
       if (name) {
         whereConditions.push(sql`${playlists.name} ILIKE ${`%${name}%`}`);
@@ -149,7 +158,22 @@ export class PlaylistService {
       if (isPublic !== undefined) {
         whereConditions.push(eq(playlists.isPublic, isPublic));
       }
-
+      if (ownerId) {
+        whereConditions.push(eq(playlists.ownerId, ownerId));
+      }
+  
+      const playlistSongSubquery = db
+        .select({
+          playlistId: playlistSongs.playlistId,
+        })
+        .from(playlistSongs)
+        .innerJoin(songs, eq(playlistSongs.songId, songs.id))
+        .where(and(
+          artist ? sql`${songs.artist} ILIKE ${`%${artist}%`}` : sql`true`,
+          genres && genres.length ? sql`${songs.genres} @> ${genres}` : sql`true`
+        ))
+        .groupBy(playlistSongs.playlistId);
+  
       const playlistsResult = await db
         .select({
           id: playlists.id,
@@ -168,10 +192,13 @@ export class PlaylistService {
         `.as("isLikedByUser"),
         })
         .from(playlists)
-        .where(and(...whereConditions))
+        .where(and(
+          ...whereConditions,
+          sql`${playlists.id} IN (${playlistSongSubquery})`
+        ))
         .limit(limit)
         .offset(offset);
-
+  
       const detailedPlaylists = await Promise.all(
         playlistsResult.map(async (playlist) => {
           const playlistSongsData = await db
@@ -207,7 +234,7 @@ export class PlaylistService {
             .from(playlistSongs)
             .innerJoin(songs, eq(playlistSongs.songId, songs.id))
             .where(eq(playlistSongs.playlistId, playlist.id));
-
+  
           const fixedPlaylistsSongs = playlistSongsData.map((song) => ({
             ...song,
             genres: song.genres as Genres[],
@@ -219,7 +246,7 @@ export class PlaylistService {
             })
             .from(playlistShares)
             .where(eq(playlistShares.playlistId, playlist.id));
-
+  
           const [owner] = await db
             .select({
               id: users.id,
@@ -231,7 +258,7 @@ export class PlaylistService {
             .from(users)
             .where(eq(users.id, playlist.ownerId))
             .limit(1);
-
+  
           return {
             ...playlist,
             songs: fixedPlaylistsSongs,
@@ -244,13 +271,14 @@ export class PlaylistService {
           };
         })
       );
-
+  
       return detailedPlaylists;
     } catch (error) {
       console.error("Error in getPlaylists function:", error);
       throw error;
     }
   }
+  
 
   async updatePlaylist(
     id: string,

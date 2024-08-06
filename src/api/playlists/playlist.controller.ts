@@ -3,6 +3,7 @@ import { PlaylistService } from "./playlist.service";
 import { IPlaylist, IPlaylistFilters } from "./playlist.model";
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
 import { loggerService } from "../../services/logger.service";
+import { Genres } from "../songs/song.enum";
 
 const playlistService = new PlaylistService();
 const store = asyncLocalStorage.getStore();
@@ -49,8 +50,16 @@ export const getPlaylistById = async (req: Request, res: Response) => {
 
 export const getPlaylists = async (req: Request, res: Response) => {
   try {
-    const filter: IPlaylistFilters = req.body;
+    const filter: IPlaylistFilters = {
+      name: (req.query.name as string) || "",
+      isPublic: (req.query.isPublic as unknown as boolean) || true,
+      limit: req?.query?.limit ? +req.query.limit : 10,
+      ownerId: (req.query.ownerId as string) || "",
+      artist: (req.query.artist as string) || "",
+      genres: (req.query.genres as Genres[]) || [],
+    };
     const id = store?.loggedinUser?.id;
+    console.log("filter:", filter)
 
     const playlists = await playlistService.getPlaylists(id, filter);
 

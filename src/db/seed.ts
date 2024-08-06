@@ -6,7 +6,12 @@ import { ISong, ISongDTO } from "../api/songs/song.model";
 import { SongService } from "../api/songs/song.service";
 import { IUser } from "../api/users/user.model";
 import { UserService } from "../api/users/user.service";
-import { playlistJson, songsJson, usersJson } from "./demo-data/consts";
+import {
+  playlistJson,
+  playlistsImgsJson,
+  songsJson,
+  usersJson,
+} from "./demo-data/consts";
 
 const playlistTypes: PlaylistType[] = Object.values(PlaylistType).splice(0, 7);
 const userServices = new UserService();
@@ -45,16 +50,24 @@ async function seed() {
       await songService.get({}),
     ]);
 
-    for (let i = 0; i < playlists.length - 1; i++) {
-      const playlist = playlists[i];
-      const songsToAdd = songs.slice(0, 15);
-      console.log("playlist.songs:", playlist.songs.length);
-      if (playlist.songs) continue;
-      console.log("playlist:", playlist);
-      songsToAdd.forEach((song) => {
-        playlistsServices.addSongToPlaylist(playlist.id!, song.id!);
+    console.log("playlists:", playlists.length);
+
+    playlists.forEach(async (playlist, idx) => {
+      playlistsServices.updatePlaylist(playlist.id!, {
+        ...playlist,
+        imgUrl: playlistsImgsJson[idx % playlistsImgsJson.length],
       });
-    }
+    });
+    // for (let i = 0; i < playlists.length - 1; i++) {
+    //   const playlist = playlists[i];
+    //   const songsToAdd = songs.slice(0, 15);
+    //   console.log("playlist.songs:", playlist.songs.length);
+    //   if (playlist.songs) continue;
+    //   console.log("playlist:", playlist);
+    //   songsToAdd.forEach((song) => {
+    //     playlistsServices.addSongToPlaylist(playlist.id!, song.id!);
+    //   });
+    // }
 
     // const updatedPLaylists = playlists.map(async (playlist, idx) => {
     //   const a = await playlistsServices.updatePlaylist(playlist.id!, {
@@ -65,6 +78,8 @@ async function seed() {
     //   return a;
     // });
     // console.log("updatedPLaylists:", updatedPLaylists);
+
+    console.log(playlistsImgsJson.length);
   } catch (error) {
     console.error("Error during seeding:", error);
   }

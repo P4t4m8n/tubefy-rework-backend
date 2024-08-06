@@ -1,3 +1,4 @@
+import { Genres } from "../songs/song.enum";
 import { ISong } from "../songs/song.model";
 import { IUser } from "../users/user.model";
 import { PlaylistType } from "./playlist.enum";
@@ -32,7 +33,9 @@ export interface IDetailedPlaylist extends IPlaylist {
 export interface IPlaylistFilters {
   name?: string;
   isPublic?: boolean;
-  page?: number;
   limit?: number;
-  userId?: string;
+  ownerId?: string;
+  artist?: string;
+  genres?: Genres[];
+  page?: number;
 }
