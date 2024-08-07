@@ -29,8 +29,8 @@ export class AuthService {
     if (!user) return null;
 
     const isPasswordValid = await userService.verifyPassword(
-      user.password,
-      password
+      password,
+      user.password
     );
 
     if (!isPasswordValid) return null;

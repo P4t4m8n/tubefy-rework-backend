@@ -9,6 +9,7 @@ export async function requireAuth(
 ): Promise<void> {
   const store = asyncLocalStorage.getStore();
   if (!store?.loggedinUser) {
+    console.log("store:", store)
     res.status(401).send("Not Authenticated");
     return;
   }
