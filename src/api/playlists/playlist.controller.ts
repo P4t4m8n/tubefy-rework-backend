@@ -53,7 +53,7 @@ export const getPlaylists = async (req: Request, res: Response) => {
     const filter: IPlaylistFilters = {
       name: (req.query.name as string) || "",
       isPublic: (req.query.isPublic as unknown as boolean) || true,
-      limit: req?.query?.limit ? +req.query.limit : 10,
+      limit: req?.query?.limit ? +req.query.limit : 100,
       ownerId: (req.query.ownerId as string) || "",
       artist: (req.query.artist as string) || "",
       genres: (req.query.genres as Genres[]) || [],

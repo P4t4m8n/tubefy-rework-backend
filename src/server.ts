@@ -38,6 +38,9 @@ if (process.env.NODE_ENV === "production") {
 import { playlistRoutes } from "./api/playlists/playlist.routes";
 app.use("/api/playlist", playlistRoutes);
 
+import { authRoutes } from "./api/auth/auth.routes";
+app.use("/api/auth", authRoutes);
+
 // Setup WebSocket
 
 // Catch-all route for SPA
