@@ -8,4 +8,4 @@ export const authRoutes = express.Router();
 
 authRoutes.post("/signup", log, signUp);
 authRoutes.post("/login", log, login);
-authRoutes.post("/logout",setupAsyncLocalStorage, requireAuth, log, logout);
+authRoutes.post("/logout", setupAsyncLocalStorage, requireAuth, log, logout);

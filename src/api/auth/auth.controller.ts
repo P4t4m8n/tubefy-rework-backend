@@ -55,11 +55,9 @@ export const login = async (req: Request, res: Response) => {
 
 export const logout = async (req: Request, res: Response) => {
   
-  console.log("logout:", logout)
   res.clearCookie("loginToken");
   // Clear the logged-in user from AsyncLocalStorage
   const store = asyncLocalStorage.getStore();
-  console.log("store:", store)
   if (store) {
     store.loggedinUser = undefined;
   }

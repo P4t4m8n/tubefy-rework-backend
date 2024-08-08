@@ -49,7 +49,6 @@ function stringifyArg(arg: LogArgument): string {
 function doLog(level: LogLevel, ...args: LogArgument[]): void {
   const strs = args.map(stringifyArg);
   const line = `${getTime()} - ${level} - ${strs.join(" | ")}\n`;
-  console.log(line);
   fs.appendFile("./logs/backend.log", line, (err) => {
     if (err) console.log("FATAL: cannot write to log file");
   });

@@ -40,6 +40,22 @@ export class PlaylistService {
     id: string,
     currentUserId?: string
   ): Promise<IDetailedPlaylist | null> {
+  
+    // Query to check if the playlist is liked by the user
+    const query = sql<boolean>`
+      CASE 
+        WHEN EXISTS (
+          SELECT 1 
+          FROM ${playlistLikes}
+          WHERE ${playlistLikes.playlistId} = ${id}
+            AND ${playlistLikes.userId} = ${currentUserId ?? null}
+        )
+        THEN TRUE
+        ELSE FALSE
+      END
+    `.as('isLikedByUser');
+  
+    // Fetch the playlist data along with the liked status
     const [playlist] = await db
       .select({
         id: playlists.id,
@@ -49,20 +65,15 @@ export class PlaylistService {
         createdAt: playlists.createdAt,
         imgUrl: playlists.imgUrl,
         type: playlists.type,
-        isLikedByUser: sql<boolean>`
-        CASE WHEN EXISTS (
-          SELECT 1 FROM ${playlistLikes}
-          WHERE ${playlistLikes.playlistId} = ${playlists.id}
-          AND ${playlistLikes.userId} = ${currentUserId ?? null}
-        ) THEN true ELSE false END
-      `.as("isLikedByUser"),
+        isLikedByUser: query,
       })
       .from(playlists)
       .where(eq(playlists.id, id))
       .limit(1);
-
+        
     if (!playlist) return null;
-
+  
+    // Fetch songs data related to the playlist
     const playlistSongsData = await db
       .select({
         id: songs.id,
@@ -73,35 +84,36 @@ export class PlaylistService {
         duration: songs.duration,
         genres: songs.genres,
         addBy: sql<IUser>`
-              (SELECT json_build_object(
-                'id', ${users.id},
-                'username', ${users.username},
-                'email', ${users.email},
-                'avatarUrl', ${users.avatarUrl},
-                'isAdmin', ${users.isAdmin}
-              )
-              FROM ${users}
-              WHERE ${users.id} = ${songs.addByUserId}
-              LIMIT 1)
-            `.as("addBy"),
+          (SELECT json_build_object(
+            'id', ${users.id},
+            'username', ${users.username},
+            'email', ${users.email},
+            'avatarUrl', ${users.avatarUrl},
+            'isAdmin', ${users.isAdmin}
+          )
+          FROM ${users}
+          WHERE ${users.id} = ${songs.addByUserId}
+          LIMIT 1)
+        `.as("addBy"),
         addedAt: songs.addedAt,
         isLikedByUser: sql<boolean>`
-        CASE WHEN EXISTS (
-          SELECT 1 FROM ${songLikes}
-          WHERE ${songLikes.songId} = ${songs.id}
-          AND ${songLikes.userId} = ${currentUserId ?? null}
-        ) THEN true ELSE false END
-      `.as("isLikedByUser"),
+          CASE WHEN EXISTS (
+            SELECT 1 FROM ${songLikes}
+            WHERE ${songLikes.songId} = ${songs.id}
+            AND ${songLikes.userId} = ${currentUserId ?? null}
+          ) THEN true ELSE false END
+        `.as("isLikedByUser"),
       })
       .from(playlistSongs)
       .innerJoin(songs, eq(playlistSongs.songId, songs.id))
       .where(eq(playlistSongs.playlistId, id));
-
+  
     const fixedPlaylistsSongs = playlistSongsData.map((song) => ({
       ...song,
       genres: song.genres as Genres[],
     }));
-
+  
+    // Fetch shares data
     const sharesData = await db
       .select({
         id: playlistShares.id,
@@ -109,7 +121,8 @@ export class PlaylistService {
       })
       .from(playlistShares)
       .where(eq(playlistShares.playlistId, id));
-
+  
+    // Fetch the owner data
     const [owner] = await db
       .select({
         id: users.id,
@@ -121,8 +134,10 @@ export class PlaylistService {
       .from(users)
       .where(eq(users.id, playlist.ownerId))
       .limit(1);
-
+  
+    // Remove ownerId from the playlist object
     delete (playlist as { ownerId?: string }).ownerId;
+  
     return {
       ...playlist,
       songs: fixedPlaylistsSongs,
@@ -134,6 +149,7 @@ export class PlaylistService {
       type: playlist.type as PlaylistType,
     };
   }
+  
 
   async getPlaylists(
     userId?: string,
@@ -279,7 +295,6 @@ export class PlaylistService {
     }
   }
   
-
   async updatePlaylist(
     id: string,
     updateData: Partial<IPlaylist>

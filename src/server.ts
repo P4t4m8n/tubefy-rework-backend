@@ -1,3 +1,4 @@
+import { setupAsyncLocalStorage } from "./middlewares/setupALs.middleware";
 import express from "express";
 import cors from "cors";
 import path from "path";
@@ -15,6 +16,7 @@ const server = http.createServer(app);
 // Middleware setup
 app.use(cookieParser());
 app.use(express.json());
+app.use(setupAsyncLocalStorage)
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.resolve("public")));
@@ -41,14 +43,17 @@ app.use("/api/playlist", playlistRoutes);
 import { authRoutes } from "./api/auth/auth.routes";
 app.use("/api/auth", authRoutes);
 
+import { songRoutes } from "./api/songs/song.routes";
+app.use("/api/song", songRoutes);
+
+
 // Setup WebSocket
 
-// Catch-all route for SPA
+// Catch-all route
 app.get("/**", (req: express.Request, res: express.Response) => {
   res.sendFile(path.resolve("public/index.html"));
 });
 
-// Start the server
 const port = process.env.PORT || 3030;
 server.listen(port, () => {
   loggerService.info("Server is running on port: " + port);

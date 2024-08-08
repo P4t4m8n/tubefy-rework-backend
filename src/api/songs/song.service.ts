@@ -1,4 +1,4 @@
-import { eq, sql } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 import { db } from "../../db";
 import { songLikes, songs, users } from "../../db/schema";
 import { ISong, ISongDTO, ISongFilter } from "./song.model";
@@ -82,5 +82,23 @@ export class SongService {
     }));
 
     return fixedSongs;
+  }
+
+  async toggleLike(songId: string, userId: string): Promise<boolean> {
+    const likedSong = await db
+      .select()
+      .from(songLikes)
+      .where(and(eq(songLikes.songId, songId), eq(songLikes.userId, userId)))
+      .limit(1);
+
+    if (likedSong.length) {
+      await db
+        .delete(songLikes)
+        .where(and(eq(songLikes.songId, songId), eq(songLikes.userId, userId)));
+      return false;
+    }
+
+    await db.insert(songLikes).values({ songId, userId });
+    return true;
   }
 }

@@ -6,7 +6,6 @@ import { loggerService } from "../../services/logger.service";
 import { Genres } from "../songs/song.enum";
 
 const playlistService = new PlaylistService();
-const store = asyncLocalStorage.getStore();
 
 export const createPlaylist = async (req: Request, res: Response) => {
   try {
@@ -27,6 +26,8 @@ export const createPlaylist = async (req: Request, res: Response) => {
 
 export const getPlaylistById = async (req: Request, res: Response) => {
   try {
+    const store = asyncLocalStorage.getStore();
+
     const { id } = req.params;
     const userId = store?.loggedinUser?.id;
 
@@ -34,7 +35,7 @@ export const getPlaylistById = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "Playlist ID is required" });
     }
 
-    const playlist = await playlistService.getPlaylistById(id, userId);
+    const playlist = await playlistService.getPlaylistById(id, userId!);
 
     if (!playlist) {
       loggerService.error("Playlist not found", { id });
@@ -58,8 +59,9 @@ export const getPlaylists = async (req: Request, res: Response) => {
       artist: (req.query.artist as string) || "",
       genres: (req.query.genres as Genres[]) || [],
     };
+    const store = asyncLocalStorage.getStore();
+
     const id = store?.loggedinUser?.id;
-    console.log("filter:", filter)
 
     const playlists = await playlistService.getPlaylists(id, filter);
 
@@ -77,6 +79,8 @@ export const updatePlaylist = async (req: Request, res: Response) => {
     const playlistData: Partial<IPlaylist> = req.body;
 
     if (!playlistData.isPublic) {
+      const store = asyncLocalStorage.getStore();
+
       const userId = store?.loggedinUser?.id;
       if (playlistData.ownerId !== userId) {
         return res
@@ -128,6 +132,8 @@ export const addSongToPlaylist = async (req: Request, res: Response) => {
     const { songId, isPublic, ownerId } = req.body;
 
     if (!isPublic) {
+      const store = asyncLocalStorage.getStore();
+
       const userId = store?.loggedinUser?.id;
       if (ownerId !== userId) {
         return res
@@ -166,6 +172,8 @@ export const removeSongFromPlaylist = async (req: Request, res: Response) => {
     const { isPublic, ownerId } = req.body;
 
     if (!isPublic) {
+      const store = asyncLocalStorage.getStore();
+
       const userId = store?.loggedinUser?.id;
       if (ownerId !== userId) {
         return res
@@ -218,7 +226,9 @@ export const getUserPlaylists = async (req: Request, res: Response) => {
 
 export const toggleLikePlaylist = async (req: Request, res: Response) => {
   try {
+    const store = asyncLocalStorage.getStore();
     const userId = store?.loggedinUser?.id;
+
     const { id } = req.params;
 
     if (!id) {
@@ -237,7 +247,7 @@ export const toggleLikePlaylist = async (req: Request, res: Response) => {
         .json({ message: "Failed to toggle like on playlist" });
     }
 
-    return res.json({ message: "Like toggled successfully" });
+    return res.json(true);
   } catch (error) {
     return res
       .status(500)

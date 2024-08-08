@@ -12,6 +12,7 @@ import {
   updatePlaylist,
 } from "./playlist.controller";
 import { log } from "../../middlewares/logger.middleware";
+import { setupAsyncLocalStorage } from "../../middlewares/setupALs.middleware";
 
 export const playlistRoutes = express.Router();
 
@@ -23,4 +24,10 @@ playlistRoutes.delete("/:id", requireAuth, log, deletePlaylist);
 playlistRoutes.post("/:id/songs", log, addSongToPlaylist);
 playlistRoutes.delete("/:id/songs/:songId", log, removeSongFromPlaylist);
 playlistRoutes.get("/user/:userId", log, getUserPlaylists);
-playlistRoutes.post("/like/:id", requireAuth, log, toggleLikePlaylist);
+playlistRoutes.post(
+  "/like/:id",
+  setupAsyncLocalStorage,
+  requireAuth,
+  log,
+  toggleLikePlaylist
+);
