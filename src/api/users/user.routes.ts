@@ -8,13 +8,12 @@ import {
   getUserById,
   updateUser,
 } from "./user.controller";
-import { requireAuth } from "../../middlewares/auth.middleware";
+import { requireAdmin, requireAuth } from "../../middlewares/auth.middleware";
 
 export const userRoutes = express.Router();
 
-userRoutes.post("/", log, createUser);
 userRoutes.get("/:id", log, getUserById);
-userRoutes.get("/:email", log, getUserByEmail);
+userRoutes.get("/:email", requireAuth, log, getUserByEmail);
 userRoutes.put("/:id", requireAuth, log, updateUser);
 userRoutes.delete("/:id", requireAuth, log, deleteUser);
-userRoutes.get("/", requireAuth, log, getAllUsers);
+userRoutes.get("/", requireAuth, requireAdmin, log, getAllUsers);

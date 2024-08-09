@@ -14,4 +14,5 @@ export enum PlaylistType {
   CHILLOUT = "Chillout",
   NEW_WAVE = "New Wave",
   EMPTY = "",
+  LIKED_SONGS = "Liked Songs",
 }

@@ -11,7 +11,7 @@ async function testConnection() {
 
   try {
     await client.connect();
-    console.log("Connected to the database successfully.");
+    console.info("Connected to the database successfully.");
   } catch (err) {
     console.error("Database connection failed:", err);
   } finally {

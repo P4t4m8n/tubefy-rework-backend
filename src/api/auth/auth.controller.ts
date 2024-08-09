@@ -11,22 +11,27 @@ export const signUp = async (req: Request, res: Response) => {
     const { username, email, password } = req.body;
 
     if (!username || !email || !password) {
-      res.status(400).json({ message: "Missing required fields" });
+      let missingFields = [];
+      if (!username) missingFields.push("username");
+      if (!email) missingFields.push("email");
+      if (!password) missingFields.push("password");
+      return res
+        .status(400)
+        .json({ message: `Missing fields: ${missingFields.join(",")} ` });
     }
 
     const result = await authService.signUp({
       username,
       email,
       password,
-      avatarUrl: "",
     });
     res.cookie("loginToken", result.token, {
       httpOnly: true,
       maxAge: TOKEN_EXPIRY,
     });
-    res.status(201).json({ user: result.user });
+    return res.status(201).json({ user: result.user });
   } catch (error) {
-    res.status(400).json({ message: "Failed to sign up", error });
+    return res.status(400).json({ message: "Failed to sign up", error });
   }
 };
 
@@ -35,7 +40,13 @@ export const login = async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
-      res.status(400).json({ message: "Missing required fields" });
+      let missingFields = [];
+      if (!email) missingFields.push("email");
+      if (!password) missingFields.push("password");
+
+      return res
+        .status(400)
+        .json({ message: `Missing fields: ${missingFields.join(",")} ` });
     }
 
     const result = await authService.login(email, password);
@@ -44,17 +55,16 @@ export const login = async (req: Request, res: Response) => {
         httpOnly: true,
         maxAge: TOKEN_EXPIRY,
       });
-      res.json({ user: result.user });
+      return res.json(result.user);
     } else {
-      res.status(401).json({ message: "Invalid credentials" });
+      return res.status(401).json({ message: "Invalid credentials" });
     }
   } catch (error) {
-    res.status(500).json({ message: "Failed to login", error });
+    return res.status(500).json({ message: "Failed to login", error });
   }
 };
 
 export const logout = async (req: Request, res: Response) => {
-  
   res.clearCookie("loginToken");
   // Clear the logged-in user from AsyncLocalStorage
   const store = asyncLocalStorage.getStore();
@@ -62,5 +72,5 @@ export const logout = async (req: Request, res: Response) => {
     store.loggedinUser = undefined;
   }
 
-  res.json({ message: "Logged out successfully" });
+  return res.json({ message: "Logged out successfully" });
 };

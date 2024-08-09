@@ -1,141 +1,84 @@
-import { and, eq, like, SQL, sql } from "drizzle-orm";
-
 import argon2 from "argon2";
-import { IDetailedUser, IUser, IUserFilters } from "./user.model";
-import { db } from "../../db";
-import { friends, playlists, songLikes, songs, users } from "../../db/schema";
-import { IPlaylist } from "../playlists/playlist.model";
-import { PlaylistType } from "../playlists/playlist.enum";
+import { IUserDTO, IUserFilters, IUserSignupDTO } from "./user.model";
+import { prisma } from "../../../prisma/prismaClient";
 
 export class UserService {
-  async createUser(userData: Omit<IUser, "id">): Promise<IUser> {
-    const hashedPassword = await argon2.hash(userData.password!);
-    const [newUser] = await db
-      .insert(users)
-      .values({
-        ...userData,
+  async create(userData: IUserSignupDTO): Promise<IUserDTO> {
+    const { password, email, username, imgUrl } = userData;
+    const hashedPassword = await argon2.hash(password);
+    const newUser = await prisma.user.create({
+      data: {
         password: hashedPassword,
-      })
-      .returning();
+        email,
+        username,
+        imgUrl,
+      },
+    });
+
     return newUser;
   }
+  async getById(userId: string): Promise<IUserDTO | null> {
+    const user = await prisma.user.findUniqueOrThrow({
+      where: {
+        id: userId,
+      },
+    });
 
-  async getUserById(id: string): Promise<IUser | null> {
-    const [user] = await db
-      .select()
-      .from(users)
-      .where(eq(users.id, id))
-      .limit(1);
-    return user || null;
+    return user;
   }
+  async getByUsername(username: string): Promise<IUserDTO | null> {
+    const user = await prisma.user.findUniqueOrThrow({
+      where: {
+        username: username,
+      },
+    });
 
-  async getUserByEmail(email: string): Promise<IUser | null> {
-    const [user] = await db
-      .select()
-      .from(users)
-      .where(eq(users.email, email))
-      .limit(1);
-    return user || null;
+    return user;
   }
+  async getByEmail(email: string): Promise<IUserDTO | null> {
+    const user = await prisma.user.findUniqueOrThrow({
+      where: {
+        email: email,
+      },
+    });
 
-  async updateUser(
+    return user;
+  }
+  async update(
     id: string,
-    userData: Partial<IUser>
-  ): Promise<IUser | null> {
-    if (userData.password) {
-      userData.password = await argon2.hash(userData.password);
-    }
-    const [updatedUser] = await db
-      .update(users)
-      .set(userData)
-      .where(eq(users.id, id))
-      .returning();
-    return updatedUser || null;
-  }
+    userData: Partial<IUserDTO>
+  ): Promise<IUserDTO | null> {
+    const user = await prisma.user.update({
+      where: {
+        id: id,
+      },
+      data: userData,
+    });
 
-  async deleteUser(id: string): Promise<boolean> {
-    const result = await db.delete(users).where(eq(users.id, id));
-    if (!result.rowCount) return false;
-    return result.rowCount > 0;
+    return user;
   }
+  async remove(id: string): Promise<boolean> {
+    await prisma.user.delete({
+      where: {
+        id: id,
+      },
+    });
 
-  async getAllUsers(
+    return true;
+  }
+  async query(
     filters: IUserFilters = {}
-  ): Promise<{ users: IUser[]; total: number }> {
-    const { username, email, isAdmin, page = 1, limit = 10 } = filters;
-    const offset = (page - 1) * limit;
-
-    const whereConditions: SQL[] = [];
-
-    if (username) {
-      whereConditions.push(like(users.username, `%${username}%`));
-    }
-
-    if (email) {
-      whereConditions.push(like(users.email, `%${email}%`));
-    }
-
-    if (isAdmin !== undefined) {
-      whereConditions.push(eq(users.isAdmin, isAdmin));
-    }
-
-    const baseQuery = db.select().from(users);
-    const countQuery = db.select({ count: sql<number>`count(*)` }).from(users);
-
-    if (whereConditions.length > 0) {
-      const whereClause = and(...whereConditions);
-      baseQuery.where(whereClause);
-      countQuery.where(whereClause);
-    }
-
-    const query = baseQuery.limit(limit).offset(offset);
-
-    const [usersResult, countResult] = await Promise.all([query, countQuery]);
-
-    return {
-      users: usersResult,
-      total: Number(countResult[0].count),
-    };
+  ): Promise<{ users: IUserDTO[]; total: number }> {
+    const users = await prisma.user.findMany({
+      where: {
+        AND: [
+          filters.email ? { email: filters.email } : undefined,
+          filters.username ? { username: filters.username } : undefined,
+        ].filter(Boolean) as any,
+      },
+    });
+    return { users, total: users.length };
   }
-
-  async getDetailedUser(id: string): Promise<IDetailedUser | null> {
-    const [user] = await db
-      .select()
-      .from(users)
-      .where(eq(users.id, id))
-      .limit(1);
-
-    if (!user) return null;
-
-    const userPlaylistsData = await db
-      .select()
-      .from(playlists)
-      .where(eq(playlists.ownerId, id));
-
-    const userPlaylists: IPlaylist[] = userPlaylistsData.map((playlist) => ({
-      ...playlist,
-      type: playlist.type as PlaylistType,
-    }));
-
-    const userFriends: IUser[] = await db
-      .select({
-        id: friends.friendId,
-        username: users.username,
-        avatarUrl: users.avatarUrl,
-        email: users.email,
-        isAdmin: users.isAdmin,
-      })
-      .from(friends)
-      .innerJoin(users, eq(friends.friendId, users.id))
-      .where(and(eq(friends.userId, id), eq(friends.status, "ACCEPTED")));
-
-    return {
-      ...user,
-      playlists: userPlaylists,
-      friends: userFriends,
-    };
-  }
-
   async verifyPassword(
     plainTextPassword: string,
     hashedPassword: string

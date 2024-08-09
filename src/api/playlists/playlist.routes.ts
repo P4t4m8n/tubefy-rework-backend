@@ -7,27 +7,26 @@ import {
   getPlaylistById,
   getPlaylists,
   getUserPlaylists,
+  likePlaylist,
   removeSongFromPlaylist,
-  toggleLikePlaylist,
+  unlikePlaylist,
   updatePlaylist,
 } from "./playlist.controller";
 import { log } from "../../middlewares/logger.middleware";
-import { setupAsyncLocalStorage } from "../../middlewares/setupALs.middleware";
 
 export const playlistRoutes = express.Router();
 
-playlistRoutes.post("/", requireAuth, log, createPlaylist);
-playlistRoutes.get("/:id", log, getPlaylistById);
-playlistRoutes.get("/", log, getPlaylists);
-playlistRoutes.put("/:id", requireAuth, log, updatePlaylist);
-playlistRoutes.delete("/:id", requireAuth, log, deletePlaylist);
+playlistRoutes.post("/edit", requireAuth, log, createPlaylist);
+playlistRoutes.put("/edit/:id", requireAuth, log, updatePlaylist);
+
 playlistRoutes.post("/:id/songs", log, addSongToPlaylist);
-playlistRoutes.delete("/:id/songs/:songId", log, removeSongFromPlaylist);
-playlistRoutes.get("/user/:userId", log, getUserPlaylists);
-playlistRoutes.post(
-  "/like/:id",
-  setupAsyncLocalStorage,
-  requireAuth,
-  log,
-  toggleLikePlaylist
-);
+playlistRoutes.delete("/:id/songs", log, removeSongFromPlaylist);
+
+playlistRoutes.post("/:id/like", requireAuth, log, likePlaylist);
+playlistRoutes.delete("/:id/like", requireAuth, log, unlikePlaylist);
+
+playlistRoutes.get("/user", requireAuth, log, getUserPlaylists);
+
+playlistRoutes.get("/:id", log, getPlaylistById);
+playlistRoutes.delete("/:id", requireAuth, log, deletePlaylist);
+playlistRoutes.get("/", log, getPlaylists);

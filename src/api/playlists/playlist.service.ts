@@ -1,452 +1,344 @@
-import { and, eq, SQL, sql } from "drizzle-orm";
 import {
   IPlaylist,
-  IDetailedPlaylist,
   IPlaylistFilters,
-  IPlaylistDTO,
+  IPlaylistCreateDTO,
+  IPlaylistUpdateDTO,
 } from "./playlist.model";
-import { db } from "../../db";
-import {
-  playlists,
-  playlistSongs,
-  playlistLikes,
-  playlistShares,
-  songs,
-  users,
-  songLikes,
-} from "../../db/schema";
 import { IUser } from "../users/user.model";
 import { ISong } from "../songs/song.model";
-import { Genres } from "../songs/song.enum";
+import { prisma } from "../../../prisma/prismaClient";
 import { PlaylistType } from "./playlist.enum";
+import { Genres } from "../songs/song.enum";
 
 export class PlaylistService {
-  async createPlaylist(
-    playlistData: Omit<IPlaylistDTO, "id">
+  async create(
+    playlistData: IPlaylistUpdateDTO,
+    user: IUser
   ): Promise<IPlaylist> {
-    const [newPlaylist] = await db
-      .insert(playlists)
-      .values(playlistData)
-      .returning();
+    const { name, isPublic, imgUrl, types, genres } = playlistData;
 
-    const updatedPlaylist = {
-      ...newPlaylist,
-      type: newPlaylist.type as PlaylistType,
-    };
-    return updatedPlaylist;
-  }
+    const playlist = await prisma.playlist.create({
+      data: { name, isPublic, imgUrl, ownerId: user.id!, types, genres },
+    });
 
-  async getPlaylistById(
-    id: string,
-    currentUserId?: string
-  ): Promise<IDetailedPlaylist | null> {
-  
-    // Query to check if the playlist is liked by the user
-    const query = sql<boolean>`
-      CASE 
-        WHEN EXISTS (
-          SELECT 1 
-          FROM ${playlistLikes}
-          WHERE ${playlistLikes.playlistId} = ${id}
-            AND ${playlistLikes.userId} = ${currentUserId ?? null}
-        )
-        THEN TRUE
-        ELSE FALSE
-      END
-    `.as('isLikedByUser');
-  
-    // Fetch the playlist data along with the liked status
-    const [playlist] = await db
-      .select({
-        id: playlists.id,
-        name: playlists.name,
-        ownerId: playlists.ownerId,
-        isPublic: playlists.isPublic,
-        createdAt: playlists.createdAt,
-        imgUrl: playlists.imgUrl,
-        type: playlists.type,
-        isLikedByUser: query,
-      })
-      .from(playlists)
-      .where(eq(playlists.id, id))
-      .limit(1);
-        
-    if (!playlist) return null;
-  
-    // Fetch songs data related to the playlist
-    const playlistSongsData = await db
-      .select({
-        id: songs.id,
-        youtubeId: songs.youtubeId,
-        name: songs.name,
-        artist: songs.artist,
-        thumbnail: songs.thumbnail,
-        duration: songs.duration,
-        genres: songs.genres,
-        addBy: sql<IUser>`
-          (SELECT json_build_object(
-            'id', ${users.id},
-            'username', ${users.username},
-            'email', ${users.email},
-            'avatarUrl', ${users.avatarUrl},
-            'isAdmin', ${users.isAdmin}
-          )
-          FROM ${users}
-          WHERE ${users.id} = ${songs.addByUserId}
-          LIMIT 1)
-        `.as("addBy"),
-        addedAt: songs.addedAt,
-        isLikedByUser: sql<boolean>`
-          CASE WHEN EXISTS (
-            SELECT 1 FROM ${songLikes}
-            WHERE ${songLikes.songId} = ${songs.id}
-            AND ${songLikes.userId} = ${currentUserId ?? null}
-          ) THEN true ELSE false END
-        `.as("isLikedByUser"),
-      })
-      .from(playlistSongs)
-      .innerJoin(songs, eq(playlistSongs.songId, songs.id))
-      .where(eq(playlistSongs.playlistId, id));
-  
-    const fixedPlaylistsSongs = playlistSongsData.map((song) => ({
-      ...song,
-      genres: song.genres as Genres[],
-    }));
-  
-    // Fetch shares data
-    const sharesData = await db
-      .select({
-        id: playlistShares.id,
-        userId: playlistShares.userId,
-      })
-      .from(playlistShares)
-      .where(eq(playlistShares.playlistId, id));
-  
-    // Fetch the owner data
-    const [owner] = await db
-      .select({
-        id: users.id,
-        username: users.username,
-        email: users.email,
-        avatarUrl: users.avatarUrl,
-        isAdmin: users.isAdmin,
-      })
-      .from(users)
-      .where(eq(users.id, playlist.ownerId))
-      .limit(1);
-  
-    // Remove ownerId from the playlist object
-    delete (playlist as { ownerId?: string }).ownerId;
-  
     return {
       ...playlist,
-      songs: fixedPlaylistsSongs,
-      shares: {
-        count: sharesData.length,
-      },
-      owner,
-      duration: this.getTotalDuration(fixedPlaylistsSongs),
-      type: playlist.type as PlaylistType,
+      owner: user,
+      shares: { count: 0 },
+      genres: [],
+      songs: [],
+      duration: "00:00",
+      types: playlist.types as PlaylistType[],
     };
   }
-  
 
-  async getPlaylists(
+  async createMany(
+    dataA: IPlaylistUpdateDTO[],
+    user: IUser
+  ): Promise<IPlaylist[]> {
+    const data: any = dataA.map((playlist) => ({
+      ...playlist,
+      ownerId: user.id!,
+      genres: playlist.genres as Genres[],
+      types: playlist.types as PlaylistType[],
+    }));
+
+    const playlists = await prisma.playlist.createManyAndReturn({
+      data,
+    });
+
+    return playlists.map((playlist) => ({
+      ...playlist,
+      owner: user,
+      shares: { count: 0 },
+      genres: [],
+      songs: [],
+      duration: "00:00",
+      types: playlist.types as PlaylistType[],
+    }));
+  }
+
+  async getById(id: string, currentUserId?: string): Promise<IPlaylist | null> {
+    const playlistData = await prisma.playlist.findUniqueOrThrow({
+      where: { id },
+      include: {
+        owner: {
+          select: {
+            id: true,
+            imgUrl: true,
+            username: true,
+          },
+        },
+        playlistSongs: {
+          include: {
+            song: {
+              select: {
+                id: true,
+                youtubeId: true,
+                name: true,
+                artist: true,
+                imgUrl: true,
+                duration: true,
+                genres: true,
+                addedAt: true,
+                addByUserId: true,
+              },
+              include: {
+                addedBy: {
+                  select: {
+                    id: true,
+                    imgUrl: true,
+                    username: true,
+                  },
+                },
+                songLikes: {
+                  where: {
+                    userId: currentUserId,
+                    songId: id,
+                  },
+                },
+              },
+            },
+          },
+        },
+        playlistShares: {},
+      },
+    });
+
+    const songs = playlistData.playlistSongs.map((playlistSong) => {
+      const song: ISong = {
+        ...playlistSong.song,
+        isLikeByUser: playlistSong.song.songLikes.length > 0,
+        addBy: playlistSong.song.addedBy,
+        genres: playlistSong.song.genres as Genres[],
+      };
+      return song;
+    });
+
+    const duration = this.getTotalDuration(songs);
+
+    const playlist = {
+      ...playlistData,
+      shares: { count: 0 },
+      songs,
+      duration,
+      types: playlistData.types as PlaylistType[],
+      genres: playlistData.genres as Genres[],
+    };
+
+    return playlist;
+  }
+
+  async query(
     userId?: string,
     filters: IPlaylistFilters = {}
-  ): Promise<IDetailedPlaylist[]> {
-    try {
-      const {
-        name,
-        isPublic,
-        page = 1,
-        limit = 76,
-        ownerId,
-        artist,
-        genres,
-      } = filters;
-      const offset = (page - 1) * limit;
-  
-      const whereConditions: SQL[] = [];
-      if (name) {
-        whereConditions.push(sql`${playlists.name} ILIKE ${`%${name}%`}`);
-      }
-      if (isPublic !== undefined) {
-        whereConditions.push(eq(playlists.isPublic, isPublic));
-      }
-      if (ownerId) {
-        whereConditions.push(eq(playlists.ownerId, ownerId));
-      }
-  
-      const playlistSongSubquery = db
-        .select({
-          playlistId: playlistSongs.playlistId,
-        })
-        .from(playlistSongs)
-        .innerJoin(songs, eq(playlistSongs.songId, songs.id))
-        .where(and(
-          artist ? sql`${songs.artist} ILIKE ${`%${artist}%`}` : sql`true`,
-          genres && genres.length ? sql`${songs.genres} @> ${genres}` : sql`true`
-        ))
-        .groupBy(playlistSongs.playlistId);
-  
-      const playlistsResult = await db
-        .select({
-          id: playlists.id,
-          name: playlists.name,
-          ownerId: playlists.ownerId,
-          isPublic: playlists.isPublic,
-          createdAt: playlists.createdAt,
-          imgUrl: playlists.imgUrl,
-          type: playlists.type,
-          isLikedByUser: sql<boolean>`
-          CASE WHEN EXISTS (
-            SELECT 1 FROM ${playlistLikes}
-            WHERE ${playlistLikes.playlistId} = ${playlists.id}
-            AND ${playlistLikes.userId} = ${userId ?? null}
-          ) THEN true ELSE false END
-        `.as("isLikedByUser"),
-        })
-        .from(playlists)
-        .where(and(
-          ...whereConditions,
-          sql`${playlists.id} IN (${playlistSongSubquery})`
-        ))
-        .limit(limit)
-        .offset(offset);
-  
-      const detailedPlaylists = await Promise.all(
-        playlistsResult.map(async (playlist) => {
-          const playlistSongsData = await db
-            .select({
-              id: songs.id,
-              youtubeId: songs.youtubeId,
-              name: songs.name,
-              artist: songs.artist,
-              thumbnail: songs.thumbnail,
-              genres: songs.genres,
-              duration: songs.duration,
-              addBy: sql<IUser>`
-              (SELECT json_build_object(
-                'id', ${users.id},
-                'username', ${users.username},
-                'email', ${users.email},
-                'avatarUrl', ${users.avatarUrl},
-                'isAdmin', ${users.isAdmin}
-              )
-              FROM ${users}
-              WHERE ${users.id} = ${songs.addByUserId}
-              LIMIT 1)
-            `.as("addBy"),
-              addedAt: songs.addedAt,
-              isLikedByUser: sql<boolean>`
-                CASE WHEN EXISTS (
-                  SELECT 1 FROM ${songLikes}
-                  WHERE ${songLikes.songId} = ${songs.id}
-                  AND ${songLikes.userId} = ${userId ?? null}
-                ) THEN true ELSE false END
-              `.as("isLikedByUser"),
-            })
-            .from(playlistSongs)
-            .innerJoin(songs, eq(playlistSongs.songId, songs.id))
-            .where(eq(playlistSongs.playlistId, playlist.id));
-  
-          const fixedPlaylistsSongs = playlistSongsData.map((song) => ({
-            ...song,
-            genres: song.genres as Genres[],
-          }));
-          const sharesData = await db
-            .select({
-              id: playlistShares.id,
-              userId: playlistShares.userId,
-            })
-            .from(playlistShares)
-            .where(eq(playlistShares.playlistId, playlist.id));
-  
-          const [owner] = await db
-            .select({
-              id: users.id,
-              username: users.username,
-              email: users.email,
-              avatarUrl: users.avatarUrl,
-              isAdmin: users.isAdmin,
-            })
-            .from(users)
-            .where(eq(users.id, playlist.ownerId))
-            .limit(1);
-  
-          return {
-            ...playlist,
-            songs: fixedPlaylistsSongs,
-            shares: {
-              count: sharesData.length,
+  ): Promise<IPlaylist[]> {
+    const { name, isPublic, ownerId, artist, genres, isLikedByUser } = filters;
+
+    const queryFilters: any = {};
+
+    switch (true) {
+      case !!name:
+        queryFilters.name = { contains: name };
+        break;
+      case !!isPublic:
+        queryFilters.isPublic = {
+          equals: isPublic,
+        };
+        break;
+      case !!ownerId:
+        queryFilters.ownerId = ownerId;
+      case !!artist:
+        queryFilters.playlistSongs = {
+          some: {
+            song: {
+              artist: {
+                contains: artist,
+              },
             },
-            owner,
-            duration: this.getTotalDuration(fixedPlaylistsSongs),
-            type: playlist.type as PlaylistType,
-          };
-        })
-      );
-  
-      return detailedPlaylists;
-    } catch (error) {
-      console.error("Error in getPlaylists function:", error);
-      throw error;
+          },
+        };
+
+      case !!genres:
+        queryFilters.genres = {
+          hasSome: genres,
+        };
+
+      case !!isLikedByUser:
+        queryFilters.playlistLikes = {
+          some: {
+            userId: userId,
+          },
+        };
     }
+
+    const playlistsData = await prisma.playlist.findMany({
+      where: queryFilters,
+      include: {
+        owner: {
+          select: {
+            id: true,
+            imgUrl: true,
+            username: true,
+          },
+        },
+        playlistSongs: {
+          include: {
+            song: {
+              select: {
+                id: true,
+                name: true,
+                artist: true,
+                imgUrl: true,
+                duration: true,
+                genres: true,
+                youtubeId: true,
+                addedAt: true,
+                addedBy: {
+                  select: {
+                    id: true,
+                    imgUrl: true,
+                    username: true,
+                  },
+                },
+                songLikes: {
+                  where: {
+                    userId: userId,
+                  },
+                  select: {
+                    id: true,
+                    userId: true,
+                    songId: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+        playlistShares: {},
+      },
+    });
+
+    const playlists = playlistsData.map((playlistData) => {
+      const songs = playlistData.playlistSongs.map((playlistSong) => {
+        const song: ISong = {
+          ...playlistSong.song,
+          isLikeByUser: playlistSong.song.songLikes.length > 0,
+          addBy: playlistSong.song.addedBy,
+          genres: playlistSong.song.genres as Genres[],
+        };
+        return song;
+      });
+
+      const duration = this.getTotalDuration(songs);
+      const playlist: IPlaylist = {
+        id: playlistData.id,
+        name: playlistData.name,
+        imgUrl: playlistData.imgUrl,
+        isPublic: playlistData.isPublic,
+        createdAt: playlistData.createdAt,
+        owner: playlistData.owner,
+        shares: { count: 0 },
+        songs,
+        duration,
+        types: playlistData.types as PlaylistType[],
+        genres: playlistData.genres as Genres[],
+      };
+      return playlist;
+    });
+
+    return playlists;
   }
-  
-  async updatePlaylist(
+
+  async update(
     id: string,
-    updateData: Partial<IPlaylist>
-  ): Promise<IPlaylist | null> {
-    const [updatedPlaylist] = await db
-      .update(playlists)
-      .set(updateData)
-      .where(eq(playlists.id, id))
-      .returning();
+    updateData: IPlaylist
+  ): Promise<IPlaylistCreateDTO | null> {
+    const playlist = prisma.playlist.update({
+      where: { id },
+      data: {
+        name: updateData.name,
+        isPublic: updateData.isPublic,
+        imgUrl: updateData.imgUrl,
+        types: updateData.types,
+        genres: updateData.genres,
+      },
+    });
 
-    const fixedPlaylist = {
-      ...updatedPlaylist,
-      type: updatedPlaylist.type as PlaylistType,
-    };
-    return fixedPlaylist || null;
+    return playlist;
   }
 
-  async deletePlaylist(id: string): Promise<boolean> {
-    const result = await db.delete(playlists).where(eq(playlists.id, id));
-    if (!result.rowCount) return false;
-    return result?.rowCount > 0;
+  async remove(id: string): Promise<boolean> {
+    const playlist = prisma.playlist.delete({
+      where: { id },
+    });
+
+    return !!playlist;
   }
 
   async addSongToPlaylist(
     playlistId: string,
     songId: string
   ): Promise<boolean> {
-    const result = await db
-      .insert(playlistSongs)
-      .values({ playlistId, songId });
-    if (!result.rowCount) return false;
-    return result.rowCount > 0;
+    const playlistSong = await prisma.playlistSong.create({
+      data: {
+        playlistId,
+        songId,
+      },
+    });
+
+    return !!playlistSong;
   }
 
   async removeSongFromPlaylist(
     playlistId: string,
     songId: string
   ): Promise<boolean> {
-    const result = await db
-      .delete(playlistSongs)
-      .where(
-        and(
-          eq(playlistSongs.playlistId, playlistId),
-          eq(playlistSongs.songId, songId)
-        )
-      );
+    const playlistSong = prisma.playlistSong.deleteMany({
+      where: {
+        playlistId,
+        songId,
+      },
+    });
 
-    if (!result.rowCount) return false;
-    return result.rowCount > 0;
+    return !!playlistSong;
   }
 
-  async getUserPlaylists(
-    userId: string,
-    filters: IPlaylistFilters = {}
-  ): Promise<{ playlists: IPlaylist[]; total: number }> {
-    const { name, isPublic, page = 1, limit = 10 } = filters;
-    const offset = (page - 1) * limit;
+  async likePlaylist(playlistId: string, userId: string): Promise<boolean> {
+    const createCheck = await prisma.playlistLike.create({
+      data: { playlistId, userId },
+    });
 
-    const whereConditions: SQL[] = [eq(playlists.ownerId, userId)];
-
-    if (name) {
-      whereConditions.push(sql`${playlists.name} ILIKE ${`%${name}%`}`);
-    }
-
-    if (isPublic !== undefined) {
-      whereConditions.push(eq(playlists.isPublic, isPublic));
-    }
-
-    const [playlistsResult, countResult] = await Promise.all([
-      db
-        .select()
-        .from(playlists)
-        .where(and(...whereConditions))
-        .limit(limit)
-        .offset(offset),
-      db
-        .select({ count: sql<number>`count(*)` })
-        .from(playlists)
-        .where(and(...whereConditions)),
-    ]);
-
-    const fixedPlaylistsResults = playlistsResult.map((playlist) => ({
-      ...playlist,
-      type: playlist.type as PlaylistType,
-    }));
-
-    return {
-      playlists: fixedPlaylistsResults,
-      total: Number(countResult[0].count),
-    };
+    return !!createCheck;
   }
 
-  async togglePlaylistLike(
-    playlistId: string,
-    userId: string
-  ): Promise<boolean> {
-    const existingLike = await db
-      .select()
-      .from(playlistLikes)
-      .where(
-        and(
-          eq(playlistLikes.playlistId, playlistId),
-          eq(playlistLikes.userId, userId)
-        )
-      )
-      .limit(1);
-    if (!existingLike) {
-      return false;
-    }
+  async unlikePlaylist(playlistId: string, userId: string): Promise<boolean> {
+    const deleteCheck = await prisma.playlistLike.deleteMany({
+      where: { playlistId, userId },
+    });
 
-    let result;
-    if (existingLike.length > 0) {
-      result = await db
-        .delete(playlistLikes)
-        .where(
-          and(
-            eq(playlistLikes.playlistId, playlistId),
-            eq(playlistLikes.userId, userId)
-          )
-        );
-    } else {
-      result = await db.insert(playlistLikes).values({ playlistId, userId });
-      if (!result.rowCount) return false;
-    }
-    return true;
+    return !!deleteCheck;
   }
 
   async sharePlaylist(playlistId: string, userId: string): Promise<boolean> {
-    const existingShare = await db
-      .select()
-      .from(playlistShares)
-      .where(
-        and(
-          eq(playlistShares.playlistId, playlistId),
-          eq(playlistShares.userId, userId)
-        )
-      )
-      .limit(1);
+    const playlistShare = await prisma.playlistShare.findFirst({
+      where: { playlistId, userId },
+    });
 
-    if (existingShare.length) {
-      return false;
+    if (!!playlistShare) {
+      const { id } = playlistShare;
+      const deleteCheck = await prisma.playlistShare.delete({
+        where: { id },
+      });
+
+      return !!deleteCheck;
     }
 
-    const result = await db
-      .insert(playlistShares)
-      .values({ playlistId, userId });
+    const createCheck = await prisma.playlistShare.create({
+      data: { playlistId, userId },
+    });
 
-    if (result.rowCount === 0) {
-      throw new Error("Failed to insert playlist share");
-    }
-
-    return true;
+    return !!createCheck;
   }
 
   getTotalDuration(songs: ISong[]): string {

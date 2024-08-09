@@ -1,0 +1,20 @@
+[
+  {
+    "username": "Demo-user-one",
+    "password": "Demo-user-one",
+    "email": "a@a",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1719231948/avatar4_wmaocu.jpg"
+  },
+  {
+    "username": "Demo-user-two",
+    "password": "Demo-user-two",
+    "email": "b@b",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1719231948/avatar5_zvr4cg.jpg"
+  },
+  {
+    "username": "Demo-user-three",
+    "password": "Demo-user-three",
+    "email": "c@c",
+    "imgUrl": " https://res.cloudinary.com/dpnevk8db/image/upload/v1719136220/avatar1_izzwlj.jpg"
+  }
+]

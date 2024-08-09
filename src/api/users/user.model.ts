@@ -1,26 +1,36 @@
-import { IPlaylist } from "../playlists/playlist.model";
-import { ISongLike } from "../songs/songLike.model";
-
 export interface IUser {
   username: string;
-  password?: string;
-  avatarUrl?: string|null;
+  imgUrl?: string | null;
   isAdmin?: boolean;
-  email: string;
   id?: string;
 }
 
-export interface IDetailedUser extends IUser {
-  playlists: IPlaylist[];
-  friends: IUser[];
+export interface IDetailedUser {
+  email: string;
 }
 
+export interface IUserLoginDTO {
+  password?: string;
+  email: string;
+}
 
+export interface IUserSignupDTO {
+  password: string;
+  email: string;
+  username: string;
+  imgUrl?: string;
+}
+
+export interface IUserDTO {
+  username: string;
+  email: string;
+  password?: string;
+  imgUrl: string | null | undefined;
+  isAdmin?: boolean;
+  id?: string;
+}
 
 export interface IUserFilters {
   username?: string;
   email?: string;
-  isAdmin?: boolean;
-  page?: number;
-  limit?: number;
 }

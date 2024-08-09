@@ -50,6 +50,6 @@ function doLog(level: LogLevel, ...args: LogArgument[]): void {
   const strs = args.map(stringifyArg);
   const line = `${getTime()} - ${level} - ${strs.join(" | ")}\n`;
   fs.appendFile("./logs/backend.log", line, (err) => {
-    if (err) console.log("FATAL: cannot write to log file");
+    if (err) console.error("FATAL: cannot write to log file");
   });
 }

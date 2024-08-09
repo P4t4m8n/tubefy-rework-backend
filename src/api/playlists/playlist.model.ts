@@ -3,31 +3,33 @@ import { ISong } from "../songs/song.model";
 import { IUser } from "../users/user.model";
 import { PlaylistType } from "./playlist.enum";
 
-export interface IPlaylist {
-  id?: string;
+export interface IPlaylistCreateDTO {
   name: string;
   ownerId: string;
+  isPublic: boolean;
+  imgUrl: string;
+}
+
+export interface IPlaylistUpdateDTO extends IPlaylistCreateDTO {
+  types: PlaylistType[];
+  genres: Genres[];
+}
+
+export interface IPlaylist {
+  id: string;
+  name: string;
+  imgUrl: string;
+  songs: ISong[];
+  genres: Genres[];
   isPublic: boolean;
   createdAt: Date;
-  imgUrl: string;
   isLikedByUser?: boolean;
-  type: PlaylistType;
-}
-
-export interface IPlaylistDTO {
-  name: string;
-  ownerId: string;
-  isPublic: boolean;
-  imgUrl: string;
-}
-
-export interface IDetailedPlaylist extends IPlaylist {
-  songs: ISong[];
+  types: PlaylistType[];
+  owner: IUser;
+  duration: string;
   shares: {
     count: number;
   };
-  owner: IUser;
-  duration: string;
 }
 
 export interface IPlaylistFilters {
@@ -38,4 +40,5 @@ export interface IPlaylistFilters {
   artist?: string;
   genres?: Genres[];
   page?: number;
+  isLikedByUser?: boolean;
 }

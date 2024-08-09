@@ -5,30 +5,24 @@ export interface ISong {
   id: string;
   youtubeId: string;
   name: string;
-  artist: string | null;
-  thumbnail: string | null;
-  duration: string | null;
-  isLikeByUser?: boolean;
+  imgUrl: string;
+  isLikeByUser: boolean;
   genres: Genres[];
+  duration: string;
+  artist: string;
   addedAt: Date;
   addBy: IUser;
-}
-
-export interface IPlaylistSong {
-  id: string;
-  playlistId: number;
-  songId: number;
-  addedAt: Date;
 }
 
 export interface ISongDTO {
   youtubeId: string;
   name: string;
-  artist: string | null;
-  thumbnail: string | null;
-  duration: string | null;
-  addedAt: Date;
+  artist: string;
+  imgUrl: string;
+  duration: string;
+  addedAt?: Date;
   addByUserId: string;
+  genres: Genres[];
 }
 
 export interface ISongFilter {
@@ -38,5 +32,5 @@ export interface ISongFilter {
   limit?: number;
   offset?: number;
   addByUserId?: string;
-  userId?:string
+  isLikedByUser?: boolean;
 }

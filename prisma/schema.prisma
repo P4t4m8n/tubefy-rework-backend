@@ -1,0 +1,193 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Genre {
+  POP
+  ROCK
+  JAZZ
+  BLUES
+  HIP_HOP
+  RAP
+  COUNTRY
+  CLASSICAL
+  FOLK
+  LATIN
+  METAL
+  REGGAE
+  SOUL
+  ELECTRONIC
+  DANCE
+  INDIE
+  ALTERNATIVE
+  PUNK
+  R_AND_B
+  FUNK
+  DISCO
+  TECHNO
+  HOUSE
+  TRANCE
+  DUBSTEP
+  DRUM_AND_BASS
+  AMBIENT
+  CHILLOUT
+  DOWNTEMPO
+  REGGAETON
+  SKA
+  GRUNGE
+  EMO
+  GOTHIC
+  HARDCORE
+  HARDSTYLE
+  INDUSTRIAL
+  NEW_WAVE
+  NOISE
+  PSYCHEDELIC
+  SYNTHPOP
+  TRAP
+  VAPORWAVE
+  WORLD
+  OTHER
+}
+
+enum FriendStatus {
+  PENDING
+  ACCEPTED
+  BLOCKED
+  REJECTED
+}
+
+enum PlaylistType {
+  NEW_MUSIC
+  DAILY_MIX
+  CHILL
+  WORKOUT
+  PARTY
+  FOCUS
+  SLEEP
+  TRAVEL
+  KIDS
+  COOKING
+  WELLNESS
+  STUDY
+  CHILLOUT
+  NEW_WAVE
+  EMPTY
+  LIKED_SONGS
+}
+
+model User {
+  id            String          @id @default(uuid())
+  username      String          @unique
+  email         String          @unique
+  password      String          @map("password_hash")
+  createdAt     DateTime        @default(now())
+  isAdmin       Boolean         @default(false)
+  imgUrl        String?
+  songs         Song[]          @relation("SongAddedByUser")
+  playlists     Playlist[]      @relation("PlaylistOwner")
+  friendOut     Friend[]        @relation("UserFriendsOut")
+  friendIn      Friend[]        @relation("UserFriendsIn")
+  playlistLikes PlaylistLike[]
+  songLikes     SongLike[]
+  PlaylistShare PlaylistShare[]
+}
+
+model Song {
+  id            String         @id @default(uuid())
+  youtubeId     String         @unique
+  addByUserId   String         @map("added_by_user_id")
+  addedAt       DateTime       @default(now())
+  name          String
+  artist        String
+  imgUrl        String
+  duration      String
+  addedBy       User           @relation("SongAddedByUser", fields: [addByUserId], references: [id])
+  genres        String[]       @default(["OTHER"])
+  playlistSongs PlaylistSong[]
+  songLikes     SongLike[]
+}
+
+model Playlist {
+  id       String  @id @default(uuid())
+  name     String  @default("")
+  ownerId  String  @map("owner_id")
+  isPublic Boolean @default(false)
+  imgUrl   String  @default("")
+
+  createdAt      DateTime        @default(now())
+  description    String?
+  genres         String[]        @default(["OTHER"])
+  types          String[]        @default(["EMPTY"])
+  owner          User            @relation("PlaylistOwner", fields: [ownerId], references: [id])
+  playlistSongs  PlaylistSong[]
+  playlistLikes  PlaylistLike[]
+  playlistShares PlaylistShare[]
+}
+
+model PlaylistSong {
+  id         String   @id @default(uuid())
+  playlistId String   @map("playlist_id")
+  songId     String   @map("song_id")
+  addedAt    DateTime @default(now())
+  playlist   Playlist @relation(fields: [playlistId], references: [id])
+  song       Song     @relation(fields: [songId], references: [id])
+
+  @@unique([songId, playlistId])
+}
+
+model SongLike {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  songId    String   @map("song_id")
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  song      Song     @relation(fields: [songId], references: [id])
+
+  @@unique([userId, songId])
+}
+
+model PlaylistLike {
+  id         String   @id @default(uuid())
+  userId     String   @map("user_id")
+  playlistId String   @map("playlist_id")
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id])
+  playlist   Playlist @relation(fields: [playlistId], references: [id])
+
+  @@unique([userId, playlistId])
+}
+
+model Friend {
+  id        String       @id @default(uuid())
+  createdAt DateTime     @default(now())
+  status    FriendStatus @default(PENDING)
+  userId    String       @map("user_id")
+  user      User         @relation("UserFriendsOut", fields: [userId], references: [id])
+  friendId  String       @map("friend_id")
+  friend    User         @relation("UserFriendsIn", fields: [friendId], references: [id])
+
+  @@unique([userId, friendId])
+}
+
+model PlaylistShare {
+  id         String   @id @default(uuid())
+  playlistId String   @map("playlist_id")
+  userId     String   @map("user_id")
+  sharedAt   DateTime @default(now())
+  playlist   Playlist @relation(fields: [playlistId], references: [id])
+  user       User     @relation(fields: [userId], references: [id])
+
+  @@unique([playlistId, userId])
+}

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { IUser } from "./user.model";
+import { IUser, IUserSignupDTO } from "./user.model";
 import { UserService } from "./user.service";
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
 
@@ -8,18 +8,18 @@ const store = asyncLocalStorage.getStore();
 
 export const createUser = async (req: Request, res: Response) => {
   try {
-    const userData: IUser = req.body;
+    const userData: IUserSignupDTO = req.body;
 
     if (!userData.email || !userData.password) {
       throw new Error("Email and password are required");
     }
 
-    const existingUser = await userService.getUserByEmail(userData.email);
+    const existingUser = await userService.getByEmail(userData.email);
     if (existingUser) {
       throw new Error("User with this email already exists");
     }
 
-    const newUser = await userService.createUser(userData);
+    const newUser = await userService.create(userData);
 
     return res.status(201).json(newUser);
   } catch (error) {
@@ -35,7 +35,7 @@ export const getUserById = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "User ID is required" });
     }
 
-    const user = await userService.getUserById(id);
+    const user = await userService.getById(id);
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });
@@ -55,7 +55,7 @@ export const getUserByEmail = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "Email is required" });
     }
 
-    const user = await userService.getUserByEmail(email);
+    const user = await userService.getByEmail(email);
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });
@@ -76,7 +76,7 @@ export const updateUser = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "User ID is required" });
     }
 
-    const updatedUser = await userService.updateUser(id, userData);
+    const updatedUser = await userService.update(id, userData);
 
     if (!updatedUser) {
       return res.status(404).json({ message: "User not found" });
@@ -96,7 +96,7 @@ export const deleteUser = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "User ID is required" });
     }
 
-    const result = await userService.deleteUser(id);
+    const result = await userService.remove(id);
 
     if (!result) {
       return res.status(404).json({ message: "User not found" });
@@ -123,7 +123,7 @@ export const getAllUsers = async (req: Request, res: Response) => {
       limit: req.query.limit ? parseInt(req.query.limit as string) : undefined,
     };
 
-    const { users, total } = await userService.getAllUsers(filters);
+    const { users, total } = await userService.query(filters);
 
     return res.json({
       users,
@@ -136,22 +136,4 @@ export const getAllUsers = async (req: Request, res: Response) => {
   }
 };
 
-export const getDetailedUser = async (req: Request, res: Response) => {
-  try {
-    const { id } = req.params;
 
-    if (!id) {
-      res.status(400).json({ message: "User ID is required" });
-    }
-
-    const user = await userService.getDetailedUser(id);
-
-    if (!user) {
-      res.status(404).json({ message: "User not found" });
-    }
-
-    return res.json(user);
-  } catch (error) {
-    return res.status(500).json({ message: "Failed to retrieve user", error });
-  }
-};
