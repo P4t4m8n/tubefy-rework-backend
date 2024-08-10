@@ -220,15 +220,19 @@ export const getUserPlaylists = async (req: Request, res: Response) => {
     const user = store?.loggedinUser;
     if (!user) {
       return res
-        .status(403)
-        .json({ message: "Unauthorized to get user playlists" });
+      .status(403)
+      .json({ message: "Unauthorized to get user playlists" });
     }
-
-    const playlists = await playlistService.query(user.id, {
+    
+    const ownedPlaylist = await playlistService.query(user.id, {
       ownerId: user.id,
     });
 
-    return res.json(playlists);
+    const likedPlaylists = await playlistService.query(user.id, {
+      isLikedByUser: true,
+    });
+
+    return res.json([...ownedPlaylist, ...likedPlaylists]);
   } catch (error) {
     return res
       .status(500)

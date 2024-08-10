@@ -6,7 +6,7 @@ export interface ISong {
   youtubeId: string;
   name: string;
   imgUrl: string;
-  isLikeByUser: boolean;
+  isLikedByUser: boolean;
   genres: Genres[];
   duration: string;
   artist: string;

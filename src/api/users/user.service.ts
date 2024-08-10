@@ -18,7 +18,7 @@ export class UserService {
     return newUser;
   }
   async getById(userId: string): Promise<IUserDTO | null> {
-    const user = await prisma.user.findUniqueOrThrow({
+    const user = await prisma.user.findUnique({
       where: {
         id: userId,
       },
@@ -27,7 +27,7 @@ export class UserService {
     return user;
   }
   async getByUsername(username: string): Promise<IUserDTO | null> {
-    const user = await prisma.user.findUniqueOrThrow({
+    const user = await prisma.user.findUnique({
       where: {
         username: username,
       },
@@ -36,7 +36,7 @@ export class UserService {
     return user;
   }
   async getByEmail(email: string): Promise<IUserDTO | null> {
-    const user = await prisma.user.findUniqueOrThrow({
+    const user = await prisma.user.findUnique({
       where: {
         email: email,
       },

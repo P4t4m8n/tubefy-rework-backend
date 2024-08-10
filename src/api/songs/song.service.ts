@@ -18,7 +18,7 @@ export class SongService {
     });
     return {
       ...song,
-      isLikeByUser: false,
+      isLikedByUser: false,
       addBy: user,
       genres: song.genres as  Genres[],
     };
@@ -34,7 +34,7 @@ export class SongService {
 
     return songs.map((song) => ({
       ...song,
-      isLikeByUser: false,
+      isLikedByUser: false,
       addBy: user,
       genres: song.genres as  Genres[],
     }));
@@ -87,7 +87,7 @@ export class SongService {
 
     const songs: ISong[] = songsData.map((song) => ({
       ...song,
-      isLikeByUser: song.songLikes.length > 0,
+      isLikedByUser: song.songLikes.length > 0,
       addBy: song.addedBy,
       genres: song.genres as  Genres[],
     }));

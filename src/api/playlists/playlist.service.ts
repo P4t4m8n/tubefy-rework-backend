@@ -59,7 +59,6 @@ export class PlaylistService {
   }
 
   async getById(id: string, currentUserId?: string): Promise<IPlaylist | null> {
-    console.log("id:", id)
     const playlistData = await prisma.playlist.findUnique({
       where: { id },
       include: {
@@ -104,14 +103,18 @@ export class PlaylistService {
           },
         },
         playlistShares: {},
+        playlistLikes: {
+          where: {
+            userId: currentUserId,
+          },
+        },
       },
     });
-    console.log(playlistData)
     if (!playlistData) return null;
     const songs = playlistData.playlistSongs.map((playlistSong) => {
       const song: ISong = {
         ...playlistSong.song,
-        isLikeByUser: playlistSong.song.songLikes.length > 0,
+        isLikedByUser: playlistSong.song.songLikes.length > 0,
         addBy: playlistSong.song.addedBy,
         genres: playlistSong.song.genres as Genres[],
       };
@@ -120,13 +123,19 @@ export class PlaylistService {
 
     const duration = this.getTotalDuration(songs);
 
-    const playlist = {
-      ...playlistData,
-      shares: { count: 0 },
+    const playlist: IPlaylist = {
+      id: playlistData.id,
+      name: playlistData.name,
+      isLikedByUser: playlistData.playlistLikes.length > 0,
+      imgUrl: playlistData.imgUrl,
       songs,
-      duration,
-      types: playlistData.types as PlaylistType[],
       genres: playlistData.genres as Genres[],
+      isPublic: playlistData.isPublic,
+      createdAt: playlistData.createdAt,
+      types: playlistData.types as PlaylistType[],
+      owner: playlistData.owner,
+      shares: { count: 0 },
+      duration,
     };
 
     return playlist;
@@ -136,44 +145,40 @@ export class PlaylistService {
     userId?: string,
     filters: IPlaylistFilters = {}
   ): Promise<IPlaylist[]> {
-    const { name, isPublic, ownerId, artist, genres, isLikedByUser } = filters;
-console.log("filters:", filters)
+    const { name, isPublic, ownerId, artist, genres, isLikedByUser, limit } =
+      filters;
+
     const queryFilters: any = {};
 
-    switch (true) {
-      case !!name:
-        queryFilters.name = { contains: name };
-        break;
-      case !!isPublic:
-        queryFilters.isPublic = {
-          equals: isPublic,
-        };
-        break;
-      case !!ownerId:
-        queryFilters.ownerId = ownerId;
-      case !!artist:
-        queryFilters.playlistSongs = {
-          some: {
-            song: {
-              artist: {
-                contains: artist,
-              },
+    if (!!name) queryFilters.name = { contains: name };
+    if (!!isPublic)
+      queryFilters.isPublic = {
+        equals: isPublic,
+      };
+    if (!!ownerId) queryFilters.ownerId = ownerId;
+    if (!!artist)
+      queryFilters.playlistSongs = {
+        some: {
+          song: {
+            artist: {
+              contains: artist,
+              mode: "insensitive",
             },
           },
-        };
+        },
+      };
 
-      case !!genres:
-        queryFilters.genres = {
-          hasSome: genres,
-        };
+    if (!!genres && genres.length > 0)
+      queryFilters.genres = {
+        hasSome: genres,
+      };
 
-      case !!isLikedByUser:
-        queryFilters.playlistLikes = {
-          some: {
-            userId: userId,
-          },
-        };
-    }
+    if (!!isLikedByUser)
+      queryFilters.playlistLikes = {
+        some: {
+          userId: userId,
+        },
+      };
 
     const playlistsData = await prisma.playlist.findMany({
       where: queryFilters,
@@ -220,13 +225,14 @@ console.log("filters:", filters)
         },
         playlistShares: {},
       },
+      take: limit,
     });
 
     const playlists = playlistsData.map((playlistData) => {
       const songs = playlistData.playlistSongs.map((playlistSong) => {
         const song: ISong = {
           ...playlistSong.song,
-          isLikeByUser: playlistSong.song.songLikes.length > 0,
+          isLikedByUser: playlistSong.song.songLikes.length > 0,
           addBy: playlistSong.song.addedBy,
           genres: playlistSong.song.genres as Genres[],
         };

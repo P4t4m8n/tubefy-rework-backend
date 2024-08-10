@@ -18,6 +18,7 @@ export interface IPlaylistUpdateDTO extends IPlaylistCreateDTO {
 export interface IPlaylist {
   id: string;
   name: string;
+  
   imgUrl: string;
   songs: ISong[];
   genres: Genres[];

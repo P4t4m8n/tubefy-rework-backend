@@ -11,7 +11,7 @@ const JWT_SECRET = process.env.JWT_SECRET!;
 const userService = new UserService();
 export class AuthService {
   async signUp(
-    userData: Omit<IUserSignupDTO, "id" | "isAdmin">
+    userData: IUserSignupDTO
   ): Promise<{ user: IUser; token: string }> {
     const usernameCheck = await userService.getByUsername(
       userData.username
