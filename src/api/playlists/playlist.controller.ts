@@ -227,10 +227,12 @@ export const getUserPlaylists = async (req: Request, res: Response) => {
     const ownedPlaylist = await playlistService.query(user.id, {
       ownerId: user.id,
     });
+    console.log("ownedPlaylist:", ownedPlaylist)
 
     const likedPlaylists = await playlistService.query(user.id, {
       isLikedByUser: true,
     });
+    console.log("likedPlaylists:", likedPlaylists)
 
     return res.json([...ownedPlaylist, ...likedPlaylists]);
   } catch (error) {

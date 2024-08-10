@@ -8,6 +8,7 @@ export interface IPlaylistCreateDTO {
   ownerId: string;
   isPublic: boolean;
   imgUrl: string;
+  description?: string | null;
 }
 
 export interface IPlaylistUpdateDTO extends IPlaylistCreateDTO {
@@ -18,7 +19,7 @@ export interface IPlaylistUpdateDTO extends IPlaylistCreateDTO {
 export interface IPlaylist {
   id: string;
   name: string;
-  
+
   imgUrl: string;
   songs: ISong[];
   genres: Genres[];
