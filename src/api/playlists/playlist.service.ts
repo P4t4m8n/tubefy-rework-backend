@@ -59,7 +59,8 @@ export class PlaylistService {
   }
 
   async getById(id: string, currentUserId?: string): Promise<IPlaylist | null> {
-    const playlistData = await prisma.playlist.findUniqueOrThrow({
+    console.log("id:", id)
+    const playlistData = await prisma.playlist.findUnique({
       where: { id },
       include: {
         owner: {
@@ -74,16 +75,13 @@ export class PlaylistService {
             song: {
               select: {
                 id: true,
-                youtubeId: true,
                 name: true,
                 artist: true,
                 imgUrl: true,
                 duration: true,
                 genres: true,
+                youtubeId: true,
                 addedAt: true,
-                addByUserId: true,
-              },
-              include: {
                 addedBy: {
                   select: {
                     id: true,
@@ -94,7 +92,11 @@ export class PlaylistService {
                 songLikes: {
                   where: {
                     userId: currentUserId,
-                    songId: id,
+                  },
+                  select: {
+                    id: true,
+                    userId: true,
+                    songId: true,
                   },
                 },
               },
@@ -104,7 +106,8 @@ export class PlaylistService {
         playlistShares: {},
       },
     });
-
+    console.log(playlistData)
+    if (!playlistData) return null;
     const songs = playlistData.playlistSongs.map((playlistSong) => {
       const song: ISong = {
         ...playlistSong.song,
@@ -134,7 +137,7 @@ export class PlaylistService {
     filters: IPlaylistFilters = {}
   ): Promise<IPlaylist[]> {
     const { name, isPublic, ownerId, artist, genres, isLikedByUser } = filters;
-
+console.log("filters:", filters)
     const queryFilters: any = {};
 
     switch (true) {

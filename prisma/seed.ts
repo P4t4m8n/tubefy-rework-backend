@@ -101,7 +101,6 @@ const seedPlaylists = async (user: IUser): Promise<IPlaylist[]> => {
         };
       }
     );
-    console.log("playlistData:", playlistData);
 
     const playlists = await Promise.all(
       playlistData.map(async (playlist) => {
@@ -109,7 +108,7 @@ const seedPlaylists = async (user: IUser): Promise<IPlaylist[]> => {
       })
     );
 
-    console.log("playlists seeds");
+    console.info("playlists seeds");
     return playlists;
   } catch (error) {
     console.error("Error seeding playlists:", error);
@@ -132,7 +131,6 @@ const seedSongs = async (user: IUser): Promise<ISong[]> => {
       })
     );
     console.info("songs seeds");
-    console.log("songs:", songs);
     return songs;
   } catch (error) {
     console.error("Error seeding songs:", error);
