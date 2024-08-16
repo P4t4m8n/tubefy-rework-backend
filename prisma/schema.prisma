@@ -88,20 +88,21 @@ enum PlaylistType {
 }
 
 model User {
-  id            String          @id @default(uuid())
-  username      String          @unique
-  email         String          @unique
-  password      String          @map("password_hash")
-  createdAt     DateTime        @default(now())
-  isAdmin       Boolean         @default(false)
-  imgUrl        String?
-  songs         Song[]          @relation("SongAddedByUser")
-  playlists     Playlist[]      @relation("PlaylistOwner")
-  friendOut     Friend[]        @relation("UserFriendsOut")
-  friendIn      Friend[]        @relation("UserFriendsIn")
-  playlistLikes PlaylistLike[]
-  songLikes     SongLike[]
-  PlaylistShare PlaylistShare[]
+  id                 String              @id @default(uuid())
+  username           String              @unique
+  email              String              @unique
+  password           String              @map("password_hash")
+  createdAt          DateTime            @default(now())
+  isAdmin            Boolean             @default(false)
+  imgUrl             String?
+  songs              Song[]              @relation("SongAddedByUser")
+  playlists          Playlist[]          @relation("PlaylistOwner")
+  friendOut          Friend[]            @relation("UserFriendsOut")
+  friendIn           Friend[]            @relation("UserFriendsIn")
+  playlistLikes      PlaylistLike[]
+  songLikes          SongLike[]
+  PlaylistShare      PlaylistShare[]
+  LikedSongsPlaylist LikedSongsPlaylist?
 }
 
 model Song {
@@ -134,6 +135,14 @@ model Playlist {
   playlistSongs  PlaylistSong[]
   playlistLikes  PlaylistLike[]
   playlistShares PlaylistShare[]
+}
+
+model LikedSongsPlaylist {
+  id       String  @id @default(uuid())
+  userId   String  @unique() @map("user_id")
+  imgUrl   String  @default("https://res.cloudinary.com/dpnevk8db/image/upload/v1705451341/playlist-like.png")
+  user     User    @relation(fields: [userId], references: [id])
+  isPublic Boolean @default(false)
 }
 
 model PlaylistSong {

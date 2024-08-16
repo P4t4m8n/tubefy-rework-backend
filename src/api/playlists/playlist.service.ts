@@ -3,6 +3,7 @@ import {
   IPlaylistFilters,
   IPlaylistCreateDTO,
   IPlaylistUpdateDTO,
+  ILikedSongsPlaylist,
 } from "./playlist.model";
 import { IUser } from "../users/user.model";
 import { ISong } from "../songs/song.model";
@@ -348,6 +349,68 @@ export class PlaylistService {
     });
 
     return !!createCheck;
+  }
+
+  async createUserLikesPlaylist(userId: string): Promise<ILikedSongsPlaylist> {
+    const likedSongsPlaylist = await prisma.likedSongsPlaylist.create({
+      data: {
+        isPublic: false,
+        userId: userId,
+      },
+    });
+
+    return {
+      ...likedSongsPlaylist,
+      songs: [],
+      duration: "00:00",
+      shares: { count: 0 },
+      name: "Liked Songs",
+    };
+  }
+
+  async getUserLikedSongsPlaylist(
+    userId: string
+  ): Promise<ILikedSongsPlaylist> {
+    const likedSongsPlaylistData = await prisma.likedSongsPlaylist.findFirst({
+      where: { userId },
+      include: {
+        user: {
+          include: {
+            songLikes: {
+              include: {
+                song: true,
+              },
+            },
+          },
+          
+        },
+      },
+    });
+
+    const addBy = {
+      username: likedSongsPlaylistData!.user.username,
+      imgUrl: likedSongsPlaylistData!.user.imgUrl,
+      id: likedSongsPlaylistData!.user.id,
+    };
+    const songs: ISong[] =
+      likedSongsPlaylistData?.user.songLikes.map((songLike) => {
+        const isLikedByUser = true;
+        const genres = songLike.song.genres as Genres[];
+        return { ...songLike.song, isLikedByUser, addBy, genres };
+      }) || [];
+
+    const duration = this.getTotalDuration(songs);
+    const { id, imgUrl, isPublic } = likedSongsPlaylistData!;
+
+    return {
+      songs,
+      id,
+      name: "Liked Songs",
+      imgUrl,
+      isPublic,
+      duration,
+      shares: { count: 0 },
+    };
   }
 
   getTotalDuration(songs: ISong[]): string {

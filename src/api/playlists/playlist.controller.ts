@@ -220,22 +220,30 @@ export const getUserPlaylists = async (req: Request, res: Response) => {
     const user = store?.loggedinUser;
     if (!user) {
       return res
-      .status(403)
-      .json({ message: "Unauthorized to get user playlists" });
+        .status(403)
+        .json({ message: "Unauthorized to get user playlists" });
     }
-    
-    const ownedPlaylist = await playlistService.query(user.id, {
-      ownerId: user.id,
-    });
-    console.log("ownedPlaylist:", ownedPlaylist)
 
-    const likedPlaylists = await playlistService.query(user.id, {
+    const { id } = user;
+    const ownedPlaylist = await playlistService.query(id, {
+      ownerId: id,
+    });
+
+    const likedPlaylists = await playlistService.query(id, {
       isLikedByUser: true,
     });
-    console.log("likedPlaylists:", likedPlaylists)
 
-    return res.json([...ownedPlaylist, ...likedPlaylists]);
+    const likedSongsPlaylist = await playlistService.getUserLikedSongsPlaylist(
+      id!
+    );
+    console.log("likedSongsPlaylist:", likedSongsPlaylist);
+
+    return res.json({
+      likedSongsPlaylist,
+      OwnedPlaylist: [...ownedPlaylist, ...likedPlaylists],
+    });
   } catch (error) {
+    loggerService.error(`Failed to retrieve user playlists`, error as Error);
     return res
       .status(500)
       .json({ message: "Failed to retrieve user playlists", error });

@@ -19,7 +19,6 @@ export interface IPlaylistUpdateDTO extends IPlaylistCreateDTO {
 export interface IPlaylist {
   id: string;
   name: string;
-
   imgUrl: string;
   songs: ISong[];
   genres: Genres[];
@@ -28,6 +27,18 @@ export interface IPlaylist {
   isLikedByUser?: boolean;
   types: PlaylistType[];
   owner: IUser;
+  duration: string;
+  shares: {
+    count: number;
+  };
+}
+
+export interface ILikedSongsPlaylist {
+  id: string;
+  name: string;
+  imgUrl: string;
+  songs: ISong[];
+  isPublic: boolean;
   duration: string;
   shares: {
     count: number;

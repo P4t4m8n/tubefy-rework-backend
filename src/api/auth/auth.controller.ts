@@ -1,4 +1,5 @@
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
+import { PlaylistService } from "../playlists/playlist.service";
 import { AuthService } from "./auth.service";
 import { Request, Response } from "express";
 
@@ -25,6 +26,10 @@ export const signUp = async (req: Request, res: Response) => {
       email,
       password,
     });
+
+    const playlistService = new PlaylistService();
+    await playlistService.createUserLikesPlaylist(result.user.id!);
+
     res.cookie("loginToken", result.token, {
       httpOnly: true,
       maxAge: TOKEN_EXPIRY,

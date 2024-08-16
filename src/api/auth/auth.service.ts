@@ -13,9 +13,7 @@ export class AuthService {
   async signUp(
     userData: IUserSignupDTO
   ): Promise<{ user: IUser; token: string }> {
-    const usernameCheck = await userService.getByUsername(
-      userData.username
-    );
+    const usernameCheck = await userService.getByUsername(userData.username);
     if (usernameCheck) {
       throw new Error("Username already exists");
     }
@@ -23,7 +21,7 @@ export class AuthService {
     if (emailCheck) {
       throw new Error("Email already exists");
     }
-    
+
     const newUser = await userService.create(userData);
     delete newUser.password;
     const token = this.#generateToken(newUser);
