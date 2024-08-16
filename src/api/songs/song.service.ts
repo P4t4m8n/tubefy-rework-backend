@@ -19,7 +19,7 @@ export class SongService {
     return {
       ...song,
       isLikedByUser: false,
-      addBy: user,
+      addedBy: user,
       genres: song.genres as  Genres[],
     };
   }
@@ -35,7 +35,7 @@ export class SongService {
     return songs.map((song) => ({
       ...song,
       isLikedByUser: false,
-      addBy: user,
+      addedBy: user,
       genres: song.genres as  Genres[],
     }));
   }

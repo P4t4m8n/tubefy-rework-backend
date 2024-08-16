@@ -116,7 +116,7 @@ export class PlaylistService {
       const song: ISong = {
         ...playlistSong.song,
         isLikedByUser: playlistSong.song.songLikes.length > 0,
-        addBy: playlistSong.song.addedBy,
+        addedBy: playlistSong.song.addedBy,
         genres: playlistSong.song.genres as Genres[],
       };
       return song;
@@ -234,7 +234,7 @@ export class PlaylistService {
         const song: ISong = {
           ...playlistSong.song,
           isLikedByUser: playlistSong.song.songLikes.length > 0,
-          addBy: playlistSong.song.addedBy,
+          addedBy: playlistSong.song.addedBy,
           genres: playlistSong.song.genres as Genres[],
         };
         return song;
@@ -382,12 +382,11 @@ export class PlaylistService {
               },
             },
           },
-          
         },
       },
     });
 
-    const addBy = {
+    const addedBy = {
       username: likedSongsPlaylistData!.user.username,
       imgUrl: likedSongsPlaylistData!.user.imgUrl,
       id: likedSongsPlaylistData!.user.id,
@@ -396,7 +395,7 @@ export class PlaylistService {
       likedSongsPlaylistData?.user.songLikes.map((songLike) => {
         const isLikedByUser = true;
         const genres = songLike.song.genres as Genres[];
-        return { ...songLike.song, isLikedByUser, addBy, genres };
+        return { ...songLike.song, isLikedByUser, genres, addedBy };
       }) || [];
 
     const duration = this.getTotalDuration(songs);
@@ -410,6 +409,73 @@ export class PlaylistService {
       isPublic,
       duration,
       shares: { count: 0 },
+    };
+  }
+
+  async getUserLikedPlaylistById(
+    playlistId: string,
+    currentUserId?: string
+  ): Promise<IPlaylist> {
+    const likedSongsPlaylistData =
+      await prisma.likedSongsPlaylist.findUniqueOrThrow({
+        where: { id: playlistId },
+        include: {
+          user: {
+            include: {
+              songLikes: {
+                include: {
+                  song: {
+                    include: {
+                      songLikes: {
+                        where: {
+                          userId: currentUserId,
+                        },
+                      },
+                      addedBy: {
+                        select: {
+                          id: true,
+                          imgUrl: true,
+                          username: true,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      });
+
+    const owner = {
+      username: likedSongsPlaylistData?.user.username,
+      imgUrl: likedSongsPlaylistData?.user.imgUrl,
+      id: likedSongsPlaylistData?.user.id,
+    };
+    const songs: ISong[] =
+      likedSongsPlaylistData?.user.songLikes.map((songLike) => {
+        console.log("songLike:", songLike);
+        const { song } = songLike;
+        const isLikedByUser = song.songLikes.length > 0;
+        const genres = song.genres as Genres[];
+        return { ...song, isLikedByUser, genres };
+      }) || [];
+
+    const duration = this.getTotalDuration(songs);
+    const { id, imgUrl, isPublic } = likedSongsPlaylistData!;
+
+    return {
+      songs,
+      id,
+      name: "Liked Songs",
+      imgUrl,
+      isPublic,
+      duration,
+      shares: { count: 0 },
+      genres: [],
+      types: [],
+      createdAt: new Date(),
+      owner,
     };
   }
 

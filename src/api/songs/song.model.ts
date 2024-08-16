@@ -11,7 +11,7 @@ export interface ISong {
   duration: string;
   artist: string;
   addedAt: Date;
-  addBy: IUser;
+  addedBy: IUser;
 }
 
 export interface ISongDTO {

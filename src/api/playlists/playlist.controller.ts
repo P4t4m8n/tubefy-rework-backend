@@ -61,6 +61,32 @@ export const getPlaylistById = async (req: Request, res: Response) => {
   }
 };
 
+export const getUserLikedPlaylistById = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const store = asyncLocalStorage.getStore();
+    const userId = store?.loggedinUser?.id;
+
+    if (!id) {
+      return res.status(400).json({ message: "Playlist ID is required" });
+    }
+
+    const playlist = await playlistService.getUserLikedPlaylistById(id, userId);
+
+    if (!playlist) {
+      loggerService.error("Playlist not found", { id });
+      return res.status(404).json({ message: "Playlist not found" });
+    }
+
+    return res.json(playlist);
+  } catch (error) {
+    loggerService.error("Failed to retrieve playlist", error as Error);
+    return res
+      .status(500)
+      .json({ message: "Failed to retrieve playlist", error });
+  }
+};
+
 export const getPlaylists = async (req: Request, res: Response) => {
   try {
     const filter: IPlaylistFilters = {
@@ -236,7 +262,6 @@ export const getUserPlaylists = async (req: Request, res: Response) => {
     const likedSongsPlaylist = await playlistService.getUserLikedSongsPlaylist(
       id!
     );
-    console.log("likedSongsPlaylist:", likedSongsPlaylist);
 
     return res.json({
       likedSongsPlaylist,
