@@ -279,7 +279,7 @@ export class PlaylistService {
   }
 
   async remove(id: string): Promise<boolean> {
-    const playlist = prisma.playlist.delete({
+    const playlist = await prisma.playlist.delete({
       where: { id },
     });
 
@@ -454,7 +454,6 @@ export class PlaylistService {
     };
     const songs: ISong[] =
       likedSongsPlaylistData?.user.songLikes.map((songLike) => {
-        console.log("songLike:", songLike);
         const { song } = songLike;
         const isLikedByUser = song.songLikes.length > 0;
         const genres = song.genres as Genres[];
