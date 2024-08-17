@@ -290,14 +290,26 @@ export class PlaylistService {
     playlistId: string,
     songId: string
   ): Promise<boolean> {
-    const playlistSong = await prisma.playlistSong.create({
-      data: {
-        playlistId,
-        songId,
-      },
-    });
+    try {
+      const playlistSong = await prisma.playlistSong.upsert({
+        where: {
+          songId_playlistId: {
+            songId,
+            playlistId,
+          },
+        },
+        update: {},
+        create: {
+          playlistId,
+          songId,
+        },
+      });
 
-    return !!playlistSong;
+      return !!playlistSong;
+    } catch (error) {
+      console.error(`Error while adding song to playlist: ${error}`);
+      return false;
+    }
   }
 
   async removeSongFromPlaylist(

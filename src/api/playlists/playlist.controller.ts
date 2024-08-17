@@ -163,18 +163,7 @@ export const deletePlaylist = async (req: Request, res: Response) => {
 export const addSongToPlaylist = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const { songId, isPublic, ownerId } = req.body;
-
-    if (!isPublic) {
-      const store = asyncLocalStorage.getStore();
-
-      const userId = store?.loggedinUser?.id;
-      if (ownerId !== userId) {
-        return res
-          .status(403)
-          .json({ message: "Unauthorized to add song to playlist" });
-      }
-    }
+    const { songId } = req.body;
 
     if (!id) {
       return res.status(400).json({ message: "Playlist ID is required" });
