@@ -316,7 +316,7 @@ export class PlaylistService {
     playlistId: string,
     songId: string
   ): Promise<boolean> {
-    const playlistSong = prisma.playlistSong.deleteMany({
+    const playlistSong = await prisma.playlistSong.deleteMany({
       where: {
         playlistId,
         songId,

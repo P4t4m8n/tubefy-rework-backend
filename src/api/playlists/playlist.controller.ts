@@ -191,14 +191,15 @@ export const addSongToPlaylist = async (req: Request, res: Response) => {
 
 export const removeSongFromPlaylist = async (req: Request, res: Response) => {
   try {
-    const { id, songId } = req.params;
-    const { isPublic, ownerId } = req.body;
+    const { id } = req.params;
+    const { isPublic, isOwnerId, songId } = req.body;
+    console.log("isOwnerId, songId:", isOwnerId, songId)
 
     if (!isPublic) {
       const store = asyncLocalStorage.getStore();
 
       const userId = store?.loggedinUser?.id;
-      if (ownerId !== userId) {
+      if (isOwnerId !== userId) {
         return res
           .status(403)
           .json({ message: "Unauthorized to add song to playlist" });
