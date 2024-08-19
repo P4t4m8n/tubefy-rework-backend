@@ -193,7 +193,6 @@ export const removeSongFromPlaylist = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const { isPublic, isOwnerId, songId } = req.body;
-    console.log("isOwnerId, songId:", isOwnerId, songId)
 
     if (!isPublic) {
       const store = asyncLocalStorage.getStore();

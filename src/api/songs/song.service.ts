@@ -8,7 +8,7 @@ export class SongService {
     const song = await prisma.song.create({
       data: {
         youtubeId: songData.youtubeId,
-        addByUserId: songData.addByUserId,
+        addByUserId: user.id!,
         name: songData.name,
         artist: songData.artist,
         imgUrl: songData.imgUrl,
