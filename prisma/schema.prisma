@@ -150,7 +150,7 @@ model PlaylistSong {
   playlistId String   @map("playlist_id")
   songId     String   @map("song_id")
   addedAt    DateTime @default(now())
-  playlist   Playlist @relation(fields: [playlistId], references: [id])
+  playlist   Playlist @relation(fields: [playlistId], references: [id], onDelete: Cascade)
   song       Song     @relation(fields: [songId], references: [id])
 
   @@unique([songId, playlistId])
@@ -173,7 +173,7 @@ model PlaylistLike {
   playlistId String   @map("playlist_id")
   createdAt  DateTime @default(now())
   user       User     @relation(fields: [userId], references: [id])
-  playlist   Playlist @relation(fields: [playlistId], references: [id])
+  playlist   Playlist @relation(fields: [playlistId], references: [id], onDelete: Cascade)
 
   @@unique([userId, playlistId])
 }
@@ -195,7 +195,7 @@ model PlaylistShare {
   playlistId String   @map("playlist_id")
   userId     String   @map("user_id")
   sharedAt   DateTime @default(now())
-  playlist   Playlist @relation(fields: [playlistId], references: [id])
+  playlist   Playlist @relation(fields: [playlistId], references: [id], onDelete: Cascade)
   user       User     @relation(fields: [userId], references: [id])
 
   @@unique([playlistId, userId])

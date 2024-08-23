@@ -13,14 +13,14 @@ export class SongService {
         artist: songData.artist,
         imgUrl: songData.imgUrl,
         duration: songData.duration,
-        genres: songData.genres as  Genres[],
+        genres: songData.genres as Genres[],
       },
     });
     return {
       ...song,
       isLikedByUser: false,
       addedBy: user,
-      genres: song.genres as  Genres[],
+      genres: song.genres as Genres[],
     };
   }
 
@@ -28,7 +28,7 @@ export class SongService {
     const songs = await prisma.song.createManyAndReturn({
       data: data.map((song) => ({
         ...song,
-        genres: song.genres  as Genres[],
+        genres: song.genres as Genres[],
       })),
     });
 
@@ -36,7 +36,7 @@ export class SongService {
       ...song,
       isLikedByUser: false,
       addedBy: user,
-      genres: song.genres as  Genres[],
+      genres: song.genres as Genres[],
     }));
   }
 
@@ -89,7 +89,7 @@ export class SongService {
       ...song,
       isLikedByUser: song.songLikes.length > 0,
       addBy: song.addedBy,
-      genres: song.genres as  Genres[],
+      genres: song.genres as Genres[],
     }));
 
     return songs;

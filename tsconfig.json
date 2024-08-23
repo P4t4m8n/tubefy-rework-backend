@@ -7,6 +7,6 @@
     "skipLibCheck": true,
     "outDir": "./dist",
   },
-  "include": ["src/**/*.ts", "prisma/seed.ts", "prisma/text-connection.ts"],
+  "include": ["src/**/*.ts", "prisma/seed.ts", "prisma/test-connection.ts"],
   "exclude": ["node_modules"]
 }

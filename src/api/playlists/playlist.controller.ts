@@ -154,6 +154,7 @@ export const deletePlaylist = async (req: Request, res: Response) => {
 
     return res.json({ message: "Playlist deleted successfully" });
   } catch (error) {
+    loggerService.error("Failed to delete playlist", error as Error);
     return res
       .status(500)
       .json({ message: "Failed to delete playlist", error });

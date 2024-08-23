@@ -279,11 +279,13 @@ export class PlaylistService {
   }
 
   async remove(id: string): Promise<boolean> {
-    const playlist = await prisma.playlist.delete({
+    console.log("id:", id);
+    const check = await prisma.playlist.delete({
       where: { id },
     });
+    console.log("check:", check)
 
-    return !!playlist;
+    return !!check;
   }
 
   async addSongToPlaylist(
