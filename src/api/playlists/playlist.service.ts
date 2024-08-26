@@ -3,7 +3,6 @@ import {
   IPlaylistFilters,
   IPlaylistCreateDTO,
   TPlaylistType,
-  
 } from "./playlist.model";
 import { IUser } from "../users/user.model";
 import { ISong } from "../songs/song.model";
@@ -28,6 +27,7 @@ export class PlaylistService {
       genres: [],
       songs: [],
       duration: "00:00",
+      itemType: "playlist",
       types: playlist.types as TPlaylistType[],
     };
   }
@@ -86,7 +86,7 @@ export class PlaylistService {
     });
     if (!playlistData) return null;
 
-    const playlist: IPlaylist = this.transformPlaylistData(playlistData);
+    const playlist: IPlaylist = this.playlistDataToPlaylist(playlistData);
 
     return playlist;
   }
@@ -147,7 +147,7 @@ export class PlaylistService {
       take: limit,
     });
 
-    const playlists = this.playlistDataToPlaylist(playlistsData);
+    const playlists = this.mapPlaylistDataToPlaylist(playlistsData);
 
     return playlists;
   }
@@ -314,7 +314,7 @@ export class PlaylistService {
       likedSongsPlaylistData?.owner.songLikes.map(
         (songLike) => songLike.song
       ) || [];
-    const songs: ISong[] = songService.songDataToSong(likedSongsData);
+    const songs: ISong[] = songService.mapSongDataToSongs(likedSongsData);
     const owner = {
       id: likedSongsPlaylistData?.owner.id,
       imgUrl: likedSongsPlaylistData?.owner.imgUrl,
@@ -336,6 +336,7 @@ export class PlaylistService {
       genres: genres as Genres[],
       songs,
       duration,
+      itemType: "playlist",
     };
 
     return playlist;
@@ -364,22 +365,25 @@ export class PlaylistService {
     return `${hoursString}:${pad(minutes)}:${pad(seconds)}`;
   }
 
-  playlistDataToPlaylist(
+  mapPlaylistDataToPlaylist(
     playlistData: TPlaylistData[],
     owner?: IUser
   ): IPlaylist[] {
     const playlists = playlistData.map((playlistData) => {
-      return this.transformPlaylistData(playlistData, owner);
+      return this.playlistDataToPlaylist(playlistData, owner);
     });
 
     return playlists;
   }
 
-  transformPlaylistData(playlistData: TPlaylistData, owner?: IUser): IPlaylist {
+  playlistDataToPlaylist(
+    playlistData: TPlaylistData,
+    owner?: IUser
+  ): IPlaylist {
     const songsData = playlistData.playlistSongs.map(
       (playlistSong) => playlistSong.song
     );
-    const songs = songService.songDataToSong(songsData);
+    const songs = songService.mapSongDataToSongs(songsData);
     const duration = this.getTotalDuration(songs);
     const playlist: IPlaylist = {
       id: playlistData.id,
@@ -392,6 +396,8 @@ export class PlaylistService {
       duration,
       types: playlistData.types as TPlaylistType[],
       genres: playlistData.genres as Genres[],
+      itemType: "playlist",
+      isLikedByUser: !!playlistData?.playlistLikes?.length,
     };
     return playlist;
   }
@@ -473,5 +479,8 @@ type TPlaylistData = {
         id: string;
       }[];
     };
+  }[],
+  playlistLikes?: {
+    userId: string;
   }[];
 };

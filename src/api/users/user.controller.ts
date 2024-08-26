@@ -51,7 +51,6 @@ export const getUserById = async (req: Request, res: Response) => {
 export const getUserByEmail = async (req: Request, res: Response) => {
   try {
     const { email } = req.params;
-    console.log("email:", email);
 
     if (!email) {
       return res.status(400).json({ message: "Email is required" });
@@ -63,7 +62,6 @@ export const getUserByEmail = async (req: Request, res: Response) => {
       return res.status(404).json({ message: "User not found" });
     }
     delete user.password;
-    console.log("user:", user)
 
     return res.json(user);
   } catch (error) {

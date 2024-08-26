@@ -6,7 +6,6 @@ import {
   deletePlaylist,
   getPlaylistById,
   getPlaylists,
-  getUserLikedPlaylist,
   getUserPlaylists,
   likePlaylist,
   removeSongFromPlaylist,
@@ -26,7 +25,6 @@ playlistRoutes.delete("/:id/songs", requireAuth, log, removeSongFromPlaylist);
 playlistRoutes.post("/:id/like", requireAuth, log, likePlaylist);
 playlistRoutes.delete("/:id/like", requireAuth, log, unlikePlaylist);
 
-playlistRoutes.get("/user/:id", log, getUserLikedPlaylist);
 
 playlistRoutes.get("/:id", log, getPlaylistById);
 playlistRoutes.delete("/:id", requireAuth, log, deletePlaylist);

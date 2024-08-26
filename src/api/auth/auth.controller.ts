@@ -38,7 +38,6 @@ export const signUp = async (req: Request, res: Response) => {
 
     const playlistToCreate = getDefaultLikesPlaylist(result.user.id!);
     const playlist = await playlistService.create(playlistToCreate, result.user);
-    console.log("playlist:", playlist)
 
     const user = await userService.getDetailedUser(result.user);
 

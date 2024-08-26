@@ -8,6 +8,7 @@ import {
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
 import { loggerService } from "../../services/logger.service";
 import { Genres } from "../songs/song.enum";
+import { songService } from "../songs/song.service";
 
 const playlistService = new PlaylistService();
 
@@ -51,25 +52,15 @@ export const getPlaylistById = async (req: Request, res: Response) => {
       return res.status(404).json({ message: "Playlist not found" });
     }
 
-    return res.json(playlist);
-  } catch (error) {
-    loggerService.error("Failed to retrieve playlist", error as Error);
-    return res
-      .status(500)
-      .json({ message: "Failed to retrieve playlist", error });
-  }
-};
-
-export const getUserLikedPlaylist = async (req: Request, res: Response) => {
-  try {
-    const store = asyncLocalStorage.getStore();
-    const userId = store?.loggedinUser?.id;
-
-    const playlist = await playlistService.getUserLikedSongsPlaylist(userId!);
-
-    if (!playlist) {
-      loggerService.error("User likedPlaylist not found", { userId });
-      return res.status(404).json({ message: "Playlist not found" });
+    if (playlist.types.includes("Liked Songs")) {
+      if (!playlist.isPublic) {
+        if (playlist.owner.id !== userId) {
+          return res
+            .status(403)
+            .json({ message: "Unauthorized to view playlist" });
+        }
+      }
+      playlist.songs = await songService.getLikedSongs(playlist.owner.id!);
     }
 
     return res.json(playlist);

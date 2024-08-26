@@ -1,20 +1,24 @@
 import { IFriend } from "../friends/friends.model";
-import {  IPlaylist } from "../playlists/playlist.model";
+import { IPlaylist } from "../playlists/playlist.model";
 
 export interface IUser {
-  username: string;
+  id?: string;
   imgUrl?: string | null;
   isAdmin?: boolean;
-  id?: string;
+  username: string;
 }
 
-export interface IDetailedUser extends IUser {
-  email: string;
+export interface IUserDetailed extends IUser {
   password?: string;
+  email: string;
+}
+
+export interface FullUser  {
   friends?: IFriend[];
   friendsRequest?: IFriend[];
-  playlists: IPlaylist[];
   likedSongsPlaylist: IPlaylist;
+  playlists: IPlaylist[];
+  user: IUserDetailed;
 }
 
 export interface IUserLoginDTO {

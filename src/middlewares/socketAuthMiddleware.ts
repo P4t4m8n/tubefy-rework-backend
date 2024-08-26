@@ -6,7 +6,6 @@ export const socketAuthMiddleware = async (
   next: (err?: Error) => void
 ) => {
   const userId = socket.handshake.headers.cookie?.split("loginToken=")[1];
-  console.log("userId:", userId)
 
   if (!userId) {
     return next(new Error("You must be logged in"));

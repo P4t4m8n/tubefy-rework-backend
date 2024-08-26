@@ -1,3 +1,4 @@
+import { IItemType } from "../../app.model";
 import { Genres } from "../songs/song.enum";
 import { ISong } from "../songs/song.model";
 import { IUser } from "../users/user.model";
@@ -11,18 +12,19 @@ export interface IPlaylistCreateDTO {
   types: TPlaylistType[];
   genres: Genres[];
 }
-export interface IPlaylist {
+export interface IPlaylist extends IItemType {
   id: string;
   name: string;
+  createdAt: Date;
   imgUrl: string;
   isPublic: boolean;
-  createdAt: Date;
-  isLikedByUser?: boolean;
   owner: IUser;
   duration: string;
   types: TPlaylistType[];
   songs: ISong[];
   genres: Genres[];
+
+  isLikedByUser?: boolean;
 }
 export interface IPlaylistFilters {
   name?: string;

@@ -21,9 +21,9 @@ export class SongService {
       isLikedByUser: false,
       addedBy: user,
       genres: song.genres as Genres[],
+      itemType: "song",
     };
   }
-
   async createMany(data: ISongDTO[], user: IUser): Promise<ISong[]> {
     const songs = await prisma.song.createManyAndReturn({
       data: data.map((song) => ({
@@ -37,9 +37,9 @@ export class SongService {
       isLikedByUser: false,
       addedBy: user,
       genres: song.genres as Genres[],
+      itemType: "song",
     }));
   }
-
   async query(songFilter: ISongFilter, userId?: string): Promise<ISong[]> {
     const { name, artist, genres, addByUserId, isLikedByUser } = songFilter;
 
@@ -85,16 +85,10 @@ export class SongService {
       },
     });
 
-    const songs: ISong[] = songsData.map((song) => ({
-      ...song,
-      isLikedByUser: song.songLikes.length > 0,
-      addBy: song.addedBy,
-      genres: song.genres as Genres[],
-    }));
+    const songs: ISong[] = this.mapSongDataToSongs(songsData);
 
     return songs;
   }
-
   async likeSong(songId: string, userId: string): Promise<boolean> {
     const likedSongsCheck = await prisma.songLike.create({
       data: {
@@ -105,7 +99,6 @@ export class SongService {
 
     return !!likedSongsCheck;
   }
-
   async unlikeSong(songId: string, userId: string): Promise<boolean> {
     const unlikeSongsCheck = await prisma.songLike.deleteMany({
       where: {
@@ -116,19 +109,53 @@ export class SongService {
 
     return !!unlikeSongsCheck;
   }
+  mapSongDataToSongs(songsData: songData[]): ISong[] {
+    const songs = songsData.map((songData) => this.songDataToSong(songData));
+    return songs;
+  }
+  songDataToSong(songData: songData): ISong {
+    const song: ISong = {
+      ...songData,
+      isLikedByUser: songData.songLikes ? songData.songLikes.length > 0 : true,
+      addedBy: songData.addedBy,
+      genres: songData.genres as Genres[],
+      itemType: "song",
+    };
+    return song;
+  }
 
-  songDataToSong(songsData: songData[]): ISong[] {
-    const songs = songsData.map((songData) => {
-      const song: ISong = {
-        ...songData,
-        isLikedByUser: songData.songLikes
-          ? songData.songLikes.length > 0
-          : true,
-        addedBy: songData.addedBy,
-        genres: songData.genres as Genres[],
-      };
-      return song;
+  async getLikedSongs(userId: string): Promise<ISong[]> {
+    const likedSongsData = await prisma.songLike.findMany({
+      where: {
+        userId,
+      },
+      select: {
+        song: {
+          select: {
+            id: true,
+            name: true,
+            artist: true,
+            imgUrl: true,
+            duration: true,
+            genres: true,
+            youtubeId: true,
+            addedAt: true,
+            addedBy: {
+              select: {
+                id: true,
+                imgUrl: true,
+                username: true,
+              },
+            },
+          },
+        },
+      },
     });
+
+    const songs = this.mapSongDataToSongs(
+      likedSongsData.map((data) => data.song)
+    );
+
     return songs;
   }
 }

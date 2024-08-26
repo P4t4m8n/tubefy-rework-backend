@@ -1,6 +1,6 @@
 import argon2 from "argon2";
 import {
-  IDetailedUser,
+  FullUser,
   IUser,
   IUserDTO,
   IUserFilters,
@@ -89,7 +89,7 @@ export class UserService {
     });
     return { users, total: users.length };
   }
-  async getDetailedUser(owner: IUser): Promise<IDetailedUser> {
+  async getDetailedUser(owner: IUser): Promise<FullUser> {
     const userData = await prisma.user.findUniqueOrThrow({
       relationLoadStrategy: "join",
       where: {
@@ -257,19 +257,18 @@ export class UserService {
       },
     });
 
-    const userPlaylists: IPlaylist[] = playlistService.playlistDataToPlaylist(
-      userData.playlists
-    );
+    const userPlaylists: IPlaylist[] =
+      playlistService.mapPlaylistDataToPlaylist(userData.playlists);
 
     const likedPlaylistsData = userData?.playlistLikes.map(
       (playlist) => playlist.playlist
     );
 
     const likedPlaylists: IPlaylist[] =
-      playlistService.playlistDataToPlaylist(likedPlaylistsData);
+      playlistService.mapPlaylistDataToPlaylist(likedPlaylistsData);
 
     const songsData = userData.songLikes.map((song) => song.song);
-    const songs = songService.songDataToSong(songsData);
+    const songs = songService.mapSongDataToSongs(songsData);
 
     const idx = userPlaylists.findIndex(
       (playlist) => playlist.name === "Liked Songs"
@@ -290,14 +289,16 @@ export class UserService {
     const { id, imgUrl, username, email, isAdmin, friends, friendsRequest } =
       userData;
 
-    const user: IDetailedUser = {
+    const user: FullUser = {
       playlists: [...userPlaylists, ...likedPlaylists],
       likedSongsPlaylist,
-      id,
-      imgUrl,
-      username,
-      email,
-      isAdmin,
+      user: {
+        id,
+        imgUrl,
+        username,
+        email,
+        isAdmin,
+      },
       friendsRequest,
       friends,
     };
