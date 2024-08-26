@@ -1,4 +1,3 @@
-
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["relationJoins", "omitApi"]
@@ -85,20 +84,20 @@ enum PlaylistType {
 }
 
 model User {
-  id                 String              @id @default(uuid())
-  username           String              @unique
-  email              String              @unique
-  password           String              @map("password_hash")
-  createdAt          DateTime            @default(now())
-  isAdmin            Boolean             @default(false)
-  imgUrl             String?
-  songs              Song[]              @relation("SongAddedByUser")
-  playlists          Playlist[]          @relation("PlaylistOwner")
-  friends            Friend[]            @relation("friends")
-  friendsRequest    Friend[]            @relation("friendsRequest")
-  playlistLikes      PlaylistLike[]
-  songLikes          SongLike[]
-  PlaylistShare      PlaylistShare[]
+  id             String          @id @default(uuid())
+  username       String          @unique
+  email          String          @unique
+  password       String          @map("password_hash")
+  createdAt      DateTime        @default(now())
+  isAdmin        Boolean         @default(false)
+  imgUrl         String?
+  songs          Song[]          @relation("SongAddedByUser")
+  playlists      Playlist[]      @relation("PlaylistOwner")
+  friends        Friend[]        @relation("friends")
+  friendsRequest Friend[]        @relation("friendsRequest")
+  playlistLikes  PlaylistLike[]
+  songLikes      SongLike[]
+  PlaylistShare  PlaylistShare[]
 }
 
 model Song {
@@ -117,17 +116,16 @@ model Song {
 }
 
 model Playlist {
-  id       String  @id @default(uuid())
-  name     String  @default("")
-  ownerId  String  @map("owner_id")
-  isPublic Boolean @default(false)
-  imgUrl   String  @default("")
-
+  id             String          @id @default(uuid())
+  name           String          @default("")
+  ownerId        String          @map("owner_id")
+  isPublic       Boolean         @default(false)
+  imgUrl         String          @default("")
   createdAt      DateTime        @default(now())
   description    String?
   genres         String[]        @default(["OTHER"])
   types          String[]        @default(["EMPTY"])
-  owner          User            @relation("PlaylistOwner", fields: [ownerId], references: [id])
+  owner          User            @relation("PlaylistOwner", fields: [ownerId], references: [id], onDelete: Cascade)
   playlistSongs  PlaylistSong[]
   playlistLikes  PlaylistLike[]
   playlistShares PlaylistShare[]

@@ -10,17 +10,17 @@ const TOKEN_EXPIRY = 1000 * 60 * 60 * 24; // 1 day
 export const signUp = async (req: Request, res: Response) => {
   try {
     const { username, email, password } = req.body;
-
+    
     if (!username || !email || !password) {
       let missingFields = [];
       if (!username) missingFields.push("username");
       if (!email) missingFields.push("email");
       if (!password) missingFields.push("password");
       return res
-        .status(400)
-        .json({ message: `Missing fields: ${missingFields.join(",")} ` });
+      .status(400)
+      .json({ message: `Missing fields: ${missingFields.join(",")} ` });
     }
-
+    
     const usernameCheck = await userService.getByUsername(username);
     if (usernameCheck) {
       return res.status(409).json({ message: "Username already exists" });
@@ -29,7 +29,7 @@ export const signUp = async (req: Request, res: Response) => {
     if (emailCheck) {
       return res.status(409).json({ message: "Email already exists" });
     }
-
+    
     const result = await authService.signUp({
       username,
       email,
@@ -37,7 +37,8 @@ export const signUp = async (req: Request, res: Response) => {
     });
 
     const playlistToCreate = getDefaultLikesPlaylist(result.user.id!);
-    await playlistService.create(playlistToCreate, result.user);
+    const playlist = await playlistService.create(playlistToCreate, result.user);
+    console.log("playlist:", playlist)
 
     const user = await userService.getDetailedUser(result.user);
 

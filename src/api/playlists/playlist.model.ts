@@ -1,7 +1,6 @@
 import { Genres } from "../songs/song.enum";
 import { ISong } from "../songs/song.model";
 import { IUser } from "../users/user.model";
-import { PlaylistType } from "./playlist.enum";
 
 export interface IPlaylistCreateDTO {
   name: string;
@@ -9,7 +8,7 @@ export interface IPlaylistCreateDTO {
   isPublic: boolean;
   imgUrl: string;
   description?: string | null;
-  types: PlaylistType[];
+  types: TPlaylistType[];
   genres: Genres[];
 }
 export interface IPlaylist {
@@ -21,7 +20,7 @@ export interface IPlaylist {
   isLikedByUser?: boolean;
   owner: IUser;
   duration: string;
-  types: PlaylistType[];
+  types: TPlaylistType[];
   songs: ISong[];
   genres: Genres[];
 }
@@ -35,3 +34,21 @@ export interface IPlaylistFilters {
   page?: number;
   isLikedByUser?: boolean;
 }
+
+export type TPlaylistType =
+  | "New Music"
+  | "Daily mix"
+  | "Chill"
+  | "Workout"
+  | "Party"
+  | "Focus"
+  | "Sleep"
+  | "Travel"
+  | "Kids"
+  | "Cooking"
+  | "Wellness"
+  | "Study"
+  | "Chill-out "
+  | "New Wave"
+  | ""
+  | "Liked Songs";

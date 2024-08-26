@@ -7,11 +7,10 @@ import {
   IUserSignupDTO,
 } from "./user.model";
 import { prisma } from "../../../prisma/prismaClient";
-import {  IPlaylist } from "../playlists/playlist.model";
+import { IPlaylist } from "../playlists/playlist.model";
 import { playlistService } from "../playlists/playlist.service";
 import { songService } from "../songs/song.service";
 import { getDefaultLikesPlaylist } from "../../services/util";
-import { PlaylistType } from "../playlists/playlist.enum";
 
 export class UserService {
   async create(userData: IUserSignupDTO): Promise<IUserDTO> {
@@ -47,8 +46,7 @@ export class UserService {
     return user;
   }
   async getByEmail(email: string): Promise<IUserDTO | null> {
-    const user = await prisma.user.findUniqueOrThrow({
-      relationLoadStrategy: "join",
+    const user = await prisma.user.findUnique({
       where: {
         email: email,
       },
@@ -263,15 +261,9 @@ export class UserService {
       userData.playlists
     );
 
-    let likedPlaylistIdx = -1;
-
-    //Flattening the playlistLikes array and getting the liked songs infex
-    const likedPlaylistsData = userData?.playlistLikes.map((playlist, idx) => {
-      if (playlist.playlist.types.includes(PlaylistType.LIKED_SONGS)) {
-        likedPlaylistIdx = idx;
-      }
-      return playlist.playlist;
-    });
+    const likedPlaylistsData = userData?.playlistLikes.map(
+      (playlist) => playlist.playlist
+    );
 
     const likedPlaylists: IPlaylist[] =
       playlistService.playlistDataToPlaylist(likedPlaylistsData);
@@ -279,19 +271,20 @@ export class UserService {
     const songsData = userData.songLikes.map((song) => song.song);
     const songs = songService.songDataToSong(songsData);
 
-    let likedSongsPlaylist: IPlaylist;
+    const idx = userPlaylists.findIndex(
+      (playlist) => playlist.name === "Liked Songs"
+    );
 
+    let likedSongsPlaylist = userPlaylists.splice(idx, 1)[0];
     //Check in case the user has no liked songs playlist
-    if (likedPlaylistIdx === -1) {
+    if (!likedSongsPlaylist) {
       const playlistToSave = getDefaultLikesPlaylist(userData.id);
       likedSongsPlaylist = await playlistService.create(
         playlistToSave,
         userData
       );
-    } else {
-      likedSongsPlaylist = userPlaylists.splice(likedPlaylistIdx, 1)[0];
     }
-    
+
     likedSongsPlaylist.songs = songs;
 
     const { id, imgUrl, username, email, isAdmin, friends, friendsRequest } =

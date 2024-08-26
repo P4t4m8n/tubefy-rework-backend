@@ -2,12 +2,12 @@ import {
   IPlaylist,
   IPlaylistFilters,
   IPlaylistCreateDTO,
+  TPlaylistType,
   
 } from "./playlist.model";
 import { IUser } from "../users/user.model";
 import { ISong } from "../songs/song.model";
 import { prisma } from "../../../prisma/prismaClient";
-import { PlaylistType } from "./playlist.enum";
 import { Genres } from "../songs/song.enum";
 import { songService } from "../songs/song.service";
 
@@ -28,7 +28,7 @@ export class PlaylistService {
       genres: [],
       songs: [],
       duration: "00:00",
-      types: playlist.types as PlaylistType[],
+      types: playlist.types as TPlaylistType[],
     };
   }
 
@@ -169,7 +169,7 @@ export class PlaylistService {
 
     return {
       ...playlist,
-      types: playlist.types as PlaylistType[],
+      types: playlist.types as TPlaylistType[],
       genres: playlist.genres as Genres[],
     };
   }
@@ -332,7 +332,7 @@ export class PlaylistService {
       isPublic,
       createdAt,
       owner,
-      types: types as PlaylistType[],
+      types: types as TPlaylistType[],
       genres: genres as Genres[],
       songs,
       duration,
@@ -390,7 +390,7 @@ export class PlaylistService {
       owner: owner ? owner : playlistData.owner!,
       songs,
       duration,
-      types: playlistData.types as PlaylistType[],
+      types: playlistData.types as TPlaylistType[],
       genres: playlistData.genres as Genres[],
     };
     return playlist;
