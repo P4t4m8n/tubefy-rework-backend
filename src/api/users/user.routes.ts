@@ -12,8 +12,8 @@ import { requireAdmin, requireAuth } from "../../middlewares/auth.middleware";
 
 export const userRoutes = express.Router();
 
-userRoutes.get("/:id", log, getUserById);
-userRoutes.get("/:email", requireAuth, log, getUserByEmail);
+userRoutes.get("/admin/:id", requireAuth, requireAdmin, log, getUserById);
+userRoutes.get("/:email", log, getUserByEmail);
 userRoutes.put("/:id", requireAuth, log, updateUser);
 userRoutes.delete("/:id", requireAuth, log, deleteUser);
 userRoutes.get("/", requireAuth, requireAdmin, log, getAllUsers);

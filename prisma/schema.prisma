@@ -1,11 +1,7 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins", "omitApi"]
 }
 
 datasource db {
@@ -66,6 +62,7 @@ enum FriendStatus {
   ACCEPTED
   BLOCKED
   REJECTED
+  REMOVED
 }
 
 enum PlaylistType {
@@ -97,12 +94,11 @@ model User {
   imgUrl             String?
   songs              Song[]              @relation("SongAddedByUser")
   playlists          Playlist[]          @relation("PlaylistOwner")
-  friendOut          Friend[]            @relation("UserFriendsOut")
-  friendIn           Friend[]            @relation("UserFriendsIn")
+  friends            Friend[]            @relation("friends")
+  friendsRequest    Friend[]            @relation("friendsRequest")
   playlistLikes      PlaylistLike[]
   songLikes          SongLike[]
   PlaylistShare      PlaylistShare[]
-  LikedSongsPlaylist LikedSongsPlaylist?
 }
 
 model Song {
@@ -135,14 +131,6 @@ model Playlist {
   playlistSongs  PlaylistSong[]
   playlistLikes  PlaylistLike[]
   playlistShares PlaylistShare[]
-}
-
-model LikedSongsPlaylist {
-  id       String  @id @default(uuid())
-  userId   String  @unique() @map("user_id")
-  imgUrl   String  @default("https://res.cloudinary.com/dpnevk8db/image/upload/v1705451341/playlist-like.png")
-  user     User    @relation(fields: [userId], references: [id])
-  isPublic Boolean @default(false)
 }
 
 model PlaylistSong {
@@ -183,9 +171,9 @@ model Friend {
   createdAt DateTime     @default(now())
   status    FriendStatus @default(PENDING)
   userId    String       @map("user_id")
-  user      User         @relation("UserFriendsOut", fields: [userId], references: [id])
+  user      User         @relation("friends", fields: [userId], references: [id])
   friendId  String       @map("friend_id")
-  friend    User         @relation("UserFriendsIn", fields: [friendId], references: [id])
+  friend    User         @relation("friendsRequest", fields: [friendId], references: [id])
 
   @@unique([userId, friendId])
 }

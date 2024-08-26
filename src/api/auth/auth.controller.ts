@@ -1,9 +1,9 @@
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
-import { PlaylistService } from "../playlists/playlist.service";
-import { AuthService } from "./auth.service";
+import { getDefaultLikesPlaylist } from "../../services/util";
+import { playlistService } from "../playlists/playlist.service";
+import { userService } from "../users/user.service";
+import { authService } from "./auth.service";
 import { Request, Response } from "express";
-
-const authService = new AuthService();
 
 const TOKEN_EXPIRY = 1000 * 60 * 60 * 24; // 1 day
 
@@ -21,20 +21,31 @@ export const signUp = async (req: Request, res: Response) => {
         .json({ message: `Missing fields: ${missingFields.join(",")} ` });
     }
 
+    const usernameCheck = await userService.getByUsername(username);
+    if (usernameCheck) {
+      return res.status(409).json({ message: "Username already exists" });
+    }
+    const emailCheck = await userService.getByEmail(email);
+    if (emailCheck) {
+      return res.status(409).json({ message: "Email already exists" });
+    }
+
     const result = await authService.signUp({
       username,
       email,
       password,
     });
 
-    const playlistService = new PlaylistService();
-    await playlistService.createUserLikesPlaylist(result.user.id!);
+    const playlistToCreate = getDefaultLikesPlaylist(result.user.id!);
+    await playlistService.create(playlistToCreate, result.user);
+
+    const user = await userService.getDetailedUser(result.user);
 
     res.cookie("loginToken", result.token, {
       httpOnly: true,
       maxAge: TOKEN_EXPIRY,
     });
-    return res.status(201).json({ user: result.user });
+    return res.status(201).json(user);
   } catch (error) {
     return res.status(400).json({ message: "Failed to sign up", error });
   }
@@ -54,16 +65,18 @@ export const login = async (req: Request, res: Response) => {
         .json({ message: `Missing fields: ${missingFields.join(",")} ` });
     }
 
-    const result = await authService.login(email, password);
-    if (result) {
-      res.cookie("loginToken", result.token, {
-        httpOnly: true,
-        maxAge: TOKEN_EXPIRY,
-      });
-      return res.json(result.user);
-    } else {
-      return res.status(401).json({ message: "Invalid credentials" });
+    const result = await authService.login({ email, password });
+    if (!result) {
+      return res.status(409).json({ message: "Invalid Email or Password" });
     }
+
+    const user = await userService.getDetailedUser(result.user);
+
+    res.cookie("loginToken", result.token, {
+      httpOnly: true,
+      maxAge: TOKEN_EXPIRY,
+    });
+    return res.status(200).json(user);
   } catch (error) {
     return res.status(500).json({ message: "Failed to login", error });
   }
@@ -71,11 +84,10 @@ export const login = async (req: Request, res: Response) => {
 
 export const logout = async (req: Request, res: Response) => {
   res.clearCookie("loginToken");
-  // Clear the logged-in user from AsyncLocalStorage
   const store = asyncLocalStorage.getStore();
   if (store) {
     store.loggedinUser = undefined;
   }
 
-  return res.json({ message: "Logged out successfully" });
+  return res.status(200).json({ message: "Logged out successfully" });
 };

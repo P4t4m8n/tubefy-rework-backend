@@ -1,7 +1,6 @@
 import { PlaylistType } from "../src/api/playlists/playlist.enum";
 import {
   IPlaylist,
-  IPlaylistUpdateDTO,
 } from "../src/api/playlists/playlist.model";
 import { PlaylistService } from "../src/api/playlists/playlist.service";
 import { Genres } from "../src/api/songs/song.enum";
@@ -23,43 +22,42 @@ const playlistsServices = new PlaylistService();
 const songService = new SongService();
 async function seed() {
   try {
-    // const { users } = await userServices.query();
-    const playlists = await playlistsServices.query();
-    // const songs = await songService.query({});
-
+    // // const { users } = await userServices.query();
+    // const playlists = await playlistsServices.query();
+    // // const songs = await songService.query({});
   
 
-    let i = 0;
-    for (const playlist of playlists) {
-      await playlistsServices.update(playlist.id!, {
-        ...playlist,
-        imgUrl: playlistsImgsJson[i % 40],
-      });
-      i++
-    }
-
-    //  await seedPlaylists(users[0]);
-    // await seedSongs(users[0]);
-
-    // await prisma.playlistSong.deleteMany();
-    // await prisma.playlist.deleteMany();
-    // await prisma.user.deleteMany();
-    // await prisma.song.deleteMany();
-
-    // let j = 0;
+    // let i = 0;
     // for (const playlist of playlists) {
-    //   if (j >= songs.length) {
-    //     j = 0;
-    //   }
-
-    //   for (let i = j; i < j + 5; i++) {
-    //     if (i < songs.length) {
-    //       await playlistsServices.addSongToPlaylist(playlist.id!, songs[i].id!);
-    //     }
-    //   }
-
-    //   j += 5;
+    //   await playlistsServices.update(playlist.id!, {
+    //     ...playlist,
+    //     imgUrl: playlistsImgsJson[i % 40],
+    //   });
+    //   i++
     // }
+
+    // //  await seedPlaylists(users[0]);
+    // // await seedSongs(users[0]);
+
+    // // await prisma.playlistSong.deleteMany();
+    // // await prisma.playlist.deleteMany();
+    // // await prisma.user.deleteMany();
+    // // await prisma.song.deleteMany();
+
+    // // let j = 0;
+    // // for (const playlist of playlists) {
+    // //   if (j >= songs.length) {
+    // //     j = 0;
+    // //   }
+
+    // //   for (let i = j; i < j + 5; i++) {
+    // //     if (i < songs.length) {
+    // //       await playlistsServices.addSongToPlaylist(playlist.id!, songs[i].id!);
+    // //     }
+    // //   }
+
+    // //   j += 5;
+    // // }
   } catch (error) {
     console.error("Error during seeding:", error);
   }

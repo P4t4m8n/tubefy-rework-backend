@@ -6,6 +6,7 @@ import {
   IUserSignupDTO,
 } from "../users/user.model";
 import { UserService } from "../users/user.service";
+import argon2 from "argon2";
 
 const JWT_SECRET = process.env.JWT_SECRET!;
 const userService = new UserService();
@@ -13,34 +14,26 @@ export class AuthService {
   async signUp(
     userData: IUserSignupDTO
   ): Promise<{ user: IUser; token: string }> {
-    const usernameCheck = await userService.getByUsername(userData.username);
-    if (usernameCheck) {
-      throw new Error("Username already exists");
-    }
-    const emailCheck = await userService.getByEmail(userData.email);
-    if (emailCheck) {
-      throw new Error("Email already exists");
-    }
-
-    const newUser = await userService.create(userData);
-    delete newUser.password;
-    const token = this.#generateToken(newUser);
-    return { user: newUser, token };
+    const user = await userService.create(userData);
+    delete user.password;
+    if (!user.id) throw new Error("Error creating user no id generated");
+    const token = this.#generateToken(user.id);
+    return { user, token };
   }
 
   async login(
-    email: string,
-    password: string
-  ): Promise<{ user: IUserLoginDTO; token: string } | null> {
+    userData: IUserLoginDTO
+  ): Promise<{ user: IUser; token: string } | null> {
+    const { email, password } = userData;
     const user = await userService.getByEmail(email);
-    if (!user) return null;
-    const isPasswordValid = await userService.verifyPassword(
+    if (!user || !user?.id) return null;
+    const isPasswordValid = await this.#verifyPassword(
       password,
       user.password!
     );
     if (!isPasswordValid) return null;
     delete user.password;
-    const token = this.#generateToken(user);
+    const token = this.#generateToken(user.id);
     return { user, token };
   }
 
@@ -55,8 +48,15 @@ export class AuthService {
     }
   }
 
-  #generateToken(user: IUserDTO): string {
-    return jwt.sign({ userId: user.id }, JWT_SECRET, { expiresIn: "1d" });
+  #generateToken(userId: string): string {
+    return jwt.sign({ userId }, JWT_SECRET, { expiresIn: "1d" });
+  }
+
+  async #verifyPassword(
+    plainTextPassword: string,
+    hashedPassword: string
+  ): Promise<boolean> {
+    return argon2.verify(hashedPassword, plainTextPassword);
   }
 }
 

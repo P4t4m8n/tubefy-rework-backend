@@ -1,14 +1,16 @@
+import { FriendStatus } from "@prisma/client";
+import { IUser } from "../users/user.model";
+
 export interface IFriend {
-  id: number;
-  userId: number;
-  friendId: number;
+  id: string;
   createdAt: Date;
   status: FriendStatus;
+  friend: IUser;
 }
 
-export enum FriendStatus {
-  PENDING = "PENDING",
-  ACCEPTED = "ACCEPTED",
-  BLOCKED = "BLOCKED",
-  REJECTED = "REJECTED",
+export interface IFriendDTO {
+  userId: string;
+  friendId: string;
+  id: string;
+  status: FriendStatus;
 }

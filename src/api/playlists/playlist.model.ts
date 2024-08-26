@@ -9,42 +9,22 @@ export interface IPlaylistCreateDTO {
   isPublic: boolean;
   imgUrl: string;
   description?: string | null;
-}
-
-export interface IPlaylistUpdateDTO extends IPlaylistCreateDTO {
   types: PlaylistType[];
   genres: Genres[];
 }
-
 export interface IPlaylist {
   id: string;
   name: string;
   imgUrl: string;
-  songs: ISong[];
-  genres: Genres[];
   isPublic: boolean;
   createdAt: Date;
   isLikedByUser?: boolean;
-  types: PlaylistType[];
   owner: IUser;
   duration: string;
-  shares: {
-    count: number;
-  };
-}
-
-export interface ILikedSongsPlaylist {
-  id: string;
-  name: string;
-  imgUrl: string;
+  types: PlaylistType[];
   songs: ISong[];
-  isPublic: boolean;
-  duration: string;
-  shares: {
-    count: number;
-  };
+  genres: Genres[];
 }
-
 export interface IPlaylistFilters {
   name?: string;
   isPublic?: boolean;

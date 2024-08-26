@@ -2,30 +2,29 @@ import {
   IPlaylist,
   IPlaylistFilters,
   IPlaylistCreateDTO,
-  IPlaylistUpdateDTO,
-  ILikedSongsPlaylist,
+  
 } from "./playlist.model";
 import { IUser } from "../users/user.model";
 import { ISong } from "../songs/song.model";
 import { prisma } from "../../../prisma/prismaClient";
 import { PlaylistType } from "./playlist.enum";
 import { Genres } from "../songs/song.enum";
+import { songService } from "../songs/song.service";
 
 export class PlaylistService {
   async create(
-    playlistData: IPlaylistUpdateDTO,
-    user: IUser
+    playlistData: IPlaylistCreateDTO,
+    owner: IUser
   ): Promise<IPlaylist> {
     const { name, isPublic, imgUrl, types, genres } = playlistData;
 
     const playlist = await prisma.playlist.create({
-      data: { name, isPublic, imgUrl, ownerId: user.id!, types, genres },
+      data: { name, isPublic, imgUrl, ownerId: owner.id!, types, genres },
     });
 
     return {
       ...playlist,
-      owner: user,
-      shares: { count: 0 },
+      owner,
       genres: [],
       songs: [],
       duration: "00:00",
@@ -33,34 +32,9 @@ export class PlaylistService {
     };
   }
 
-  async createMany(
-    dataA: IPlaylistUpdateDTO[],
-    user: IUser
-  ): Promise<IPlaylist[]> {
-    const data: any = dataA.map((playlist) => ({
-      ...playlist,
-      ownerId: user.id!,
-      genres: playlist.genres as Genres[],
-      types: playlist.types as PlaylistType[],
-    }));
-
-    const playlists = await prisma.playlist.createManyAndReturn({
-      data,
-    });
-
-    return playlists.map((playlist) => ({
-      ...playlist,
-      owner: user,
-      shares: { count: 0 },
-      genres: [],
-      songs: [],
-      duration: "00:00",
-      types: playlist.types as PlaylistType[],
-    }));
-  }
-
   async getById(id: string, currentUserId?: string): Promise<IPlaylist | null> {
     const playlistData = await prisma.playlist.findUnique({
+      relationLoadStrategy: "join",
       where: { id },
       include: {
         owner: {
@@ -103,7 +77,6 @@ export class PlaylistService {
             },
           },
         },
-        playlistShares: {},
         playlistLikes: {
           where: {
             userId: currentUserId,
@@ -112,32 +85,8 @@ export class PlaylistService {
       },
     });
     if (!playlistData) return null;
-    const songs = playlistData.playlistSongs.map((playlistSong) => {
-      const song: ISong = {
-        ...playlistSong.song,
-        isLikedByUser: playlistSong.song.songLikes.length > 0,
-        addedBy: playlistSong.song.addedBy,
-        genres: playlistSong.song.genres as Genres[],
-      };
-      return song;
-    });
 
-    const duration = this.getTotalDuration(songs);
-
-    const playlist: IPlaylist = {
-      id: playlistData.id,
-      name: playlistData.name,
-      isLikedByUser: playlistData.playlistLikes.length > 0,
-      imgUrl: playlistData.imgUrl,
-      songs,
-      genres: playlistData.genres as Genres[],
-      isPublic: playlistData.isPublic,
-      createdAt: playlistData.createdAt,
-      types: playlistData.types as PlaylistType[],
-      owner: playlistData.owner,
-      shares: { count: 0 },
-      duration,
-    };
+    const playlist: IPlaylist = this.transformPlaylistData(playlistData);
 
     return playlist;
   }
@@ -146,42 +95,12 @@ export class PlaylistService {
     userId?: string,
     filters: IPlaylistFilters = {}
   ): Promise<IPlaylist[]> {
-    const { name, isPublic, ownerId, artist, genres, isLikedByUser, limit } =
-      filters;
+    const { limit } = filters;
 
-    const queryFilters: any = {};
-
-    if (!!name) queryFilters.name = { contains: name };
-    if (!!isPublic)
-      queryFilters.isPublic = {
-        equals: isPublic,
-      };
-    if (!!ownerId) queryFilters.ownerId = ownerId;
-    if (!!artist)
-      queryFilters.playlistSongs = {
-        some: {
-          song: {
-            artist: {
-              contains: artist,
-              mode: "insensitive",
-            },
-          },
-        },
-      };
-
-    if (!!genres && genres.length > 0)
-      queryFilters.genres = {
-        hasSome: genres,
-      };
-
-    if (!!isLikedByUser)
-      queryFilters.playlistLikes = {
-        some: {
-          userId: userId,
-        },
-      };
+    const queryFilters = this.#buildQueryFilters(filters, userId);
 
     const playlistsData = await prisma.playlist.findMany({
+      relationLoadStrategy: "join",
       where: queryFilters,
       include: {
         owner: {
@@ -224,38 +143,11 @@ export class PlaylistService {
             },
           },
         },
-        playlistShares: {},
       },
       take: limit,
     });
 
-    const playlists = playlistsData.map((playlistData) => {
-      const songs = playlistData.playlistSongs.map((playlistSong) => {
-        const song: ISong = {
-          ...playlistSong.song,
-          isLikedByUser: playlistSong.song.songLikes.length > 0,
-          addedBy: playlistSong.song.addedBy,
-          genres: playlistSong.song.genres as Genres[],
-        };
-        return song;
-      });
-
-      const duration = this.getTotalDuration(songs);
-      const playlist: IPlaylist = {
-        id: playlistData.id,
-        name: playlistData.name,
-        imgUrl: playlistData.imgUrl,
-        isPublic: playlistData.isPublic,
-        createdAt: playlistData.createdAt,
-        owner: playlistData.owner,
-        shares: { count: 0 },
-        songs,
-        duration,
-        types: playlistData.types as PlaylistType[],
-        genres: playlistData.genres as Genres[],
-      };
-      return playlist;
-    });
+    const playlists = this.playlistDataToPlaylist(playlistsData);
 
     return playlists;
   }
@@ -264,7 +156,7 @@ export class PlaylistService {
     id: string,
     updateData: IPlaylist
   ): Promise<IPlaylistCreateDTO | null> {
-    const playlist = prisma.playlist.update({
+    const playlist = await prisma.playlist.update({
       where: { id },
       data: {
         name: updateData.name,
@@ -275,15 +167,17 @@ export class PlaylistService {
       },
     });
 
-    return playlist;
+    return {
+      ...playlist,
+      types: playlist.types as PlaylistType[],
+      genres: playlist.genres as Genres[],
+    };
   }
 
   async remove(id: string): Promise<boolean> {
-    console.log("id:", id);
     const check = await prisma.playlist.delete({
       where: { id },
     });
-    console.log("check:", check)
 
     return !!check;
   }
@@ -365,92 +259,43 @@ export class PlaylistService {
     return !!createCheck;
   }
 
-  async createUserLikesPlaylist(userId: string): Promise<ILikedSongsPlaylist> {
-    const likedSongsPlaylist = await prisma.likedSongsPlaylist.create({
-      data: {
-        isPublic: false,
-        userId: userId,
-      },
-    });
-
-    return {
-      ...likedSongsPlaylist,
-      songs: [],
-      duration: "00:00",
-      shares: { count: 0 },
-      name: "Liked Songs",
-    };
-  }
-
-  async getUserLikedSongsPlaylist(
-    userId: string
-  ): Promise<ILikedSongsPlaylist> {
-    const likedSongsPlaylistData = await prisma.likedSongsPlaylist.findFirst({
-      where: { userId },
-      include: {
-        user: {
-          include: {
+  async getUserLikedSongsPlaylist(userId: string): Promise<IPlaylist> {
+    const likedSongsPlaylistData = await prisma.playlist.findFirst({
+      relationLoadStrategy: "join",
+      where: { ownerId: userId, name: "Liked Songs" },
+      select: {
+        id: true,
+        imgUrl: true,
+        isPublic: true,
+        createdAt: true,
+        types: true,
+        genres: true,
+        name: true,
+        owner: {
+          select: {
+            id: true,
+            imgUrl: true,
+            username: true,
             songLikes: {
-              include: {
-                song: true,
+              where: {
+                userId: userId,
               },
-            },
-          },
-        },
-      },
-    });
-
-    const addedBy = {
-      username: likedSongsPlaylistData!.user.username,
-      imgUrl: likedSongsPlaylistData!.user.imgUrl,
-      id: likedSongsPlaylistData!.user.id,
-    };
-    const songs: ISong[] =
-      likedSongsPlaylistData?.user.songLikes.map((songLike) => {
-        const isLikedByUser = true;
-        const genres = songLike.song.genres as Genres[];
-        return { ...songLike.song, isLikedByUser, genres, addedBy };
-      }) || [];
-
-    const duration = this.getTotalDuration(songs);
-    const { id, imgUrl, isPublic } = likedSongsPlaylistData!;
-
-    return {
-      songs,
-      id,
-      name: "Liked Songs",
-      imgUrl,
-      isPublic,
-      duration,
-      shares: { count: 0 },
-    };
-  }
-
-  async getUserLikedPlaylistById(
-    playlistId: string,
-    currentUserId?: string
-  ): Promise<IPlaylist> {
-    const likedSongsPlaylistData =
-      await prisma.likedSongsPlaylist.findUniqueOrThrow({
-        where: { id: playlistId },
-        include: {
-          user: {
-            include: {
-              songLikes: {
-                include: {
-                  song: {
-                    include: {
-                      songLikes: {
-                        where: {
-                          userId: currentUserId,
-                        },
-                      },
-                      addedBy: {
-                        select: {
-                          id: true,
-                          imgUrl: true,
-                          username: true,
-                        },
+              select: {
+                song: {
+                  select: {
+                    id: true,
+                    name: true,
+                    artist: true,
+                    imgUrl: true,
+                    duration: true,
+                    genres: true,
+                    youtubeId: true,
+                    addedAt: true,
+                    addedBy: {
+                      select: {
+                        id: true,
+                        imgUrl: true,
+                        username: true,
                       },
                     },
                   },
@@ -459,37 +304,41 @@ export class PlaylistService {
             },
           },
         },
-      });
+      },
+    });
 
+    if (!likedSongsPlaylistData)
+      throw new Error("Liked songs playlist not found");
+
+    const likedSongsData =
+      likedSongsPlaylistData?.owner.songLikes.map(
+        (songLike) => songLike.song
+      ) || [];
+    const songs: ISong[] = songService.songDataToSong(likedSongsData);
     const owner = {
-      username: likedSongsPlaylistData?.user.username,
-      imgUrl: likedSongsPlaylistData?.user.imgUrl,
-      id: likedSongsPlaylistData?.user.id,
+      id: likedSongsPlaylistData?.owner.id,
+      imgUrl: likedSongsPlaylistData?.owner.imgUrl,
+      username: likedSongsPlaylistData?.owner.username,
     };
-    const songs: ISong[] =
-      likedSongsPlaylistData?.user.songLikes.map((songLike) => {
-        const { song } = songLike;
-        const isLikedByUser = song.songLikes.length > 0;
-        const genres = song.genres as Genres[];
-        return { ...song, isLikedByUser, genres };
-      }) || [];
 
     const duration = this.getTotalDuration(songs);
-    const { id, imgUrl, isPublic } = likedSongsPlaylistData!;
 
-    return {
-      songs,
+    const { id, imgUrl, isPublic, createdAt, types, genres, name } =
+      likedSongsPlaylistData;
+    const playlist: IPlaylist = {
       id,
-      name: "Liked Songs",
+      name,
       imgUrl,
       isPublic,
-      duration,
-      shares: { count: 0 },
-      genres: [],
-      types: [],
-      createdAt: new Date(),
+      createdAt,
       owner,
+      types: types as PlaylistType[],
+      genres: genres as Genres[],
+      songs,
+      duration,
     };
+
+    return playlist;
   }
 
   getTotalDuration(songs: ISong[]): string {
@@ -514,4 +363,115 @@ export class PlaylistService {
 
     return `${hoursString}:${pad(minutes)}:${pad(seconds)}`;
   }
+
+  playlistDataToPlaylist(
+    playlistData: TPlaylistData[],
+    owner?: IUser
+  ): IPlaylist[] {
+    const playlists = playlistData.map((playlistData) => {
+      return this.transformPlaylistData(playlistData, owner);
+    });
+
+    return playlists;
+  }
+
+  transformPlaylistData(playlistData: TPlaylistData, owner?: IUser): IPlaylist {
+    const songsData = playlistData.playlistSongs.map(
+      (playlistSong) => playlistSong.song
+    );
+    const songs = songService.songDataToSong(songsData);
+    const duration = this.getTotalDuration(songs);
+    const playlist: IPlaylist = {
+      id: playlistData.id,
+      name: playlistData.name,
+      imgUrl: playlistData.imgUrl || "",
+      isPublic: playlistData.isPublic,
+      createdAt: playlistData.createdAt,
+      owner: owner ? owner : playlistData.owner!,
+      songs,
+      duration,
+      types: playlistData.types as PlaylistType[],
+      genres: playlistData.genres as Genres[],
+    };
+    return playlist;
+  }
+
+  #buildQueryFilters(filters: IPlaylistFilters, userId?: string) {
+    const { name, isPublic, ownerId, artist, genres, isLikedByUser } = filters;
+
+    const queryFilters: any = {};
+
+    if (name) queryFilters.name = { contains: name };
+    if (isPublic !== undefined)
+      queryFilters.isPublic = {
+        equals: isPublic,
+      };
+    if (ownerId) queryFilters.ownerId = ownerId;
+    if (artist)
+      queryFilters.playlistSongs = {
+        some: {
+          song: {
+            artist: {
+              contains: artist,
+              mode: "insensitive",
+            },
+          },
+        },
+      };
+
+    if (genres && genres.length > 0)
+      queryFilters.genres = {
+        hasSome: genres,
+      };
+
+    if (isLikedByUser)
+      queryFilters.playlistLikes = {
+        some: {
+          userId: userId,
+        },
+      };
+
+    return queryFilters;
+  }
 }
+
+export const playlistService = new PlaylistService();
+
+type TPlaylistData = {
+  id: string;
+  name: string;
+  ownerId?: string;
+  isPublic: boolean;
+  imgUrl: string | null;
+  createdAt: Date;
+  description: string | null;
+  genres: string[];
+  types: string[];
+  owner?: {
+    id: string;
+    imgUrl: string | null;
+    username: string;
+  };
+  playlistSongs: {
+    id: string;
+    songId: string;
+    song: {
+      id: string;
+      name: string;
+      artist: string;
+      imgUrl: string;
+      duration: string;
+      genres: string[];
+      youtubeId: string;
+      addedAt: Date;
+      addedBy: {
+        id: string;
+        imgUrl: string | null;
+        username: string;
+      };
+      songLikes: {
+        id: string;
+      }[];
+    };
+  }[];
+};

@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { IUser, IUserSignupDTO } from "./user.model";
 import { UserService } from "./user.service";
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
+import { loggerService } from "../../services/logger.service";
 
 const userService = new UserService();
 const store = asyncLocalStorage.getStore();
@@ -50,19 +51,23 @@ export const getUserById = async (req: Request, res: Response) => {
 export const getUserByEmail = async (req: Request, res: Response) => {
   try {
     const { email } = req.params;
+    console.log("email:", email);
 
     if (!email) {
       return res.status(400).json({ message: "Email is required" });
     }
 
     const user = await userService.getByEmail(email);
-
+    
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
+    delete user.password;
+    console.log("user:", user)
 
     return res.json(user);
   } catch (error) {
+    loggerService.error(`Failed to retrieve user, ${error}`);
     return res.status(500).json({ message: "Failed to retrieve user", error });
   }
 };
@@ -135,5 +140,3 @@ export const getAllUsers = async (req: Request, res: Response) => {
     return res.status(500).json({ message: "Failed to retrieve users", error });
   }
 };
-
-

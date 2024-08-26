@@ -1,4 +1,3 @@
-import { IPlaylistCreateDTO } from "../../src/api/playlists/playlist.model";
 import { IUserSignupDTO } from "../../src/api/users/user.model";
 
 export const playlistJson = [

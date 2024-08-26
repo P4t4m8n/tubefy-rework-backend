@@ -116,4 +116,39 @@ export class SongService {
 
     return !!unlikeSongsCheck;
   }
+
+  songDataToSong(songsData: songData[]): ISong[] {
+    const songs = songsData.map((songData) => {
+      const song: ISong = {
+        ...songData,
+        isLikedByUser: songData.songLikes
+          ? songData.songLikes.length > 0
+          : true,
+        addedBy: songData.addedBy,
+        genres: songData.genres as Genres[],
+      };
+      return song;
+    });
+    return songs;
+  }
 }
+
+export const songService = new SongService();
+type songData = {
+  id: string;
+  name: string;
+  artist: string;
+  imgUrl: string;
+  duration: string;
+  genres: string[];
+  youtubeId: string;
+  addedAt: Date;
+  addedBy: {
+    id: string;
+    imgUrl: string | null;
+    username: string;
+  };
+  songLikes?: {
+    id: string;
+  }[];
+};

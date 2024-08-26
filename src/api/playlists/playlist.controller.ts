@@ -4,7 +4,6 @@ import {
   IPlaylist,
   IPlaylistCreateDTO,
   IPlaylistFilters,
-  IPlaylistUpdateDTO,
 } from "./playlist.model";
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
 import { loggerService } from "../../services/logger.service";
@@ -16,7 +15,7 @@ export const createPlaylist = async (req: Request, res: Response) => {
   try {
     const store = asyncLocalStorage.getStore();
     const user = store?.loggedinUser;
-    const playlistData: IPlaylistUpdateDTO = req.body;
+    const playlistData: IPlaylistCreateDTO = req.body;
 
     if (!user) {
       loggerService.error("Unauthorized to create playlist", { user });
@@ -61,20 +60,15 @@ export const getPlaylistById = async (req: Request, res: Response) => {
   }
 };
 
-export const getUserLikedPlaylistById = async (req: Request, res: Response) => {
+export const getUserLikedPlaylist = async (req: Request, res: Response) => {
   try {
-    const { id } = req.params;
     const store = asyncLocalStorage.getStore();
     const userId = store?.loggedinUser?.id;
 
-    if (!id) {
-      return res.status(400).json({ message: "Playlist ID is required" });
-    }
-
-    const playlist = await playlistService.getUserLikedPlaylistById(id, userId);
+    const playlist = await playlistService.getUserLikedSongsPlaylist(userId!);
 
     if (!playlist) {
-      loggerService.error("Playlist not found", { id });
+      loggerService.error("User likedPlaylist not found", { userId });
       return res.status(404).json({ message: "Playlist not found" });
     }
 
@@ -104,7 +98,6 @@ export const getPlaylists = async (req: Request, res: Response) => {
     const id = store?.loggedinUser?.id;
 
     const playlists = await playlistService.query(id, filter);
-
     return res.json(playlists);
   } catch (error) {
     return res

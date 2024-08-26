@@ -9,19 +9,17 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-// Create Express app and HTTP server
 const app = express();
 const server = http.createServer(app);
 
 // Middleware setup
 app.use(cookieParser());
 app.use(express.json());
-app.use(setupAsyncLocalStorage)
+app.use(setupAsyncLocalStorage);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.resolve("public")));
 } else {
-  // Use CORS in development
   const corsOptions: cors.CorsOptions = {
     origin: [
       "http://127.0.0.1:5173",
@@ -46,8 +44,15 @@ app.use("/api/auth", authRoutes);
 import { songRoutes } from "./api/songs/song.routes";
 app.use("/api/song", songRoutes);
 
+import { friendRoutes } from "./api/friends/friends.routes";
+app.use("/api/friend", friendRoutes);
+
+import { userRoutes } from "./api/users/user.routes";
+app.use("/api/user", userRoutes);
 
 // Setup WebSocket
+import { setUpSocketAPI } from "./services/socket.service";
+setUpSocketAPI(server);
 
 // Catch-all route
 app.get("/**", (req: express.Request, res: express.Response) => {

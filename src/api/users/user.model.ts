@@ -1,3 +1,6 @@
+import { IFriend } from "../friends/friends.model";
+import {  IPlaylist } from "../playlists/playlist.model";
+
 export interface IUser {
   username: string;
   imgUrl?: string | null;
@@ -5,12 +8,17 @@ export interface IUser {
   id?: string;
 }
 
-export interface IDetailedUser {
+export interface IDetailedUser extends IUser {
   email: string;
+  password?: string;
+  friends?: IFriend[];
+  friendsRequest?: IFriend[];
+  playlists: IPlaylist[];
+  likedSongsPlaylist: IPlaylist;
 }
 
 export interface IUserLoginDTO {
-  password?: string;
+  password: string;
   email: string;
 }
 
