@@ -7,32 +7,31 @@ export interface IUser {
   isAdmin?: boolean;
   username: string;
 }
-
 export interface IUserDetailed extends IUser {
   password?: string;
   email: string;
 }
-
-export interface FullUser  {
+export interface IFullUser  {
   friends?: IFriend[];
   friendsRequest?: IFriend[];
   likedSongsPlaylist: IPlaylist;
   playlists: IPlaylist[];
   user: IUserDetailed;
 }
-
+export interface IUserFilters {
+  username?: string;
+  email?: string;
+}
 export interface IUserLoginDTO {
   password: string;
   email: string;
 }
-
 export interface IUserSignupDTO {
   password: string;
   email: string;
   username: string;
   imgUrl?: string;
 }
-
 export interface IUserDTO {
   username: string;
   email: string;
@@ -42,7 +41,3 @@ export interface IUserDTO {
   id?: string;
 }
 
-export interface IUserFilters {
-  username?: string;
-  email?: string;
-}

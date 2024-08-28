@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { IUser, IUserSignupDTO } from "./user.model";
+import { IUser, IUserFilters, IUserSignupDTO } from "./user.model";
 import { UserService } from "./user.service";
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
 import { loggerService } from "../../services/logger.service";
@@ -57,7 +57,7 @@ export const getUserByEmail = async (req: Request, res: Response) => {
     }
 
     const user = await userService.getByEmail(email);
-    
+
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
@@ -135,6 +135,35 @@ export const getAllUsers = async (req: Request, res: Response) => {
       limit: filters.limit || 10,
     });
   } catch (error) {
+    return res.status(500).json({ message: "Failed to retrieve users", error });
+  }
+};
+
+export const getUsers = async (req: Request, res: Response) => {
+  try {
+    const userId = store?.loggedinUser?.id;
+    const { username, email } = req.query as IUserFilters;
+
+    if (!username && !email) {
+      return res.status(400).json({ message: "Username or email is required" });
+    }
+
+    const users = await userService.query({ username, email });
+
+    if (!users) {
+      return res.status(404).json({ message: "No users where found" });
+    }
+
+    if (userId) {
+      const idx = users.users.findIndex((user) => user.id === userId);
+      if (idx > -1) {
+        users.users.splice(idx, 1);
+      }
+    }
+
+    return res.status(200).json(users);
+  } catch (error) {
+    loggerService.error(`Failed to retrieve users, ${error}`);
     return res.status(500).json({ message: "Failed to retrieve users", error });
   }
 };

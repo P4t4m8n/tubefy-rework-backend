@@ -1,6 +1,6 @@
 import argon2 from "argon2";
 import {
-  FullUser,
+  IFullUser,
   IUser,
   IUserDTO,
   IUserFilters,
@@ -78,18 +78,25 @@ export class UserService {
   }
   async query(
     filters: IUserFilters = {}
-  ): Promise<{ users: IUserDTO[]; total: number }> {
+  ): Promise<{ users: IUser[]; total: number }> {
+    console.log("filters:", filters)
     const users = await prisma.user.findMany({
       where: {
-        AND: [
+        OR: [
           filters.email ? { email: filters.email } : undefined,
           filters.username ? { username: filters.username } : undefined,
         ].filter(Boolean) as any,
       },
+      select: {
+        id: true,
+        imgUrl: true,
+        username: true,
+      },
     });
+
     return { users, total: users.length };
   }
-  async getDetailedUser(owner: IUser): Promise<FullUser> {
+  async getDetailedUser(owner: IUser): Promise<IFullUser> {
     const userData = await prisma.user.findUniqueOrThrow({
       relationLoadStrategy: "join",
       where: {
@@ -289,7 +296,7 @@ export class UserService {
     const { id, imgUrl, username, email, isAdmin, friends, friendsRequest } =
       userData;
 
-    const user: FullUser = {
+    const user: IFullUser = {
       playlists: [...userPlaylists, ...likedPlaylists],
       likedSongsPlaylist,
       user: {

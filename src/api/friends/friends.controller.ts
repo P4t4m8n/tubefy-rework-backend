@@ -48,12 +48,12 @@ export const getFriend = async (req: Request, res: Response) => {
 
 export const createFriend = async (req: Request, res: Response) => {
   try {
-    const { friendId } = req.params;
+    const { friendId } = req.body;
     const store = asyncLocalStorage.getStore();
     const userId = store?.loggedinUser?.id;
 
     if (!userId) {
-      loggerService.error("Unauthorized to get friends", { userId });
+      loggerService.error("Unauthorized to create friends", { userId });
       return res.status(403).json({ message: "Unauthorized to get friends" });
     }
     const isCreated = await friendService.create(userId, friendId);
@@ -76,8 +76,8 @@ export const updateFriend = async (req: Request, res: Response) => {
     const status = req.body.status as FriendStatus;
 
     if (!userId) {
-      loggerService.error("Unauthorized to get friends", { userId });
-      return res.status(403).json({ message: "Unauthorized to get friends" });
+      loggerService.error("Unauthorized to update friend", { userId });
+      return res.status(403).json({ message: "Unauthorized to update friend" });
     }
     const isUpdated = await friendService.update(userId, friendId, status);
     if (!isUpdated) {
