@@ -76,10 +76,8 @@ export class UserService {
 
     return true;
   }
-  async query(
-    filters: IUserFilters = {}
-  ): Promise<{ users: IUser[]; total: number }> {
-    console.log("filters:", filters)
+  async query(filters: IUserFilters = {}): Promise<IUser[]> {
+    console.log("filters:", filters);
     const users = await prisma.user.findMany({
       where: {
         OR: [
@@ -94,7 +92,7 @@ export class UserService {
       },
     });
 
-    return { users, total: users.length };
+    return users;
   }
   async getDetailedUser(owner: IUser): Promise<IFullUser> {
     const userData = await prisma.user.findUniqueOrThrow({

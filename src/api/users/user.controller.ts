@@ -126,11 +126,11 @@ export const getAllUsers = async (req: Request, res: Response) => {
       limit: req.query.limit ? parseInt(req.query.limit as string) : undefined,
     };
 
-    const { users, total } = await userService.query(filters);
+    const users = await userService.query(filters);
 
     return res.json({
       users,
-      total,
+      total: users.length,
       page: filters.page || 1,
       limit: filters.limit || 10,
     });
@@ -155,9 +155,9 @@ export const getUsers = async (req: Request, res: Response) => {
     }
 
     if (userId) {
-      const idx = users.users.findIndex((user) => user.id === userId);
+      const idx = users.findIndex((user) => user.id === userId);
       if (idx > -1) {
-        users.users.splice(idx, 1);
+        users.splice(idx, 1);
       }
     }
 
