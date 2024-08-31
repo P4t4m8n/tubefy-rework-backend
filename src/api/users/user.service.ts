@@ -11,6 +11,7 @@ import { IPlaylist } from "../playlists/playlist.model";
 import { playlistService } from "../playlists/playlist.service";
 import { songService } from "../songs/song.service";
 import { getDefaultLikesPlaylist } from "../../services/util";
+import { friendService } from "../friends/friends.service";
 
 export class UserService {
   async create(userData: IUserSignupDTO): Promise<IUserDTO> {
@@ -77,7 +78,6 @@ export class UserService {
     return true;
   }
   async query(filters: IUserFilters = {}): Promise<IUser[]> {
-    console.log("filters:", filters);
     const users = await prisma.user.findMany({
       where: {
         OR: [
@@ -246,11 +246,23 @@ export class UserService {
           },
         },
         friendsRequest: {
+          where: {
+            status: {
+              in: ["PENDING", "ACCEPTED"],
+            },
+          },
           select: {
             status: true,
             id: true,
             createdAt: true,
             friend: {
+              select: {
+                id: true,
+                username: true,
+                imgUrl: true,
+              },
+            },
+            user: {
               select: {
                 id: true,
                 username: true,
@@ -291,8 +303,11 @@ export class UserService {
 
     likedSongsPlaylist.songs = songs;
 
-    const { id, imgUrl, username, email, isAdmin, friends, friendsRequest } =
-      userData;
+    const { friends, friendsRequest } = friendService.categorizeFriendsByStatus(
+      userData.friendsRequest
+    );
+
+    const { id, imgUrl, username, email, isAdmin } = userData;
 
     const user: IFullUser = {
       playlists: [...userPlaylists, ...likedPlaylists],
@@ -305,7 +320,7 @@ export class UserService {
         isAdmin,
       },
       friendsRequest,
-      friends,
+      friends: [...friends, ...userData.friends],
     };
 
     return user;

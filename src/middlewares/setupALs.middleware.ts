@@ -1,10 +1,10 @@
 import { Request, Response, NextFunction } from "express";
 import { AsyncLocalStorage } from "async_hooks";
-import { IUser } from "../api/users/user.model";
+import {  IUserDetailed } from "../api/users/user.model";
 import { authService } from "../api/auth/auth.service";
 
 export interface AsyncStorageData {
-  loggedinUser?: IUser;
+  loggedinUser?: IUserDetailed;
 }
 
 export const asyncLocalStorage = new AsyncLocalStorage<AsyncStorageData>();

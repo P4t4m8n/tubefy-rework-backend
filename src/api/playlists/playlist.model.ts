@@ -1,4 +1,4 @@
-import { IItemType } from "../../app.model";
+import { IItemType } from "../../models/app.model";
 import { Genres } from "../songs/song.enum";
 import { ISong } from "../songs/song.model";
 import { IUser } from "../users/user.model";

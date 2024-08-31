@@ -13,4 +13,4 @@ export const friendRoutes = express.Router();
 friendRoutes.get("/", requireAuth, log, getFriends);
 friendRoutes.get("/:friendId", requireAuth, log, getFriend);
 friendRoutes.post("/", requireAuth, log, createFriend);
-friendRoutes.put("/:friendId", requireAuth, log, updateFriend);
+friendRoutes.put("/:id", requireAuth, log, updateFriend);

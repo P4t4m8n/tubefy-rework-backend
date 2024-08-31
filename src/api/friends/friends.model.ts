@@ -8,6 +8,10 @@ export interface IFriend {
   friend: IUser;
 }
 
+export interface IFriendRequestData extends IFriend {
+  user?: IUser;
+}
+
 export interface IFriendDTO {
   userId: string;
   friendId: string;
