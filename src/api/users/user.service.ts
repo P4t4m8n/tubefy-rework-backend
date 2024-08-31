@@ -232,6 +232,11 @@ export class UserService {
           },
         },
         friends: {
+          where: {
+            status: {
+              in: ["PENDING", "ACCEPTED", "REJECTED"],
+            },
+          },
           select: {
             status: true,
             id: true,

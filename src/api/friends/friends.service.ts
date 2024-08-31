@@ -133,15 +133,22 @@ export class FriendService {
     }
   }
 
-  async remove(id: string): Promise<boolean> {
+  async remove(id: string): Promise<string> {
     try {
-      await prisma.friend.delete({
+      const { friend } = await prisma.friend.delete({
         where: {
           id,
         },
+        select: {
+          friend: {
+            select: {
+              id: true,
+            },
+          },
+        },
       });
 
-      return true;
+      return friend.id;
     } catch (error) {
       throw new Error(`Error while removing friend: ${error}`);
     }
@@ -157,7 +164,7 @@ export class FriendService {
     };
 
     friendsRequestData.forEach((friend) => {
-      friend.friend = friend.user!
+      friend.friend = friend.user!;
       delete friend?.user;
       if (friend.status === "ACCEPTED") {
         result.friends.push(friend);

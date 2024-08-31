@@ -91,14 +91,6 @@ export const updateFriend = async (req: Request, res: Response) => {
       loggerService.error("Unauthorized to update friend", { id });
       return res.status(403).send({ message: "Unauthorized to update friend" });
     }
-
-    if (status === "REJECTED") {
-      await friendService.remove(id);
-      emitToUser(friend.id, "rejectFriendRequest", { id });
-      res.status(204).send({ message: "Friend rejected" });
-      return;
-    }
-
     const updatedFriend = await friendService.update(id, status);
 
     const returnedFriend = {
@@ -106,13 +98,51 @@ export const updateFriend = async (req: Request, res: Response) => {
       friend,
     };
 
-    if (status === "ACCEPTED") {
-      emitToUser(friend.id, "approveFriendRequest", updatedFriend);
+    switch (status) {
+      case "ACCEPTED":
+        emitToUser(friend.id, "approveFriendRequest", updatedFriend);
+        break;
+      case "REJECTED":
+        emitToUser(friend.id, "rejectFriendRequest", updatedFriend);
+        break;
+      case "BLOCKED":
+        emitToUser(friend.id, "blockFriendRequest", updatedFriend);
+        break;
+
+      default:
+        break;
     }
 
     return res.json(returnedFriend);
   } catch (err) {
     loggerService.error("Failed to update friend", err as Error);
     res.status(500).send({ err: "Failed to update friend" });
+  }
+};
+
+export const removeFriend = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    console.log("id:", id);
+    const { friendId } = req.body;
+    console.log("friendId:", friendId);
+
+    const store = asyncLocalStorage.getStore();
+    const user = store?.loggedinUser;
+
+    if (!user || !user?.id) {
+      loggerService.error("Unauthorized to remove friend", { id });
+      return res.status(403).send({ message: "Unauthorized to remove friend" });
+    }
+
+    const friend = await friendService.remove(id);
+
+    const { username } = user;
+    emitToUser(friendId, "removeFriendRequest", { id, friend: { username } });
+
+    return res.json(friend);
+  } catch (err) {
+    loggerService.error("Failed to remove friend", err as Error);
+    res.status(500).send({ err: "Failed to remove friend" });
   }
 };

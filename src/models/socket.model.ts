@@ -2,7 +2,9 @@ export type TSocketEvent =
   | "sharePlaylist"
   | "sendFriendRequest"
   | "rejectFriendRequest"
-  | "approveFriendRequest";
+  | "approveFriendRequest"
+  | "blockFriendRequest"
+  | "removeFriendRequest";
 
 interface SharePlaylistPayload {
   friendId: string;
