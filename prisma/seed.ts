@@ -1,3 +1,4 @@
+import { notificationService } from "../src/api/notification/notification.service";
 import { PlaylistType } from "../src/api/playlists/playlist.enum";
 import {
   IPlaylist,
@@ -22,6 +23,7 @@ const playlistsServices = new PlaylistService();
 const songService = new SongService();
 async function seed() {
   try {
+
     // // const { users } = await userServices.query();
     // const playlists = await playlistsServices.query();
     // // const songs = await songService.query({});

@@ -1,4 +1,5 @@
 import { IFriend } from "../friends/friends.model";
+import { INotification } from "../notification/notification.model";
 import { IPlaylist } from "../playlists/playlist.model";
 
 export interface IUser {
@@ -11,12 +12,13 @@ export interface IUserDetailed extends IUser {
   password?: string;
   email: string;
 }
-export interface IFullUser  {
-  friends?: IFriend[];
-  friendsRequest?: IFriend[];
+export interface IFullUser {
+  friends: IFriend[];
+  friendsRequest: IFriend[];
   likedSongsPlaylist: IPlaylist;
   playlists: IPlaylist[];
   user: IUserDetailed;
+  notifications: INotification[];
 }
 export interface IUserFilters {
   username?: string;
@@ -40,4 +42,3 @@ export interface IUserDTO {
   isAdmin?: boolean;
   id?: string;
 }
-

@@ -12,12 +12,15 @@ export interface IPlaylistCreateDTO {
   types: TPlaylistType[];
   genres: Genres[];
 }
-export interface IPlaylist extends IItemType {
+
+export interface IPlaylistSmall extends IItemType {
   id: string;
   name: string;
-  createdAt: Date;
   imgUrl: string;
-  isPublic: boolean;
+  isPublic?: boolean;
+}
+export interface IPlaylist extends IPlaylistSmall {
+  createdAt: Date;
   owner: IUser;
   duration: string;
   types: TPlaylistType[];
@@ -54,3 +57,9 @@ export type TPlaylistType =
   | "New Wave"
   | ""
   | "Liked Songs";
+
+export interface IPlaylistShare {
+  playlistId: string;
+  user: IUser;
+  isOpen: boolean;
+}

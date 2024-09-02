@@ -2,7 +2,14 @@ import { IItemType } from "../../models/app.model";
 import { IUser } from "../users/user.model";
 import { Genres } from "./song.enum";
 
-export interface ISong extends IItemType {
+
+export interface ISongSmall extends IItemType {
+  id: string;
+  youtubeId: string;
+  name: string;
+  imgUrl: string;
+}
+export interface ISong extends ISongSmall {
   id: string;
   youtubeId: string;
   name: string;

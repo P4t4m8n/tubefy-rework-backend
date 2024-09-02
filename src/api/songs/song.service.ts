@@ -21,7 +21,7 @@ export class SongService {
       isLikedByUser: false,
       addedBy: user,
       genres: song.genres as Genres[],
-      itemType: "song",
+      itemType: "SONG",
     };
   }
   async createMany(data: ISongDTO[], user: IUser): Promise<ISong[]> {
@@ -37,7 +37,7 @@ export class SongService {
       isLikedByUser: false,
       addedBy: user,
       genres: song.genres as Genres[],
-      itemType: "song",
+      itemType:"SONG",
     }));
   }
   async query(songFilter: ISongFilter, userId?: string): Promise<ISong[]> {
@@ -119,7 +119,7 @@ export class SongService {
       isLikedByUser: songData.songLikes ? songData.songLikes.length > 0 : true,
       addedBy: songData.addedBy,
       genres: songData.genres as Genres[],
-      itemType: "song",
+      itemType: "SONG",
     };
     return song;
   }
@@ -179,3 +179,4 @@ type songData = {
     id: string;
   }[];
 };
+

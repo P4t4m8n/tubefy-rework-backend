@@ -3,7 +3,6 @@ import { FriendService } from "./friends.service";
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
 import { loggerService } from "../../services/logger.service";
 import { FriendStatus } from "@prisma/client";
-import { emit } from "process";
 import { emitToUser } from "../../services/socket.service";
 import { IFriend } from "./friends.model";
 
@@ -123,9 +122,7 @@ export const updateFriend = async (req: Request, res: Response) => {
 export const removeFriend = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    console.log("id:", id);
     const { friendId } = req.body;
-    console.log("friendId:", friendId);
 
     const store = asyncLocalStorage.getStore();
     const user = store?.loggedinUser;

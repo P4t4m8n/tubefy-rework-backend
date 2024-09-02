@@ -1,3 +1,5 @@
+import { ItemType } from "@prisma/client";
+
 export interface IItemType {
-  itemType: "song" | "playlist";
+  itemType: ItemType;
 }

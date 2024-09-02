@@ -276,6 +276,95 @@ export class UserService {
             },
           },
         },
+        notifications: {
+          select: {
+            id: true,
+            text: true,
+            type: true,
+            fromUser: {
+              select: {
+                id: true,
+                username: true,
+                imgUrl: true,
+              },
+            },
+            song: {
+              select: {
+                name: true,
+                id: true,
+                youtubeId: true,
+                imgUrl: true,
+                itemType: true,
+              },
+            },
+            playlist: {
+              select: {
+                name: true,
+                id: true,
+                imgUrl: true,
+                isPublic: true,
+                itemType: true,
+              },
+            },
+          },
+        },
+        PlaylistShare: {
+          where: {
+            status: { equals: "ACCEPTED" },
+          },
+          select: {
+            id: true,
+            playlist: {
+              select: {
+                id: true,
+                name: true,
+                imgUrl: true,
+                isPublic: true,
+                createdAt: true,
+                description: true,
+                genres: true,
+                types: true,
+                playlistLikes: {
+                  where: {
+                    userId: owner.id,
+                  },
+                },
+                playlistSongs: {
+                  include: {
+                    song: {
+                      select: {
+                        id: true,
+                        name: true,
+                        artist: true,
+                        imgUrl: true,
+                        duration: true,
+                        genres: true,
+                        youtubeId: true,
+                        addedAt: true,
+                        addedBy: {
+                          select: {
+                            id: true,
+                            imgUrl: true,
+                            username: true,
+                          },
+                        },
+                        songLikes: {
+                          where: {
+                            userId: owner.id,
+                          },
+                          select: {
+                            id: true,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+                playlistShares: {},
+              },
+            },
+          },
+        },
       },
     });
 
@@ -288,6 +377,11 @@ export class UserService {
 
     const likedPlaylists: IPlaylist[] =
       playlistService.mapPlaylistDataToPlaylist(likedPlaylistsData);
+
+    const sharedPlaylists: IPlaylist[] =
+      playlistService.mapPlaylistDataToPlaylist(
+        userData.PlaylistShare.map((share) => share.playlist)
+      );
 
     const songsData = userData.songLikes.map((song) => song.song);
     const songs = songService.mapSongDataToSongs(songsData);
@@ -312,10 +406,10 @@ export class UserService {
       userData.friendsRequest
     );
 
-    const { id, imgUrl, username, email, isAdmin } = userData;
+    const { id, imgUrl, username, email, isAdmin, notifications } = userData;
 
     const user: IFullUser = {
-      playlists: [...userPlaylists, ...likedPlaylists],
+      playlists: [...userPlaylists, ...likedPlaylists, ...sharedPlaylists],
       likedSongsPlaylist,
       user: {
         id,
@@ -326,6 +420,7 @@ export class UserService {
       },
       friendsRequest,
       friends: [...friends, ...userData.friends],
+      notifications,
     };
 
     return user;

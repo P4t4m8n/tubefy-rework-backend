@@ -3,14 +3,22 @@ import {
   IPlaylistFilters,
   IPlaylistCreateDTO,
   TPlaylistType,
+  IPlaylistShare,
 } from "./playlist.model";
 import { IUser } from "../users/user.model";
 import { ISong } from "../songs/song.model";
 import { prisma } from "../../../prisma/prismaClient";
 import { Genres } from "../songs/song.enum";
 import { songService } from "../songs/song.service";
+import { playlistShareSqlLogic } from "./playlist.SqlLogic";
+import { IShareSelectSqlLogic } from "./sqlLogic.model";
+import { ShareStatus } from "@prisma/client";
 
-export class PlaylistService {
+class PlaylistService {
+  #shareSelectSqlLogic: IShareSelectSqlLogic;
+  constructor() {
+    this.#shareSelectSqlLogic = playlistShareSqlLogic();
+  }
   async create(
     playlistData: IPlaylistCreateDTO,
     owner: IUser
@@ -27,7 +35,7 @@ export class PlaylistService {
       genres: [],
       songs: [],
       duration: "00:00",
-      itemType: "playlist",
+      itemType: "PLAYLIST",
       types: playlist.types as TPlaylistType[],
     };
   }
@@ -238,26 +246,142 @@ export class PlaylistService {
     return !!deleteCheck;
   }
 
-  async sharePlaylist(playlistId: string, userId: string): Promise<boolean> {
-    const playlistShare = await prisma.playlistShare.findFirst({
-      where: { playlistId, userId },
+  async removeShare(
+    playlistId: string,
+    userId: string,
+  ): Promise<boolean> {
+ 
+    await prisma.playlistShare.delete({
+      where: { playlistId_userId: { playlistId, userId } },
     });
 
-    if (!!playlistShare) {
-      const { id } = playlistShare;
-      const deleteCheck = await prisma.playlistShare.delete({
-        where: { id },
-      });
+    return true;
+  }
 
-      return !!deleteCheck;
+  async saveShare({
+    playlistId,
+    userId,
+    sessionId,
+    status,
+    isOpen,
+  }: {
+    playlistId: string;
+    userId: string;
+    sessionId?: string;
+    status?: ShareStatus;
+    isOpen?: boolean;
+  }): Promise<{
+    share: IPlaylistShare;
+    playlist: { name: string; imgUrl: string; playlistId: string };
+  }> {
+    // Get the playlist's owner id, name and imgUrl for socket emit
+    const { ownerId, name, imgUrl } = await prisma.playlist.findUniqueOrThrow({
+      where: { id: playlistId },
+      select: { ownerId: true, name: true, imgUrl: true },
+    });
+
+    // If isOpen is provided, it means the user wants to change the share status
+    if (isOpen !== undefined) {
+      // Only the owner can change the share status
+      if (ownerId !== sessionId || !sessionId)
+        throw new Error("Not authorized");
     }
 
-    const createCheck = await prisma.playlistShare.create({
-      data: { playlistId, userId },
+    const share = await prisma.playlistShare.upsert({
+      where: { playlistId_userId: { playlistId, userId: userId } },
+      update: { isOpen, status },
+      create: { playlistId, userId: userId },
+      select: this.#shareSelectSqlLogic,
     });
 
-    return !!createCheck;
+    const playlist = {
+      name,
+      imgUrl,
+      playlistId,
+    };
+
+    return { share, playlist };
   }
+
+  async approveShare({
+    playlistId,
+    userId,
+  }: {
+    playlistId: string;
+    userId: string;
+  }): Promise<IPlaylist> {
+    const playlistData = await prisma.playlistShare.update({
+      where: { playlistId_userId: { playlistId, userId: userId } },
+      data: { status: "ACCEPTED" },
+      select: {
+        playlist: {
+          select: {
+            id: true,
+            imgUrl: true,
+            name: true,
+            isPublic: true,
+            description: true,
+            createdAt: true,
+            genres: true,
+            types: true,
+            owner: {
+              select: {
+                id: true,
+                imgUrl: true,
+                username: true,
+              },
+            },
+            playlistSongs: {
+              include: {
+                song: {
+                  select: {
+                    id: true,
+                    name: true,
+                    artist: true,
+                    imgUrl: true,
+                    duration: true,
+                    genres: true,
+                    youtubeId: true,
+                    addedAt: true,
+                    addedBy: {
+                      select: {
+                        id: true,
+                        imgUrl: true,
+                        username: true,
+                      },
+                    },
+                    songLikes: {
+                      where: {
+                        userId,
+                      },
+                      select: {
+                        id: true,
+                        userId: true,
+                        songId: true,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            playlistLikes: {
+              where: {
+                userId,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    const playlist: IPlaylist = this.playlistDataToPlaylist(
+      playlistData.playlist
+    );
+
+    return playlist;
+  }
+
+  
 
   async getUserLikedSongsPlaylist(userId: string): Promise<IPlaylist> {
     const likedSongsPlaylistData = await prisma.playlist.findFirst({
@@ -336,7 +460,7 @@ export class PlaylistService {
       genres: genres as Genres[],
       songs,
       duration,
-      itemType: "playlist",
+      itemType: "PLAYLIST",
     };
 
     return playlist;
@@ -396,7 +520,7 @@ export class PlaylistService {
       duration,
       types: playlistData.types as TPlaylistType[],
       genres: playlistData.genres as Genres[],
-      itemType: "playlist",
+      itemType: "PLAYLIST",
       isLikedByUser: !!playlistData?.playlistLikes?.length,
     };
     return playlist;
@@ -479,7 +603,7 @@ type TPlaylistData = {
         id: string;
       }[];
     };
-  }[],
+  }[];
   playlistLikes?: {
     userId: string;
   }[];

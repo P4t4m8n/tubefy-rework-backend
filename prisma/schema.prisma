@@ -64,6 +64,11 @@ enum FriendStatus {
   REMOVED
 }
 
+enum ShareStatus {
+  PENDING
+  ACCEPTED
+}
+
 enum PlaylistType {
   NEW_MUSIC
   DAILY_MIX
@@ -83,6 +88,24 @@ enum PlaylistType {
   LIKED_SONGS
 }
 
+enum ItemType {
+  SONG
+  PLAYLIST
+}
+
+enum NotificationType {
+  FRIEND_REQUEST
+  FRIEND_ACCEPTED
+  FRIEND_REJECTED
+  FRIEND_BLOCKED
+  FRIEND_REMOVED
+  PLAYLIST_LIKE
+  PLAYLIST_SHARE
+  PLAYLIST_COMMENT
+  SONG_LIKE
+  SONG_COMMENT
+}
+
 model User {
   id             String          @id @default(uuid())
   username       String          @unique
@@ -98,6 +121,8 @@ model User {
   playlistLikes  PlaylistLike[]
   songLikes      SongLike[]
   PlaylistShare  PlaylistShare[]
+  notifications  Notification[]  @relation("user")
+  Notification   Notification[]  @relation("fromUser")
 }
 
 model Song {
@@ -109,10 +134,12 @@ model Song {
   artist        String
   imgUrl        String
   duration      String
+  itemType      ItemType       @default(SONG)
   addedBy       User           @relation("SongAddedByUser", fields: [addByUserId], references: [id])
   genres        String[]       @default(["OTHER"])
   playlistSongs PlaylistSong[]
   songLikes     SongLike[]
+  notifications Notification[]
 }
 
 model Playlist {
@@ -122,6 +149,7 @@ model Playlist {
   isPublic       Boolean         @default(false)
   imgUrl         String          @default("")
   createdAt      DateTime        @default(now())
+  itemType       ItemType        @default(PLAYLIST)
   description    String?
   genres         String[]        @default(["OTHER"])
   types          String[]        @default(["EMPTY"])
@@ -129,6 +157,7 @@ model Playlist {
   playlistSongs  PlaylistSong[]
   playlistLikes  PlaylistLike[]
   playlistShares PlaylistShare[]
+  notifications  Notification[]
 }
 
 model PlaylistSong {
@@ -177,12 +206,29 @@ model Friend {
 }
 
 model PlaylistShare {
-  id         String   @id @default(uuid())
-  playlistId String   @map("playlist_id")
-  userId     String   @map("user_id")
-  sharedAt   DateTime @default(now())
-  playlist   Playlist @relation(fields: [playlistId], references: [id], onDelete: Cascade)
-  user       User     @relation(fields: [userId], references: [id])
+  id         String      @id @default(uuid())
+  playlistId String      @map("playlist_id")
+  userId     String      @map("user_id")
+  sharedAt   DateTime    @default(now())
+  isOpen     Boolean     @default(false)
+  status     ShareStatus @default(PENDING)
+  playlist   Playlist    @relation(fields: [playlistId], references: [id], onDelete: Cascade)
+  user       User        @relation(fields: [userId], references: [id])
 
   @@unique([playlistId, userId])
+}
+
+model Notification {
+  id         String           @id @default(uuid())
+  type       NotificationType
+  userId     String           @map("user_id")
+  fromUserId String           @map("from_id")
+  text       String
+  playlistId String?          @map("playlist_id")
+  songId     String?          @map("song_id")
+  createdAt  DateTime         @default(now())
+  user       User             @relation("user", fields: [userId], references: [id])
+  fromUser   User             @relation("fromUser", fields: [fromUserId], references: [id])
+  playlist   Playlist?        @relation(fields: [playlistId], references: [id])
+  song       Song?            @relation(fields: [songId], references: [id])
 }

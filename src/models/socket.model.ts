@@ -1,5 +1,12 @@
-export type TSocketEvent =
+export type TSocketEvent = TSocketEventShare | TSocketEventFriend;
+
+export type TSocketEventShare =
   | "sharePlaylist"
+  | "isOpenPlaylist"
+  | "joinPlaylist"
+  | "leavePlaylist";
+
+export type TSocketEventFriend =
   | "sendFriendRequest"
   | "rejectFriendRequest"
   | "approveFriendRequest"

@@ -6,11 +6,15 @@ import {
   deletePlaylist,
   getPlaylistById,
   getPlaylists,
-  getUserPlaylists,
   likePlaylist,
   removeSongFromPlaylist,
+  createSharePlaylist,
   unlikePlaylist,
   updatePlaylist,
+  updateSharePlaylist,
+  removeSharePlaylist,
+  approveSharePlaylist,
+  rejectSharePlaylist,
 } from "./playlist.controller";
 import { log } from "../../middlewares/logger.middleware";
 
@@ -25,7 +29,22 @@ playlistRoutes.delete("/:id/songs", requireAuth, log, removeSongFromPlaylist);
 playlistRoutes.post("/:id/like", requireAuth, log, likePlaylist);
 playlistRoutes.delete("/:id/like", requireAuth, log, unlikePlaylist);
 
-
 playlistRoutes.get("/:id", log, getPlaylistById);
 playlistRoutes.delete("/:id", requireAuth, log, deletePlaylist);
 playlistRoutes.get("/", log, getPlaylists);
+
+playlistRoutes.post("/:id/share", requireAuth, log, createSharePlaylist);
+playlistRoutes.put("/:id/share", requireAuth, log, updateSharePlaylist);
+playlistRoutes.put(
+  "/:id/share/approve",
+  requireAuth,
+  log,
+  approveSharePlaylist
+);
+playlistRoutes.delete(
+  "/:id/share/reject",
+  requireAuth,
+  log,
+  rejectSharePlaylist
+);
+playlistRoutes.delete("/:id/share", requireAuth, log, removeSharePlaylist);

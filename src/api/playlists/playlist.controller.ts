@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { PlaylistService } from "./playlist.service";
 import {
   IPlaylist,
   IPlaylistCreateDTO,
@@ -9,8 +8,14 @@ import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
 import { loggerService } from "../../services/logger.service";
 import { Genres } from "../songs/song.enum";
 import { songService } from "../songs/song.service";
-
-const playlistService = new PlaylistService();
+import { playlistService } from "./playlist.service";
+import { emitToUser } from "../../services/socket.service";
+import { TSocketEvent } from "../../models/socket.model";
+import { notificationService } from "../notification/notification.service";
+import {
+  userSharedPlaylistWithYou,
+  youSharedPlaylist,
+} from "../notification/notificationText";
 
 export const createPlaylist = async (req: Request, res: Response) => {
   try {
@@ -311,26 +316,166 @@ export const unlikePlaylist = async (req: Request, res: Response) => {
   }
 };
 
-export const sharePlaylist = async (req: Request, res: Response) => {
+export const createSharePlaylist = async (req: Request, res: Response) => {
   try {
-    const { playlistId, userId } = req.body;
+    const { friendId } = req.body;
+    const { id: playlistId } = req.params;
+    const store = asyncLocalStorage.getStore();
+    const { username, id: userId } = store?.loggedinUser!;
 
     if (!playlistId) {
       return res.status(400).json({ message: "Playlist ID is required" });
     }
 
-    if (!userId) {
+    if (!friendId || !userId) {
       return res.status(400).json({ message: "User ID is required" });
     }
 
-    const result = await playlistService.sharePlaylist(playlistId, userId);
+    const result = await playlistService.saveShare({
+      playlistId,
+      userId: friendId,
+    });
 
     if (!result) {
       return res.status(404).json({ message: "Failed to share playlist" });
     }
 
-    return res.json({ message: "Playlist shared successfully" });
+    const userNotification = await notificationService.create({
+      userId,
+      fromUserId: friendId,
+      type: "PLAYLIST_SHARE",
+      text: youSharedPlaylist(),
+      playlistId,
+    });
+
+    const friendNotification = await notificationService.create({
+      userId: friendId,
+      fromUserId: userId,
+      type: "PLAYLIST_SHARE",
+      text: userSharedPlaylistWithYou(username),
+      playlistId,
+    });
+
+    emitToUser(friendId, "sharePlaylist", friendNotification);
+
+    return res.json(userNotification);
   } catch (error) {
+    loggerService.error("Failed to share playlist", error as Error);
     return res.status(500).json({ message: "Failed to share playlist", error });
+  }
+};
+
+export const updateSharePlaylist = async (req: Request, res: Response) => {
+  try {
+    const { friendId, isOpen } = req.body;
+    const { playlistId } = req.params;
+
+    const store = asyncLocalStorage.getStore();
+    const sessionId = store?.loggedinUser?.id;
+
+    if (!playlistId) {
+      return res.status(400).json({ message: "Playlist ID is required" });
+    }
+
+    if (!friendId) {
+      return res.status(400).json({ message: "User ID is required" });
+    }
+
+    if (isOpen === undefined) {
+      return res.status(400).json({ message: "isPublic is required" });
+    }
+
+    const result = await playlistService.saveShare({
+      playlistId,
+      userId: friendId,
+      sessionId,
+      isOpen,
+    });
+
+    if (!result) {
+      return res.status(403).json({ message: "Unauthorized to update share" });
+    }
+
+    emitToUser(friendId, "isOpenPlaylist", {
+      playlistId,
+      isOpen,
+    });
+
+    return res.json({ message: "Share updated successfully" });
+  } catch (error) {
+    return res.status(500).json({ message: "Failed to update share", error });
+  }
+};
+
+export const approveSharePlaylist = async (req: Request, res: Response) => {
+  try {
+    const { id: playlistId } = req.params;
+    const store = asyncLocalStorage.getStore();
+    const userId = store?.loggedinUser?.id;
+
+    if (!playlistId) {
+      return res.status(400).json({ message: "Playlist ID is required" });
+    }
+    if (!userId) {
+      return res.status(400).json({ message: "User ID is required" });
+    }
+
+    const playlist = await playlistService.approveShare({ playlistId, userId });
+    await notificationService.remove({ playlistId, userId });
+    return res.status(200).json(playlist);
+  } catch (error) {
+    return res.status(500).json({ message: "Failed to approve share", error });
+  }
+};
+
+export const removeSharePlaylist = async (req: Request, res: Response) => {
+  try {
+    const { friendId } = req.body;
+    const { playlistId } = req.params;
+    const store = asyncLocalStorage.getStore();
+    const sessionUser = store?.loggedinUser?.id;
+
+    if (!playlistId) {
+      return res.status(400).json({ message: "Playlist ID is required" });
+    }
+
+    if (!friendId) {
+      return res.status(400).json({ message: "User ID is required" });
+    }
+
+    if (!sessionUser) {
+      return res.status(403).json({ message: "Unauthorized to remove share" });
+    }
+
+    const result = await playlistService.removeShare(playlistId, friendId);
+
+    if (!result) {
+      return res.status(403).json({ message: "Unauthorized to remove share" });
+    }
+
+    return res.json({ message: "Share removed successfully" });
+  } catch (error) {
+    return res.status(500).json({ message: "Failed to remove share", error });
+  }
+};
+
+export const rejectSharePlaylist = async (req: Request, res: Response) => {
+  try {
+    const { id: playlistId } = req.params;
+    const store = asyncLocalStorage.getStore();
+    const userId = store?.loggedinUser?.id;
+
+    if (!playlistId) {
+      return res.status(400).json({ message: "Playlist ID is required" });
+    }
+    if (!userId) {
+      return res.status(400).json({ message: "User ID is required" });
+    }
+
+    const playlist = await playlistService.removeShare(playlistId, userId);
+    await notificationService.remove({ playlistId, userId });
+    return res.status(200).json(playlist);
+  } catch (error) {
+    return res.status(500).json({ message: "Failed to approve share", error });
   }
 };
