@@ -34,12 +34,13 @@ export const createNotification = async (req: Request, res: Response) => {
 export const removeNotification = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
+    console.log("id:", id)
 
     if (!id) {
       return res.status(400).send("Notification ID is required");
     }
 
-    await notificationService.remove({id});
+    await notificationService.remove({notificationId: id});
 
     res.status(204).send();
   } catch (error) {

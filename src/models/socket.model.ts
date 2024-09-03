@@ -4,7 +4,8 @@ export type TSocketEventShare =
   | "sharePlaylist"
   | "isOpenPlaylist"
   | "joinPlaylist"
-  | "leavePlaylist";
+  | "leavePlaylist"
+  | "addSongToPlaylist";
 
 export type TSocketEventFriend =
   | "sendFriendRequest"

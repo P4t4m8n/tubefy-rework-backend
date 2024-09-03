@@ -193,27 +193,38 @@ class PlaylistService {
   async addSongToPlaylist(
     playlistId: string,
     songId: string
-  ): Promise<boolean> {
-    try {
-      const playlistSong = await prisma.playlistSong.upsert({
-        where: {
-          songId_playlistId: {
-            songId,
-            playlistId,
+  ): Promise<{
+    playlist: { name: string };
+    song: { id: string; name: string };
+  }> {
+    const playlistSong = await prisma.playlistSong.upsert({
+      where: {
+        songId_playlistId: {
+          songId,
+          playlistId,
+        },
+      },
+      update: {},
+      create: {
+        playlistId,
+        songId,
+      },
+      select: {
+        playlist: {
+          select: {
+            name: true,
           },
         },
-        update: {},
-        create: {
-          playlistId,
-          songId,
+        song: {
+          select: {
+            id: true,
+            name: true,
+          },
         },
-      });
+      },
+    });
 
-      return !!playlistSong;
-    } catch (error) {
-      console.error(`Error while adding song to playlist: ${error}`);
-      return false;
-    }
+    return playlistSong;
   }
 
   async removeSongFromPlaylist(
@@ -246,11 +257,7 @@ class PlaylistService {
     return !!deleteCheck;
   }
 
-  async removeShare(
-    playlistId: string,
-    userId: string,
-  ): Promise<boolean> {
- 
+  async removeShare(playlistId: string, userId: string): Promise<boolean> {
     await prisma.playlistShare.delete({
       where: { playlistId_userId: { playlistId, userId } },
     });
@@ -380,8 +387,6 @@ class PlaylistService {
 
     return playlist;
   }
-
-  
 
   async getUserLikedSongsPlaylist(userId: string): Promise<IPlaylist> {
     const likedSongsPlaylistData = await prisma.playlist.findFirst({
@@ -524,6 +529,58 @@ class PlaylistService {
       isLikedByUser: !!playlistData?.playlistLikes?.length,
     };
     return playlist;
+  }
+
+  async fetchSharedPlaylistsId(userId: string): Promise<string[]> {
+    try {
+      const playlists = await prisma.playlistShare.findMany({
+        where: { OR: [{ userId }, { playlist: { ownerId: userId } }] },
+        select: {
+          playlist: {
+            select: {
+              id: true,
+            },
+          },
+        },
+      });
+      return playlists.map((playlist) => playlist.playlist.id);
+    } catch (error) {
+      console.error("Error while fetching shared playlists: ", error);
+      throw new Error("Error while fetching shared playlists");
+    }
+  }
+
+  async fetchSharedUserToPlaylists(playlistId: string, userId?: string) {
+    const sharedUsersData = await prisma.playlistShare.findMany({
+      where: { playlistId },
+      select: {
+        user: {
+          select: {
+            id: true,
+            username: true,
+            imgUrl: true,
+          },
+        },
+        playlist: {
+          select: {
+            owner: {
+              select: {
+                id: true,
+                username: true,
+                imgUrl: true,
+              },
+            },
+          },
+        },
+      },
+    });
+    const sharedUsers = sharedUsersData.map((user) => user.user);
+
+    if (userId && sharedUsersData[0].playlist.owner.id !== userId) {
+      sharedUsers.push(sharedUsersData[0].playlist.owner);
+    }
+
+    return sharedUsers;
   }
 
   #buildQueryFilters(filters: IPlaylistFilters, userId?: string) {

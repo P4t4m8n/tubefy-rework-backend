@@ -9,7 +9,7 @@ import { loggerService } from "../../services/logger.service";
 import { Genres } from "../songs/song.enum";
 import { songService } from "../songs/song.service";
 import { playlistService } from "./playlist.service";
-import { emitToUser } from "../../services/socket.service";
+import {  emitToUser } from "../../services/socket.service";
 import { TSocketEvent } from "../../models/socket.model";
 import { notificationService } from "../notification/notification.service";
 import {
@@ -154,6 +154,8 @@ export const addSongToPlaylist = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const { songId } = req.body;
+    const { username, id: userId } =
+      asyncLocalStorage.getStore()?.loggedinUser!;
 
     if (!id) {
       return res.status(400).json({ message: "Playlist ID is required" });
@@ -164,12 +166,29 @@ export const addSongToPlaylist = async (req: Request, res: Response) => {
     }
 
     const result = await playlistService.addSongToPlaylist(id, songId);
-
     if (!result) {
       return res
         .status(404)
         .json({ message: "Failed to add song to playlist" });
     }
+
+    const playlistName = result.playlist.name;
+    const songName = result.song.name;
+    const text = `${username} added a ${songName} to ${playlistName}`;
+
+    const users = await playlistService.fetchSharedUserToPlaylists(id,userId);
+    users.forEach(async (user) => {
+      const notification = await notificationService.create({
+        userId: user.id,
+        fromUserId: userId!,
+        type: "PLAYLIST_SONG_ADD",
+        text,
+        playlistId: id,
+        songId,
+      });
+      console.log("notification:", notification)
+      emitToUser(user.id, "addSongToPlaylist", notification);
+    });
 
     return res.json({ message: "Song added to playlist successfully" });
   } catch (error) {
@@ -411,21 +430,25 @@ export const updateSharePlaylist = async (req: Request, res: Response) => {
 
 export const approveSharePlaylist = async (req: Request, res: Response) => {
   try {
-    const { id: playlistId } = req.params;
+    const { id: playlistId, notificationId } = req.params;
     const store = asyncLocalStorage.getStore();
     const userId = store?.loggedinUser?.id;
 
     if (!playlistId) {
       return res.status(400).json({ message: "Playlist ID is required" });
     }
+    if (!notificationId) {
+      return res.status(400).json({ message: "Notification ID is required" });
+    }
     if (!userId) {
       return res.status(400).json({ message: "User ID is required" });
     }
 
     const playlist = await playlistService.approveShare({ playlistId, userId });
-    await notificationService.remove({ playlistId, userId });
+    await notificationService.remove({ playlistId, userId, notificationId });
     return res.status(200).json(playlist);
   } catch (error) {
+    loggerService.error("Failed to approve share", error as Error);
     return res.status(500).json({ message: "Failed to approve share", error });
   }
 };
@@ -463,7 +486,7 @@ export const removeSharePlaylist = async (req: Request, res: Response) => {
 
 export const rejectSharePlaylist = async (req: Request, res: Response) => {
   try {
-    const { id: playlistId } = req.params;
+    const { id: playlistId, notificationId } = req.params;
     const store = asyncLocalStorage.getStore();
     const userId = store?.loggedinUser?.id;
 
@@ -475,7 +498,7 @@ export const rejectSharePlaylist = async (req: Request, res: Response) => {
     }
 
     const playlist = await playlistService.removeShare(playlistId, userId);
-    await notificationService.remove({ playlistId, userId });
+    await notificationService.remove({ playlistId, userId, notificationId });
     return res.status(200).json(playlist);
   } catch (error) {
     return res.status(500).json({ message: "Failed to approve share", error });

@@ -12,14 +12,46 @@ export interface INotificationDTO {
   songId?: string;
 }
 
-export interface INotification extends INotificationData {
-  imgUrl: string;
-}
-export interface INotificationData {
+export interface INotification {
+  imgUrl?: string;
   id: string;
   type: NotificationType;
   text: string;
   fromUser?: IUser;
   playlist?: IPlaylistSmall | null;
   song?: ISongSmall | null;
+}
+
+export interface INotificationData {
+  id: string;
+  type: string;
+  text: string;
+  fromUser: {
+    id: string;
+    imgUrl: string | null;
+    username: string;
+  };
+  playlist?: {
+    id: string;
+    name: string;
+    imgUrl: string;
+    isPublic: boolean;
+    itemType: "PLAYLIST";
+  };
+  song: {
+    id: string;
+    name: string;
+    artist: string;
+    imgUrl: string;
+    duration: string;
+    genres: string[];
+    youtubeId: string;
+    addedAt: Date;
+    addedBy: {
+      id: string;
+      imgUrl: string;
+      username: string;
+    };
+    songLikes: string[]; 
+  };
 }

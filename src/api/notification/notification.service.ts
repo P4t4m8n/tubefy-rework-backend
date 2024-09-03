@@ -1,17 +1,22 @@
 import { NotificationType } from "@prisma/client";
 import { prisma } from "../../../prisma/prismaClient";
 import { IPlaylistSmallSqlLogic } from "../playlists/sqlLogic.model";
-import { ISongSmallSqlLogic } from "../songs/songSqlLogic.model";
-import { INotification, INotificationData, INotificationDTO } from "./notification.model";
+import { ISongSqlLogic } from "../songs/songSqlLogic.model";
+import { INotification, INotificationDTO } from "./notification.model";
 import { IUserSqlLogic } from "../users/userSqlLogic.model";
 import { playlistSmallSqlLogic } from "../playlists/playlist.SqlLogic";
-import { songSmallSqlLogic } from "../songs/songSqlLogic";
+import { getSongSqlLogic } from "../songs/songSqlLogic";
+import { songService } from "../songs/song.service";
+import { ISongData } from "../songs/song.model";
 
 class NotificationService {
   async create(notificationDTO: INotificationDTO): Promise<INotification> {
-    const extraData = this.#getExtraData(notificationDTO.type);
+    const extraData = this.#getExtraData(
+      notificationDTO.type,
+      notificationDTO.userId
+    );
 
-    const notification = await prisma.notification.create({
+    const notificationData = await prisma.notification.create({
       data: notificationDTO,
       select: {
         id: true,
@@ -20,9 +25,42 @@ class NotificationService {
         ...extraData,
       },
     });
+    const { id, type, text, fromUser } = notificationData;
+    const notification: INotification = {
+      id,
+      type,
+      text,
+      fromUser,
+      imgUrl: fromUser?.imgUrl || "/default-user.png",
+    };
 
-    const imgUrl = notification?.fromUser?.imgUrl || "/default-user.png";
-    return { ...notification, imgUrl };
+    if (notificationData?.playlist) {
+      notification.playlist = notificationData.playlist;
+      if (notification.playlist.imgUrl) {
+        notification.imgUrl = notification.playlist.imgUrl;
+      }
+    }
+    if (notificationData?.song) {
+      const fixedSong = songService.songDataToSong(
+        notificationData.song as unknown as ISongData
+      );
+      if (notificationData.song.imgUrl) {
+        notification.imgUrl = notificationData.song.imgUrl;
+      }
+
+      notification.song = fixedSong;
+    }
+
+    console.log(notification);
+    return notification;
+  }
+
+  async createMany(notificationDTO: INotificationDTO[]) {
+    const notifications = await prisma.notification.createMany({
+      data: notificationDTO,
+    });
+
+    return notifications;
   }
 
   async query(userId: string): Promise<INotification[]> {
@@ -96,30 +134,32 @@ class NotificationService {
   }
 
   async remove({
-    id,
+    notificationId,
     playlistId,
     userId,
     songId,
   }: {
-    id?: string;
+    notificationId: string;
     playlistId?: string;
     songId?: string;
     userId?: string;
   }) {
-    if (!id && (!playlistId || !userId)) {
+    if (!notificationId && !(playlistId && userId)) {
       throw new Error("You must provide an id or playlistId and userId");
     }
-
+    
+    
     await prisma.notification.delete({
       where: {
-        id,
+        id: notificationId,
         playlistId,
         userId,
+        songId,
       },
     });
   }
 
-  mapNotificationsDataToNotifications(notificationsData: INotificationData[]) {
+  mapNotificationsDataToNotifications(notificationsData: INotification[]) {
     const fixedNotifications: INotification[] = notificationsData.map(
       (notification) => {
         switch (notification!.type) {
@@ -150,6 +190,19 @@ class NotificationService {
                 notification!.fromUser?.imgUrl ||
                 "/default-song.png",
             };
+          case "PLAYLIST_SONG_ADD":
+            return {
+              song: notification!.song,
+              fromUser: notification!.fromUser,
+              playlist: notification!.playlist,
+              type: notification!.type,
+              id: notification!.id,
+              text: notification!.text,
+              imgUrl:
+                notification!.song?.imgUrl ||
+                notification!.fromUser?.imgUrl ||
+                "/default-song.png",
+            };
           default:
             return {
               fromUser: notification!.fromUser,
@@ -165,10 +218,10 @@ class NotificationService {
     return fixedNotifications;
   }
 
-  #getExtraData(type?: NotificationType) {
+  #getExtraData(type?: NotificationType, userId?: string) {
     const extraData: {
       fromUser: IUserSqlLogic;
-      song?: ISongSmallSqlLogic;
+      song?: ISongSqlLogic;
       playlist?: IPlaylistSmallSqlLogic;
     } = {
       fromUser: {
@@ -187,8 +240,11 @@ class NotificationService {
         break;
       case "SONG_LIKE":
       case "SONG_COMMENT":
-        extraData.song = songSmallSqlLogic;
+        // extraData.song = songSmallSqlLogic;
         break;
+      case "PLAYLIST_SONG_ADD":
+        extraData.playlist = playlistSmallSqlLogic;
+        extraData.song = getSongSqlLogic(userId!);
       default:
         break;
     }

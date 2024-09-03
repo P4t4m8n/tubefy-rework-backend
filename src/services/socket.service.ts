@@ -3,7 +3,9 @@ import { socketAuthMiddleware } from "../middlewares/socketAuthMiddleware";
 import { loggerService } from "./logger.service";
 import http from "http";
 import { TSocketEvent } from "../models/socket.model";
-
+import { IPlaylist } from "../api/playlists/playlist.model";
+import { playlistService } from "../api/playlists/playlist.service";
+let gIo: Server;
 const connectedUsers = new Map<string, Socket>();
 
 const createEventHandlers = (socket: Socket) =>
@@ -25,7 +27,7 @@ const createEventHandlers = (socket: Socket) =>
 export const setUpSocketAPI = (
   server: http.Server<typeof http.IncomingMessage, typeof http.ServerResponse>
 ) => {
-  const gIo = new Server(server, {
+  gIo = new Server(server, {
     cors: {
       origin: "http://localhost:5173",
       credentials: true,
@@ -34,9 +36,13 @@ export const setUpSocketAPI = (
 
   gIo.use(socketAuthMiddleware);
 
-  gIo.on("connect", (socket: Socket) => {
+  gIo.on("connect", async (socket: Socket) => {
     const userId = socket.data.userId;
     connectedUsers.set(userId, socket);
+    // const playlistsIds = await playlistService.fetchSharedPlaylistsId(userId);
+    // playlistsIds.forEach((id) => {
+    //   socket.join(id);
+    // });
     console.info(`User connected [id: ${socket.id}, userId: ${userId}]`);
 
     // Register event handlers

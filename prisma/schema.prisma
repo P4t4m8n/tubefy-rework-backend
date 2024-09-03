@@ -103,6 +103,7 @@ enum NotificationType {
   PLAYLIST_LIKE
   PLAYLIST_SHARE
   PLAYLIST_COMMENT
+  PLAYLIST_SONG_ADD
 
   SONG_LIKE
   SONG_COMMENT
@@ -226,7 +227,7 @@ model PlaylistShare {
 model Notification {
   id         String           @id @default(uuid())
   type       NotificationType
-  userId     String           @map("user_id")
+  userId     String           @map("user_id") 
   fromUserId String           @map("from_id")
   text       String
   playlistId String?          @map("playlist_id")

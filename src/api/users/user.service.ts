@@ -414,7 +414,6 @@ export class UserService {
         userData.notifications
       );
 
-      
     const user: IFullUser = {
       playlists: [...userPlaylists, ...likedPlaylists, ...sharedPlaylists],
       likedSongsPlaylist,

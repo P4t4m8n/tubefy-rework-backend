@@ -2,7 +2,6 @@ import { IItemType } from "../../models/app.model";
 import { IUser } from "../users/user.model";
 import { Genres } from "./song.enum";
 
-
 export interface ISongSmall extends IItemType {
   id: string;
   youtubeId: string;
@@ -21,7 +20,6 @@ export interface ISong extends ISongSmall {
   addedAt: Date;
   addedBy: IUser;
 }
-
 export interface ISongDTO {
   youtubeId: string;
   name: string;
@@ -32,7 +30,6 @@ export interface ISongDTO {
   addByUserId: string;
   genres: Genres[];
 }
-
 export interface ISongFilter {
   name?: string;
   artist?: string;
@@ -41,4 +38,23 @@ export interface ISongFilter {
   offset?: number;
   addByUserId?: string;
   isLikedByUser?: boolean;
+}
+
+export interface ISongData {
+  id: string;
+  name: string;
+  artist: string;
+  imgUrl: string;
+  duration: string;
+  genres: string[];
+  youtubeId: string;
+  addedAt: Date;
+  addedBy: {
+    id: string;
+    imgUrl: string | null;
+    username: string;
+  };
+  songLikes?: {
+    id: string;
+  }[];
 }

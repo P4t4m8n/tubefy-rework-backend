@@ -36,13 +36,13 @@ playlistRoutes.get("/", log, getPlaylists);
 playlistRoutes.post("/:id/share", requireAuth, log, createSharePlaylist);
 playlistRoutes.put("/:id/share", requireAuth, log, updateSharePlaylist);
 playlistRoutes.put(
-  "/:id/share/approve",
+  "/:id/share/:notificationId",
   requireAuth,
   log,
   approveSharePlaylist
 );
 playlistRoutes.delete(
-  "/:id/share/reject",
+  "/:id/share/:notificationId",
   requireAuth,
   log,
   rejectSharePlaylist

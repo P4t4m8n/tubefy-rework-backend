@@ -50,6 +50,9 @@ app.use("/api/friend", friendRoutes);
 import { userRoutes } from "./api/users/user.routes";
 app.use("/api/user", userRoutes);
 
+import { notificationRoutes } from "./api/notification/notification.routes";
+app.use("/api/notification", notificationRoutes);
+
 // Setup WebSocket
 import { setUpSocketAPI } from "./services/socket.service";
 setUpSocketAPI(server);
