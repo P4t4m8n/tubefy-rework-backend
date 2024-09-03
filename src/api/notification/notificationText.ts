@@ -1,5 +1,9 @@
-export const youSharedPlaylist = () => "You shared a playlist";
+export const youSharedPlaylist = (
+  playlistName: string = "Playlist",
+  friendName: string = "User"
+) => `You shared playlist ${playlistName} with ${friendName}`;
 
-export const userSharedPlaylistWithYou = (username: string) =>
-  `${username} shared a playlist with you`;
-
+export const userSharedPlaylistWithYou = (
+  username: string = "User",
+  playlistName: string = "PLaylist"
+) => `${username} shared playlist ${playlistName} with you`;

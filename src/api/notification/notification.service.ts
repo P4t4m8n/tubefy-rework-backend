@@ -2,7 +2,7 @@ import { NotificationType } from "@prisma/client";
 import { prisma } from "../../../prisma/prismaClient";
 import { IPlaylistSmallSqlLogic } from "../playlists/sqlLogic.model";
 import { ISongSmallSqlLogic } from "../songs/songSqlLogic.model";
-import { INotification, INotificationDTO } from "./notification.model";
+import { INotification, INotificationData, INotificationDTO } from "./notification.model";
 import { IUserSqlLogic } from "../users/userSqlLogic.model";
 import { playlistSmallSqlLogic } from "../playlists/playlist.SqlLogic";
 import { songSmallSqlLogic } from "../songs/songSqlLogic";
@@ -21,7 +21,8 @@ class NotificationService {
       },
     });
 
-    return notification;
+    const imgUrl = notification?.fromUser?.imgUrl || "/default-user.png";
+    return { ...notification, imgUrl };
   }
 
   async query(userId: string): Promise<INotification[]> {
@@ -51,6 +52,10 @@ class NotificationService {
               type: notification.type,
               id: notification.id,
               text: notification.text,
+              imgUrl:
+                notification.playlist?.imgUrl ||
+                notification.fromUser?.imgUrl ||
+                "/default-playlist.png",
             };
           case "SONG_LIKE":
           case "SONG_COMMENT":
@@ -60,6 +65,10 @@ class NotificationService {
               type: notification.type,
               id: notification.id,
               text: notification.text,
+              imgUrl:
+                notification.song?.imgUrl ||
+                notification.fromUser?.imgUrl ||
+                "/default-song.png",
             };
           default:
             return {
@@ -67,6 +76,7 @@ class NotificationService {
               type: notification.type,
               id: notification.id,
               text: notification.text,
+              imgUrl: notification.fromUser?.imgUrl || "/default-user.png",
             };
         }
       }
@@ -100,7 +110,6 @@ class NotificationService {
       throw new Error("You must provide an id or playlistId and userId");
     }
 
-  
     await prisma.notification.delete({
       where: {
         id,
@@ -108,6 +117,52 @@ class NotificationService {
         userId,
       },
     });
+  }
+
+  mapNotificationsDataToNotifications(notificationsData: INotificationData[]) {
+    const fixedNotifications: INotification[] = notificationsData.map(
+      (notification) => {
+        switch (notification!.type) {
+          case "PLAYLIST_COMMENT":
+          case "PLAYLIST_LIKE":
+          case "PLAYLIST_SHARE":
+            return {
+              fromUser: notification!.fromUser,
+              playlist: notification!.playlist,
+              type: notification!.type,
+              id: notification!.id,
+              text: notification!.text,
+              imgUrl:
+                notification!.playlist?.imgUrl ||
+                notification!.fromUser?.imgUrl ||
+                "/default-playlist.png",
+            };
+          case "SONG_LIKE":
+          case "SONG_COMMENT":
+            return {
+              song: notification!.song,
+              fromUser: notification!.fromUser,
+              type: notification!.type,
+              id: notification!.id,
+              text: notification!.text,
+              imgUrl:
+                notification!.song?.imgUrl ||
+                notification!.fromUser?.imgUrl ||
+                "/default-song.png",
+            };
+          default:
+            return {
+              fromUser: notification!.fromUser,
+              type: notification!.type,
+              id: notification!.id,
+              text: notification!.text,
+              imgUrl: notification!.fromUser?.imgUrl || "/default-user.png",
+            };
+        }
+      }
+    );
+
+    return fixedNotifications;
   }
 
   #getExtraData(type?: NotificationType) {

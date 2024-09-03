@@ -12,7 +12,10 @@ export interface INotificationDTO {
   songId?: string;
 }
 
-export interface INotification {
+export interface INotification extends INotificationData {
+  imgUrl: string;
+}
+export interface INotificationData {
   id: string;
   type: NotificationType;
   text: string;

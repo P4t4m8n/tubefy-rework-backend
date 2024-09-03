@@ -339,20 +339,22 @@ export const createSharePlaylist = async (req: Request, res: Response) => {
     if (!result) {
       return res.status(404).json({ message: "Failed to share playlist" });
     }
-
-    const userNotification = await notificationService.create({
-      userId,
-      fromUserId: friendId,
-      type: "PLAYLIST_SHARE",
-      text: youSharedPlaylist(),
-      playlistId,
-    });
-
     const friendNotification = await notificationService.create({
       userId: friendId,
       fromUserId: userId,
       type: "PLAYLIST_SHARE",
-      text: userSharedPlaylistWithYou(username),
+      text: userSharedPlaylistWithYou(username, result.playlist.name),
+      playlistId,
+    });
+
+    const userNotification = await notificationService.create({
+      userId,
+      fromUserId: friendId,
+      type: "GENERAL_NOTIFICATION",
+      text: youSharedPlaylist(
+        result.playlist.name,
+        friendNotification.fromUser?.username || ""
+      ),
       playlistId,
     });
 

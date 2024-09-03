@@ -12,6 +12,7 @@ import { playlistService } from "../playlists/playlist.service";
 import { songService } from "../songs/song.service";
 import { getDefaultLikesPlaylist } from "../../services/util";
 import { friendService } from "../friends/friends.service";
+import { notificationService } from "../notification/notification.service";
 
 export class UserService {
   async create(userData: IUserSignupDTO): Promise<IUserDTO> {
@@ -408,6 +409,12 @@ export class UserService {
 
     const { id, imgUrl, username, email, isAdmin, notifications } = userData;
 
+    const fixedNotifications =
+      notificationService.mapNotificationsDataToNotifications(
+        userData.notifications
+      );
+
+      
     const user: IFullUser = {
       playlists: [...userPlaylists, ...likedPlaylists, ...sharedPlaylists],
       likedSongsPlaylist,
@@ -420,7 +427,7 @@ export class UserService {
       },
       friendsRequest,
       friends: [...friends, ...userData.friends],
-      notifications,
+      notifications: fixedNotifications,
     };
 
     return user;
