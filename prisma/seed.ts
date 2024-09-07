@@ -4,9 +4,9 @@ import {
   IPlaylist,
 } from "../src/api/playlists/playlist.model";
 import { PlaylistService } from "../src/api/playlists/playlist.service";
-import { Genres } from "../src/api/songs/song.enum";
-import { ISong, ISongDTO } from "../src/api/songs/song.model";
-import { SongService } from "../src/api/songs/song.service";
+import { Genres } from "../src/api/song/song.enum";
+import { ISong, ISongDTO } from "../src/api/song/song.model";
+import { SongService } from "../src/api/song/song.service";
 import { IUser, IUserDTO, IUserSignupDTO } from "../src/api/users/user.model";
 import { UserService } from "../src/api/users/user.service";
 import {

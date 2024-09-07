@@ -1,7 +1,7 @@
 import { NotificationType } from "@prisma/client";
 import { IUser } from "../users/user.model";
 import { IPlaylistSmall } from "../playlists/playlist.model";
-import { ISongSmall } from "../songs/song.model";
+import { ISongSmall } from "../song/song.model";
 
 export interface INotificationDTO {
   userId: string;

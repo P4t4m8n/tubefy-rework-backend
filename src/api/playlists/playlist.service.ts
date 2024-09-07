@@ -1,15 +1,15 @@
 import {
   IPlaylist,
   IPlaylistFilters,
-  IPlaylistCreateDTO,
+  IPlaylistDTO,
   TPlaylistType,
   IPlaylistShare,
 } from "./playlist.model";
 import { IUser } from "../users/user.model";
-import { ISong } from "../songs/song.model";
+import { ISong } from "../song/song.model";
 import { prisma } from "../../../prisma/prismaClient";
-import { Genres } from "../songs/song.enum";
-import { songService } from "../songs/song.service";
+import { Genres } from "../song/song.enum";
+import { songService } from "../song/song.service";
 import { playlistShareSqlLogic } from "./playlist.SqlLogic";
 import { IShareSelectSqlLogic } from "./sqlLogic.model";
 import { ShareStatus } from "@prisma/client";
@@ -19,10 +19,7 @@ class PlaylistService {
   constructor() {
     this.#shareSelectSqlLogic = playlistShareSqlLogic();
   }
-  async create(
-    playlistData: IPlaylistCreateDTO,
-    owner: IUser
-  ): Promise<IPlaylist> {
+  async create(playlistData: IPlaylistDTO, owner: IUser): Promise<IPlaylist> {
     const { name, isPublic, imgUrl, types, genres } = playlistData;
 
     const playlist = await prisma.playlist.create({
@@ -162,8 +159,10 @@ class PlaylistService {
 
   async update(
     id: string,
-    updateData: IPlaylist
-  ): Promise<IPlaylistCreateDTO | null> {
+    updateData: IPlaylistDTO
+  ): Promise<IPlaylistDTO | null> {
+    console.log("updateData:", updateData)
+    console.log("id:", id)
     const playlist = await prisma.playlist.update({
       where: { id },
       data: {
@@ -173,12 +172,40 @@ class PlaylistService {
         types: updateData.types,
         genres: updateData.genres,
       },
+      include: {
+        playlistSongs: {
+          select: {
+            song: {
+              select: {
+                id: true,
+                name: true,
+                artist: true,
+                imgUrl: true,
+                duration: true,
+                genres: true,
+                youtubeId: true,
+                addedAt: true,
+                itemType: true,
+                addedBy: {
+                  select: {
+                    id: true,
+                    imgUrl: true,
+                    username: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
     });
 
+    const duration = updateData.duration || "00:00";
     return {
       ...playlist,
       types: playlist.types as TPlaylistType[],
       genres: playlist.genres as Genres[],
+      duration,
     };
   }
 

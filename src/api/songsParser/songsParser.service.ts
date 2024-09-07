@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ISong } from "../songs/song.model";
+import { ISong } from "../song/song.model";
 
 export class songParserService {
   private OPENAI_API_KEY = process.env.OPENAI_API_KEY;

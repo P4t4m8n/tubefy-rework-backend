@@ -1,5 +1,6 @@
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
 import { loggerService } from "../../services/logger.service";
+import { playlistService } from "../playlists/playlist.service";
 import { SongService } from "./song.service";
 import { Request, Response } from "express";
 
@@ -8,14 +9,16 @@ const songServices = new SongService();
 export const createSong = async (req: Request, res: Response) => {
   try {
     const store = asyncLocalStorage.getStore();
-    const songData = req.body;
+    const { song, playlistId } = req.body;
     const user = store?.loggedinUser;
 
     if (!user) {
       return res.status(403).json({ message: "Unauthorized to create song" });
     }
 
-    const newSong = await songServices.create(songData, user);
+    const newSong = await songServices.create(song, user);
+    console.log("newSong:", newSong)
+    await playlistService.addSongToPlaylist(playlistId, newSong.id);
 
     return res.status(201).json(newSong);
   } catch (error) {

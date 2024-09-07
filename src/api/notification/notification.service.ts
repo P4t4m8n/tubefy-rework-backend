@@ -1,13 +1,13 @@
 import { NotificationType } from "@prisma/client";
 import { prisma } from "../../../prisma/prismaClient";
 import { IPlaylistSmallSqlLogic } from "../playlists/sqlLogic.model";
-import { ISongSqlLogic } from "../songs/songSqlLogic.model";
+import { ISongSqlLogic } from "../song/songSqlLogic.model";
 import { INotification, INotificationDTO } from "./notification.model";
 import { IUserSqlLogic } from "../users/userSqlLogic.model";
 import { playlistSmallSqlLogic } from "../playlists/playlist.SqlLogic";
-import { getSongSqlLogic } from "../songs/songSqlLogic";
-import { songService } from "../songs/song.service";
-import { ISongData } from "../songs/song.model";
+import { getSongSqlLogic } from "../song/songSqlLogic";
+import { songService } from "../song/song.service";
+import { ISongData } from "../song/song.model";
 
 class NotificationService {
   async create(notificationDTO: INotificationDTO): Promise<INotification> {

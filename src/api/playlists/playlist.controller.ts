@@ -1,15 +1,11 @@
 import { Request, Response } from "express";
-import {
-  IPlaylist,
-  IPlaylistCreateDTO,
-  IPlaylistFilters,
-} from "./playlist.model";
+import { IPlaylist, IPlaylistDTO, IPlaylistFilters } from "./playlist.model";
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
 import { loggerService } from "../../services/logger.service";
-import { Genres } from "../songs/song.enum";
-import { songService } from "../songs/song.service";
+import { Genres } from "../song/song.enum";
+import { songService } from "../song/song.service";
 import { playlistService } from "./playlist.service";
-import {  emitToUser } from "../../services/socket.service";
+import { emitToUser } from "../../services/socket.service";
 import { TSocketEvent } from "../../models/socket.model";
 import { notificationService } from "../notification/notification.service";
 import {
@@ -21,7 +17,7 @@ export const createPlaylist = async (req: Request, res: Response) => {
   try {
     const store = asyncLocalStorage.getStore();
     const user = store?.loggedinUser;
-    const playlistData: IPlaylistCreateDTO = req.body;
+    const playlistData: IPlaylistDTO = req.body;
 
     if (!user) {
       loggerService.error("Unauthorized to create playlist", { user });
@@ -106,18 +102,16 @@ export const updatePlaylist = async (req: Request, res: Response) => {
   try {
     const store = asyncLocalStorage.getStore();
     const user = store?.loggedinUser;
-    const playlistData: IPlaylist = req.body;
+    const playlistData: IPlaylistDTO = req.body;
+    const { id } = req.params;
 
-    if (user) {
+    if (!user || !user?.id) {
       return res
         .status(403)
         .json({ message: "Unauthorized to update playlist" });
     }
 
-    const updatedPlaylist = await playlistService.update(
-      user!.id!,
-      playlistData
-    );
+    const updatedPlaylist = await playlistService.update(id, playlistData);
 
     return res.json(updatedPlaylist);
   } catch (error) {
@@ -176,7 +170,7 @@ export const addSongToPlaylist = async (req: Request, res: Response) => {
     const songName = result.song.name;
     const text = `${username} added a ${songName} to ${playlistName}`;
 
-    const users = await playlistService.fetchSharedUserToPlaylists(id,userId);
+    const users = await playlistService.fetchSharedUserToPlaylists(id, userId);
     users.forEach(async (user) => {
       const notification = await notificationService.create({
         userId: user.id,
@@ -186,7 +180,7 @@ export const addSongToPlaylist = async (req: Request, res: Response) => {
         playlistId: id,
         songId,
       });
-      console.log("notification:", notification)
+      console.log("notification:", notification);
       emitToUser(user.id, "addSongToPlaylist", notification);
     });
 

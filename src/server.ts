@@ -41,7 +41,7 @@ app.use("/api/playlist", playlistRoutes);
 import { authRoutes } from "./api/auth/auth.routes";
 app.use("/api/auth", authRoutes);
 
-import { songRoutes } from "./api/songs/song.routes";
+import { songRoutes } from "./api/song/song.routes";
 app.use("/api/song", songRoutes);
 
 import { friendRoutes } from "./api/friends/friends.routes";

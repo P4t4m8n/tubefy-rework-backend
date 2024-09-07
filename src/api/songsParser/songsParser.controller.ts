@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 import { songParserService } from "./songsParser.service";
 import { songsJson } from "../../../prisma/demo-data/consts";
-import { ISong } from "../songs/song.model";
-import { SongService } from "../songs/song.service";
-import { Genres } from "../songs/song.enum";
+import { ISong } from "../song/song.model";
+import { SongService } from "../song/song.service";
+import { Genres } from "../song/song.enum";
 
 const songsParserServices = new songParserService();
 const songsServices = new SongService();
