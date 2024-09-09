@@ -1,6 +1,5 @@
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
 import { getDefaultLikesPlaylist } from "../../services/util";
-import { notificationService } from "../notification/notification.service";
 import { playlistService } from "../playlists/playlist.service";
 import { userService } from "../users/user.service";
 import { authService } from "./auth.service";
@@ -41,6 +40,7 @@ export const signUp = async (req: Request, res: Response) => {
     await playlistService.create(playlistToCreate, result.user);
 
     const user = await userService.getDetailedUser(result.user);
+    console.log("user:", user);
 
     res.cookie("loginToken", result.token, {
       httpOnly: true,
@@ -68,10 +68,11 @@ export const login = async (req: Request, res: Response) => {
 
     const result = await authService.login({ email, password });
     if (!result) {
-      return res.status(409).json({ message: "Invalid Email or Password" });
+      return res.status(409).json({ message: "Email or Password Invalid" });
     }
 
     const user = await userService.getDetailedUser(result.user);
+    console.log("user:", user);
 
     res.cookie("loginToken", result.token, {
       httpOnly: true,
