@@ -40,7 +40,6 @@ export const signUp = async (req: Request, res: Response) => {
     await playlistService.create(playlistToCreate, result.user);
 
     const user = await userService.getDetailedUser(result.user);
-    console.log("user:", user);
 
     res.cookie("loginToken", result.token, {
       httpOnly: true,
@@ -72,7 +71,6 @@ export const login = async (req: Request, res: Response) => {
     }
 
     const user = await userService.getDetailedUser(result.user);
-    console.log("user:", user);
 
     res.cookie("loginToken", result.token, {
       httpOnly: true,

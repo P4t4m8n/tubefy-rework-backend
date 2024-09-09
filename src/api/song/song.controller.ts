@@ -17,7 +17,6 @@ export const createSong = async (req: Request, res: Response) => {
     }
 
     const newSong = await songServices.create(song, user);
-    console.log("newSong:", newSong)
     await playlistService.addSongToPlaylist(playlistId, newSong.id);
 
     return res.status(201).json(newSong);

@@ -161,8 +161,7 @@ class PlaylistService {
     id: string,
     updateData: IPlaylistDTO
   ): Promise<IPlaylistDTO | null> {
-    console.log("updateData:", updateData)
-    console.log("id:", id)
+ 
     const playlist = await prisma.playlist.update({
       where: { id },
       data: {

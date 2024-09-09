@@ -180,7 +180,6 @@ export const addSongToPlaylist = async (req: Request, res: Response) => {
         playlistId: id,
         songId,
       });
-      console.log("notification:", notification);
       emitToUser(user.id, "addSongToPlaylist", notification);
     });
 

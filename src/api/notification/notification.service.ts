@@ -51,7 +51,6 @@ class NotificationService {
       notification.song = fixedSong;
     }
 
-    console.log(notification);
     return notification;
   }
 
