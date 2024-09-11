@@ -99,6 +99,7 @@ enum NotificationType {
   FRIEND_REJECTED
   FRIEND_BLOCKED
   FRIEND_REMOVED
+  FRIEND_ADD
 
   PLAYLIST_LIKE
   PLAYLIST_SHARE
@@ -200,13 +201,14 @@ model PlaylistLike {
 }
 
 model Friend {
-  id        String       @id @default(uuid())
-  createdAt DateTime     @default(now())
-  status    FriendStatus @default(PENDING)
-  userId    String       @map("user_id")
-  user      User         @relation("friends", fields: [userId], references: [id])
-  friendId  String       @map("friend_id")
-  friend    User         @relation("friendsRequest", fields: [friendId], references: [id])
+  id           String         @id @default(uuid())
+  createdAt    DateTime       @default(now())
+  status       FriendStatus   @default(PENDING)
+  userId       String         @map("user_id")
+  user         User           @relation("friends", fields: [userId], references: [id])
+  friendId     String         @map("friend_id")
+  friend       User           @relation("friendsRequest", fields: [friendId], references: [id])
+  Notification Notification[]
 
   @@unique([userId, friendId])
 }
@@ -227,14 +229,16 @@ model PlaylistShare {
 model Notification {
   id         String           @id @default(uuid())
   type       NotificationType
-  userId     String           @map("user_id") 
+  userId     String           @map("user_id")
   fromUserId String           @map("from_id")
   text       String
   playlistId String?          @map("playlist_id")
   songId     String?          @map("song_id")
+  friendId   String?          @map("friend_id")
   createdAt  DateTime         @default(now())
   user       User             @relation("user", fields: [userId], references: [id])
   fromUser   User             @relation("fromUser", fields: [fromUserId], references: [id])
   playlist   Playlist?        @relation(fields: [playlistId], references: [id])
   song       Song?            @relation(fields: [songId], references: [id])
+  friend     Friend?          @relation(fields: [friendId], references: [id])
 }

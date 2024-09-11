@@ -5,7 +5,6 @@ import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
 import { loggerService } from "../../services/logger.service";
 
 const userService = new UserService();
-const store = asyncLocalStorage.getStore();
 
 export const createUser = async (req: Request, res: Response) => {
   try {
@@ -30,6 +29,7 @@ export const createUser = async (req: Request, res: Response) => {
 
 export const getUserById = async (req: Request, res: Response) => {
   try {
+    const store = asyncLocalStorage.getStore();
     const id = store?.loggedinUser?.id;
 
     if (!id) {
@@ -72,6 +72,8 @@ export const getUserByEmail = async (req: Request, res: Response) => {
 
 export const updateUser = async (req: Request, res: Response) => {
   try {
+    const store = asyncLocalStorage.getStore();
+
     const id = store?.loggedinUser?.id;
     const userData: Partial<IUser> = req.body;
 
@@ -141,7 +143,9 @@ export const getAllUsers = async (req: Request, res: Response) => {
 
 export const getUsers = async (req: Request, res: Response) => {
   try {
+    const store = asyncLocalStorage.getStore();
     const userId = store?.loggedinUser?.id;
+
     const { username, email } = req.query as IUserFilters;
 
     if (!username && !email) {

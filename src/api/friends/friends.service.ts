@@ -1,6 +1,7 @@
 import { FriendStatus, Prisma } from "@prisma/client";
 import { prisma } from "../../../prisma/prismaClient";
 import { IFriend, IFriendRequestData } from "./friends.model";
+import { IUser } from "../users/user.model";
 export class FriendService {
   async query(
     userId: string,
@@ -62,7 +63,8 @@ export class FriendService {
 
   async create(userId: string, friendId: string): Promise<IFriend> {
     try {
-      const request = await prisma.friend.create({
+      const friendData = await prisma.friend.create({
+        relationLoadStrategy: "join",
         data: {
           userId,
           friendId,
@@ -84,10 +86,10 @@ export class FriendService {
       });
 
       const friend: IFriend = {
-        id: request.id,
-        createdAt: request.createdAt,
-        status: request.status,
-        friend: request.friend,
+        id: friendData.id,
+        createdAt: friendData.createdAt,
+        status: friendData.status,
+        friend: friendData.friend,
       };
 
       return friend;
@@ -96,21 +98,52 @@ export class FriendService {
         error instanceof Prisma.PrismaClientKnownRequestError &&
         error.code === "P2002"
       ) {
-        // P2002 is the code for a unique constraint violation
+        //code for a unique constraint violation
         throw new Error("Friend request already exists");
       }
       throw new Error(`Error while creating friend request: ${error}`);
     }
   }
 
-  async update(id: string, status: FriendStatus): Promise<IFriend> {
+  async update(id: string, status: FriendStatus) {
+    const friend = await prisma.friend.update({
+      where: {
+        id,
+      },
+      data: {
+        status,
+      },
+      select: {
+        id: true,
+        status: true,
+        createdAt: true,
+        friend: {
+          select: {
+            id: true,
+            username: true,
+            isAdmin: true,
+            imgUrl: true,
+          },
+        },
+        user: {
+          select: {
+            id: true,
+            username: true,
+            isAdmin: true,
+            imgUrl: true,
+          },
+        },
+      },
+    });
+
+    return friend;
+  }
+
+  async remove(id: string): Promise<IFriend> {
     try {
-      const friend = await prisma.friend.update({
+      const friend = await prisma.friend.delete({
         where: {
           id,
-        },
-        data: {
-          status,
         },
         select: {
           id: true,
@@ -120,7 +153,6 @@ export class FriendService {
             select: {
               id: true,
               username: true,
-              isAdmin: true,
               imgUrl: true,
             },
           },
@@ -128,27 +160,6 @@ export class FriendService {
       });
 
       return friend;
-    } catch (error) {
-      throw new Error(`Error while accepting friend request: ${error}`);
-    }
-  }
-
-  async remove(id: string): Promise<string> {
-    try {
-      const { friend } = await prisma.friend.delete({
-        where: {
-          id,
-        },
-        select: {
-          friend: {
-            select: {
-              id: true,
-            },
-          },
-        },
-      });
-
-      return friend.id;
     } catch (error) {
       throw new Error(`Error while removing friend: ${error}`);
     }

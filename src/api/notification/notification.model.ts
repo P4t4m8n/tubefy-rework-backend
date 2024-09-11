@@ -2,6 +2,7 @@ import { NotificationType } from "@prisma/client";
 import { IUser } from "../users/user.model";
 import { IPlaylistSmall } from "../playlists/playlist.model";
 import { ISongSmall } from "../song/song.model";
+import { IFriend } from "../friends/friends.model";
 
 export interface INotificationDTO {
   userId: string;
@@ -10,6 +11,7 @@ export interface INotificationDTO {
   text: string;
   playlistId?: string;
   songId?: string;
+  friendId?: string;
 }
 
 export interface INotification {
@@ -20,6 +22,7 @@ export interface INotification {
   fromUser?: IUser;
   playlist?: IPlaylistSmall | null;
   song?: ISongSmall | null;
+  friend?: IFriend | null;
 }
 
 export interface INotificationData {
@@ -52,6 +55,11 @@ export interface INotificationData {
       imgUrl: string;
       username: string;
     };
-    songLikes: string[]; 
+    songLikes: string[];
+  };
+  friend: {
+    id: string;
+    imgUrl: string;
+    username: string;
   };
 }

@@ -351,7 +351,7 @@ export const createSharePlaylist = async (req: Request, res: Response) => {
     if (!result) {
       return res.status(404).json({ message: "Failed to share playlist" });
     }
-    const friendNotification = await notificationService.create({
+    const friendNotificationPromise = notificationService.create({
       userId: friendId,
       fromUserId: userId,
       type: "PLAYLIST_SHARE",
@@ -359,16 +359,21 @@ export const createSharePlaylist = async (req: Request, res: Response) => {
       playlistId,
     });
 
-    const userNotification = await notificationService.create({
+    const userNotificationPromise = notificationService.create({
       userId,
       fromUserId: friendId,
       type: "GENERAL_NOTIFICATION",
       text: youSharedPlaylist(
         result.playlist.name,
-        friendNotification.fromUser?.username || ""
+        result.share.user.username || ""
       ),
       playlistId,
     });
+
+    const [userNotification, friendNotification] = await Promise.all([
+      userNotificationPromise,
+      friendNotificationPromise,
+    ]);
 
     emitToUser(friendId, "sharePlaylist", friendNotification);
 
@@ -449,6 +454,7 @@ export const approveSharePlaylist = async (req: Request, res: Response) => {
 export const removeSharePlaylist = async (req: Request, res: Response) => {
   try {
     const { friendId } = req.body;
+    console.log("friendId:", friendId)
     const { playlistId } = req.params;
     const store = asyncLocalStorage.getStore();
     const sessionUser = store?.loggedinUser?.id;
@@ -480,6 +486,8 @@ export const removeSharePlaylist = async (req: Request, res: Response) => {
 export const rejectSharePlaylist = async (req: Request, res: Response) => {
   try {
     const { id: playlistId, notificationId } = req.params;
+    console.log("playlistId:", playlistId)
+    console.log("notificationId:", notificationId)
     const store = asyncLocalStorage.getStore();
     const userId = store?.loggedinUser?.id;
 

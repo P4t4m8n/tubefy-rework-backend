@@ -8,6 +8,9 @@ import { playlistSmallSqlLogic } from "../playlists/playlist.SqlLogic";
 import { getSongSqlLogic } from "../song/songSqlLogic";
 import { songService } from "../song/song.service";
 import { ISongData } from "../song/song.model";
+import { friendSqlLogic } from "../friends/friends.SqlLogic";
+import { IFriendSqlLogic } from "../friends/friends.SqlLogic.model";
+import { IFriend } from "../friends/friends.model";
 
 class NotificationService {
   async create(notificationDTO: INotificationDTO): Promise<INotification> {
@@ -17,6 +20,7 @@ class NotificationService {
     );
 
     const notificationData = await prisma.notification.create({
+      relationLoadStrategy: "join",
       data: notificationDTO,
       select: {
         id: true,
@@ -49,6 +53,9 @@ class NotificationService {
       }
 
       notification.song = fixedSong;
+    }
+    if (notificationData?.friend && notificationData?.friend) {
+      notification.friend = notificationData?.friend as unknown as IFriend;
     }
 
     return notification;
@@ -146,8 +153,7 @@ class NotificationService {
     if (!notificationId && !(playlistId && userId)) {
       throw new Error("You must provide an id or playlistId and userId");
     }
-    
-    
+
     await prisma.notification.delete({
       where: {
         id: notificationId,
@@ -222,6 +228,7 @@ class NotificationService {
       fromUser: IUserSqlLogic;
       song?: ISongSqlLogic;
       playlist?: IPlaylistSmallSqlLogic;
+      friend?: IFriendSqlLogic;
     } = {
       fromUser: {
         select: {
@@ -244,6 +251,12 @@ class NotificationService {
       case "PLAYLIST_SONG_ADD":
         extraData.playlist = playlistSmallSqlLogic;
         extraData.song = getSongSqlLogic(userId!);
+      case "FRIEND_REQUEST":
+      case "FRIEND_ACCEPTED":
+      case "FRIEND_REJECTED":
+      case "FRIEND_BLOCKED":
+      case "FRIEND_ADD":
+        extraData.friend = friendSqlLogic;
       default:
         break;
     }
