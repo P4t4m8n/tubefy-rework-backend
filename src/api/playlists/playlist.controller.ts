@@ -454,7 +454,6 @@ export const approveSharePlaylist = async (req: Request, res: Response) => {
 export const removeSharePlaylist = async (req: Request, res: Response) => {
   try {
     const { friendId } = req.body;
-    console.log("friendId:", friendId)
     const { playlistId } = req.params;
     const store = asyncLocalStorage.getStore();
     const sessionUser = store?.loggedinUser?.id;
@@ -486,8 +485,7 @@ export const removeSharePlaylist = async (req: Request, res: Response) => {
 export const rejectSharePlaylist = async (req: Request, res: Response) => {
   try {
     const { id: playlistId, notificationId } = req.params;
-    console.log("playlistId:", playlistId)
-    console.log("notificationId:", notificationId)
+
     const store = asyncLocalStorage.getStore();
     const userId = store?.loggedinUser?.id;
 

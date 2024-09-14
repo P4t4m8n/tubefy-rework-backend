@@ -14,17 +14,6 @@ export type TSocketEventFriend =
   | "blockFriendRequest"
   | "removeFriendRequest";
 
-interface SharePlaylistPayload {
-  friendId: string;
-  playlistId: string;
-}
 
-interface FriendRequestPayload {
-  fromUserId: string;
-  toUserId: string;
-}
 
-interface SocketEventPayloads {
-  sharePlaylist: SharePlaylistPayload;
-  friendRequest: FriendRequestPayload;
-}
+

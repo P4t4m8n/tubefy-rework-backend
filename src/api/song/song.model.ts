@@ -39,7 +39,6 @@ export interface ISongFilter {
   addByUserId?: string;
   isLikedByUser?: boolean;
 }
-
 export interface ISongData {
   id: string;
   name: string;

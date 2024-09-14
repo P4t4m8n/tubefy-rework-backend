@@ -7,14 +7,6 @@ export interface IFriend {
   status: FriendStatus;
   friend: IUser;
 }
-
 export interface IFriendRequestData extends IFriend {
   user?: IUser;
-}
-
-export interface IFriendDTO {
-  userId: string;
-  friendId: string;
-  id: string;
-  status: FriendStatus;
 }

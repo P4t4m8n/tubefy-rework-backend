@@ -15,7 +15,6 @@ export interface IPlaylistDTO {
   id?: string;
   duration?: string;
 }
-
 export interface IPlaylistSmall extends IItemType {
   id: string;
   name: string;
