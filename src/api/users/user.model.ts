@@ -38,7 +38,7 @@ export interface IUserDTO {
   username: string;
   email: string;
   password?: string;
-  imgUrl: string | null | undefined;
+  imgUrl?: string | null | undefined;
   isAdmin?: boolean;
   id?: string;
 }

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { IUser, IUserFilters, IUserSignupDTO } from "./user.model";
+import { IUser, IUserDTO, IUserFilters, IUserSignupDTO } from "./user.model";
 import { UserService } from "./user.service";
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
 import { loggerService } from "../../services/logger.service";
@@ -75,10 +75,17 @@ export const updateUser = async (req: Request, res: Response) => {
     const store = asyncLocalStorage.getStore();
 
     const id = store?.loggedinUser?.id;
-    const userData: Partial<IUser> = req.body;
+    const userData: IUserDTO = req.body;
+    console.log("userData:", userData);
 
     if (!id) {
       return res.status(400).json({ message: "User ID is required" });
+    }
+
+    if (id !== userData.id) {
+      return res
+        .status(403)
+        .json({ message: "You are not allowed to update this user" });
     }
 
     const updatedUser = await userService.update(id, userData);
@@ -89,7 +96,8 @@ export const updateUser = async (req: Request, res: Response) => {
 
     return res.json(updatedUser);
   } catch (error) {
-    return res.status(400).json({ message: "Failed to update user", error });
+    loggerService.error(`Failed to update user, ${error}`);
+    return res.status(500).json({ message: "Failed to update user", error });
   }
 };
 

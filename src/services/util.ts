@@ -1,8 +1,7 @@
 import { IPlaylistDTO } from "../api/playlists/playlist.model";
+import { IUserDTO } from "../api/users/user.model";
 
-export const getDefaultLikesPlaylist = (
-  ownerId: string
-): IPlaylistDTO => {
+export const getDefaultLikesPlaylist = (ownerId: string): IPlaylistDTO => {
   return {
     name: "Liked Songs",
     isPublic: false,
@@ -14,3 +13,4 @@ export const getDefaultLikesPlaylist = (
     createdAt: new Date(),
   };
 };
+

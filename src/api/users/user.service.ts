@@ -60,13 +60,16 @@ export class UserService {
     id: string,
     userData: Partial<IUserDTO>
   ): Promise<IUserDTO | null> {
-    const user = await prisma.user.update({
+    console.log("userData:", userData)
+    const user:IUserDTO = await prisma.user.update({
+      relationLoadStrategy: "join",
       where: {
         id: id,
       },
       data: userData,
     });
 
+    delete user.password;
     return user;
   }
   async remove(id: string): Promise<boolean> {

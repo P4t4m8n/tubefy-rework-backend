@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { AsyncLocalStorage } from "async_hooks";
-import {  IUserDetailed } from "../api/users/user.model";
+import { IUserDetailed } from "../api/users/user.model";
 import { authService } from "../api/auth/auth.service";
 
 export interface AsyncStorageData {
@@ -31,7 +31,7 @@ export async function setupAsyncLocalStorage(
     if (loggedinUser) {
       const alsStore = asyncLocalStorage.getStore();
       if (alsStore) {
-        alsStore.loggedinUser = loggedinUser;
+        alsStore.loggedinUser = loggedinUser as IUserDetailed;
       }
     }
 
