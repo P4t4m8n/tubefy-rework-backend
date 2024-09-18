@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "LocationIP" ALTER COLUMN "countryCode" SET DATA TYPE TEXT,
+ALTER COLUMN "countryName" SET DATA TYPE TEXT;

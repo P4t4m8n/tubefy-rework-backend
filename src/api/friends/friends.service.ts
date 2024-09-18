@@ -5,7 +5,8 @@ import { IUser } from "../users/user.model";
 export class FriendService {
   async query(
     userId: string,
-    status: FriendStatus = "ACCEPTED"
+    status: FriendStatus = "ACCEPTED",
+    take?: number
   ): Promise<IFriend[]> {
     try {
       const friends = await prisma.friend.findMany({
@@ -24,6 +25,7 @@ export class FriendService {
             },
           },
         },
+        take:take||99999
       });
       if (!friends) {
         return [];

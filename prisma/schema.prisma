@@ -86,6 +86,11 @@ enum PlaylistType {
   NEW_WAVE
   EMPTY
   LIKED_SONGS
+  LOCAL_MUSIC
+  OTHER
+  POPLER
+  CHARTS
+  DECADE
 }
 
 enum ItemType {
@@ -156,6 +161,7 @@ model Playlist {
   isPublic       Boolean         @default(false)
   imgUrl         String          @default("")
   createdAt      DateTime        @default(now())
+  originCountry  String          @default("US")
   itemType       ItemType        @default(PLAYLIST)
   description    String?
   genres         String[]        @default(["OTHER"])
@@ -241,4 +247,12 @@ model Notification {
   playlist   Playlist?        @relation(fields: [playlistId], references: [id])
   song       Song?            @relation(fields: [songId], references: [id])
   friend     Friend?          @relation(fields: [friendId], references: [id])
+}
+
+model LocationIP {
+  id          String @id @default(uuid())
+  startIp     String @db.Inet
+  endIp       String @db.Inet
+  countryCode String
+  countryName String
 }

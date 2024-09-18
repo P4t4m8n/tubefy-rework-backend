@@ -37,7 +37,7 @@ export class SongService {
       isLikedByUser: false,
       addedBy: user,
       genres: song.genres as Genres[],
-      itemType:"SONG",
+      itemType: "SONG",
     }));
   }
   async query(songFilter: ISongFilter, userId?: string): Promise<ISong[]> {
@@ -179,4 +179,3 @@ type songData = {
     id: string;
   }[];
 };
-

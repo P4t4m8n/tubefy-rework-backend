@@ -60,7 +60,6 @@ export class UserService {
     id: string,
     userData: Partial<IUserDTO>
   ): Promise<IUserDTO | null> {
-    console.log("userData:", userData)
     const user:IUserDTO = await prisma.user.update({
       relationLoadStrategy: "join",
       where: {

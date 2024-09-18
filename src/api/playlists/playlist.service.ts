@@ -4,6 +4,7 @@ import {
   IPlaylistDTO,
   TPlaylistType,
   IPlaylistShare,
+  IPlaylistsGroup,
 } from "./playlist.model";
 import { IUser } from "../users/user.model";
 import { ISong } from "../song/song.model";
@@ -13,6 +14,7 @@ import { songService } from "../song/song.service";
 import { playlistShareSqlLogic } from "./playlist.SqlLogic";
 import { IShareSelectSqlLogic } from "./sqlLogic.model";
 import { ShareStatus } from "@prisma/client";
+import { IFriend } from "../friends/friends.model";
 
 class PlaylistService {
   #shareSelectSqlLogic: IShareSelectSqlLogic;
@@ -155,6 +157,227 @@ class PlaylistService {
     const playlists = this.mapPlaylistDataToPlaylist(playlistsData);
 
     return playlists;
+  }
+
+  async queryDefaultPlaylists(
+    playlistTypes: TPlaylistType[],
+    friends: IFriend[],
+    country: string,
+    userId?: string
+  ): Promise<IPlaylistsGroup[]> {
+    const playlistsByTypePromises = playlistTypes.map((type) =>
+      prisma.playlist.findMany({
+        relationLoadStrategy: "join",
+        select: {
+          id: true,
+          name: true,
+          imgUrl: true,
+          isPublic: true,
+          createdAt: true,
+          types: true,
+          genres: true,
+          description: true,
+          owner: {
+            select: {
+              id: true,
+              imgUrl: true,
+              username: true,
+            },
+          },
+          playlistSongs: {
+            select: {
+              song: {
+                select: {
+                  id: true,
+                  name: true,
+                  artist: true,
+                  imgUrl: true,
+                  duration: true,
+                  genres: true,
+                  youtubeId: true,
+                  addedAt: true,
+                  addedBy: {
+                    select: {
+                      id: true,
+                      imgUrl: true,
+                      username: true,
+                    },
+                  },
+                  songLikes: {
+                    where: {
+                      userId: userId,
+                    },
+                    select: {
+                      id: true,
+                      userId: true,
+                      songId: true,
+                    },
+                  },
+                },
+              },
+            },
+          },
+          playlistLikes: {
+            select: {
+              userId: true,
+            },
+          },
+        },
+        where: {
+          types: {
+            has: type,
+          },
+        },
+      })
+    );
+
+    const localPlaylistsPromise = prisma.playlist.findMany({
+      relationLoadStrategy: "join",
+      select: {
+        id: true,
+        name: true,
+        imgUrl: true,
+        isPublic: true,
+        createdAt: true,
+        types: true,
+        genres: true,
+        description: true,
+        owner: {
+          select: {
+            id: true,
+            imgUrl: true,
+            username: true,
+          },
+        },
+        playlistSongs: {
+          select: {
+            song: {
+              select: {
+                id: true,
+                name: true,
+                artist: true,
+                imgUrl: true,
+                duration: true,
+                genres: true,
+                youtubeId: true,
+                addedAt: true,
+                addedBy: {
+                  select: {
+                    id: true,
+                    imgUrl: true,
+                    username: true,
+                  },
+                },
+                songLikes: {
+                  where: {
+                    userId: userId,
+                  },
+                  select: {
+                    id: true,
+                    userId: true,
+                    songId: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+        playlistLikes: {
+          select: {
+            userId: true,
+          },
+        },
+      },
+      where: {
+        originCountry: country,
+      },
+      take: 6,
+    });
+
+    const friendsPLaylistPromises = friends.map((friend) =>
+      prisma.playlist.findMany({
+        relationLoadStrategy: "join",
+        select: {
+          id: true,
+          name: true,
+          imgUrl: true,
+          isPublic: true,
+          createdAt: true,
+          types: true,
+          genres: true,
+          description: true,
+          owner: {
+            select: {
+              id: true,
+              imgUrl: true,
+              username: true,
+            },
+          },
+          playlistSongs: {
+            select: {
+              song: {
+                select: {
+                  id: true,
+                  name: true,
+                  artist: true,
+                  imgUrl: true,
+                  duration: true,
+                  genres: true,
+                  youtubeId: true,
+                  addedAt: true,
+                  addedBy: {
+                    select: {
+                      id: true,
+                      imgUrl: true,
+                      username: true,
+                    },
+                  },
+                  songLikes: {
+                    where: {
+                      userId: userId,
+                    },
+                    select: {
+                      id: true,
+                      userId: true,
+                      songId: true,
+                    },
+                  },
+                },
+              },
+            },
+          },
+          playlistLikes: {
+            select: {
+              userId: true,
+            },
+          },
+        },
+        where: {
+          ownerId: friend.id,
+        },
+        take: 6,
+      })
+    );
+
+    const [playlistsByTypeArr, localPlaylists, friendsPlaylistsArr] =
+      await Promise.all([
+        Promise.all(playlistsByTypePromises),
+        localPlaylistsPromise,
+        Promise.all(friendsPLaylistPromises),
+      ]);
+
+    const playlistsByType: TPlaylistData[] = playlistsByTypeArr.flat();
+    const friendsPlaylists: TPlaylistData[] = friendsPlaylistsArr.flat();
+
+    const playlists = this.mapPlaylistDataToPlaylist([
+      ...playlistsByType,
+      ...friendsPlaylists,
+      ...localPlaylists,
+    ]);
+
+    const playlistsGroup = this.#playlistsToPlaylistsGroup(playlists);
+
+    return playlistsGroup;
   }
 
   async update(
@@ -645,6 +868,24 @@ class PlaylistService {
 
     return queryFilters;
   }
+
+  #playlistsToPlaylistsGroup(playlists: IPlaylist[]): IPlaylistsGroup[] {
+    const playlistMap = new Map<TPlaylistType | string, IPlaylist[]>();
+
+    playlists.forEach((playlist) => {
+      if (!playlistMap.has(playlist.types[0])) {
+        playlistMap.set(playlist.types[0], []);
+      }
+      playlistMap.get(playlist.types[0])!.push(playlist);
+    });
+
+    const playlistObjects: IPlaylistsGroup[] = [];
+    playlistMap.forEach((playlists, type) => {
+      playlistObjects.push({ type, playlists });
+    });
+
+    return playlistObjects;
+  }
 }
 
 export const playlistService = new PlaylistService();
@@ -665,8 +906,8 @@ type TPlaylistData = {
     username: string;
   };
   playlistSongs: {
-    id: string;
-    songId: string;
+    id?: string;
+    songId?: string;
     song: {
       id: string;
       name: string;

@@ -14,6 +14,7 @@ export interface IPlaylistDTO {
   createdAt: Date;
   id?: string;
   duration?: string;
+  originCountry?: string;
 }
 export interface IPlaylistSmall extends IItemType {
   id: string;
@@ -28,7 +29,7 @@ export interface IPlaylist extends IPlaylistSmall {
   types: TPlaylistType[];
   songs: ISong[];
   genres: Genres[];
-
+  originCountry?: string;
   isLikedByUser?: boolean;
 }
 export interface IPlaylistFilters {
@@ -42,23 +43,37 @@ export interface IPlaylistFilters {
   isLikedByUser?: boolean;
 }
 
-export type TPlaylistType =
-  | "New Music"
-  | "Daily mix"
-  | "Chill"
-  | "Workout"
-  | "Party"
-  | "Focus"
-  | "Sleep"
-  | "Travel"
-  | "Kids"
-  | "Cooking"
-  | "Wellness"
-  | "Study"
-  | "Chill-out "
-  | "New Wave"
-  | ""
-  | "Liked Songs";
+export interface IPlaylistsGroup {
+  type: TPlaylistType | string;
+  playlists: IPlaylist[];
+}
+
+export const PLAYLISTS_TYPES = [
+  "New Music",
+  "Daily mix",
+  "Chill",
+  "Workout",
+  "Party",
+  "Focus",
+  "Sleep",
+  "Travel",
+  "Kids",
+  "Cooking",
+  "Wellness",
+  "Study",
+  "Chill-out ",
+  "New Wave",
+  "",
+  "Liked Songs",
+  "Local music",
+  "Other",
+  "Popular",
+  "Charts",
+  "Decade",
+  "Mood",
+] as const;
+
+export type TPlaylistType = typeof PLAYLISTS_TYPES[number];
 
 export interface IPlaylistShare {
   playlistId: string;

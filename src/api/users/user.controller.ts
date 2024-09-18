@@ -76,7 +76,6 @@ export const updateUser = async (req: Request, res: Response) => {
 
     const id = store?.loggedinUser?.id;
     const userData: IUserDTO = req.body;
-    console.log("userData:", userData);
 
     if (!id) {
       return res.status(400).json({ message: "User ID is required" });

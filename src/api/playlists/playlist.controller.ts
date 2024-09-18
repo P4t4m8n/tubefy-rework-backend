@@ -12,6 +12,9 @@ import {
   userSharedPlaylistWithYou,
   youSharedPlaylist,
 } from "../notification/notificationText";
+import { findCountryByIp } from "../../services/location.service";
+import { fetchUserCountry, getRandomPlaylistTypes } from "../../services/util";
+import { friendService } from "../friends/friends.service";
 
 export const createPlaylist = async (req: Request, res: Response) => {
   try {
@@ -74,6 +77,7 @@ export const getPlaylistById = async (req: Request, res: Response) => {
 };
 
 export const getPlaylists = async (req: Request, res: Response) => {
+  console.log("getPlaylists");
   try {
     const filter: IPlaylistFilters = {
       name: (req.query.name as string) || "",
@@ -95,6 +99,33 @@ export const getPlaylists = async (req: Request, res: Response) => {
     return res
       .status(500)
       .json({ message: "Failed to retrieve playlists", error });
+  }
+};
+
+export const getDefaultPlaylists = async (req: Request, res: Response) => {
+  try {
+    const ip = req.headers["x-forwarded-for"];
+
+    const country = fetchUserCountry(ip as string);
+
+    const store = asyncLocalStorage.getStore();
+    const user = store?.loggedinUser;
+
+    let friends = [];
+
+    if (user && user.id) {
+      friends = await friendService.query(user.id, "ACCEPTED", 5);
+    }
+
+    const playlistsTypes = getRandomPlaylistTypes(5);
+
+    
+    res.status(200).json({ message: "Success" });
+  } catch (error) {
+    loggerService.error("Failed to retrieve default playlist", error as Error);
+    return res
+      .status(500)
+      .json({ message: "Failed to retrieve default playlist", error });
   }
 };
 
