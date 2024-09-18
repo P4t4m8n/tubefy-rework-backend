@@ -7,3 +7,5 @@ logs/
 
 .vscode/
 prisma/seed.ts
+locationData/country.json
+locationData/IP2LOCATION-LITE-DB1.IPV6.CSV
