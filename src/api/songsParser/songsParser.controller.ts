@@ -3,7 +3,7 @@ import { songParserService } from "./songsParser.service";
 import { songsJson } from "../../../prisma/demo-data/consts";
 import { ISong } from "../song/song.model";
 import { SongService } from "../song/song.service";
-import { Genres } from "../song/song.enum";
+import { EGenres } from "../song/song.enum";
 
 const songsParserServices = new songParserService();
 const songsServices = new SongService();
@@ -16,7 +16,7 @@ export const processSongsInBatch = async () => {
       name: "Respect",
       artist: "ArethaFrankl...",
       thumbnail: "https://i.ytimg.com/vi/6FOUqQt3Kg0/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "02:30",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -33,7 +33,7 @@ export const processSongsInBatch = async () => {
       name: "Fly Me To TheMoon",
       artist: "Frank Sinatra",
       thumbnail: "https://i.ytimg.com/vi/ZEcqHA7dbwM/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "02:28",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -50,7 +50,7 @@ export const processSongsInBatch = async () => {
       name: "My Way",
       artist: "Frank Sinatra",
       thumbnail: "https://i.ytimg.com/vi/qQzdAsjWGPg/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "04:37",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -67,7 +67,7 @@ export const processSongsInBatch = async () => {
       name: "39sLife",
       artist: "That",
       thumbnail: "https://i.ytimg.com/vi/TnlPtaPxXfc/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "03:08",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -84,7 +84,7 @@ export const processSongsInBatch = async () => {
       name: "Halo",
       artist: "Beyonce",
       thumbnail: "https://i.ytimg.com/vi/bnVUHWCynig/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "03:45",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -101,7 +101,7 @@ export const processSongsInBatch = async () => {
       name: "ampTheWailer...",
       artist: "BobMarley",
       thumbnail: "https://i.ytimg.com/vi/HNBCVM4KbUM/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "03:13",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -118,7 +118,7 @@ export const processSongsInBatch = async () => {
       name: "IsThisLove",
       artist: "BobMarley",
       thumbnail: "https://i.ytimg.com/vi/69RdQFDuYPI/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "03:54",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -135,7 +135,7 @@ export const processSongsInBatch = async () => {
       name: "ampTheWailer...",
       artist: "BobMarley",
       thumbnail: "https://i.ytimg.com/vi/uMUQMSXLlHM/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "02:43",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -152,7 +152,7 @@ export const processSongsInBatch = async () => {
       name: "Dreams",
       artist: "FleetwoodMac",
       thumbnail: "https://i.ytimg.com/vi/Y3ywicffOj4/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "04:24",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -169,7 +169,7 @@ export const processSongsInBatch = async () => {
       name: "DCBackInBlac...",
       artist: "AC",
       thumbnail: "https://i.ytimg.com/vi/pAgnJDJN4VA/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "04:14",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -186,7 +186,7 @@ export const processSongsInBatch = async () => {
       name: "DCHighwaytoH...",
       artist: "AC",
       thumbnail: "https://i.ytimg.com/vi/gEPmA3USJdI/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "04:45",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -203,7 +203,7 @@ export const processSongsInBatch = async () => {
       name: "DCHighwaytoH...",
       artist: "AC",
       thumbnail: "https://i.ytimg.com/vi/l482T0yNkeo/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "03:28",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -220,7 +220,7 @@ export const processSongsInBatch = async () => {
       name: "Good Vibrations",
       artist: "TheBeachBoys",
       thumbnail: "https://i.ytimg.com/vi/apBWI6xrbLY/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "03:35",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -237,7 +237,7 @@ export const processSongsInBatch = async () => {
       name: "YouCantAlway...",
       artist: "TheRollingSt...",
       thumbnail: "https://i.ytimg.com/vi/Ef9QnZVpVd8/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "04:29",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -254,7 +254,7 @@ export const processSongsInBatch = async () => {
       name: "I39mStillSta...",
       artist: "EltonJohn",
       thumbnail: "https://i.ytimg.com/vi/ZHwVBirqD2s/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "03:03",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",
@@ -271,7 +271,7 @@ export const processSongsInBatch = async () => {
       name: "Genres.OTHERhipLe...",
       artist: "LedZeppelin",
       thumbnail: "https://i.ytimg.com/vi/FDMq9ie0ih0/mqdefault.jpg",
-      genres: [Genres.OTHER],
+      genres: [EGenres.OTHER],
       duration: "02:15:15",
       addBy: {
         id: "12b3c1cb-8f63-42a9-bed2-ef0dbf8adcd6",

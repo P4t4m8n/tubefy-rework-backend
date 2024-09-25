@@ -1,20 +1,24 @@
 import { Request, Response } from "express";
-import { IPlaylist, IPlaylistDTO, IPlaylistFilters } from "./playlist.model";
+import {
+  IPlaylistDTO,
+  IPlaylistFilters,
+  TPlaylistType,
+} from "./playlist.model";
 import { asyncLocalStorage } from "../../middlewares/setupALs.middleware";
 import { loggerService } from "../../services/logger.service";
-import { Genres } from "../song/song.enum";
+import { EGenres } from "../song/song.enum";
 import { songService } from "../song/song.service";
 import { playlistService } from "./playlist.service";
 import { emitToUser } from "../../services/socket.service";
-import { TSocketEvent } from "../../models/socket.model";
 import { notificationService } from "../notification/notification.service";
 import {
   userSharedPlaylistWithYou,
   youSharedPlaylist,
 } from "../notification/notificationText";
 import { findCountryByIp } from "../../services/location.service";
-import { fetchUserCountry, getRandomPlaylistTypes } from "../../services/util";
+import { fetchUserCountry } from "../../services/util";
 import { friendService } from "../friends/friends.service";
+import { IFriend } from "../friends/friends.model";
 
 export const createPlaylist = async (req: Request, res: Response) => {
   try {
@@ -56,7 +60,7 @@ export const getPlaylistById = async (req: Request, res: Response) => {
       return res.status(404).json({ message: "Playlist not found" });
     }
 
-    if (playlist.types.includes("Liked Songs")) {
+    if (playlist.type === "Liked Songs") {
       if (!playlist.isPublic) {
         if (playlist.owner.id !== userId) {
           return res
@@ -85,7 +89,7 @@ export const getPlaylists = async (req: Request, res: Response) => {
       limit: req?.query?.limit ? +req.query.limit : 100,
       ownerId: (req.query.ownerId as string) || "",
       artist: (req.query.artist as string) || "",
-      genres: (req.query.genres as Genres[]) || [],
+      genres: (req.query.genres as EGenres[]) || [],
       isLikedByUser: !!req.query.isLikedByUser || false,
     };
 
@@ -106,21 +110,29 @@ export const getDefaultPlaylists = async (req: Request, res: Response) => {
   try {
     const ip = req.headers["x-forwarded-for"];
 
-    const country = fetchUserCountry(ip as string);
+    const country = await fetchUserCountry(ip as string);
 
     const store = asyncLocalStorage.getStore();
     const user = store?.loggedinUser;
 
-    let friends = [];
+    let friends: IFriend[] = [];
+    let randomPlaylistAmount = 7;
 
     if (user && user.id) {
       friends = await friendService.query(user.id, "ACCEPTED", 5);
+      randomPlaylistAmount = 6;
     }
+    const playlistsTypes = getRandomPlaylistTypes(randomPlaylistAmount);
 
-    const playlistsTypes = getRandomPlaylistTypes(5);
+    const playlists = await playlistService.queryDefaultPlaylists(
+      playlistsTypes,
+      friends,
+      country,
+      user?.id
+    );
+    console.log("playlists:", playlists)
 
-    
-    res.status(200).json({ message: "Success" });
+    res.status(200).send(playlists);
   } catch (error) {
     loggerService.error("Failed to retrieve default playlist", error as Error);
     return res
@@ -533,4 +545,28 @@ export const rejectSharePlaylist = async (req: Request, res: Response) => {
   } catch (error) {
     return res.status(500).json({ message: "Failed to approve share", error });
   }
+};
+
+const getRandomPlaylistTypes = (count: number): TPlaylistType[] => {
+  const types: TPlaylistType[] = [
+    "New Music",
+    "Chill",
+    "Workout",
+    "Party",
+    "Focus",
+    "Study",
+    "Popular",
+    "Charts",
+    "Decades",
+    "Mood",
+  ];
+
+  const randomTypes: TPlaylistType[] = [];
+  for (let i = 0; i < count; i++) {
+    const randomIndex = Math.floor(Math.random() * types.length);
+    randomTypes.push(types[randomIndex]);
+    types.splice(randomIndex, 1);
+  }
+
+  return randomTypes;
 };

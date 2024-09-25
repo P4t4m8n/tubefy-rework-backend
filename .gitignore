@@ -9,3 +9,231 @@ logs/
 prisma/seed.ts
 locationData/country.json
 locationData/IP2LOCATION-LITE-DB1.IPV6.CSV
+prisma/demo-data/db-playlists.json
+prisma/demo-data/db.json
+prisma/demo-data/songs.json
+z/aaa.json
+z/db-2024-09-18T12-42-45.969Z.json
+z/db-2024-09-18T12-46-57.800Z.json
+z/db-2024-09-18T14-15-43.881Z.json
+z/db-2024-09-18T19-22-08.657Z.json
+z/db-2024-09-18T19-23-42.395Z.json
+z/db-2024-09-18T19-25-38.866Z.json
+z/db-2024-09-18T19-27-00.571Z.json
+z/db-2024-09-19T13-25-10.116Z.json
+z/db-2024-09-19T13-41-56.707Z.json
+z/db-2024-09-19T15-50-57.005Z.json
+z/db-2024-09-19T15-52-15.608Z.json
+z/db-2024-09-19T15-54-06.671Z.json
+z/db-test-playlist.json
+prisma/demo-data/songsJsons/db-2Pac.json
+prisma/demo-data/songsJsons/db-ABBA.json
+prisma/demo-data/songsJsons/db-Above & Beyond.json
+prisma/demo-data/songsJsons/db-Adele.json
+prisma/demo-data/songsJsons/db-Aerosmith.json
+prisma/demo-data/songsJsons/db-Al Green.json
+prisma/demo-data/songsJsons/db-Alan Walker.json
+prisma/demo-data/songsJsons/db-Alicia Keys.json
+prisma/demo-data/songsJsons/db-Arcade Fire.json
+prisma/demo-data/songsJsons/db-Arctic Monkeys.json
+prisma/demo-data/songsJsons/db-Aretha Franklin.json
+prisma/demo-data/songsJsons/db-Ariana Grande.json
+prisma/demo-data/songsJsons/db-Armin van Buuren.json
+prisma/demo-data/songsJsons/db-Avicii.json
+prisma/demo-data/songsJsons/db-Barry White.json
+prisma/demo-data/songsJsons/db-Bastille.json
+prisma/demo-data/songsJsons/db-Beck.json
+prisma/demo-data/songsJsons/db-Beyoncé.json
+prisma/demo-data/songsJsons/db-Bill Withers.json
+prisma/demo-data/songsJsons/db-Billie Eilish.json
+prisma/demo-data/songsJsons/db-Billie Joe Armstrong.json
+prisma/demo-data/songsJsons/db-Blink-182.json
+prisma/demo-data/songsJsons/db-Bob Dylan.json
+prisma/demo-data/songsJsons/db-Bob Marley.json
+prisma/demo-data/songsJsons/db-Bon Iver.json
+prisma/demo-data/songsJsons/db-Bon Jovi.json
+prisma/demo-data/songsJsons/db-Bruce Springsteen.json
+prisma/demo-data/songsJsons/db-Bruno Mars.json
+prisma/demo-data/songsJsons/db-Calvin Harris.json
+prisma/demo-data/songsJsons/db-Camila Cabello.json
+prisma/demo-data/songsJsons/db-Car Seat Headrest.json
+prisma/demo-data/songsJsons/db-Cardi B.json
+prisma/demo-data/songsJsons/db-Childish Gambino.json
+prisma/demo-data/songsJsons/db-Chris Brown.json
+prisma/demo-data/songsJsons/db-Chvrches.json
+prisma/demo-data/songsJsons/db-Coldplay.json
+prisma/demo-data/songsJsons/db-Crystal Castles.json
+prisma/demo-data/songsJsons/db-Curtis Mayfield.json
+prisma/demo-data/songsJsons/db-Daft Punk.json
+prisma/demo-data/songsJsons/db-David Bowie.json
+prisma/demo-data/songsJsons/db-David Guetta.json
+prisma/demo-data/songsJsons/db-Deadmau5.json
+prisma/demo-data/songsJsons/db-Deftones.json
+prisma/demo-data/songsJsons/db-Demi Lovato.json
+prisma/demo-data/songsJsons/db-Depeche Mode.json
+prisma/demo-data/songsJsons/db-Diana Ross.json
+prisma/demo-data/songsJsons/db-Diplo.json
+prisma/demo-data/songsJsons/db-Disclosure.json
+prisma/demo-data/songsJsons/db-DJ Khaled.json
+prisma/demo-data/songsJsons/db-Doja Cat.json
+prisma/demo-data/songsJsons/db-Drake.json
+prisma/demo-data/songsJsons/db-Dua Lipa.json
+prisma/demo-data/songsJsons/db-Earth, Wind & Fire.json
+prisma/demo-data/songsJsons/db-Ed Sheeran.json
+prisma/demo-data/songsJsons/db-Ellie Goulding.json
+prisma/demo-data/songsJsons/db-Elton John.json
+prisma/demo-data/songsJsons/db-Elvis Presley.json
+prisma/demo-data/songsJsons/db-Eminem.json
+prisma/demo-data/songsJsons/db-Eric Prydz.json
+prisma/demo-data/songsJsons/db-Faithless.json
+prisma/demo-data/songsJsons/db-Fatboy Slim.json
+prisma/demo-data/songsJsons/db-Father John Misty.json
+prisma/demo-data/songsJsons/db-Fleetwood Mac.json
+prisma/demo-data/songsJsons/db-Florence + The Machine.json
+prisma/demo-data/songsJsons/db-Foo Fighters.json
+prisma/demo-data/songsJsons/db-Foster The People.json
+prisma/demo-data/songsJsons/db-Frank Ocean.json
+prisma/demo-data/songsJsons/db-Frank Sinatra.json
+prisma/demo-data/songsJsons/db-Future.json
+prisma/demo-data/songsJsons/db-George Michael.json
+prisma/demo-data/songsJsons/db-Gladys Knight & The Pips.json
+prisma/demo-data/songsJsons/db-Green Day.json
+prisma/demo-data/songsJsons/db-Grimes.json
+prisma/demo-data/songsJsons/db-Guns N’ Roses.json
+prisma/demo-data/songsJsons/db-Halsey.json
+prisma/demo-data/songsJsons/db-Harry Styles.json
+prisma/demo-data/songsJsons/db-Imagine Dragons.json
+prisma/demo-data/songsJsons/db-Isaac Hayes.json
+prisma/demo-data/songsJsons/db-J. Cole.json
+prisma/demo-data/songsJsons/db-Jack White.json
+prisma/demo-data/songsJsons/db-James Brown.json
+prisma/demo-data/songsJsons/db-Janet Jackson.json
+prisma/demo-data/songsJsons/db-Jay-Z.json
+prisma/demo-data/songsJsons/db-Jessie J.json
+prisma/demo-data/songsJsons/db-Jimi Hendrix.json
+prisma/demo-data/songsJsons/db-John Lennon.json
+prisma/demo-data/songsJsons/db-Justice.json
+prisma/demo-data/songsJsons/db-Justin Bieber.json
+prisma/demo-data/songsJsons/db-Kacey Musgraves.json
+prisma/demo-data/songsJsons/db-Kanye West.json
+prisma/demo-data/songsJsons/db-Katy Perry.json
+prisma/demo-data/songsJsons/db-Kendrick Lamar.json
+prisma/demo-data/songsJsons/db-Kings of Leon.json
+prisma/demo-data/songsJsons/db-Kiss.json
+prisma/demo-data/songsJsons/db-Kygo.json
+prisma/demo-data/songsJsons/db-Lady Gaga.json
+prisma/demo-data/songsJsons/db-Lana Del Rey.json
+prisma/demo-data/songsJsons/db-LCD Soundsystem.json
+prisma/demo-data/songsJsons/db-Led Zeppelin.json
+prisma/demo-data/songsJsons/db-Lil Baby.json
+prisma/demo-data/songsJsons/db-Lil Nas X.json
+prisma/demo-data/songsJsons/db-Lil Uzi Vert.json
+prisma/demo-data/songsJsons/db-Lil Wayne.json
+prisma/demo-data/songsJsons/db-Linkin Park.json
+prisma/demo-data/songsJsons/db-Lorde.json
+prisma/demo-data/songsJsons/db-Mac DeMarco.json
+prisma/demo-data/songsJsons/db-Madonna.json
+prisma/demo-data/songsJsons/db-Major Lazer.json
+prisma/demo-data/songsJsons/db-Maroon 5.json
+prisma/demo-data/songsJsons/db-Marshmello.json
+prisma/demo-data/songsJsons/db-Martin Garrix.json
+prisma/demo-data/songsJsons/db-Marvin Gaye.json
+prisma/demo-data/songsJsons/db-Megan Thee Stallion.json
+prisma/demo-data/songsJsons/db-Metallica.json
+prisma/demo-data/songsJsons/db-MGMT.json
+prisma/demo-data/songsJsons/db-Michael Jackson.json
+prisma/demo-data/songsJsons/db-Miley Cyrus.json
+prisma/demo-data/songsJsons/db-Moby.json
+prisma/demo-data/songsJsons/db-Mumford & Sons.json
+prisma/demo-data/songsJsons/db-Nas.json
+prisma/demo-data/songsJsons/db-Nicki Minaj.json
+prisma/demo-data/songsJsons/db-Nirvana.json
+prisma/demo-data/songsJsons/db-Oasis.json
+prisma/demo-data/songsJsons/db-Of Monsters and Men.json
+prisma/demo-data/songsJsons/db-Otis Redding.json
+prisma/demo-data/songsJsons/db-Panic! At The Disco.json
+prisma/demo-data/songsJsons/db-Passion Pit.json
+prisma/demo-data/songsJsons/db-Patti LaBelle.json
+prisma/demo-data/songsJsons/db-Paul Oakenfold.json
+prisma/demo-data/songsJsons/db-Paul van Dyk.json
+prisma/demo-data/songsJsons/db-Pearl Jam.json
+prisma/demo-data/songsJsons/db-Phil Collins.json
+prisma/demo-data/songsJsons/db-Phoenix.json
+prisma/demo-data/songsJsons/db-Pink Floyd.json
+prisma/demo-data/songsJsons/db-Pink.json
+prisma/demo-data/songsJsons/db-Portugal. The Man.json
+prisma/demo-data/songsJsons/db-Post Malone.json
+prisma/demo-data/songsJsons/db-Prince.json
+prisma/demo-data/songsJsons/db-Purity Ring.json
+prisma/demo-data/songsJsons/db-Queen.json
+prisma/demo-data/songsJsons/db-Queens of the Stone Age.json
+prisma/demo-data/songsJsons/db-Radiohead.json
+prisma/demo-data/songsJsons/db-Rage Against The Machine.json
+prisma/demo-data/songsJsons/db-Ray Charles.json
+prisma/demo-data/songsJsons/db-Red Hot Chili Peppers.json
+prisma/demo-data/songsJsons/db-Rihanna.json
+prisma/demo-data/songsJsons/db-Sam Cooke.json
+prisma/demo-data/songsJsons/db-Sam Smith.json
+prisma/demo-data/songsJsons/db-Shakira.json
+prisma/demo-data/songsJsons/db-Shawn Mendes.json
+prisma/demo-data/songsJsons/db-Sia.json
+prisma/demo-data/songsJsons/db-Simon & Garfunkel.json
+prisma/demo-data/songsJsons/db-Smokey Robinson.json
+prisma/demo-data/songsJsons/db-Snoop Dogg.json
+prisma/demo-data/songsJsons/db-Steve Aoki.json
+prisma/demo-data/songsJsons/db-Stevie Nicks.json
+prisma/demo-data/songsJsons/db-Stevie Wonder.json
+prisma/demo-data/songsJsons/db-Sufjan Stevens.json
+prisma/demo-data/songsJsons/db-Swedish House Mafia.json
+prisma/demo-data/songsJsons/db-Tame Impala.json
+prisma/demo-data/songsJsons/db-Taylor Swift.json
+prisma/demo-data/songsJsons/db-The 1975.json
+prisma/demo-data/songsJsons/db-The Beach Boys.json
+prisma/demo-data/songsJsons/db-The Beatles.json
+prisma/demo-data/songsJsons/db-The Black Keys.json
+prisma/demo-data/songsJsons/db-The Chainsmokers.json
+prisma/demo-data/songsJsons/db-The Chemical Brothers.json
+prisma/demo-data/songsJsons/db-The Clash.json
+prisma/demo-data/songsJsons/db-The Commodores.json
+prisma/demo-data/songsJsons/db-The Doors.json
+prisma/demo-data/songsJsons/db-The Eagles.json
+prisma/demo-data/songsJsons/db-The Flaming Lips.json
+prisma/demo-data/songsJsons/db-The Four Tops.json
+prisma/demo-data/songsJsons/db-The Isley Brothers.json
+prisma/demo-data/songsJsons/db-The Jackson 5.json
+prisma/demo-data/songsJsons/db-The Killers.json
+prisma/demo-data/songsJsons/db-The Lumineers.json
+prisma/demo-data/songsJsons/db-The National.json
+prisma/demo-data/songsJsons/db-The Neighbourhood.json
+prisma/demo-data/songsJsons/db-The Notorious B.I.G..json
+prisma/demo-data/songsJsons/db-The O’Jays.json
+prisma/demo-data/songsJsons/db-The Police.json
+prisma/demo-data/songsJsons/db-The Prodigy.json
+prisma/demo-data/songsJsons/db-The Rolling Stones.json
+prisma/demo-data/songsJsons/db-The Smashing Pumpkins.json
+prisma/demo-data/songsJsons/db-The Strokes.json
+prisma/demo-data/songsJsons/db-The Supremes.json
+prisma/demo-data/songsJsons/db-The Temptations.json
+prisma/demo-data/songsJsons/db-The War on Drugs.json
+prisma/demo-data/songsJsons/db-The Weeknd.json
+prisma/demo-data/songsJsons/db-The White Stripes.json
+prisma/demo-data/songsJsons/db-The Who.json
+prisma/demo-data/songsJsons/db-The XX.json
+prisma/demo-data/songsJsons/db-Tiesto.json
+prisma/demo-data/songsJsons/db-Tina Turner.json
+prisma/demo-data/songsJsons/db-Tove Lo.json
+prisma/demo-data/songsJsons/db-Travis Scott.json
+prisma/demo-data/songsJsons/db-Trippie Redd.json
+prisma/demo-data/songsJsons/db-Troye Sivan.json
+prisma/demo-data/songsJsons/db-Tupac Shakur.json
+prisma/demo-data/songsJsons/db-Twenty One Pilots.json
+prisma/demo-data/songsJsons/db-Tyler, The Creator.json
+prisma/demo-data/songsJsons/db-U2.json
+prisma/demo-data/songsJsons/db-Underworld.json
+prisma/demo-data/songsJsons/db-Usher.json
+prisma/demo-data/songsJsons/db-Vampire Weekend.json
+prisma/demo-data/songsJsons/db-Vance Joy.json
+prisma/demo-data/songsJsons/db-Whitney Houston.json
+prisma/demo-data/songsJsons/db-XXXTentacion.json
+prisma/demo-data/songsJsons/db-Zayn Malik.json
+prisma/demo-data/songsJsons/db-Zedd.json

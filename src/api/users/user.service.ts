@@ -60,7 +60,7 @@ export class UserService {
     id: string,
     userData: Partial<IUserDTO>
   ): Promise<IUserDTO | null> {
-    const user:IUserDTO = await prisma.user.update({
+    const user: IUserDTO = await prisma.user.update({
       relationLoadStrategy: "join",
       where: {
         id: id,
@@ -80,14 +80,35 @@ export class UserService {
 
     return true;
   }
+  // async query(filters: IUserFilters = {}): Promise<IUser[]> {
+  //   const users = await prisma.user.findMany({
+  //     where: {
+  //       OR: [
+  //         filters.email ? { email: filters.email } : undefined,
+  //         filters.username ? { username: filters.username } : undefined,
+  //       ].filter(Boolean) as any,
+  //     },
+  //     select: {
+  //       id: true,
+  //       imgUrl: true,
+  //       username: true,
+  //     },
+  //   });
+
+  //   return users;
+  // }
   async query(filters: IUserFilters = {}): Promise<IUser[]> {
+    const hasFilters = Object.keys(filters).length > 0;
+
     const users = await prisma.user.findMany({
-      where: {
-        OR: [
-          filters.email ? { email: filters.email } : undefined,
-          filters.username ? { username: filters.username } : undefined,
-        ].filter(Boolean) as any,
-      },
+      where: hasFilters
+        ? {
+            OR: [
+              filters.email ? { email: filters.email } : undefined,
+              filters.username ? { username: filters.username } : undefined,
+            ].filter(Boolean) as any,
+          }
+        : undefined, // No filters, return all users
       select: {
         id: true,
         imgUrl: true,
@@ -118,7 +139,7 @@ export class UserService {
             createdAt: true,
             description: true,
             genres: true,
-            types: true,
+            type: true,
             playlistLikes: {
               where: {
                 userId: owner.id,
@@ -192,7 +213,7 @@ export class UserService {
                 createdAt: true,
                 description: true,
                 genres: true,
-                types: true,
+                type: true,
                 playlistLikes: {
                   where: {
                     userId: owner.id,
@@ -326,7 +347,7 @@ export class UserService {
                 createdAt: true,
                 description: true,
                 genres: true,
-                types: true,
+                type: true,
                 playlistLikes: {
                   where: {
                     userId: owner.id,

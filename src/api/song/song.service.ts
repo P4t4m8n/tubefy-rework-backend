@@ -1,7 +1,8 @@
 import { ISong, ISongDTO, ISongFilter } from "./song.model";
-import { Genres } from "./song.enum";
+import { EGenres } from "./song.enum";
 import { IUser } from "../users/user.model";
 import { prisma } from "../../../prisma/prismaClient";
+import { TPlaylistType } from "../playlists/playlist.model";
 
 export class SongService {
   async create(songData: ISongDTO, user: IUser): Promise<ISong> {
@@ -13,31 +14,30 @@ export class SongService {
         artist: songData.artist,
         imgUrl: songData.imgUrl,
         duration: songData.duration,
-        genres: songData.genres as Genres[],
+        genres: songData.genres as EGenres[],
       },
     });
     return {
       ...song,
       isLikedByUser: false,
       addedBy: user,
-      genres: song.genres as Genres[],
+      genres: song.genres as EGenres[],
       itemType: "SONG",
+      playlistType: songData.playlistType || [],
     };
   }
   async createMany(data: ISongDTO[], user: IUser): Promise<ISong[]> {
     const songs = await prisma.song.createManyAndReturn({
-      data: data.map((song) => ({
-        ...song,
-        genres: song.genres as Genres[],
-      })),
+      data,
     });
 
     return songs.map((song) => ({
       ...song,
       isLikedByUser: false,
       addedBy: user,
-      genres: song.genres as Genres[],
+      genres: song.genres as EGenres[],
       itemType: "SONG",
+      playlistType: (song.playlistType as TPlaylistType[]) || [],
     }));
   }
   async query(songFilter: ISongFilter, userId?: string): Promise<ISong[]> {
@@ -109,6 +109,34 @@ export class SongService {
 
     return !!unlikeSongsCheck;
   }
+  async update(songDTO: ISongDTO, songId: string): Promise<ISong> {
+    const songData = await prisma.song.update({
+      where: {
+        id: songId,
+      },
+      data: {
+        name: songDTO.name,
+        artist: songDTO.artist,
+        genres: songDTO.genres as EGenres[],
+        duration: songDTO.duration,
+        imgUrl: songDTO.imgUrl,
+        youtubeId: songDTO.youtubeId,
+        playlistType: songDTO.playlistType,
+      },
+      include: {
+        addedBy: {
+          select: {
+            id: true,
+            imgUrl: true,
+            username: true,
+          },
+        },
+      },
+    });
+
+    const song = this.songDataToSong(songData);
+    return song;
+  }
   mapSongDataToSongs(songsData: songData[]): ISong[] {
     const songs = songsData.map((songData) => this.songDataToSong(songData));
     return songs;
@@ -118,12 +146,11 @@ export class SongService {
       ...songData,
       isLikedByUser: songData.songLikes ? songData.songLikes.length > 0 : true,
       addedBy: songData.addedBy,
-      genres: songData.genres as Genres[],
+      genres: songData.genres as EGenres[],
       itemType: "SONG",
     };
     return song;
   }
-
   async getLikedSongs(userId: string): Promise<ISong[]> {
     const likedSongsData = await prisma.songLike.findMany({
       where: {

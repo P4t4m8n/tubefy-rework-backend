@@ -22,3 +22,7 @@ export const playlistSmallSqlLogic = {
     itemType: true,
   },
 };
+
+export const playlistSqlLogic = {
+  
+}

@@ -1,6 +1,7 @@
 import { IItemType } from "../../models/app.model";
+import { TPlaylistType } from "../playlists/playlist.model";
 import { IUser } from "../users/user.model";
-import { Genres } from "./song.enum";
+import { EGenres } from "./song.enum";
 
 export interface ISongSmall extends IItemType {
   id: string;
@@ -9,31 +10,30 @@ export interface ISongSmall extends IItemType {
   imgUrl: string;
 }
 export interface ISong extends ISongSmall {
-  id: string;
-  youtubeId: string;
-  name: string;
-  imgUrl: string;
   isLikedByUser: boolean;
-  genres: Genres[];
+  genres: EGenres[];
   duration: string;
   artist: string;
   addedAt: Date;
   addedBy: IUser;
+  playlistType?: TPlaylistType[];
 }
 export interface ISongDTO {
-  youtubeId: string;
   name: string;
   artist: string;
-  imgUrl: string;
+  genres: EGenres[];
+  playlistType: TPlaylistType[];
   duration: string;
-  addedAt?: Date;
+  youtubeId: string;
+  imgUrl: string;
   addByUserId: string;
-  genres: Genres[];
+  originCountry?: string;
+  addedAt?: Date;
 }
 export interface ISongFilter {
   name?: string;
   artist?: string;
-  genres?: Genres[];
+  genres?: EGenres[];
   limit?: number;
   offset?: number;
   addByUserId?: string;

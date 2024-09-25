@@ -27,6 +27,7 @@ export async function setupAsyncLocalStorage(
     }
 
     const loggedinUser = await authService.validateToken(loginToken);
+    console.log("loginToken:", loginToken)
 
     if (loggedinUser) {
       const alsStore = asyncLocalStorage.getStore();

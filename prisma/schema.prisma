@@ -8,54 +8,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Genre {
-  POP
-  ROCK
-  JAZZ
-  BLUES
-  HIP_HOP
-  RAP
-  COUNTRY
-  CLASSICAL
-  FOLK
-  LATIN
-  METAL
-  REGGAE
-  SOUL
-  ELECTRONIC
-  DANCE
-  INDIE
-  ALTERNATIVE
-  PUNK
-  R_AND_B
-  FUNK
-  DISCO
-  TECHNO
-  HOUSE
-  TRANCE
-  DUBSTEP
-  DRUM_AND_BASS
-  AMBIENT
-  CHILLOUT
-  DOWNTEMPO
-  REGGAETON
-  SKA
-  GRUNGE
-  EMO
-  GOTHIC
-  HARDCORE
-  HARDSTYLE
-  INDUSTRIAL
-  NEW_WAVE
-  NOISE
-  PSYCHEDELIC
-  SYNTHPOP
-  TRAP
-  VAPORWAVE
-  WORLD
-  OTHER
-}
-
 enum FriendStatus {
   PENDING
   ACCEPTED
@@ -146,6 +98,8 @@ model Song {
   artist        String
   imgUrl        String
   duration      String
+  playlistType  String[]       @default(["OTHER"])
+  originCountry String         @default("United States")
   itemType      ItemType       @default(SONG)
   addedBy       User           @relation("SongAddedByUser", fields: [addByUserId], references: [id])
   genres        String[]       @default(["OTHER"])
@@ -165,7 +119,7 @@ model Playlist {
   itemType       ItemType        @default(PLAYLIST)
   description    String?
   genres         String[]        @default(["OTHER"])
-  types          String[]        @default(["EMPTY"])
+  type           String          @default("EMPTY")
   owner          User            @relation("PlaylistOwner", fields: [ownerId], references: [id], onDelete: Cascade)
   playlistSongs  PlaylistSong[]
   playlistLikes  PlaylistLike[]

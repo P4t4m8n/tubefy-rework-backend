@@ -9,7 +9,7 @@ import {
 import { IUser } from "../users/user.model";
 import { ISong } from "../song/song.model";
 import { prisma } from "../../../prisma/prismaClient";
-import { Genres } from "../song/song.enum";
+import { EGenres } from "../song/song.enum";
 import { songService } from "../song/song.service";
 import { playlistShareSqlLogic } from "./playlist.SqlLogic";
 import { IShareSelectSqlLogic } from "./sqlLogic.model";
@@ -22,10 +22,10 @@ class PlaylistService {
     this.#shareSelectSqlLogic = playlistShareSqlLogic();
   }
   async create(playlistData: IPlaylistDTO, owner: IUser): Promise<IPlaylist> {
-    const { name, isPublic, imgUrl, types, genres } = playlistData;
+    const { name, isPublic, imgUrl, type, genres } = playlistData;
 
     const playlist = await prisma.playlist.create({
-      data: { name, isPublic, imgUrl, ownerId: owner.id!, types, genres },
+      data: { name, isPublic, imgUrl, ownerId: owner.id!, genres, type },
     });
 
     return {
@@ -35,8 +35,19 @@ class PlaylistService {
       songs: [],
       duration: "00:00",
       itemType: "PLAYLIST",
-      types: playlist.types as TPlaylistType[],
+      type: playlist.type as TPlaylistType,
     };
+  }
+
+  async createMany(data: IPlaylistDTO[], owner: IUser) {
+    try {
+      const playlists = await prisma.playlist.createMany({
+        data,
+      });
+    } catch (error) {
+      console.error("Error while creating playlists: ", error);
+      throw new Error("Error while creating playlists");
+    }
   }
 
   async getById(id: string, currentUserId?: string): Promise<IPlaylist | null> {
@@ -174,7 +185,7 @@ class PlaylistService {
           imgUrl: true,
           isPublic: true,
           createdAt: true,
-          types: true,
+          type: true,
           genres: true,
           description: true,
           owner: {
@@ -224,10 +235,9 @@ class PlaylistService {
           },
         },
         where: {
-          types: {
-            has: type,
-          },
+          type,
         },
+        take: 6,
       })
     );
 
@@ -239,7 +249,7 @@ class PlaylistService {
         imgUrl: true,
         isPublic: true,
         createdAt: true,
-        types: true,
+        type: true,
         genres: true,
         description: true,
         owner: {
@@ -294,7 +304,8 @@ class PlaylistService {
       take: 6,
     });
 
-    const friendsPLaylistPromises = friends.map((friend) =>
+    console.log(friends.map((friend) => friend.id));
+    const friendsPlaylistPromises = friends.map((friend) =>
       prisma.playlist.findMany({
         relationLoadStrategy: "join",
         select: {
@@ -303,7 +314,7 @@ class PlaylistService {
           imgUrl: true,
           isPublic: true,
           createdAt: true,
-          types: true,
+          type: true,
           genres: true,
           description: true,
           owner: {
@@ -353,9 +364,8 @@ class PlaylistService {
           },
         },
         where: {
-          ownerId: friend.id,
+          ownerId: friend.friend.id,
         },
-        take: 6,
       })
     );
 
@@ -363,7 +373,7 @@ class PlaylistService {
       await Promise.all([
         Promise.all(playlistsByTypePromises),
         localPlaylistsPromise,
-        Promise.all(friendsPLaylistPromises),
+        Promise.all(friendsPlaylistPromises),
       ]);
 
     const playlistsByType: TPlaylistData[] = playlistsByTypeArr.flat();
@@ -390,7 +400,7 @@ class PlaylistService {
         name: updateData.name,
         isPublic: updateData.isPublic,
         imgUrl: updateData.imgUrl,
-        types: updateData.types,
+        type: updateData.type,
         genres: updateData.genres,
       },
       include: {
@@ -424,8 +434,8 @@ class PlaylistService {
     const duration = updateData.duration || "00:00";
     return {
       ...playlist,
-      types: playlist.types as TPlaylistType[],
-      genres: playlist.genres as Genres[],
+      type: playlist.type as TPlaylistType,
+      genres: playlist.genres as EGenres[],
       duration,
     };
   }
@@ -578,7 +588,7 @@ class PlaylistService {
             description: true,
             createdAt: true,
             genres: true,
-            types: true,
+            type: true,
             owner: {
               select: {
                 id: true,
@@ -645,7 +655,7 @@ class PlaylistService {
         imgUrl: true,
         isPublic: true,
         createdAt: true,
-        types: true,
+        type: true,
         genres: true,
         name: true,
         owner: {
@@ -700,7 +710,7 @@ class PlaylistService {
 
     const duration = this.getTotalDuration(songs);
 
-    const { id, imgUrl, isPublic, createdAt, types, genres, name } =
+    const { id, imgUrl, isPublic, createdAt, type, genres, name } =
       likedSongsPlaylistData;
     const playlist: IPlaylist = {
       id,
@@ -709,8 +719,8 @@ class PlaylistService {
       isPublic,
       createdAt,
       owner,
-      types: types as TPlaylistType[],
-      genres: genres as Genres[],
+      type: type as TPlaylistType,
+      genres: genres as EGenres[],
       songs,
       duration,
       itemType: "PLAYLIST",
@@ -771,8 +781,8 @@ class PlaylistService {
       owner: owner ? owner : playlistData.owner!,
       songs,
       duration,
-      types: playlistData.types as TPlaylistType[],
-      genres: playlistData.genres as Genres[],
+      type: playlistData.type as TPlaylistType,
+      genres: playlistData.genres as EGenres[],
       itemType: "PLAYLIST",
       isLikedByUser: !!playlistData?.playlistLikes?.length,
     };
@@ -870,13 +880,13 @@ class PlaylistService {
   }
 
   #playlistsToPlaylistsGroup(playlists: IPlaylist[]): IPlaylistsGroup[] {
-    const playlistMap = new Map<TPlaylistType | string, IPlaylist[]>();
+    const playlistMap = new Map<TPlaylistType, IPlaylist[]>();
 
     playlists.forEach((playlist) => {
-      if (!playlistMap.has(playlist.types[0])) {
-        playlistMap.set(playlist.types[0], []);
+      if (!playlistMap.has(playlist.type)) {
+        playlistMap.set(playlist.type, []);
       }
-      playlistMap.get(playlist.types[0])!.push(playlist);
+      playlistMap.get(playlist.type)!.push(playlist);
     });
 
     const playlistObjects: IPlaylistsGroup[] = [];
@@ -899,7 +909,7 @@ type TPlaylistData = {
   createdAt: Date;
   description: string | null;
   genres: string[];
-  types: string[];
+  type: string;
   owner?: {
     id: string;
     imgUrl: string | null;

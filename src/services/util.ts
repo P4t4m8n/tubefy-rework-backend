@@ -13,7 +13,7 @@ export const getDefaultLikesPlaylist = (ownerId: string): IPlaylistDTO => {
     ownerId,
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1705451341/playlist-like.png",
-    types: ["Liked Songs"],
+    type: "Liked Songs",
     genres: [],
     createdAt: new Date(),
   };
@@ -42,18 +42,4 @@ export const fetchUserCountry = async (ip?: string): Promise<string> => {
   }
 };
 
-export const getRandomPlaylistTypes = (length: number): TPlaylistType[] => {
-  const typesArr = [...PLAYLISTS_TYPES];
-  if (length > typesArr.length) {
-    return typesArr;
-  }
 
-  const types: TPlaylistType[] = [];
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * typesArr.length);
-    typesArr.splice(randomIndex, 1);
-    types.push(typesArr[randomIndex]);
-  }
-
-  return types;
-};
