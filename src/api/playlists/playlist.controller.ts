@@ -15,7 +15,6 @@ import {
   userSharedPlaylistWithYou,
   youSharedPlaylist,
 } from "../notification/notificationText";
-import { findCountryByIp } from "../../services/location.service";
 import { fetchUserCountry } from "../../services/util";
 import { friendService } from "../friends/friends.service";
 import { IFriend } from "../friends/friends.model";
@@ -81,7 +80,6 @@ export const getPlaylistById = async (req: Request, res: Response) => {
 };
 
 export const getPlaylists = async (req: Request, res: Response) => {
-  console.log("getPlaylists");
   try {
     const filter: IPlaylistFilters = {
       name: (req.query.name as string) || "",
@@ -120,7 +118,7 @@ export const getDefaultPlaylists = async (req: Request, res: Response) => {
 
     if (user && user.id) {
       friends = await friendService.query(user.id, "ACCEPTED", 5);
-      randomPlaylistAmount = 6;
+      randomPlaylistAmount = 7;
     }
     const playlistsTypes = getRandomPlaylistTypes(randomPlaylistAmount);
 
@@ -130,7 +128,6 @@ export const getDefaultPlaylists = async (req: Request, res: Response) => {
       country,
       user?.id
     );
-    console.log("playlists:", playlists)
 
     res.status(200).send(playlists);
   } catch (error) {
@@ -553,12 +550,19 @@ const getRandomPlaylistTypes = (count: number): TPlaylistType[] => {
     "Chill",
     "Workout",
     "Party",
-    "Focus",
+    "Sleep",
+    "Travel",
+    "Cooking",
     "Study",
+    "New Wave",
+    "Other",
     "Popular",
     "Charts",
     "Decades",
     "Mood",
+    "Live",
+    "Driving",
+    "Coding",
   ];
 
   const randomTypes: TPlaylistType[] = [];

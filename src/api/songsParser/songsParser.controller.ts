@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { songParserService } from "./songsParser.service";
-import { songsJson } from "../../../prisma/demo-data/consts";
+import { songsJson } from "../../../prisma/demo-data/users";
 import { ISong } from "../song/song.model";
 import { SongService } from "../song/song.service";
 import { EGenres } from "../song/song.enum";

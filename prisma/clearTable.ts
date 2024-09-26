@@ -12,5 +12,5 @@ export const clearTable = async (tableName: string) => {
 
 const tableName = "PlaylistSong";
 clearTable(tableName).then(() => {
-  console.log(`Table ${tableName} has been cleared.`);
+  console.info(`Table ${tableName} has been cleared.`);
 });

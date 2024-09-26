@@ -299,12 +299,19 @@ class PlaylistService {
         },
       },
       where: {
-        originCountry: country,
+        playlistSongs: {
+          some: {
+            song: {
+              originCountry: {
+                equals: country,
+              },
+            },
+          },
+        },
       },
       take: 6,
     });
 
-    console.log(friends.map((friend) => friend.id));
     const friendsPlaylistPromises = friends.map((friend) =>
       prisma.playlist.findMany({
         relationLoadStrategy: "join",
@@ -317,6 +324,7 @@ class PlaylistService {
           type: true,
           genres: true,
           description: true,
+
           owner: {
             select: {
               id: true,
@@ -366,6 +374,7 @@ class PlaylistService {
         where: {
           ownerId: friend.friend.id,
         },
+        take: 1,
       })
     );
 
@@ -377,7 +386,12 @@ class PlaylistService {
       ]);
 
     const playlistsByType: TPlaylistData[] = playlistsByTypeArr.flat();
-    const friendsPlaylists: TPlaylistData[] = friendsPlaylistsArr.flat();
+    let friendsPlaylists: TPlaylistData[] = friendsPlaylistsArr.flat();
+
+    friendsPlaylists = friendsPlaylists.map((p) => ({
+      ...p,
+      type: "Friend",
+    }));
 
     const playlists = this.mapPlaylistDataToPlaylist([
       ...playlistsByType,

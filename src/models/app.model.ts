@@ -55,5 +55,6 @@ export const GENRES = [
   "10s",
   "mood",
   "party",
-
 ] as const;
+
+export type TGenres = (typeof GENRES)[number];

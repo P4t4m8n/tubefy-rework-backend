@@ -23,7 +23,6 @@ export class SongService {
       addedBy: user,
       genres: song.genres as EGenres[],
       itemType: "SONG",
-      playlistType: songData.playlistType || [],
     };
   }
   async createMany(data: ISongDTO[], user: IUser): Promise<ISong[]> {
@@ -37,7 +36,6 @@ export class SongService {
       addedBy: user,
       genres: song.genres as EGenres[],
       itemType: "SONG",
-      playlistType: (song.playlistType as TPlaylistType[]) || [],
     }));
   }
   async query(songFilter: ISongFilter, userId?: string): Promise<ISong[]> {
@@ -121,7 +119,6 @@ export class SongService {
         duration: songDTO.duration,
         imgUrl: songDTO.imgUrl,
         youtubeId: songDTO.youtubeId,
-        playlistType: songDTO.playlistType,
       },
       include: {
         addedBy: {

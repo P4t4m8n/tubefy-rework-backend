@@ -1,5 +1,4 @@
-import { IItemType } from "../../models/app.model";
-import { EGenres } from "../song/song.enum";
+import { IItemType, TGenres } from "../../models/app.model";
 import { ISong } from "../song/song.model";
 import { IUser } from "../users/user.model";
 
@@ -10,7 +9,7 @@ export interface IPlaylistDTO {
   imgUrl: string;
   description?: string | null;
   type: TPlaylistType;
-  genres: EGenres[];
+  genres: TGenres[];
   createdAt?: Date;
   id?: string;
   duration?: string;
@@ -28,7 +27,7 @@ export interface IPlaylist extends IPlaylistSmall {
   duration: string;
   type: TPlaylistType;
   songs: ISong[];
-  genres: EGenres[];
+  genres: TGenres[];
   originCountry?: string;
   isLikedByUser?: boolean;
 }
@@ -38,7 +37,7 @@ export interface IPlaylistFilters {
   limit?: number;
   ownerId?: string;
   artist?: string;
-  genres?: EGenres[];
+  genres?: TGenres[];
   page?: number;
   isLikedByUser?: boolean;
 }
@@ -50,28 +49,27 @@ export interface IPlaylistsGroup {
 
 export const PLAYLISTS_TYPES = [
   "New Music",
-  "Daily Mix",
   "Chill",
   "Workout",
   "Party",
-  "Focus",
   "Sleep",
   "Travel",
-  "Kids",
   "Cooking",
-  "Wellness",
   "Study",
   "New Wave",
-  "",
-  "Liked Songs",
-  "Local Music",
   "Other",
   "Popular",
   "Charts",
   "Decades",
   "Mood",
   "Live",
+  "Driving",
+  "Coding",
+
+  //User specific
+  "Liked Songs",
   "User",
+  "Friends",
 ] as const;
 
 export type TPlaylistType = (typeof PLAYLISTS_TYPES)[number];
