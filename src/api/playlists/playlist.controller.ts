@@ -118,7 +118,7 @@ export const getDefaultPlaylists = async (req: Request, res: Response) => {
 
     if (user && user.id) {
       friends = await friendService.query(user.id, "ACCEPTED", 5);
-      randomPlaylistAmount = 7;
+      randomPlaylistAmount = 6;
     }
     const playlistsTypes = getRandomPlaylistTypes(randomPlaylistAmount);
 

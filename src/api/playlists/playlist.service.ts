@@ -235,7 +235,12 @@ class PlaylistService {
           },
         },
         where: {
-          type,
+          type: {
+            equals: type,
+          },
+          isPublic: {
+            equals: true,
+          },
         },
         take: 6,
       })
@@ -308,6 +313,9 @@ class PlaylistService {
             },
           },
         },
+        isPublic: {
+          equals: true,
+        },
       },
       take: 6,
     });
@@ -373,12 +381,15 @@ class PlaylistService {
         },
         where: {
           ownerId: friend.friend.id,
+          isPublic: {
+            equals: true,
+          },
         },
         take: 1,
       })
     );
 
-    const [playlistsByTypeArr, localPlaylists, friendsPlaylistsArr] =
+    const [playlistsByTypeArr, localPlaylistsArr, friendsPlaylistsArr] =
       await Promise.all([
         Promise.all(playlistsByTypePromises),
         localPlaylistsPromise,
@@ -390,7 +401,11 @@ class PlaylistService {
 
     friendsPlaylists = friendsPlaylists.map((p) => ({
       ...p,
-      type: "Friend",
+      type: "From you friends",
+    }));
+    const localPlaylists = localPlaylistsArr.map((p) => ({
+      ...p,
+      type: "Local Music",
     }));
 
     const playlists = this.mapPlaylistDataToPlaylist([
@@ -398,6 +413,8 @@ class PlaylistService {
       ...friendsPlaylists,
       ...localPlaylists,
     ]);
+
+  
 
     const playlistsGroup = this.#playlistsToPlaylistsGroup(playlists);
 
@@ -793,6 +810,7 @@ class PlaylistService {
       isPublic: playlistData.isPublic,
       createdAt: playlistData.createdAt,
       owner: owner ? owner : playlistData.owner!,
+      description: playlistData.description || "",
       songs,
       duration,
       type: playlistData.type as TPlaylistType,

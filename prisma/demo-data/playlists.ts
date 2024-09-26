@@ -1,3 +1,5 @@
+/* cSpell:disable */
+
 import { IPlaylistDTO } from "../../src/api/playlists/playlist.model";
 import { IPlaylistSongs } from "../seed";
 
@@ -5,1620 +7,1655 @@ export const PLAYLISTS_DATA_DTOS: IPlaylistDTO[] = [
   {
     name: "Chill Vibes",
     description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
     type: "New Music",
-    genres: ["rock", "pop", "60s", "decades"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
     name: "Workout Energy",
     description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
     type: "New Music",
-    genres: ["pop", "r&b", "80s", "rock"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
     name: "Throwback Hits",
     description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
     type: "New Music",
-    genres: ["pop", "rock", "50s", "decades", "oldies"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
     name: "Focus Beats",
     description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
     type: "New Music",
-    genres: ["pop", "country", "r&b"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
     name: "Morning Motivation",
     description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
     type: "New Music",
-    genres: ["pop", "r&b", "hip-hop", "rap"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
     name: "Late Night Jazz",
     description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
     type: "New Music",
-    genres: ["hip-hop", "rap", "r&b", "pop", "rock", "alternative"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
     name: "Party Anthems",
     description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
     type: "New Music",
-    genres: ["pop", "hip-hop", "rap", "r&b"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
     name: "Road Trip Classics",
     description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
     type: "New Music",
-    genres: ["pop", "electronic", "r&b", "rock"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
     name: "Indie Discoveries",
     description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
     type: "New Music",
-    genres: ["rock", "pop"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
     name: "Summer Chill",
     description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
     type: "New Music",
-    genres: ["rock", "pop", "r&b"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Calm Waves",
+    description: "Soothing sounds to relax by the ocean and unwind.",
     type: "Chill",
-    genres: ["pop", "r&b", "ballad", "rock"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Evening Chill",
+    description: "Soft, mellow tracks to ease you into a peaceful night.",
     type: "Chill",
-    genres: ["pop", "rock", "folk", "acoustic", "r&b", "electronic"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Lo-Fi Lounge",
+    description:
+      "Chilled-out lo-fi beats for studying, working, or just relaxing.",
     type: "Chill",
-    genres: ["pop", "r&b", "funk"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Acoustic Serenity",
+    description: "Acoustic melodies for a calm and peaceful atmosphere.",
     type: "Chill",
-    genres: ["pop", "r&b"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Chillout Vibes",
+    description: "Easygoing tunes to help you de-stress and recharge.",
     type: "Chill",
-    genres: ["pop", "r&b", "soul", "soundtrack", "hip-hop", "rap"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Moonlight Chill",
+    description: "Soft, dreamy music for a relaxed evening under the stars.",
     type: "Chill",
-    genres: ["hip-hop", "rap", "pop", "latin"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Sunday Slowdown",
+    description: "Laid-back tracks perfect for a lazy Sunday.",
     type: "Chill",
-    genres: ["pop", "80s", "dance", "rock"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Ambient Escape",
+    description: "Deep, ambient sounds for total relaxation and meditation.",
     type: "Chill",
-    genres: ["rock", "pop", "decades", "new wave"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Coffeehouse Chill",
+    description: "Indie and acoustic songs for a cozy coffeehouse vibe.",
     type: "Chill",
-    genres: ["rock", "pop", "r&b", "funk", "folk"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Zen Moments",
+    description: "Calming instrumental music to help you find your zen.",
     type: "Chill",
-    genres: ["pop", "rock", "hip-hop", "rap", "soul", "r&b"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Power Up",
+    description: "High-energy tracks to boost your strength and stamina.",
     type: "Workout",
-    genres: ["hip-hop", "r&b", "pop"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Cardio Crusher",
+    description: "Fast-paced beats to keep you moving during cardio sessions.",
     type: "Workout",
-    genres: ["pop", "dance", "soundtrack"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "HIIT Hype",
+    description: "Intense, upbeat songs for high-intensity interval training.",
     type: "Workout",
-    genres: ["rock", "pop", "alternative", "rap", "hip-hop"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Beast Mode",
+    description: "Hard-hitting tracks to push through your toughest workouts.",
     type: "Workout",
-    genres: ["hip-hop", "rap", "pop", "rock", "country"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Pump It Up",
+    description: "Motivational anthems to keep your energy levels high.",
     type: "Workout",
-    genres: ["pop", "rap", "country", "soundtrack", "rock"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Run The Beat",
+    description: "Pumping tracks to keep you in the zone on your next run.",
     type: "Workout",
-    genres: ["rock", "pop", "decades", "alternative", "90s"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Lift Legends",
+    description: "Heavy bass and powerful beats to match your lifting routine.",
     type: "Workout",
-    genres: ["rock", "90s", "pop", "country", "decades"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Dance Workout",
+    description: "Fun, rhythmic tunes for a dance-inspired workout.",
     type: "Workout",
-    genres: ["rock", "alternative"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Adrenaline Rush",
+    description: "Fast, heart-pounding tracks to fuel your adrenaline rush.",
     type: "Workout",
-    genres: ["rock", "pop", "alternative", "folk"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Endurance Boost",
+    description:
+      "Extended mixes and epic beats to power long workout sessions.",
     type: "Workout",
-    genres: ["rock", "folk"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Dancefloor Hits",
+    description: "The biggest dance tracks to get everyone on the floor.",
     type: "Party",
-    genres: ["rock", "decades", "pop", "ballad", "r&b"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Party Starters",
+    description: "Kick off the night with these electrifying anthems.",
     type: "Party",
-    genres: ["pop", "ballad", "r&b", "80s", "rock", "60s"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Club Bangers",
+    description:
+      "Non-stop hits that light up the club and keep the energy high.",
     type: "Party",
-    genres: ["rock", "pop", "disco", "70s"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Throwback Party",
+    description: "Classic party jams from the 90s and 2000s to fuel nostalgia.",
     type: "Party",
-    genres: ["pop", "disco", "jazz", "rock", "metal"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "House Party Vibes",
+    description: "Upbeat tunes to keep the vibe alive at your house party.",
     type: "Party",
-    genres: ["rock", "metal", "pop"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Pop Party",
+    description: "The latest pop hits for a fun and upbeat party playlist.",
     type: "Party",
-    genres: ["pop", "r&b", "rock", "live", "electronic"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Hip-Hop Party",
+    description:
+      "Banging hip-hop tracks to keep the crowd hyped all night long.",
     type: "Party",
-    genres: ["pop", "electronic", "rap", "hip-hop", "rock"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Reggaeton Fiesta",
+    description: "Latin beats and reggaeton hits to get everyone dancing.",
     type: "Party",
-    genres: ["rock", "alternative"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Summer Party",
+    description:
+      "Feel-good summer tracks for those outdoor BBQ and pool parties.",
     type: "Party",
-    genres: ["rock", "90s", "alternative", "mood", "pop", "dance"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "All Night Long",
+    description:
+      "High-energy tracks to keep the party going until the early hours.",
     type: "Party",
-    genres: ["pop", "dance", "r&b", "rock"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Dreamy Nights",
+    description: "Gentle tunes to guide you into a deep and restful sleep.",
     type: "Sleep",
-    genres: ["pop", "rap", "hip-hop", "r&b"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Sleepy Time",
+    description: "Soothing melodies to help you relax and fall asleep faster.",
     type: "Sleep",
-    genres: ["pop", "rap", "hip-hop", "r&b", "latin"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Lullaby Dreams",
+    description: "Soft, calming music designed for peaceful sleep.",
     type: "Sleep",
-    genres: ["rap", "hip-hop", "pop", "r&b", "rock", "60s"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Nighttime Serenity",
+    description: "Tranquil sounds for a stress-free transition to sleep.",
     type: "Sleep",
-    genres: ["rock", "pop", "decades"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Deep Sleep Ambience",
+    description: "Ambient soundscapes for an uninterrupted night’s rest.",
     type: "Sleep",
-    genres: ["rock", "pop", "alternative"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Calm Sleep Waves",
+    description: "Relaxing wave sounds for a peaceful and restorative sleep.",
     type: "Sleep",
-    genres: ["pop", "rock", "dance"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Piano Sleep",
+    description: "Soft piano melodies to lull you gently into slumber.",
     type: "Sleep",
-    genres: ["pop", "r&b", "rock", "indie", "alternative", "rap"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Nature Sleep",
+    description: "Peaceful nature sounds to create a serene sleep environment.",
     type: "Sleep",
-    genres: ["pop", "alternative", "rock"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Zen Sleep",
+    description: "Meditative sounds to quiet the mind and ease into sleep.",
     type: "Sleep",
-    genres: ["pop", "rock", "decades", "new wave"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Healing Sleep",
+    description:
+      "Healing frequencies and calming tones for deep sleep recovery.",
     type: "Sleep",
-    genres: ["rock", "new wave", "pop", "alternative", "indie"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Wanderlust Beats",
+    description: "Upbeat tracks to fuel your adventurous spirit on the road.",
     type: "Travel",
-    genres: ["rock", "indie", "pop", "alternative"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Road Trip Anthems",
+    description: "Classic tunes to make every mile of your journey memorable.",
     type: "Travel",
-    genres: ["rock", "90s"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Jetsetter Vibes",
+    description: "Chill beats for flying high or cruising through new cities.",
     type: "Travel",
-    genres: ["pop", "ballad", "decades", "rock", "dance", "70s"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Scenic Routes",
+    description: "Relaxing music for scenic drives and peaceful getaways.",
     type: "Travel",
-    genres: ["pop", "rock"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Urban Explorer",
+    description:
+      "Hip-hop and indie vibes for exploring the streets of a new city.",
     type: "Travel",
-    genres: ["pop", "soul", "r&b", "soundtrack", "electronic", "rock"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Backpacker’s Journey",
+    description:
+      "Global beats to match your journey through different cultures.",
     type: "Travel",
-    genres: ["rock", "pop", "alternative", "punk"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Highway Hits",
+    description:
+      "Energetic songs to keep the energy up during long road trips.",
     type: "Travel",
-    genres: ["rock", "pop", "punk", "country"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Destination Chill",
+    description: "Calming tracks for unwinding at your travel destination.",
     type: "Travel",
-    genres: ["pop", "rock", "r&b", "soundtrack"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Cross-Country Classics",
+    description: "Timeless tracks perfect for coast-to-coast adventures.",
     type: "Travel",
-    genres: ["pop", "rap", "country", "r&b", "soul"],
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
   {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
+    name: "Escape to Nature",
+    description:
+      "Ambient sounds and acoustic tunes for reconnecting with nature on your travels.",
     type: "Travel",
-    genres: ["pop", "r&b", "hip-hop", "soul", "rock", "rap"],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["rap", "hip-hop"],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["pop", "r&b", "rap", "rock"],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["rock", "pop", "acoustic", "new wave", "punk"],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["rock", "punk", "pop"],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["rock", "reggae", "pop"],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["reggae", "dance", "electronic", "pop", "rock", "indie"],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["pop", "rock", "electronic"],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["rock", "pop", "alternative"],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["rock", "punk", "pop", "latin", "world"],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
+    ownerId: "",
+  },
+  {
+    name: "Kitchen Grooves",
+    description: "Smooth and funky tunes to keep you grooving while you cook.",
     type: "Cooking",
-    genres: ["pop", "latin", "rock", "indie", "alternative"],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Study",
-    genres: ["rock", "indie", "alternative"],
+    ownerId: "",
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
+    name: "Chef’s Playlist",
+    description: "Upbeat tracks to inspire your culinary creations.",
+    type: "Cooking",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Study",
-    genres: ["rock", "alternative", "new wave", "80s", "pop"],
+    ownerId: "",
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
+    name: "Cooking Chill",
+    description:
+      "Relaxing music to enjoy while whipping up your favorite dishes.",
+    type: "Cooking",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Study",
-    genres: ["new wave", "80s", "rock"],
+    ownerId: "",
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
+    name: "Sizzle and Beats",
+    description: "Fun, lively songs to match the rhythm of your cooking.",
+    type: "Cooking",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Study",
-    genres: ["rock", "pop", "r&b"],
+    ownerId: "",
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
+    name: "Sunday Brunch Vibes",
+    description:
+      "Laid-back tunes perfect for a leisurely Sunday in the kitchen.",
+    type: "Cooking",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Study",
-    genres: ["pop", "r&b", "country"],
+    ownerId: "",
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
+    name: "Flavorful Mix",
+    description:
+      "A mix of world music for adding flavor to your cooking sessions.",
+    type: "Cooking",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Study",
-    genres: ["pop", "electronic", "country", "rap", "hip-hop"],
+    ownerId: "",
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
+    name: "Jazz in the Kitchen",
+    description: "Smooth jazz to create a sophisticated cooking atmosphere.",
+    type: "Cooking",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Study",
-    genres: ["rap", "hip-hop"],
+    ownerId: "",
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
+    name: "Dinner Party Prep",
+    description:
+      "Uplifting beats to get you ready for hosting the perfect dinner party.",
+    type: "Cooking",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Study",
-    genres: ["rap", "hip-hop", "pop", "r&b"],
+    ownerId: "",
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
+    name: "Acoustic Recipes",
+    description:
+      "Gentle acoustic songs to complement your relaxed cooking time.",
+    type: "Cooking",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Study",
-    genres: ["pop", "r&b", "dance", "hip-hop"],
+    ownerId: "",
   },
   {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
+    name: "Stir It Up",
+    description:
+      "Reggae and chill vibes for a fun and flavorful cooking experience.",
+    type: "Cooking",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Study",
-    genres: ["pop", "hip-hop", "rap", "r&b"],
+    ownerId: "",
   },
   {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
+    name: "Focus Flow",
+    description:
+      "Instrumental beats to help you concentrate and stay productive.",
+    type: "Study",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "New Wave",
-    genres: ["pop", "electronic", "rap", "hip-hop", "r&b", "soul"],
+    ownerId: "",
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
+    name: "Study Vibes",
+    description:
+      "Chill background tunes to keep you calm and focused while you study.",
+    type: "Study",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "New Wave",
-    genres: ["soul", "r&b", "jazz", "rock", "pop"],
+    ownerId: "",
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
+    name: "Lo-Fi Study",
+    description:
+      "Lo-fi beats to create a relaxed and distraction-free study environment.",
+    type: "Study",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "New Wave",
-    genres: ["rock", "pop", "soul", "funk", "r&b"],
+    ownerId: "",
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
+    name: "Deep Focus",
+    description:
+      "Minimalist and ambient sounds to boost concentration and block out distractions.",
+    type: "Study",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "New Wave",
-    genres: ["pop", "rock", "r&b", "decades", "dance"],
+    ownerId: "",
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
+    name: "Brain Food",
+    description:
+      "A mix of soothing music to keep your brain engaged while studying.",
+    type: "Study",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "New Wave",
-    genres: ["rock", "pop", "rap", "world"],
+    ownerId: "",
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
+    name: "Concentration Station",
+    description:
+      "A steady stream of peaceful tracks to enhance your concentration.",
+    type: "Study",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "New Wave",
-    genres: ["pop", "folk", "rock"],
+    ownerId: "",
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
+    name: "Piano for Focus",
+    description: "Soft piano melodies to create a serene study space.",
+    type: "Study",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "New Wave",
-    genres: ["dance", "pop", "r&b", "rock", "soundtrack"],
+    ownerId: "",
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
+    name: "Classical Focus",
+    description:
+      "Classical compositions to sharpen your focus and improve cognitive flow.",
+    type: "Study",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "New Wave",
-    genres: ["pop", "rap", "r&b", "funk", "hip-hop"],
+    ownerId: "",
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
+    name: "Study Chill",
+    description:
+      "Laid-back vibes to keep the stress away while you're hitting the books.",
+    type: "Study",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "New Wave",
-    genres: ["rap", "hip-hop", "rock", "alternative"],
+    ownerId: "",
   },
   {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
+    name: "Electronic Focus",
+    description:
+      "Ambient electronic music to stimulate focus and maintain a productive flow.",
+    type: "Study",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "New Wave",
-    genres: ["rap", "hip-hop", "pop", "r&b"],
+    ownerId: "",
   },
   {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
+    name: "Retro Synths",
+    description: "Classic New Wave synth beats that defined the 80s sound.",
+    type: "New Wave",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Popular",
-    genres: ["hip-hop", "r&b", "soul", "pop", "alternative", "rock", "rap"],
+    ownerId: "",
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
+    name: "New Wave Essentials",
+    description: "The quintessential tracks that shaped the New Wave era.",
+    type: "New Wave",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Popular",
-    genres: ["hip-hop", "rap", "pop"],
+    ownerId: "",
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
+    name: "Post-Punk Revival",
+    description: "A blend of post-punk and New Wave for a moody, retro vibe.",
+    type: "New Wave",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Popular",
-    genres: ["r&b", "pop", "hip-hop", "rap"],
+    ownerId: "",
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
+    name: "Synthpop Dreams",
+    description: "Catchy, synth-heavy tunes from the golden age of New Wave.",
+    type: "New Wave",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Popular",
-    genres: ["hip-hop", "rap", "r&b"],
+    ownerId: "",
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
+    name: "Alternative 80s",
+    description:
+      "Underground gems and alternative hits from the New Wave scene.",
+    type: "New Wave",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Popular",
-    genres: ["rap", "chill-out", "electronic", "hip-hop", "pop"],
+    ownerId: "",
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
+    name: "New Wave Nights",
+    description: "Atmospheric tracks for a nostalgic night of retro sounds.",
+    type: "New Wave",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Popular",
-    genres: ["hip-hop", "r&b", "rock", "alternative", "rap", "pop", "remix"],
+    ownerId: "",
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
+    name: "Electric Echoes",
+    description:
+      "Experimental and electric tracks that defined the New Wave movement.",
+    type: "New Wave",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Popular",
-    genres: ["pop", "electronic", "r&b", "soundtrack"],
+    ownerId: "",
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
+    name: "New Wave Romance",
+    description:
+      "Emotive and melodic New Wave songs perfect for the sentimental soul.",
+    type: "New Wave",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Popular",
-    genres: ["pop", "r&b", "latin"],
+    ownerId: "",
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
+    name: "Dark Wave Beats",
+    description:
+      "The darker side of New Wave with a touch of goth and post-punk.",
+    type: "New Wave",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Popular",
-    genres: ["pop", "dance", "latin", "rock", "ballad", "acoustic"],
+    ownerId: "",
   },
   {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
+    name: "Synthwave Revival",
+    description:
+      "Modern artists inspired by the retro-futuristic sounds of New Wave.",
+    type: "New Wave",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Popular",
-    genres: ["pop", "soundtrack", "electronic", "remix", "indie"],
+    ownerId: "",
   },
   {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
+    name: "Today's Hits",
+    description: "The biggest chart-toppers and trending songs right now.",
+    type: "Other",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Charts",
-    genres: ["pop", "dance", "electronic", "r&b"],
+    ownerId: "",
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
+    name: "Pop Powerhouse",
+    description: "High-energy pop anthems from the world's biggest artists.",
+    type: "Other",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Charts",
-    genres: ["pop", "r&b", "electronic", "remix"],
+    ownerId: "",
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
+    name: "Global Top 50",
+    description: "A mix of the most popular tracks from around the globe.",
+    type: "Other",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Charts",
-    genres: [
-      "pop",
-      "electronic",
-      "r&b",
-      "rap",
-      "hip-hop",
-      "reggae",
-      "dance",
-      "edm",
-    ],
+    ownerId: "",
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
+    name: "Viral Vibes",
+    description:
+      "Songs that are making waves across social media and streaming platforms.",
+    type: "Other",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Charts",
-    genres: ["pop", "electronic", "dance", "edm"],
+    ownerId: "",
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
+    name: "Pop Perfection",
+    description: "Perfectly crafted pop hits to keep you singing along.",
+    type: "Other",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Charts",
-    genres: ["pop", "dance", "electronic", "classical"],
+    ownerId: "",
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
+    name: "Top 40 Essentials",
+    description: "The hottest hits from the current Top 40 charts.",
+    type: "Other",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Charts",
-    genres: ["electronic", "dance", "pop", "edm", "latin"],
+    ownerId: "",
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
+    name: "Fresh Pop",
+    description:
+      "New releases from the biggest pop stars and up-and-coming artists.",
+    type: "Other",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Charts",
-    genres: ["pop", "electronic", "dance", "edm"],
+    ownerId: "",
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
+    name: "Summer Smash Hits",
+    description: "The biggest summer pop hits that dominate the airwaves.",
+    type: "Other",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Charts",
-    genres: ["pop", "edm", "electronic", "dance"],
+    ownerId: "",
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
+    name: "Feel-Good Pop",
+    description: "Uplifting and fun pop tracks to brighten your day.",
+    type: "Other",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Charts",
-    genres: ["pop", "electronic", "dance"],
+    ownerId: "",
   },
   {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
+    name: "US Top 100",
+    description:
+      "The most popular songs in the U.S., straight from the Billboard charts.",
+    type: "Other",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Charts",
-    genres: ["pop", "electronic", "dance", "r&b"],
+    ownerId: "",
   },
   {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
+    name: "Top 10 Hits",
+    description: "The top 10 songs ruling the charts right now.",
+    type: "Popular",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Decades",
-    genres: ["electronic", "house", "dance", "pop", "edm"],
+    ownerId: "",
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
+    name: "Global Charts",
+    description: "The most popular tracks from music charts around the world.",
+    type: "Popular",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Decades",
-    genres: ["pop", "electronic", "dance", "edm", "rock"],
+    ownerId: "",
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
+    name: "Billboard Hot 100",
+    description: "The biggest hits on the Billboard Hot 100 chart this week.",
+    type: "Popular",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Decades",
-    genres: ["electronic", "dance", "alternative", "rock"],
+    ownerId: "",
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
+    name: "UK Top 40",
+    description: "The hottest tracks from the official UK music charts.",
+    type: "Popular",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Decades",
-    genres: ["pop", "electronic", "house", "dance"],
+    ownerId: "",
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
+    name: "US Chart Toppers",
+    description: "The most played and streamed songs in the U.S.",
+    type: "Popular",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Decades",
-    genres: ["pop", "electronic", "dance"],
+    ownerId: "",
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
+    name: "Euro Chart Hits",
+    description: "Chart-topping hits across Europe, featuring a mix of genres.",
+    type: "Popular",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Decades",
-    genres: ["electronic", "dance", "edm", "pop", "remix"],
+    ownerId: "",
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
+    name: "Trending Now",
+    description: "The songs that are rising quickly up the charts this week.",
+    type: "Popular",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Decades",
-    genres: ["pop", "electronic", "dance"],
+    ownerId: "",
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
+    name: "Chart Breakers",
+    description: "The latest hits making big moves on music charts worldwide.",
+    type: "Popular",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Decades",
-    genres: ["pop", "electronic", "dance", "edm"],
+    ownerId: "",
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
+    name: "Top Streaming Songs",
+    description: "The most streamed songs across all major platforms.",
+    type: "Popular",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Decades",
-    genres: ["pop", "latin", "electronic", "edm", "dance", "rock"],
+    ownerId: "",
   },
   {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
+    name: "Pop Chart Classics",
+    description: "Timeless chart-topping hits from past decades.",
+    type: "Popular",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Decades",
-    genres: ["rock", "electronic", "dance"],
+    ownerId: "",
   },
   {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
+    name: "70s Classics",
+    description: "A collection of the best hits from the groovy 1970s.",
+    type: "Charts",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Mood",
-    genres: [
-      "electronic",
-      "pop",
-      "dance",
-      "soundtrack",
-      "trance",
-      "new wave",
-      "80s",
-      "acoustic",
-    ],
+    ownerId: "",
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
+    name: "80s Synthwave",
+    description:
+      "The iconic sounds of the 80s, filled with synths and neon vibes.",
+    type: "Charts",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Mood",
-    genres: ["rap", "chill-out", "electronic", "dance", "trance", "pop"],
+    ownerId: "",
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
+    name: "90s Pop Anthems",
+    description: "The biggest pop hits that defined the 1990s.",
+    type: "Charts",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Mood",
-    genres: ["electronic", "dance", "trance", "techno", "pop"],
+    ownerId: "",
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
+    name: "Millennial Mix",
+    description: "Chart-topping tracks from the early 2000s to mid-2010s.",
+    type: "Charts",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Mood",
-    genres: ["electronic", "dance", "trance"],
+    ownerId: "",
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
+    name: "60s Rock Revolution",
+    description:
+      "The era of rock 'n' roll, filled with rebellious hits from the 1960s.",
+    type: "Charts",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Mood",
-    genres: ["pop", "dance", "electronic"],
+    ownerId: "",
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
+    name: "90s Hip-Hop Legends",
+    description: "The classic hip-hop tracks that shaped the 1990s.",
+    type: "Charts",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Mood",
-    genres: ["electronic", "funk", "dance"],
+    ownerId: "",
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
+    name: "Disco Fever",
+    description: "Get down to the funky and danceable sounds of 70s disco.",
+    type: "Charts",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Mood",
-    genres: ["electronic", "dance", "pop", "techno", "house"],
+    ownerId: "",
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
+    name: "80s Power Ballads",
+    description: "Emotive and anthemic ballads from the 1980s.",
+    type: "Charts",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Mood",
-    genres: ["electronic", "techno", "dance", "rock", "alternative", "pop"],
+    ownerId: "",
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
+    name: "Y2K Throwbacks",
+    description: "Relive the early 2000s with these pop and R&B bangers.",
+    type: "Charts",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Mood",
-    genres: ["rock", "alternative"],
+    ownerId: "",
   },
   {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
+    name: "50s Rock 'n' Roll",
+    description: "The birth of rock, featuring timeless tracks from the 1950s.",
+    type: "Charts",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Mood",
-    genres: ["rock", "indie", "folk"],
+    ownerId: "",
   },
   {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
+    name: "Feel Good Vibes",
+    description: "Uplifting tracks to boost your mood and energy.",
+    type: "Decades",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Live",
-    genres: ["rock", "folk", "pop", "alternative"],
+    ownerId: "",
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
+    name: "Chill & Relax",
+    description: "Smooth, mellow tunes to help you unwind and de-stress.",
+    type: "Decades",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Live",
-    genres: ["pop", "indie", "alternative", "rock"],
+    ownerId: "",
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
+    name: "Melancholy Moments",
+    description: "Emotive songs for when you need to embrace the feels.",
+    type: "Decades",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Live",
-    genres: ["alternative", "rock", "psychedelic", "pop"],
+    ownerId: "",
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
+    name: "Party Mood",
+    description: "High-energy tracks to get you hyped and ready to dance.",
+    type: "Decades",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Live",
-    genres: ["rock", "pop"],
+    ownerId: "",
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
+    name: "Romantic Evening",
+    description: "Smooth, sultry songs to set the mood for a romantic night.",
+    type: "Decades",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Live",
-    genres: ["rock", "blues", "folk", "indie"],
+    ownerId: "",
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
+    name: "Focus & Flow",
+    description:
+      "Ambient and instrumental beats to help you concentrate and stay productive.",
+    type: "Decades",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Live",
-    genres: ["rock", "folk", "indie", "pop", "alternative"],
+    ownerId: "",
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
+    name: "Motivation Boost",
+    description:
+      "Powerful anthems to get you motivated and ready to conquer the day.",
+    type: "Decades",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Live",
-    genres: ["pop", "rock", "indie", "alternative"],
+    ownerId: "",
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
+    name: "Mellow Morning",
+    description: "Gentle tunes to start your day with calm and ease.",
+    type: "Decades",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Live",
-    genres: ["pop", "indie", "alternative", "rock"],
+    ownerId: "",
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
+    name: "Heartbreak Anthems",
+    description: "Sad, soulful songs to help you process those tough emotions.",
+    type: "Decades",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Live",
-    genres: ["pop", "alternative", "rock"],
+    ownerId: "",
   },
   {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
+    name: "Energetic Workout",
+    description: "Upbeat and powerful tracks to fuel your workout sessions.",
+    type: "Decades",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Live",
-    genres: ["pop", "rock", "alternative", "indie", "party"],
+    ownerId: "",
   },
   {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
+    name: "Live Concert Experience",
+    description:
+      "Feel the energy of live performances from your favorite artists.",
+    type: "Mood",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Driving",
-    genres: ["rock", "indie", "electronic", "alternative"],
+    ownerId: "",
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
+    name: "Unplugged Sessions",
+    description:
+      "Raw, acoustic live performances that showcase musical talent.",
+    type: "Mood",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Driving",
-    genres: ["pop", "rock", "indie"],
+    ownerId: "",
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
+    name: "Festival Vibes",
+    description:
+      "Relive the excitement of festival performances with these live recordings.",
+    type: "Mood",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Driving",
-    genres: ["rock", "indie", "alternative"],
+    ownerId: "",
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
+    name: "Live Rock Legends",
+    description:
+      "Epic live performances from the greatest rock bands of all time.",
+    type: "Mood",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Driving",
-    genres: ["rock", "alternative", "pop", "electronic", "decades"],
+    ownerId: "",
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
+    name: "Jazz Live",
+    description:
+      "Smooth, improvisational live jazz sets from iconic musicians.",
+    type: "Mood",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Driving",
-    genres: ["rock", "alternative", "electronic", "pop"],
+    ownerId: "",
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
+    name: "Live Acoustic Gems",
+    description: "Stripped-down, acoustic live versions of popular tracks.",
+    type: "Mood",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Driving",
-    genres: ["rock", "indie", "pop"],
+    ownerId: "",
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
+    name: "Front Row Pop",
+    description:
+      "Get up close with live pop performances that captivate the crowd.",
+    type: "Mood",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Driving",
-    genres: ["rock", "indie", "folk", "alternative"],
+    ownerId: "",
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
+    name: "Classic Concerts",
+    description:
+      "Timeless live performances from the biggest stars of the past.",
+    type: "Mood",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Driving",
-    genres: ["rock", "indie", "folk", "r&b", "alternative", "soundtrack"],
+    ownerId: "",
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
+    name: "Indie Live Sessions",
+    description: "Authentic live performances from emerging indie artists.",
+    type: "Mood",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Driving",
-    genres: ["pop", "soundtrack", "folk", "indie", "rock", "alternative"],
+    ownerId: "",
   },
   {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
+    name: "Live EDM Experience",
+    description: "High-energy live sets from top electronic DJs and producers.",
+    type: "Mood",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Driving",
-    genres: ["indie", "psychedelic", "rock", "pop", "alternative", "new wave"],
+    ownerId: "",
   },
   {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
+    name: "Road Trip Singalong",
+    description: "Sing-along hits for the ultimate road trip experience.",
+    type: "Live",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Coding",
-    genres: ["pop", "electronic", "rock", "alternative", "indie"],
+    ownerId: "",
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
+    name: "Cruise Control",
+    description: "Chill vibes for a smooth and relaxed drive.",
+    type: "Live",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Coding",
-    genres: ["alternative", "indie", "pop", "electronic"],
+    ownerId: "",
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
+    name: "Highway Rock",
+    description: "Classic rock anthems to keep you energized on long drives.",
+    type: "Live",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Coding",
-    genres: ["pop", "electronic"],
+    ownerId: "",
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
+    name: "Night Drive",
+    description: "Atmospheric and moody tracks for late-night cruising.",
+    type: "Live",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Coding",
-    genres: ["electronic", "indie", "alternative", "pop"],
+    ownerId: "",
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
+    name: "Fast Lane Beats",
+    description: "Upbeat and fast-paced tunes to match the rhythm of the road.",
+    type: "Live",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Coding",
-    genres: ["pop", "indie", "alternative", "electronic", "rock"],
+    ownerId: "",
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
+    name: "Scenic Route Sounds",
+    description: "Relaxing melodies for enjoying the beauty of the journey.",
+    type: "Live",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Coding",
-    genres: ["rock", "indie", "pop", "alternative", "electronic", "chill-out"],
+    ownerId: "",
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
+    name: "Sunny Day Drive",
+    description: "Feel-good tracks perfect for a sunny day on the open road.",
+    type: "Live",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Coding",
-    genres: ["pop", "indie", "electronic", "alternative"],
+    ownerId: "",
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
+    name: "Drive & Focus",
+    description:
+      "Instrumental and electronic beats to keep you focused on the road.",
+    type: "Live",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Coding",
-    genres: ["pop", "soundtrack", "indie", "folk"],
+    ownerId: "",
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
+    name: "Rockin' Road",
+    description: "High-energy rock and alternative tracks to fuel your drive.",
+    type: "Live",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Coding",
-    genres: ["pop", "electronic", "rock"],
+    ownerId: "",
   },
   {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
+    name: "Country Roads",
+    description:
+      "Laid-back country songs perfect for a long drive through the countryside.",
+    type: "Live",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
+    genres: [],
     isPublic: true,
-    type: "Coding",
-    genres: ["rock", "pop"],
+    ownerId: "",
+  },
+  {
+    name: "Code & Chill",
+    description:
+      "Smooth, laid-back beats to help you stay relaxed and focused while coding.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
+  },
+  {
+    name: "Focus Mode",
+    description:
+      "Ambient music to block distractions and keep you in the coding zone.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
+  },
+  {
+    name: "Programming Flow",
+    description: "Upbeat electronic tunes to get you into a productive rhythm.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
+  },
+  {
+    name: "Coding Soundscapes",
+    description:
+      "Calming soundscapes and background music for deep focus sessions.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
+  },
+  {
+    name: "Lo-Fi Coding Beats",
+    description: "Chill lo-fi beats to create the perfect coding atmosphere.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
+  },
+  {
+    name: "Deep Work Beats",
+    description:
+      "Hypnotic, repetitive beats to help you stay in the zone while coding.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
+  },
+  {
+    name: "Tech Beats",
+    description: "Futuristic electronic sounds to fuel your coding creativity.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
+  },
+  {
+    name: "Minimalist Coding",
+    description:
+      "Minimalistic music to keep your mind sharp and your code clean.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
+  },
+  {
+    name: "Instrumental Coding",
+    description: "Instrumental tracks to keep your focus without distractions.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
+  },
+  {
+    name: "Coding Marathon",
+    description:
+      "Extended tracks and mixes for long, uninterrupted coding sessions.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: [],
+    isPublic: true,
+    ownerId: "",
   },
 ];
 
@@ -1626,12 +1663,12 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
   {
     name: "Chill Vibes",
     description: "Relaxing tunes for unwinding after a long day.",
+    type: "New Music",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Music",
     genres: ["rock", "pop", "60s", "decades"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Hey Jude",
@@ -1641,7 +1678,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "A_MjCqQoLLA",
         imgUrl: "https://i.ytimg.com/vi/A_MjCqQoLLA/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Don't Let Me Down",
@@ -1661,7 +1698,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "2Q_ZzBGPdqE",
         imgUrl: "https://i.ytimg.com/vi/2Q_ZzBGPdqE/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Something",
@@ -1671,7 +1708,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "UelDrZ1aFeY",
         imgUrl: "https://i.ytimg.com/vi/UelDrZ1aFeY/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Yellow Submarine",
@@ -1738,12 +1775,12 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
   {
     name: "Workout Energy",
     description: "High-energy tracks to keep you pumped during your workout.",
+    type: "New Music",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Music",
     genres: ["pop", "r&b", "80s", "rock"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Billie Jean",
@@ -1850,12 +1887,12 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
   {
     name: "Throwback Hits",
     description: "A collection of nostalgic songs from the 90s and 2000s.",
+    type: "New Music",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Music",
     genres: ["pop", "rock", "50s", "decades", "oldies"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Can't Help Falling In Love",
@@ -1909,14 +1946,13 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
       },
       {
         name: "Oldies But Goodies 50s 60s 70s",
-        artist:
-          "Paul Anka, Elvis Presley, Roy Orbison, The Platters, Engelbert",
+        artist: "Paul Anka, Elvis Presley, Roy Orbison...",
         genres: ["oldies", "pop", "rock"],
         duration: "03:11:27",
         youtubeId: "54kW9gKAiIc",
         imgUrl: "https://i.ytimg.com/vi/54kW9gKAiIc/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Hound Dog",
@@ -1963,12 +1999,12 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
   {
     name: "Focus Beats",
     description: "Instrumental music to help you stay focused and productive.",
+    type: "New Music",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Music",
     genres: ["pop", "country", "r&b"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "You Belong With Me",
@@ -2075,12 +2111,12 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
   {
     name: "Morning Motivation",
     description: "Uplifting songs to kickstart your day with positive energy.",
+    type: "New Music",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Music",
     genres: ["pop", "r&b", "hip-hop", "rap"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "TEXAS HOLD 'EM",
@@ -2187,12 +2223,12 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
   {
     name: "Late Night Jazz",
     description: "Smooth jazz tunes for a calm and peaceful evening.",
+    type: "New Music",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Music",
     genres: ["hip-hop", "rap", "r&b", "pop", "rock", "alternative"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Can't Tell Me Nothing",
@@ -2299,12 +2335,12 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
   {
     name: "Party Anthems",
     description: "Dance hits to get the party started and keep it going.",
+    type: "New Music",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Music",
     genres: ["pop", "hip-hop", "rap", "r&b"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Laugh Now Cry Later",
@@ -2334,7 +2370,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "OSUxrSe5GbI",
         imgUrl: "https://i.ytimg.com/vi/OSUxrSe5GbI/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Puerto Rico, Canada",
+        originCountry: "Puerto Rico",
       },
       {
         name: "Rise Above",
@@ -2374,7 +2410,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "QYh6mYIJG2Y",
         imgUrl: "https://i.ytimg.com/vi/QYh6mYIJG2Y/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "no tears left to cry",
@@ -2411,12 +2447,12 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
   {
     name: "Road Trip Classics",
     description: "Timeless tracks for the perfect road trip playlist.",
+    type: "New Music",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Music",
     genres: ["pop", "electronic", "r&b", "rock"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Break Free",
@@ -2456,7 +2492,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "s37x2VSZrLw",
         imgUrl: "https://i.ytimg.com/vi/s37x2VSZrLw/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Canada & United States",
+        originCountry: "Canada",
       },
       {
         name: "God is a Woman",
@@ -2486,7 +2522,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "O4irXQhgMqg",
         imgUrl: "https://i.ytimg.com/vi/O4irXQhgMqg/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Sympathy For The Devil",
@@ -2496,7 +2532,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "GgnClrx8N2k",
         imgUrl: "https://i.ytimg.com/vi/GgnClrx8N2k/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "You Can’t Always Get What You Want",
@@ -2523,12 +2559,12 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
   {
     name: "Indie Discoveries",
     description: "Fresh and emerging indie artists you need to hear.",
+    type: "New Music",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Music",
     genres: ["rock", "pop"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Beast Of Burden",
@@ -2538,7 +2574,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "RlV-ZFyVH3c",
         imgUrl: "https://i.ytimg.com/vi/RlV-ZFyVH3c/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Gimme Shelter",
@@ -2578,7 +2614,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "FDMq9ie0ih0",
         imgUrl: "https://i.ytimg.com/vi/FDMq9ie0ih0/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Black Dog (Remaster)",
@@ -2635,12 +2671,12 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
   {
     name: "Summer Chill",
     description: "Feel-good summer songs for beach days and barbecues.",
+    type: "New Music",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Music",
     genres: ["rock", "pop", "r&b"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Greatest Hits",
@@ -2740,19 +2776,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "f1r0XZLNlGQ",
         imgUrl: "https://i.ytimg.com/vi/f1r0XZLNlGQ/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
     ],
   },
   {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
+    name: "Calm Waves",
+    description: "Soothing sounds to relax by the ocean and unwind.",
+    type: "Chill",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Chill",
     genres: ["pop", "r&b", "ballad", "rock"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Blinding Lights",
@@ -2857,14 +2893,14 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
     ],
   },
   {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
+    name: "Evening Chill",
+    description: "Soft, mellow tracks to ease you into a peaceful night.",
+    type: "Chill",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Chill",
     genres: ["pop", "rock", "folk", "acoustic", "r&b", "electronic"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Castle On The Hill",
@@ -2969,14 +3005,15 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
     ],
   },
   {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
+    name: "Lo-Fi Lounge",
+    description:
+      "Chilled-out lo-fi beats for studying, working, or just relaxing.",
+    type: "Chill",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Chill",
     genres: ["pop", "r&b", "funk"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Work",
@@ -3006,7 +3043,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "kPa7bsKwL-c",
         imgUrl: "https://i.ytimg.com/vi/kPa7bsKwL-c/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Uptown Funk",
@@ -3081,14 +3118,14 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
     ],
   },
   {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
+    name: "Acoustic Serenity",
+    description: "Acoustic melodies for a calm and peaceful atmosphere.",
+    type: "Chill",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Chill",
     genres: ["pop", "r&b"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "When I Was Your Man",
@@ -3193,14 +3230,14 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
     ],
   },
   {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
+    name: "Chillout Vibes",
+    description: "Easygoing tunes to help you de-stress and recharge.",
+    type: "Chill",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Chill",
     genres: ["pop", "r&b", "soul", "soundtrack", "hip-hop", "rap"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Boyfriend",
@@ -3305,14 +3342,14 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
     ],
   },
   {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
+    name: "Moonlight Chill",
+    description: "Soft, dreamy music for a relaxed evening under the stars.",
+    type: "Chill",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Chill",
     genres: ["hip-hop", "rap", "pop", "latin"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Somebody Save Me (feat. Jelly Roll)",
@@ -3417,14 +3454,14 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
     ],
   },
   {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
+    name: "Sunday Slowdown",
+    description: "Laid-back tracks perfect for a lazy Sunday.",
+    type: "Chill",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Chill",
     genres: ["pop", "80s", "dance", "rock"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Like A Prayer",
@@ -3494,7 +3531,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "k9ynZnEBtvw",
         imgUrl: "https://i.ytimg.com/vi/k9ynZnEBtvw/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Wish You Were Here",
@@ -3524,19 +3561,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "7jMlFXouPk8",
         imgUrl: "https://i.ytimg.com/vi/7jMlFXouPk8/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
     ],
   },
   {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
+    name: "Ambient Escape",
+    description: "Deep, ambient sounds for total relaxation and meditation.",
+    type: "Chill",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Chill",
     genres: ["rock", "pop", "decades", "new wave"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Comfortably Numb",
@@ -3546,7 +3583,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "x-xTttimcNk",
         imgUrl: "https://i.ytimg.com/vi/x-xTttimcNk/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Another Brick In The Wall",
@@ -3641,14 +3678,14 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
     ],
   },
   {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
+    name: "Coffeehouse Chill",
+    description: "Indie and acoustic songs for a cozy coffeehouse vibe.",
+    type: "Chill",
     imgUrl:
       "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Chill",
     genres: ["rock", "pop", "r&b", "funk", "folk"],
+    isPublic: true,
+    ownerId: "",
     songs: [
       {
         name: "Lazarus",
@@ -3688,7 +3725,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "dWRCooFKk3c",
         imgUrl: "https://i.ytimg.com/vi/dWRCooFKk3c/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "The Most Beautiful Girl In the World",
@@ -3721,16 +3758,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         originCountry: "United States",
       },
       {
-        name: "On stage performance (1983)",
-        artist: "Michael Jackson, Prince, James Brown",
-        genres: ["pop", "r&b"],
-        duration: "05:11",
-        youtubeId: "zIU8TBJ7SYU",
-        imgUrl: "https://i.ytimg.com/vi/zIU8TBJ7SYU/mqdefault.jpg",
-        addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "United States",
-      },
-      {
         name: "Cream",
         artist: "Prince & The New Power Generation",
         genres: ["rock", "pop"],
@@ -3750,18 +3777,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "India",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Chill",
-    genres: ["pop", "rock", "hip-hop", "rap", "soul", "r&b"],
-    songs: [
       {
         name: "Raspberry Beret",
         artist: "Prince & The Revolution",
@@ -3772,6 +3787,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Zen Moments",
+    description: "Calming instrumental music to help you find your zen.",
+    type: "Chill",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["hip-hop", "rap", "soul", "pop", "r&b", "rock"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Empire State Of Mind ft. Alicia Keys",
         artist: "JAY-Z",
@@ -3862,18 +3889,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Workout",
-    genres: ["hip-hop", "r&b", "pop"],
-    songs: [
       {
         name: "Run This Town",
         artist: "JAY-Z",
@@ -3884,6 +3899,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Power Up",
+    description: "High-energy tracks to boost your strength and stamina.",
+    type: "Workout",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: ["pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Guess featuring Billie Eilish",
         artist: "Charli XCX",
@@ -3974,18 +4001,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Workout",
-    genres: ["pop", "dance", "soundtrack"],
-    songs: [
       {
         name: "bad guy",
         artist: "Billie Eilish",
@@ -3996,6 +4011,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Cardio Crusher",
+    description: "Fast-paced beats to keep you moving during cardio sessions.",
+    type: "Workout",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: ["pop", "dance", "soundtrack", "rock"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Bad Romance",
         artist: "Lady Gaga",
@@ -4086,18 +4113,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Workout",
-    genres: ["rock", "pop", "alternative", "rap", "hip-hop"],
-    songs: [
       {
         name: "Adventure Of A Lifetime",
         artist: "Coldplay",
@@ -4108,6 +4123,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "HIIT Hype",
+    description: "Intense, upbeat songs for high-intensity interval training.",
+    type: "Workout",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: ["pop", "rock", "alternative", "rap", "hip-hop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "A Sky Full Of Stars",
         artist: "Coldplay",
@@ -4198,18 +4225,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Workout",
-    genres: ["hip-hop", "rap", "pop", "rock", "country"],
-    songs: [
       {
         name: "Like That",
         artist: "Kendrick Lamar",
@@ -4220,6 +4235,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Beast Mode",
+    description: "Hard-hitting tracks to push through your toughest workouts.",
+    type: "Workout",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: ["rap", "hip-hop", "pop", "rock", "country"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "HUMBLE.",
         artist: "Kendrick Lamar",
@@ -4268,7 +4295,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "Ubtel9AdpRI",
         imgUrl: "https://i.ytimg.com/vi/Ubtel9AdpRI/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "I Had Some Help",
@@ -4310,18 +4337,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Workout",
-    genres: ["pop", "rap", "country", "soundtrack", "rock"],
-    songs: [
       {
         name: "Better Now",
         artist: "Post Malone",
@@ -4332,6 +4347,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Pump It Up",
+    description: "Motivational anthems to keep your energy levels high.",
+    type: "Workout",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: ["pop", "country", "soundtrack", "rap", "rock"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Pour Me A Drink",
         artist: "Post Malone ft. Blake Shelton",
@@ -4422,18 +4449,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Workout",
-    genres: ["rock", "pop", "decades", "alternative", "90s"],
-    songs: [
       {
         name: "Silver Springs",
         artist: "Fleetwood Mac",
@@ -4444,6 +4459,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Run The Beat",
+    description: "Pumping tracks to keep you in the zone on your next run.",
+    type: "Workout",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: ["rock", "pop", "decades", "alternative", "90s"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Go Your Own Way (Cover)",
         artist: "Fleetwood Mac / Andy Khánh",
@@ -4534,18 +4561,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Workout",
-    genres: ["rock", "90s", "pop", "country", "decades"],
-    songs: [
       {
         name: "Where Did You Sleep Last Night",
         artist: "Nirvana",
@@ -4556,6 +4571,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Lift Legends",
+    description: "Heavy bass and powerful beats to match your lifting routine.",
+    type: "Workout",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: ["pop", "rock", "country", "decades"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Nirvana",
         artist: "INNA",
@@ -4646,18 +4673,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Workout",
-    genres: ["rock", "alternative"],
-    songs: [
       {
         name: "Streets of Philadelphia",
         artist: "Bruce Springsteen",
@@ -4668,6 +4683,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Dance Workout",
+    description: "Fun, rhythmic tunes for a dance-inspired workout.",
+    type: "Workout",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: ["rock", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "I'm On Fire",
         artist: "Bruce Springsteen",
@@ -4686,7 +4713,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "EPhWR4d3FJQ",
         imgUrl: "https://i.ytimg.com/vi/EPhWR4d3FJQ/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "You Never Can Tell",
@@ -4706,7 +4733,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "_91hNV6vuBY",
         imgUrl: "https://i.ytimg.com/vi/_91hNV6vuBY/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "My Hometown",
@@ -4716,7 +4743,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "KZ3BJYx43y0",
         imgUrl: "https://i.ytimg.com/vi/KZ3BJYx43y0/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Born to Run",
@@ -4758,18 +4785,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Ireland",
       },
-    ],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Workout",
-    genres: ["rock", "pop", "alternative", "folk"],
-    songs: [
       {
         name: "I Still Haven't Found What I'm Looking For",
         artist: "U2",
@@ -4780,6 +4795,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Ireland",
       },
+    ],
+  },
+  {
+    name: "Adrenaline Rush",
+    description: "Fast, heart-pounding tracks to fuel your adrenaline rush.",
+    type: "Workout",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: ["rock", "pop", "alternative", "folk"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Beautiful Day",
         artist: "U2",
@@ -4870,18 +4897,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Workout",
-    genres: ["rock", "folk"],
-    songs: [
       {
         name: "Hurricane",
         artist: "Bob Dylan",
@@ -4892,6 +4907,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Endurance Boost",
+    description:
+      "Extended mixes and epic beats to power long workout sessions.",
+    type: "Workout",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["folk", "rock"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "One More Cup of Coffee",
         artist: "Bob Dylan",
@@ -4950,7 +4978,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "XY2yubErGqE",
         imgUrl: "https://i.ytimg.com/vi/XY2yubErGqE/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Mr Tambourine Man",
@@ -4982,18 +5010,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Party",
-    genres: ["rock", "decades", "pop", "ballad", "r&b"],
-    songs: [
       {
         name: "Who Are You",
         artist: "The Who",
@@ -5004,6 +5020,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Dancefloor Hits",
+    description: "The biggest dance tracks to get everyone on the floor.",
+    type: "Party",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: ["rock", "decades", "pop", "ballad", "r&b"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Behind Blue Eyes",
         artist: "The Who",
@@ -5022,7 +5050,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "-J03yCE15rg",
         imgUrl: "https://i.ytimg.com/vi/-J03yCE15rg/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Love, Reign O’er Me",
@@ -5042,7 +5070,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "6d_nBCelY_E",
         imgUrl: "https://i.ytimg.com/vi/6d_nBCelY_E/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "My Generation",
@@ -5072,7 +5100,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "4C2_Yo_MBwE",
         imgUrl: "https://i.ytimg.com/vi/4C2_Yo_MBwE/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Saving All My Love For You",
@@ -5094,18 +5122,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Party",
-    genres: ["pop", "ballad", "r&b", "80s", "rock", "60s"],
-    songs: [
       {
         name: "Greatest Love Of All",
         artist: "Whitney Houston",
@@ -5116,6 +5132,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Party Starters",
+    description: "Kick off the night with these electrifying anthems.",
+    type: "Party",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: ["pop", "r&b", "80s", "ballad", "rock", "60s"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "When You Believe",
         artist: "Whitney Houston",
@@ -5184,7 +5212,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "apBWI6xrbLY",
         imgUrl: "https://i.ytimg.com/vi/apBWI6xrbLY/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Kokomo",
@@ -5206,18 +5234,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Party",
-    genres: ["rock", "pop", "disco", "70s"],
-    songs: [
       {
         name: "Barbara Ann",
         artist: "The Beach Boys",
@@ -5228,6 +5244,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Club Bangers",
+    description:
+      "Non-stop hits that light up the club and keep the energy high.",
+    type: "Party",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: ["rock", "pop", "disco", "70s"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Surfin Usa",
         artist: "Beach Boys",
@@ -5318,18 +5347,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Sweden",
       },
-    ],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Party",
-    genres: ["pop", "disco", "jazz", "rock", "metal"],
-    songs: [
       {
         name: "Waterloo",
         artist: "ABBA",
@@ -5340,6 +5357,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Sweden",
       },
+    ],
+  },
+  {
+    name: "Throwback Party",
+    description: "Classic party jams from the 90s and 2000s to fuel nostalgia.",
+    type: "Party",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: ["jazz", "pop", "rock", "metal"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Fly Me To The Moon",
         artist: "Frank Sinatra",
@@ -5430,18 +5459,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Party",
-    genres: ["rock", "metal", "pop"],
-    songs: [
       {
         name: "For Whom The Bell Tolls",
         artist: "Metallica",
@@ -5452,6 +5469,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "House Party Vibes",
+    description: "Upbeat tunes to keep the vibe alive at your house party.",
+    type: "Party",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: ["rock", "metal", "pop", "r&b"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "The Day That Never Comes",
         artist: "Metallica",
@@ -5542,18 +5571,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Party",
-    genres: ["pop", "r&b", "rock", "live", "electronic"],
-    songs: [
       {
         name: "Payphone ft. Wiz Khalifa",
         artist: "Maroon 5",
@@ -5564,6 +5581,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Pop Party",
+    description: "The latest pop hits for a fun and upbeat party playlist.",
+    type: "Party",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: ["pop", "rock", "live", "electronic"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Misery",
         artist: "Maroon 5",
@@ -5654,18 +5683,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Australia",
       },
-    ],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Party",
-    genres: ["pop", "electronic", "rap", "hip-hop", "rock"],
-    songs: [
       {
         name: "Thunderclouds",
         artist: "LSD",
@@ -5676,6 +5693,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "International",
       },
+    ],
+  },
+  {
+    name: "Hip-Hop Party",
+    description:
+      "Banging hip-hop tracks to keep the crowd hyped all night long.",
+    type: "Party",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: ["rap", "hip-hop", "rock", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "FE!N ft. Playboi Carti",
         artist: "Travis Scott",
@@ -5766,18 +5796,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Party",
-    genres: ["rock", "alternative"],
-    songs: [
       {
         name: "Numb (Live)",
         artist: "Linkin Park",
@@ -5788,6 +5806,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Reggaeton Fiesta",
+    description: "Latin beats and reggaeton hits to get everyone dancing.",
+    type: "Party",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: ["rock", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "The Emptiness Machine",
         artist: "Linkin Park",
@@ -5876,20 +5906,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "XFkzRNyygfk",
         imgUrl: "https://i.ytimg.com/vi/XFkzRNyygfk/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Party",
-    genres: ["rock", "90s", "alternative", "mood", "pop", "dance"],
-    songs: [
       {
         name: "Karma Police",
         artist: "Radiohead",
@@ -5900,6 +5918,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Summer Party",
+    description:
+      "Feel-good summer tracks for those outdoor BBQ and pool parties.",
+    type: "Party",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: ["rock", "90s", "alternative", "mood", "pop", "dance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "In Rainbows From the Basement",
         artist: "Radiohead",
@@ -5990,18 +6021,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Party",
-    genres: ["pop", "dance", "r&b", "rock"],
-    songs: [
       {
         name: "Levitating",
         artist: "Dua Lipa",
@@ -6012,6 +6031,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "All Night Long",
+    description:
+      "High-energy tracks to keep the party going until the early hours.",
+    type: "Party",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["pop", "dance", "r&b", "rock"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Tiny Desk (Home) Concert",
         artist: "Dua Lipa",
@@ -6102,18 +6134,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Sleep",
-    genres: ["pop", "rap", "hip-hop", "r&b"],
-    songs: [
       {
         name: "Bon Appétit",
         artist: "Katy Perry",
@@ -6124,6 +6144,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Dreamy Nights",
+    description: "Gentle tunes to guide you into a deep and restful sleep.",
+    type: "Sleep",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: ["pop", "rap", "hip-hop", "r&b"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "LIFETIMES",
         artist: "Katy Perry",
@@ -6172,7 +6204,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "Um7pMggPnug",
         imgUrl: "https://i.ytimg.com/vi/Um7pMggPnug/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "US",
+        originCountry: "United States",
       },
       {
         name: "Mirror",
@@ -6214,18 +6246,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Sleep",
-    genres: ["pop", "rap", "hip-hop", "r&b", "latin"],
-    songs: [
       {
         name: "High School ft. Lil Wayne",
         artist: "Nicki Minaj",
@@ -6236,6 +6256,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Sleepy Time",
+    description: "Soothing melodies to help you relax and fall asleep faster.",
+    type: "Sleep",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: ["pop", "rap", "hip-hop", "r&b", "latin"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Look at Me Now",
         artist: "Chris Brown",
@@ -6326,18 +6358,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Sleep",
-    genres: ["rap", "hip-hop", "pop", "r&b", "rock", "60s"],
-    songs: [
       {
         name: "Motion ft. Latto & Sexyy Red",
         artist: "Cardi B",
@@ -6348,6 +6368,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Lullaby Dreams",
+    description: "Soft, calming music designed for peaceful sleep.",
+    type: "Sleep",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: ["hip-hop", "rap", "pop", "r&b", "rock", "60s"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Twerk",
         artist: "City Girls ft. Cardi B",
@@ -6376,7 +6408,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "DFMEBquxeO8",
         imgUrl: "https://i.ytimg.com/vi/DFMEBquxeO8/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Pimp",
@@ -6386,7 +6418,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "wWCfGf5rzzE",
         imgUrl: "https://i.ytimg.com/vi/wWCfGf5rzzE/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Voodoo Child (Slight Return)",
@@ -6438,18 +6470,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Bulgaria",
       },
-    ],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Sleep",
-    genres: ["rock", "pop", "decades"],
-    songs: [
       {
         name: "Hey Joe",
         artist: "The Jimi Hendrix Experience",
@@ -6460,6 +6480,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Nighttime Serenity",
+    description: "Tranquil sounds for a stress-free transition to sleep.",
+    type: "Sleep",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: ["rock", "pop", "decades"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Castles Made of Sand",
         artist: "Jimi Hendrix",
@@ -6478,7 +6510,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "P701paKEMXs",
         imgUrl: "https://i.ytimg.com/vi/P701paKEMXs/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Woman",
@@ -6550,18 +6582,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Sleep",
-    genres: ["rock", "pop", "alternative"],
-    songs: [
       {
         name: "[Just Like] Starting Over",
         artist: "John Lennon",
@@ -6572,6 +6592,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Deep Sleep Ambience",
+    description: "Ambient soundscapes for an uninterrupted night’s rest.",
+    type: "Sleep",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: ["rock", "alternative", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Californication",
         artist: "Red Hot Chili Peppers",
@@ -6662,18 +6694,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Sleep",
-    genres: ["pop", "rock", "dance"],
-    songs: [
       {
         name: "The Door",
         artist: "Teddy Swims",
@@ -6684,6 +6704,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Calm Sleep Waves",
+    description: "Relaxing wave sounds for a peaceful and restorative sleep.",
+    type: "Sleep",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: ["rock", "pop", "dance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "People Are Strange",
         artist: "The Doors",
@@ -6712,7 +6744,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "7G2-FPlvY58",
         imgUrl: "https://i.ytimg.com/vi/7G2-FPlvY58/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Love Me Two Times",
@@ -6742,7 +6774,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "jm6xRm3PUVo",
         imgUrl: "https://i.ytimg.com/vi/jm6xRm3PUVo/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Flowers",
@@ -6774,18 +6806,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Sleep",
-    genres: ["pop", "r&b", "rock", "indie", "alternative", "rap"],
-    songs: [
       {
         name: "Wrecking Ball",
         artist: "Miley Cyrus",
@@ -6796,6 +6816,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Piano Sleep",
+    description: "Soft piano melodies to lull you gently into slumber.",
+    type: "Sleep",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: ["pop", "r&b", "rock", "indie", "alternative", "rap"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Doctor (Work It Out)",
         artist: "Pharrell Williams, Miley Cyrus",
@@ -6804,7 +6836,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "xWkqjXjD73E",
         imgUrl: "https://i.ytimg.com/vi/xWkqjXjD73E/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Midnight Sky",
@@ -6886,18 +6918,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Sleep",
-    genres: ["pop", "alternative", "rock"],
-    songs: [
       {
         name: "West Coast",
         artist: "Lana Del Rey",
@@ -6908,6 +6928,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Nature Sleep",
+    description: "Peaceful nature sounds to create a serene sleep environment.",
+    type: "Sleep",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: ["pop", "rock", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Doin' Time",
         artist: "Lana Del Rey",
@@ -6998,18 +7030,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Sleep",
-    genres: ["pop", "rock", "decades", "new wave"],
-    songs: [
       {
         name: "Lights Up",
         artist: "Harry Styles",
@@ -7020,6 +7040,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Zen Sleep",
+    description: "Meditative sounds to quiet the mind and ease into sleep.",
+    type: "Sleep",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: ["pop", "decades", "rock", "new wave"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Falling",
         artist: "Harry Styles",
@@ -7110,18 +7142,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Sleep",
-    genres: ["rock", "new wave", "pop", "alternative", "indie"],
-    songs: [
       {
         name: "Can't Stand Losing You",
         artist: "The Police",
@@ -7132,6 +7152,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Healing Sleep",
+    description:
+      "Healing frequencies and calming tones for deep sleep recovery.",
+    type: "Sleep",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["rock", "pop", "alternative", "indie"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Synchronicity",
         artist: "The Police",
@@ -7140,7 +7173,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "62TIFkRur7A",
         imgUrl: "https://i.ytimg.com/vi/62TIFkRur7A/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Don't Stand So Close To Me",
@@ -7200,7 +7233,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "zc8hbSM1zVo",
         imgUrl: "https://i.ytimg.com/vi/zc8hbSM1zVo/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Just Another Girl",
@@ -7222,18 +7255,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Travel",
-    genres: ["rock", "indie", "pop", "alternative"],
-    songs: [
       {
         name: "Smile Like You Mean It",
         artist: "The Killers",
@@ -7244,6 +7265,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Wanderlust Beats",
+    description: "Upbeat tracks to fuel your adventurous spirit on the road.",
+    type: "Travel",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: ["rock", "indie", "pop", "alternative", "90s"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Full Show Part 4 - Forest Hills, Queens",
         artist: "The Killers",
@@ -7334,18 +7367,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Travel",
-    genres: ["rock", "90s"],
-    songs: [
       {
         name: "Don’t Look Back In Anger",
         artist: "Oasis",
@@ -7356,6 +7377,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Road Trip Anthems",
+    description: "Classic tunes to make every mile of your journey memorable.",
+    type: "Travel",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: ["rock", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Killing In the Name",
         artist: "Rage Against The Machine",
@@ -7446,18 +7479,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Travel",
-    genres: ["pop", "ballad", "decades", "rock", "dance", "70s"],
-    songs: [
       {
         name: "I'm Still Standing",
         artist: "Elton John",
@@ -7468,6 +7489,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Jetsetter Vibes",
+    description: "Chill beats for flying high or cruising through new cities.",
+    type: "Travel",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: ["pop", "ballad", "decades", "rock", "dance", "70s"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Sacrifice",
         artist: "Elton John",
@@ -7558,18 +7591,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Canada",
       },
-    ],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Travel",
-    genres: ["pop", "rock"],
-    songs: [
       {
         name: "Nobody Knows",
         artist: "Shawn Mendes",
@@ -7580,6 +7601,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Canada",
       },
+    ],
+  },
+  {
+    name: "Scenic Routes",
+    description: "Relaxing music for scenic drives and peaceful getaways.",
+    type: "Travel",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: ["pop", "rock", "soul"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "There's Nothing Holdin' Me Back",
         artist: "Shawn Mendes",
@@ -7668,20 +7701,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "Uq9gPaIzbe8",
         imgUrl: "https://i.ytimg.com/vi/Uq9gPaIzbe8/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Travel",
-    genres: ["pop", "soul", "r&b", "soundtrack", "electronic", "rock"],
-    songs: [
       {
         name: "I'm Not The Only One",
         artist: "Sam Smith",
@@ -7692,6 +7713,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Urban Explorer",
+    description:
+      "Hip-hop and indie vibes for exploring the streets of a new city.",
+    type: "Travel",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: ["pop", "r&b", "soundtrack", "electronic", "rock"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Too Good At Goodbyes",
         artist: "Sam Smith",
@@ -7750,7 +7784,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "1JPNFp0f53I",
         imgUrl: "https://i.ytimg.com/vi/1JPNFp0f53I/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Multiple countries (Scotland, England)",
+        originCountry: "United Kingdom",
       },
       {
         name: "Dancing With A Stranger",
@@ -7782,18 +7816,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Travel",
-    genres: ["rock", "pop", "alternative", "punk"],
-    songs: [
       {
         name: "Believer",
         artist: "Imagine Dragons",
@@ -7804,6 +7826,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Backpacker’s Journey",
+    description:
+      "Global beats to match your journey through different cultures.",
+    type: "Travel",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: ["pop", "rock", "alternative", "punk"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Demons",
         artist: "Imagine Dragons",
@@ -7894,18 +7929,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Travel",
-    genres: ["rock", "pop", "punk", "country"],
-    songs: [
       {
         name: "21 Guns",
         artist: "Green Day",
@@ -7916,6 +7939,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Highway Hits",
+    description:
+      "Energetic songs to keep the energy up during long road trips.",
+    type: "Travel",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: ["rock", "pop", "punk", "country"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "American Idiot",
         artist: "Green Day",
@@ -7974,7 +8010,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "OpQFFLBMEPI",
         imgUrl: "https://i.ytimg.com/vi/OpQFFLBMEPI/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "So What",
@@ -8006,18 +8042,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Travel",
-    genres: ["pop", "rock", "r&b", "soundtrack"],
-    songs: [
       {
         name: "TRUSTFALL",
         artist: "P!NK",
@@ -8028,6 +8052,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Destination Chill",
+    description: "Calming tracks for unwinding at your travel destination.",
+    type: "Travel",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: ["pop", "rock", "r&b", "soundtrack", "rap"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "U + Ur Hand",
         artist: "P!nk",
@@ -8118,18 +8154,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Travel",
-    genres: ["pop", "rap", "country", "r&b", "soul"],
-    songs: [
       {
         name: "INDUSTRY BABY",
         artist: "Lil Nas X, Jack Harlow",
@@ -8140,6 +8164,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Cross-Country Classics",
+    description: "Timeless tracks perfect for coast-to-coast adventures.",
+    type: "Travel",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: ["pop", "country", "rap", "r&b", "soul"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "MONTERO (Call Me By Your Name)",
         artist: "Lil Nas X",
@@ -8168,7 +8204,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "QDYDRA5JPLE",
         imgUrl: "https://i.ytimg.com/vi/QDYDRA5JPLE/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "J CHRIST",
@@ -8230,18 +8266,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Travel",
-    genres: ["pop", "r&b", "hip-hop", "soul", "rock", "rap"],
-    songs: [
       {
         name: "No One",
         artist: "Alicia Keys",
@@ -8252,6 +8276,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Escape to Nature",
+    description:
+      "Ambient sounds and acoustic tunes for reconnecting with nature on your travels.",
+    type: "Travel",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["pop", "r&b", "soul", "rock", "rap", "hip-hop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Girl on Fire",
         artist: "Alicia Keys",
@@ -8269,16 +8306,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         duration: "27:47",
         youtubeId: "uwUt1fVLb3E",
         imgUrl: "https://i.ytimg.com/vi/uwUt1fVLb3E/mqdefault.jpg",
-        addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "United States",
-      },
-      {
-        name: "Empire State Of Mind",
-        artist: "JAY-Z ft. Alicia Keys",
-        genres: ["hip-hop", "r&b"],
-        duration: "04:42",
-        youtubeId: "vk6014HuxcE",
-        imgUrl: "https://i.ytimg.com/vi/vk6014HuxcE/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
@@ -8342,18 +8369,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["rap", "hip-hop"],
-    songs: [
       {
         name: "Ambitionz Az a Ridah",
         artist: "2Pac",
@@ -8374,6 +8389,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Kitchen Grooves",
+    description: "Smooth and funky tunes to keep you grooving while you cook.",
+    type: "Cooking",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: ["rap", "hip-hop", "pop", "r&b"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Write This Down",
         artist: "2Pac, Pop Smoke",
@@ -8454,18 +8481,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["pop", "r&b", "rap", "rock"],
-    songs: [
       {
         name: "Unbreakable (Reimagined Demo)",
         artist: "Michael Jackson",
@@ -8486,6 +8501,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Chef’s Playlist",
+    description: "Upbeat tracks to inspire your culinary creations.",
+    type: "Cooking",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: ["rock", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Black",
         artist: "Pearl Jam",
@@ -8524,7 +8551,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "uvjTo-hRD5c",
         imgUrl: "https://i.ytimg.com/vi/uvjTo-hRD5c/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Just Breathe",
@@ -8564,20 +8591,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "iYtBMgLfqKQ",
         imgUrl: "https://i.ytimg.com/vi/iYtBMgLfqKQ/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["rock", "pop", "acoustic", "new wave", "punk"],
-    songs: [
       {
         name: "I Don't Want to Miss a Thing",
         artist: "Aerosmith",
@@ -8598,6 +8613,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Cooking Chill",
+    description:
+      "Relaxing music to enjoy while whipping up your favorite dishes.",
+    type: "Cooking",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: ["rock", "acoustic", "new wave", "punk"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Dream On",
         artist: "Aerosmith",
@@ -8678,18 +8706,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["rock", "punk", "pop"],
-    songs: [
       {
         name: "Rock the Casbah",
         artist: "The Clash",
@@ -8710,6 +8726,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Sizzle and Beats",
+    description: "Fun, lively songs to match the rhythm of your cooking.",
+    type: "Cooking",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: ["rock", "punk", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Train in Vain (Stand by Me)",
         artist: "The Clash",
@@ -8728,7 +8756,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "N3A8uNG3GH4",
         imgUrl: "https://i.ytimg.com/vi/N3A8uNG3GH4/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "2 ANS DE PIXELS",
@@ -8790,18 +8818,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["rock", "reggae", "pop"],
-    songs: [
       {
         name: "Don't Cry",
         artist: "Guns N' Roses",
@@ -8822,6 +8838,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Sunday Brunch Vibes",
+    description:
+      "Laid-back tunes perfect for a leisurely Sunday in the kitchen.",
+    type: "Cooking",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: ["rock", "reggae", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Sweet Child O' Mine (Alternate Version)",
         artist: "Guns N' Roses",
@@ -8840,7 +8869,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "dpmAY059TTY",
         imgUrl: "https://i.ytimg.com/vi/dpmAY059TTY/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Live And Let Die",
@@ -8902,18 +8931,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Jamaica",
       },
-    ],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["reggae", "dance", "electronic", "pop", "rock", "indie"],
-    songs: [
       {
         name: "No Woman, No Cry",
         artist: "Bob Marley & The Wailers",
@@ -8934,6 +8951,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Jamaica",
       },
+    ],
+  },
+  {
+    name: "Flavorful Mix",
+    description:
+      "A mix of world music for adding flavor to your cooking sessions.",
+    type: "Cooking",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: ["reggae", "dance", "electronic", "pop", "rock", "indie"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Classics",
         artist: "Bob Marley",
@@ -9014,18 +9044,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["pop", "rock", "electronic"],
-    songs: [
       {
         name: "Breath Of Life",
         artist: "Florence + The Machine",
@@ -9046,6 +9064,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Jazz in the Kitchen",
+    description: "Smooth jazz to create a sophisticated cooking atmosphere.",
+    type: "Cooking",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: ["rock", "pop", "electronic"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Cosmic Love",
         artist: "Florence + The Machine",
@@ -9126,18 +9156,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["rock", "pop", "alternative"],
-    songs: [
       {
         name: "This Ain't A Love Song",
         artist: "Bon Jovi",
@@ -9158,6 +9176,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Dinner Party Prep",
+    description:
+      "Uplifting beats to get you ready for hosting the perfect dinner party.",
+    type: "Cooking",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: ["rock", "pop", "alternative", "punk"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Blaze Of Glory",
         artist: "Jon Bon Jovi",
@@ -9238,18 +9269,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["rock", "punk", "pop", "latin", "world"],
-    songs: [
       {
         name: "Dammit",
         artist: "blink-182",
@@ -9258,7 +9277,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "sT0g16_LQaQ",
         imgUrl: "https://i.ytimg.com/vi/sT0g16_LQaQ/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "U.S.A",
+        originCountry: "United States",
       },
       {
         name: "DANCE WITH ME",
@@ -9270,6 +9289,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Acoustic Recipes",
+    description:
+      "Gentle acoustic songs to complement your relaxed cooking time.",
+    type: "Cooking",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: ["pop", "latin", "world", "rock"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Hips Don't Lie",
         artist: "Shakira",
@@ -9328,7 +9360,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "SHnDwYgGKkY",
         imgUrl: "https://i.ytimg.com/vi/SHnDwYgGKkY/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Colombia (Shakira), USA (Cardi B)",
+        originCountry: "Colombia",
       },
       {
         name: "La La La (Brazil 2014)",
@@ -9350,18 +9382,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Colombia",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Cooking",
-    genres: ["pop", "latin", "rock", "indie", "alternative"],
-    songs: [
       {
         name: "SOLTERA",
         artist: "SHAKIRA y ANITTA",
@@ -9370,7 +9390,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "fL7CAMQ0dHc",
         imgUrl: "https://i.ytimg.com/vi/fL7CAMQ0dHc/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Colombia, Brazil",
+        originCountry: "Brazil",
       },
       {
         name: "Lonely Boy",
@@ -9382,6 +9402,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Stir It Up",
+    description:
+      "Reggae and chill vibes for a fun and flavorful cooking experience.",
+    type: "Cooking",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["rock", "indie", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Tighten Up",
         artist: "The Black Keys",
@@ -9462,18 +9495,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Study",
-    genres: ["rock", "indie", "alternative"],
-    songs: [
       {
         name: "El Camino",
         artist: "The Black Keys",
@@ -9494,6 +9515,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Focus Flow",
+    description:
+      "Instrumental beats to help you concentrate and stay productive.",
+    type: "Study",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: ["rock", "indie", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "You Only Live Once",
         artist: "The Strokes",
@@ -9512,7 +9546,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "ewOPQZZn4SY",
         imgUrl: "https://i.ytimg.com/vi/ewOPQZZn4SY/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Last Nite",
@@ -9574,18 +9608,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Study",
-    genres: ["rock", "alternative", "new wave", "80s", "pop"],
-    songs: [
       {
         name: "Bullet With Butterfly Wings",
         artist: "The Smashing Pumpkins",
@@ -9606,6 +9628,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Study Vibes",
+    description:
+      "Chill background tunes to keep you calm and focused while you study.",
+    type: "Study",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: ["rock", "new wave", "80s", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Today",
         artist: "The Smashing Pumpkins",
@@ -9686,18 +9721,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Study",
-    genres: ["new wave", "80s", "rock"],
-    songs: [
       {
         name: "Just Can't Get Enough",
         artist: "Depeche Mode",
@@ -9718,6 +9741,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Lo-Fi Study",
+    description:
+      "Lo-fi beats to create a relaxed and distraction-free study environment.",
+    type: "Study",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: ["rock", "new wave"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Ghosts Again",
         artist: "Depeche Mode",
@@ -9746,7 +9782,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "SBjQ9tuuTJQ",
         imgUrl: "https://i.ytimg.com/vi/SBjQ9tuuTJQ/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Everlong",
@@ -9766,7 +9802,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "1VQ_3sBZEm0",
         imgUrl: "https://i.ytimg.com/vi/1VQ_3sBZEm0/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Best Of You",
@@ -9798,18 +9834,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Study",
-    genres: ["rock", "pop", "r&b"],
-    songs: [
       {
         name: "Walking After You",
         artist: "Foo Fighters",
@@ -9830,6 +9854,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Deep Focus",
+    description:
+      "Minimalist and ambient sounds to boost concentration and block out distractions.",
+    type: "Study",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: ["rock", "pop", "r&b"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "All My Life",
         artist: "Foo Fighters",
@@ -9910,18 +9947,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Study",
-    genres: ["pop", "r&b", "country"],
-    songs: [
       {
         name: "The Pleasure Principle",
         artist: "Janet Jackson",
@@ -9942,6 +9967,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Brain Food",
+    description:
+      "A mix of soothing music to keep your brain engaged while studying.",
+    type: "Study",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: ["pop", "country", "electronic"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Follow Your Arrow",
         artist: "Kacey Musgraves",
@@ -10022,18 +10060,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Study",
-    genres: ["pop", "electronic", "country", "rap", "hip-hop"],
-    songs: [
       {
         name: "Summer Nostalgia Mix #30",
         artist: "Various Artists",
@@ -10042,7 +10068,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "j2EbKm5FIwc",
         imgUrl: "https://i.ytimg.com/vi/j2EbKm5FIwc/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Simple Times",
@@ -10054,6 +10080,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Concentration Station",
+    description:
+      "A steady stream of peaceful tracks to enhance your concentration.",
+    type: "Study",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: ["rap", "hip-hop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Band4Band",
         artist: "Central Cee",
@@ -10134,18 +10173,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Study",
-    genres: ["rap", "hip-hop"],
-    songs: [
       {
         name: "To Be Found",
         artist: "Prod AG",
@@ -10166,6 +10193,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Piano for Focus",
+    description: "Soft piano melodies to create a serene study space.",
+    type: "Study",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: ["hip-hop", "rap"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Wet Dreamz",
         artist: "J. Cole",
@@ -10234,7 +10273,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "y1S1eauLdlY",
         imgUrl: "https://i.ytimg.com/vi/y1S1eauLdlY/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "G.O.M.D",
@@ -10246,18 +10285,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Study",
-    genres: ["rap", "hip-hop", "pop", "r&b"],
-    songs: [
       {
         name: "Infinity Room",
         artist: "J Cole",
@@ -10278,6 +10305,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Classical Focus",
+    description:
+      "Classical compositions to sharpen your focus and improve cognitive flow.",
+    type: "Study",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: ["pop", "r&b", "rap", "dance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Angel Numbers / Ten Toes",
         artist: "Chris Brown",
@@ -10296,7 +10336,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "JXRN_LkCa_o",
         imgUrl: "https://i.ytimg.com/vi/JXRN_LkCa_o/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Residuals",
@@ -10358,18 +10398,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Study",
-    genres: ["pop", "r&b", "dance", "hip-hop"],
-    songs: [
       {
         name: "Yeah!",
         artist: "Usher",
@@ -10390,6 +10418,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Study Chill",
+    description:
+      "Laid-back vibes to keep the stress away while you're hitting the books.",
+    type: "Study",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: ["pop", "r&b", "dance", "hip-hop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "U Got It Bad",
         artist: "Usher",
@@ -10418,7 +10459,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "O1d2DYZZrek",
         imgUrl: "https://i.ytimg.com/vi/O1d2DYZZrek/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "South Korea, United States",
+        originCountry: "South Korea",
       },
       {
         name: "OMG ft. will.i.am",
@@ -10470,18 +10511,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Study",
-    genres: ["pop", "hip-hop", "rap", "r&b"],
-    songs: [
       {
         name: "Princess Diana",
         artist: "Ice Spice & Nicki Minaj",
@@ -10490,7 +10519,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "gMq-I0dejjE",
         imgUrl: "https://i.ytimg.com/vi/gMq-I0dejjE/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Super Bass",
@@ -10502,6 +10531,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Electronic Focus",
+    description:
+      "Ambient electronic music to stimulate focus and maintain a productive flow.",
+    type: "Study",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["pop", "hip-hop", "rap", "r&b", "electronic"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Barbie World",
         artist: "Nicki Minaj & Ice Spice (feat. Aqua)",
@@ -10520,7 +10562,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "j5uAR9w7LBg",
         imgUrl: "https://i.ytimg.com/vi/j5uAR9w7LBg/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Good Form ft. Lil Wayne",
@@ -10582,18 +10624,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Wave",
-    genres: ["pop", "electronic", "rap", "hip-hop", "r&b", "soul"],
-    songs: [
       {
         name: "Hope",
         artist: "AI",
@@ -10614,6 +10644,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Retro Synths",
+    description: "Classic New Wave synth beats that defined the 80s sound.",
+    type: "New Wave",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: ["hip-hop", "rap", "r&b", "soul", "jazz"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "SAD!",
         artist: "XXXTENTACION",
@@ -10694,18 +10736,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Wave",
-    genres: ["soul", "r&b", "jazz", "rock", "pop"],
-    songs: [
       {
         name: "Use Me",
         artist: "Bill Withers",
@@ -10726,6 +10756,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "New Wave Essentials",
+    description: "The quintessential tracks that shaped the New Wave era.",
+    type: "New Wave",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: ["r&b", "soul", "rock", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Grandma's Hands",
         artist: "Bill Withers",
@@ -10806,18 +10848,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Wave",
-    genres: ["rock", "pop", "soul", "funk", "r&b"],
-    songs: [
       {
         name: "I Don't Wanna Fight",
         artist: "Tina Turner",
@@ -10838,6 +10868,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Italy",
       },
+    ],
+  },
+  {
+    name: "Post-Punk Revival",
+    description: "A blend of post-punk and New Wave for a moody, retro vibe.",
+    type: "New Wave",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: ["soul", "funk", "pop", "r&b", "rock"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Superstition",
         artist: "Stevie Wonder",
@@ -10866,7 +10908,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "XxoBaEQGMPo",
         imgUrl: "https://i.ytimg.com/vi/XxoBaEQGMPo/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Faith",
@@ -10886,7 +10928,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "jN2AdOjI4FI",
         imgUrl: "https://i.ytimg.com/vi/jN2AdOjI4FI/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "For Once In My Life",
@@ -10918,18 +10960,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Wave",
-    genres: ["pop", "rock", "r&b", "decades", "dance"],
-    songs: [
       {
         name: "Careless Whisper",
         artist: "George Michael",
@@ -10950,6 +10980,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Synthpop Dreams",
+    description: "Catchy, synth-heavy tunes from the golden age of New Wave.",
+    type: "New Wave",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: ["pop", "r&b", "decades", "rock", "dance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Freedom! ’90",
         artist: "George Michael",
@@ -11030,18 +11072,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Wave",
-    genres: ["rock", "pop", "rap", "world"],
-    songs: [
       {
         name: "In The Air Tonight",
         artist: "Phil Collins",
@@ -11062,6 +11092,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Alternative 80s",
+    description:
+      "Underground gems and alternative hits from the New Wave scene.",
+    type: "New Wave",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: ["rock", "pop", "rap", "world", "folk"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Against All Odds",
         artist: "Phil Collins",
@@ -11142,18 +11185,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Ukraine",
       },
-    ],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Wave",
-    genres: ["pop", "folk", "rock"],
-    songs: [
       {
         name: "KRAJBA / КРАЖБА",
         artist: "SIMON & MARO / СИМОН И МАРО",
@@ -11174,6 +11205,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "New Wave Nights",
+    description: "Atmospheric tracks for a nostalgic night of retro sounds.",
+    type: "New Wave",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: ["rock", "pop", "dance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "I Was Made For Lovin' You",
         artist: "Kiss",
@@ -11254,18 +11297,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Wave",
-    genres: ["dance", "pop", "r&b", "rock", "soundtrack"],
-    songs: [
       {
         name: "KISS OF LIFE",
         artist: "STICKY",
@@ -11277,16 +11308,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         originCountry: "South Korea",
       },
       {
-        name: "Kiss (Official Music Video)",
-        artist: "Prince & The Revolution",
-        genres: ["pop", "r&b"],
-        duration: "03:56",
-        youtubeId: "H9tEvfIsDyo",
-        imgUrl: "https://i.ytimg.com/vi/H9tEvfIsDyo/mqdefault.jpg",
-        addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "United States",
-      },
-      {
         name: "I Write Sins Not Tragedies",
         artist: "Panic! At The Disco",
         genres: ["rock", "pop"],
@@ -11296,6 +11317,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Electric Echoes",
+    description:
+      "Experimental and electric tracks that defined the New Wave movement.",
+    type: "New Wave",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: ["rock", "pop", "soundtrack", "rap", "r&b", "funk", "hip-hop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Emperor's New Clothes",
         artist: "Panic! At The Disco",
@@ -11366,18 +11400,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Wave",
-    genres: ["pop", "rap", "r&b", "funk", "hip-hop"],
-    songs: [
       {
         name: "This Is America",
         artist: "Childish Gambino",
@@ -11396,7 +11418,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "Kp7eSUU9oy8",
         imgUrl: "https://i.ytimg.com/vi/Kp7eSUU9oy8/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Little Foot Big Foot",
@@ -11408,6 +11430,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "New Wave Romance",
+    description:
+      "Emotive and melodic New Wave songs perfect for the sentimental soul.",
+    type: "New Wave",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: ["hip-hop", "r&b", "pop", "rap"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Lithonia",
         artist: "Childish Gambino",
@@ -11416,7 +11451,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "yD9Xo0V-hPw",
         imgUrl: "https://i.ytimg.com/vi/yD9Xo0V-hPw/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Feels Like Summer",
@@ -11478,18 +11513,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Wave",
-    genres: ["rap", "hip-hop", "rock", "alternative"],
-    songs: [
       {
         name: "I Can",
         artist: "Nas",
@@ -11520,6 +11543,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Dark Wave Beats",
+    description:
+      "The darker side of New Wave with a touch of goth and post-punk.",
+    type: "New Wave",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: ["hip-hop", "rap", "rock", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Hate Me Now",
         artist: "Nas ft. Puff Daddy",
@@ -11590,18 +11626,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "New Wave",
-    genres: ["rap", "hip-hop", "pop", "r&b"],
-    songs: [
       {
         name: "Hail Mary",
         artist: "2Pac",
@@ -11632,6 +11656,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Synthwave Revival",
+    description:
+      "Modern artists inspired by the retro-futuristic sounds of New Wave.",
+    type: "New Wave",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["rap", "pop", "hip-hop", "r&b", "soul"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Young, Wild and Free",
         artist: "Snoop Dogg & Wiz Khalifa ft. Bruno Mars",
@@ -11690,7 +11727,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "kcsa87YHg84",
         imgUrl: "https://i.ytimg.com/vi/kcsa87YHg84/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Lay Low",
@@ -11702,18 +11739,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Popular",
-    genres: ["hip-hop", "r&b", "soul", "pop", "alternative", "rock", "rap"],
-    songs: [
       {
         name: "Beautiful",
         artist: "Snoop Dogg ft. Pharrell Williams",
@@ -11744,6 +11769,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Today's Hits",
+    description: "The biggest chart-toppers and trending songs right now.",
+    type: "Other",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: ["r&b", "alternative", "pop", "rock", "soul", "rap", "hip-hop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "White Ferrari",
         artist: "Frank Ocean",
@@ -11785,16 +11822,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         originCountry: "United States",
       },
       {
-        name: "Tell Em",
-        artist: "Frank Ocean x Dijon x Bon Iver",
-        genres: ["r&b", "soul"],
-        duration: "02:45",
-        youtubeId: "q50pL7vtZHg",
-        imgUrl: "https://i.ytimg.com/vi/q50pL7vtZHg/mqdefault.jpg",
-        addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
-      },
-      {
         name: "Pink Matter",
         artist: "Frank Ocean",
         genres: ["r&b", "soul"],
@@ -11814,18 +11841,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Popular",
-    genres: ["hip-hop", "rap", "pop"],
-    songs: [
       {
         name: "Mamushi (feat. Yuki Chiba)",
         artist: "Megan Thee Stallion",
@@ -11854,7 +11869,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "R6jzbvIua08",
         imgUrl: "https://i.ytimg.com/vi/R6jzbvIua08/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Jamaica, USA",
+        originCountry: "Jamaica",
       },
       {
         name: "Wanna Be feat. Megan Thee Stallion",
@@ -11866,6 +11881,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Pop Powerhouse",
+    description: "High-energy pop anthems from the world's biggest artists.",
+    type: "Other",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: ["hip-hop", "rap", "pop", "r&b"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Cobra",
         artist: "Megan Thee Stallion",
@@ -11926,18 +11953,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Popular",
-    genres: ["r&b", "pop", "hip-hop", "rap"],
-    songs: [
       {
         name: "She (Feat. Frank Ocean)",
         artist: "Tyler, The Creator",
@@ -11946,7 +11961,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "6l75clkAYFQ",
         imgUrl: "https://i.ytimg.com/vi/6l75clkAYFQ/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "After The Storm",
@@ -11978,6 +11993,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Global Top 50",
+    description: "A mix of the most popular tracks from around the globe.",
+    type: "Other",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: ["rap", "hip-hop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "See You Again",
         artist: "Tyler, The Creator",
@@ -12039,18 +12066,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Popular",
-    genres: ["hip-hop", "rap", "r&b"],
-    songs: [
       {
         name: "Over Your Head",
         artist: "Future & Lil Uzi Vert",
@@ -12091,6 +12106,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Viral Vibes",
+    description:
+      "Songs that are making waves across social media and streaming platforms.",
+    type: "Other",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: ["hip-hop", "rap", "r&b", "chill-out", "electronic"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Money Longer",
         artist: "Lil Uzi Vert",
@@ -12151,18 +12179,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Popular",
-    genres: ["rap", "chill-out", "electronic", "hip-hop", "pop"],
-    songs: [
       {
         name: "PUFFIN ON ZOOTIEZ",
         artist: "Future",
@@ -12181,7 +12197,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "rwQ0FS0XAvg",
         imgUrl: "https://i.ytimg.com/vi/rwQ0FS0XAvg/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "We Don't Trust You",
@@ -12203,6 +12219,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Pop Perfection",
+    description: "Perfectly crafted pop hits to keep you singing along.",
+    type: "Other",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: ["pop", "hip-hop", "rap", "r&b", "rock", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Wish",
         artist: "Diplo feat. Trippie Redd",
@@ -12211,7 +12239,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "efxiDBygvdg",
         imgUrl: "https://i.ytimg.com/vi/efxiDBygvdg/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Love Scars",
@@ -12263,18 +12291,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Popular",
-    genres: ["hip-hop", "r&b", "rock", "alternative", "rap", "pop", "remix"],
-    songs: [
       {
         name: "Who Needs Love",
         artist: "Trippie Redd",
@@ -12313,8 +12329,28 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "zUtTpuqV55U",
         imgUrl: "https://i.ytimg.com/vi/zUtTpuqV55U/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Top 40 Essentials",
+    description: "The hottest hits from the current Top 40 charts.",
+    type: "Other",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: [
+      "pop",
+      "rock",
+      "alternative",
+      "hip-hop",
+      "remix",
+      "electronic",
+      "r&b",
+    ],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Ego",
         artist: "Halsey",
@@ -12375,18 +12411,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Popular",
-    genres: ["pop", "electronic", "r&b", "soundtrack"],
-    songs: [
       {
         name: "Be Kind",
         artist: "Marshmello & Halsey",
@@ -12427,6 +12451,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Fresh Pop",
+    description:
+      "New releases from the biggest pop stars and up-and-coming artists.",
+    type: "Other",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: ["pop", "r&b", "soundtrack", "latin"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Let Me",
         artist: "ZAYN",
@@ -12465,7 +12502,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "rg_zwK_sSEY",
         imgUrl: "https://i.ytimg.com/vi/rg_zwK_sSEY/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Entertainer",
@@ -12487,28 +12524,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Popular",
-    genres: ["pop", "r&b", "latin"],
-    songs: [
-      {
-        name: "HE KNOWS",
-        artist: "Camila Cabello ft. Lil Nas X",
-        genres: ["pop", "r&b"],
-        duration: "04:16",
-        youtubeId: "IbZuJgVw59c",
-        imgUrl: "https://i.ytimg.com/vi/IbZuJgVw59c/mqdefault.jpg",
-        addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "United States",
-      },
       {
         name: "GODSPEED",
         artist: "Camila Cabello",
@@ -12527,7 +12542,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "-8VfKZCOo_I",
         imgUrl: "https://i.ytimg.com/vi/-8VfKZCOo_I/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Never Be the Same",
@@ -12549,6 +12564,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Summer Smash Hits",
+    description: "The biggest summer pop hits that dominate the airwaves.",
+    type: "Other",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: ["pop", "latin", "r&b", "dance", "rock", "ballad"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Shameless",
         artist: "Camila Cabello",
@@ -12599,18 +12626,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Popular",
-    genres: ["pop", "dance", "latin", "rock", "ballad", "acoustic"],
-    songs: [
       {
         name: "Confident",
         artist: "Demi Lovato",
@@ -12629,7 +12644,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "TyHvyGVs42U",
         imgUrl: "https://i.ytimg.com/vi/TyHvyGVs42U/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Puerto Rico, USA",
+        originCountry: "Puerto Rico",
       },
       {
         name: "Cool for the Summer",
@@ -12661,6 +12676,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Feel-Good Pop",
+    description: "Uplifting and fun pop tracks to brighten your day.",
+    type: "Other",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: ["pop", "ballad", "acoustic", "soundtrack", "electronic", "remix"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Anyone",
         artist: "Demi Lovato",
@@ -12669,7 +12696,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "jW3aJ-3SEVU",
         imgUrl: "https://i.ytimg.com/vi/jW3aJ-3SEVU/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "You'll Be Ok, Kid (Acoustic Version)",
@@ -12711,18 +12738,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Popular",
-    genres: ["pop", "soundtrack", "electronic", "remix", "indie"],
-    songs: [
       {
         name: "How Long Will I Love You",
         artist: "Ellie Goulding",
@@ -12773,6 +12788,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "US Top 100",
+    description:
+      "The most popular songs in the U.S., straight from the Billboard charts.",
+    type: "Other",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["pop", "electronic", "indie", "dance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Habits (Stay High) - Hippie Sabotage Remix",
         artist: "Tove Lo",
@@ -12821,20 +12849,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "TX5t3xVwvFk",
         imgUrl: "https://i.ytimg.com/vi/TX5t3xVwvFk/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Sweden, UK",
+        originCountry: "Sweden",
       },
-    ],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Charts",
-    genres: ["pop", "dance", "electronic", "r&b"],
-    songs: [
       {
         name: "Disco Tits",
         artist: "Tove Lo",
@@ -12873,7 +12889,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "_OIeG3Q-HJY",
         imgUrl: "https://i.ytimg.com/vi/_OIeG3Q-HJY/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "2 Die 4",
@@ -12885,6 +12901,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Sweden",
       },
+    ],
+  },
+  {
+    name: "Top 10 Hits",
+    description: "The top 10 songs ruling the charts right now.",
+    type: "Popular",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: ["pop", "r&b", "electronic"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Price Tag ft. B.o.B",
         artist: "Jessie J",
@@ -12935,18 +12963,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Charts",
-    genres: ["pop", "r&b", "electronic", "remix"],
-    songs: [
       {
         name: "Domino",
         artist: "Jessie J",
@@ -12995,8 +13011,20 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "TDnIB4RAyA4",
         imgUrl: "https://i.ytimg.com/vi/TDnIB4RAyA4/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Global Charts",
+    description: "The most popular tracks from music charts around the world.",
+    type: "Popular",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: ["pop", "electronic", "remix", "r&b", "rap", "hip-hop", "reggae"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Something Just Like This",
         artist: "The Chainsmokers, Coldplay",
@@ -13005,7 +13033,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "FM7MFYoylVs",
         imgUrl: "https://i.ytimg.com/vi/FM7MFYoylVs/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "United States, United Kingdom",
+        originCountry: "United Kingdom",
       },
       {
         name: "Addicted ft. Ink",
@@ -13045,29 +13073,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "hALLm_qbeoM",
         imgUrl: "https://i.ytimg.com/vi/hALLm_qbeoM/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Charts",
-    genres: [
-      "pop",
-      "electronic",
-      "r&b",
-      "rap",
-      "hip-hop",
-      "reggae",
-      "dance",
-      "edm",
-    ],
-    songs: [
       {
         name: "Takeaway",
         artist: "The Chainsmokers, ILLENIUM",
@@ -13117,8 +13124,20 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "XLH7ZuhEgE4",
         imgUrl: "https://i.ytimg.com/vi/XLH7ZuhEgE4/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Billboard Hot 100",
+    description: "The biggest hits on the Billboard Hot 100 chart this week.",
+    type: "Popular",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: ["hip-hop", "rap", "pop", "electronic", "dance", "edm"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "EVERY CHANCE I GET",
         artist: "DJ Khaled ft. Lil Baby, Lil Durk",
@@ -13137,7 +13156,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "kxloC1MKTpg",
         imgUrl: "https://i.ytimg.com/vi/kxloC1MKTpg/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Visits The Bahamas",
@@ -13147,7 +13166,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "FDi13QGDnKs",
         imgUrl: "https://i.ytimg.com/vi/FDi13QGDnKs/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "You Stay",
@@ -13169,18 +13188,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Sweden",
       },
-    ],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Charts",
-    genres: ["pop", "electronic", "dance", "edm"],
-    songs: [
       {
         name: "The Nights",
         artist: "Avicii",
@@ -13231,6 +13238,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Sweden",
       },
+    ],
+  },
+  {
+    name: "UK Top 40",
+    description: "The hottest tracks from the official UK music charts.",
+    type: "Popular",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: ["electronic", "dance", "pop", "edm"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Addicted To You",
         artist: "Avicii",
@@ -13281,18 +13300,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Charts",
-    genres: ["pop", "dance", "electronic", "classical"],
-    songs: [
       {
         name: "How Deep Is Your Love",
         artist: "Calvin Harris & Disciples",
@@ -13343,6 +13350,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "US Chart Toppers",
+    description: "The most played and streamed songs in the U.S.",
+    type: "Popular",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: ["pop", "electronic", "dance", "classical"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Under Control",
         artist: "Calvin Harris & Alesso ft. Hurts",
@@ -13381,7 +13400,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "taSubkjZUA4",
         imgUrl: "https://i.ytimg.com/vi/taSubkjZUA4/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Adagio For Strings",
@@ -13393,18 +13412,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Netherlands",
       },
-    ],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Charts",
-    genres: ["electronic", "dance", "pop", "edm", "latin"],
-    songs: [
       {
         name: "Live from Edge New York City",
         artist: "Tiësto",
@@ -13455,6 +13462,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Euro Chart Hits",
+    description: "Chart-topping hits across Europe, featuring a mix of genres.",
+    type: "Popular",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: ["pop", "electronic", "edm", "latin", "dance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Happier",
         artist: "Marshmello ft. Bastille",
@@ -13503,20 +13522,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "25vNYV0qdgA",
         imgUrl: "https://i.ytimg.com/vi/25vNYV0qdgA/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various - US, Colombia",
+        originCountry: "Colombia",
       },
-    ],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Charts",
-    genres: ["pop", "electronic", "dance", "edm"],
-    songs: [
       {
         name: "Together",
         artist: "Marshmello",
@@ -13536,7 +13543,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "-IcBIoKZfpc",
         imgUrl: "https://i.ytimg.com/vi/-IcBIoKZfpc/mqdefault_live.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Moving On",
@@ -13568,6 +13575,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Netherlands",
       },
+    ],
+  },
+  {
+    name: "Trending Now",
+    description: "The songs that are rising quickly up the charts this week.",
+    type: "Popular",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: ["pop", "edm", "electronic", "dance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "High On Life",
         artist: "Martin Garrix feat. Bonn",
@@ -13596,7 +13615,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "9vMh9f41pqE",
         imgUrl: "https://i.ytimg.com/vi/9vMh9f41pqE/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Belgium/Netherlands",
+        originCountry: "Belgium",
       },
       {
         name: "Full live-set",
@@ -13616,20 +13635,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "nc5jY67cUyQ",
         imgUrl: "https://i.ytimg.com/vi/nc5jY67cUyQ/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Charts",
-    genres: ["pop", "edm", "electronic", "dance"],
-    songs: [
       {
         name: "Scared To Be Lonely",
         artist: "Martin Garrix & Dua Lipa",
@@ -13638,7 +13645,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "e2vBLd5Egnk",
         imgUrl: "https://i.ytimg.com/vi/e2vBLd5Egnk/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Firestone ft. Conrad Sewell",
@@ -13680,6 +13687,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "International",
       },
+    ],
+  },
+  {
+    name: "Chart Breakers",
+    description: "The latest hits making big moves on music charts worldwide.",
+    type: "Popular",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: ["pop", "electronic", "dance", "edm"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "For Life",
         artist: "Kygo, Zak Abel",
@@ -13708,7 +13727,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "QzakjlbO2Lc",
         imgUrl: "https://i.ytimg.com/vi/QzakjlbO2Lc/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Norway, Australia",
+        originCountry: "Norway",
       },
       {
         name: "Higher Love",
@@ -13730,18 +13749,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Norway",
       },
-    ],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Charts",
-    genres: ["pop", "electronic", "dance"],
-    songs: [
       {
         name: "Clarity",
         artist: "Zedd ft. Foxes",
@@ -13790,8 +13797,20 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "M3mJkSqZbX4",
         imgUrl: "https://i.ytimg.com/vi/M3mJkSqZbX4/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Top Streaming Songs",
+    description: "The most streamed songs across all major platforms.",
+    type: "Popular",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: ["pop", "electronic", "dance", "r&b"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "I Want You To Know ft. Selena Gomez",
         artist: "Zedd",
@@ -13842,18 +13861,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "France",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Charts",
-    genres: ["pop", "electronic", "dance", "r&b"],
-    songs: [
       {
         name: "Get Lucky",
         artist: "Daft Punk",
@@ -13904,6 +13911,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Canada",
       },
+    ],
+  },
+  {
+    name: "Pop Chart Classics",
+    description: "Timeless chart-topping hits from past decades.",
+    type: "Popular",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["electronic", "dance", "house"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Giorgio by Moroder",
         artist: "Daft Punk",
@@ -13954,18 +13973,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Canada",
       },
-    ],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Decades",
-    genres: ["electronic", "house", "dance", "pop", "edm"],
-    songs: [
       {
         name: "Raise Your Weapon",
         artist: "deadmau5",
@@ -14016,6 +14023,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "70s Classics",
+    description: "A collection of the best hits from the groovy 1970s.",
+    type: "Charts",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: ["electronic", "house", "pop", "edm", "dance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Alone With You",
         artist: "deadmau5",
@@ -14034,7 +14053,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "dSDbwfXX5_I",
         imgUrl: "https://i.ytimg.com/vi/dSDbwfXX5_I/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Never Going Home Tonight (Feat. Madison Love)",
@@ -14044,7 +14063,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "YOT5LoFuQfM",
         imgUrl: "https://i.ytimg.com/vi/YOT5LoFuQfM/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "France & Sweden",
+        originCountry: "France",
       },
       {
         name: "United at Home - Dubai Edition",
@@ -14066,18 +14085,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "France",
       },
-    ],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Decades",
-    genres: ["pop", "electronic", "dance", "edm", "rock"],
-    songs: [
       {
         name: "I'm Good (Blue)",
         artist: "David Guetta & Bebe Rexha",
@@ -14086,7 +14093,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "90RLzVUuXe4",
         imgUrl: "https://i.ytimg.com/vi/90RLzVUuXe4/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Miami Ultra Music Festival 2024",
@@ -14128,6 +14135,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "France",
       },
+    ],
+  },
+  {
+    name: "80s Synthwave",
+    description:
+      "The iconic sounds of the 80s, filled with synths and neon vibes.",
+    type: "Charts",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: ["electronic", "dance", "pop", "rock", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Genesis",
         artist: "Justice",
@@ -14178,18 +14198,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "France",
       },
-    ],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Decades",
-    genres: ["electronic", "dance", "alternative", "rock"],
-    songs: [
       {
         name: "Cross",
         artist: "Justice",
@@ -14240,6 +14248,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "90s Pop Anthems",
+    description: "The biggest pop hits that defined the 1990s.",
+    type: "Charts",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: ["electronic", "dance", "rock", "pop", "house"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Block Rockin' Beats",
         artist: "The Chemical Brothers",
@@ -14290,18 +14310,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Decades",
-    genres: ["pop", "electronic", "house", "dance"],
-    songs: [
       {
         name: "Latch ft. Sam Smith",
         artist: "Disclosure",
@@ -14330,7 +14338,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "X6ko4cklXjs",
         imgUrl: "https://i.ytimg.com/vi/X6ko4cklXjs/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "You & Me (Flume Remix)",
@@ -14352,6 +14360,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Millennial Mix",
+    description: "Chart-topping tracks from the early 2000s to mid-2010s.",
+    type: "Charts",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: ["electronic", "house", "pop", "dance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "When A Fire Starts To Burn",
         artist: "Disclosure",
@@ -14400,20 +14420,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "QZrcXTHqQ_c",
         imgUrl: "https://i.ytimg.com/vi/QZrcXTHqQ_c/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "UK",
+        originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Decades",
-    genres: ["pop", "electronic", "dance"],
-    songs: [
       {
         name: "Lean On (feat. MØ)",
         artist: "Major Lazer & DJ Snake",
@@ -14442,7 +14450,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "RljexCqQC0w",
         imgUrl: "https://i.ytimg.com/vi/RljexCqQC0w/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Particula",
@@ -14452,7 +14460,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "CtEHrcA8dKc",
         imgUrl: "https://i.ytimg.com/vi/CtEHrcA8dKc/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Get Free",
@@ -14464,6 +14472,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "60s Rock Revolution",
+    description:
+      "The era of rock 'n' roll, filled with rebellious hits from the 1960s.",
+    type: "Charts",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: ["pop", "electronic", "dance", "edm"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Run Up",
         artist: "Major Lazer",
@@ -14514,18 +14535,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Decades",
-    genres: ["electronic", "dance", "edm", "pop", "remix"],
-    songs: [
       {
         name: "Club Space 2023 (Full Set)",
         artist: "Diplo",
@@ -14576,6 +14585,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "90s Hip-Hop Legends",
+    description: "The classic hip-hop tracks that shaped the 1990s.",
+    type: "Charts",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: ["pop", "electronic", "remix", "dance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Get It Right",
         artist: "Diplo",
@@ -14594,7 +14615,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "QgOXIEhHU1Y",
         imgUrl: "https://i.ytimg.com/vi/QgOXIEhHU1Y/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "ULTRAMAN",
@@ -14626,18 +14647,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Decades",
-    genres: ["pop", "electronic", "dance"],
-    songs: [
       {
         name: "On My Way",
         artist: "Alan Walker, Sabrina Carpenter & Farruko",
@@ -14646,7 +14655,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "dhYOPzcsbGM",
         imgUrl: "https://i.ytimg.com/vi/dhYOPzcsbGM/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "The Spectre",
@@ -14666,7 +14675,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "ccu6JuC21rk",
         imgUrl: "https://i.ytimg.com/vi/ccu6JuC21rk/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Alone, Pt. II",
@@ -14676,7 +14685,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "HhjHYkPQ8F0",
         imgUrl: "https://i.ytimg.com/vi/HhjHYkPQ8F0/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Best Song Of All Time",
@@ -14686,8 +14695,20 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "U935BSVJIM0",
         imgUrl: "https://i.ytimg.com/vi/U935BSVJIM0/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Disco Fever",
+    description: "Get down to the funky and danceable sounds of 70s disco.",
+    type: "Charts",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: ["pop", "electronic", "dance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Hero",
         artist: "Alan Walker & Sasha Alex Sloan",
@@ -14696,7 +14717,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "tu4HfcmMn1E",
         imgUrl: "https://i.ytimg.com/vi/tu4HfcmMn1E/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Don't You Worry Child",
@@ -14738,18 +14759,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Sweden",
       },
-    ],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Decades",
-    genres: ["pop", "electronic", "dance", "edm"],
-    songs: [
       {
         name: "Lioness",
         artist: "Swedish House Mafia ft. Niki & The Dove",
@@ -14800,6 +14809,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Sweden",
       },
+    ],
+  },
+  {
+    name: "80s Power Ballads",
+    description: "Emotive and anthemic ballads from the 1980s.",
+    type: "Charts",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: ["pop", "electronic", "dance", "edm", "latin"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Finally",
         artist: "Swedish House Mafia & Alicia Keys",
@@ -14808,7 +14829,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "OuMHgqXjM7E",
         imgUrl: "https://i.ytimg.com/vi/OuMHgqXjM7E/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Sweden/USA",
+        originCountry: "Sweden",
       },
       {
         name: "Boneless",
@@ -14818,7 +14839,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "gl2p4G3CUrI",
         imgUrl: "https://i.ytimg.com/vi/gl2p4G3CUrI/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Mainstage | Tomorrowland Winter 2022",
@@ -14838,7 +14859,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "y3OzHBEcymw",
         imgUrl: "https://i.ytimg.com/vi/y3OzHBEcymw/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Just Hold On",
@@ -14850,18 +14871,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Decades",
-    genres: ["pop", "latin", "electronic", "edm", "dance", "rock"],
-    songs: [
       {
         name: "Maldad",
         artist: "Steve Aoki & Maluma",
@@ -14880,7 +14889,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "SWiaqhNSXeg",
         imgUrl: "https://i.ytimg.com/vi/SWiaqhNSXeg/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Waste It On Me",
@@ -14890,7 +14899,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "bIv16itYi_0",
         imgUrl: "https://i.ytimg.com/vi/bIv16itYi_0/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various (United States and South Korea)",
+        originCountry: "South Korea",
       },
       {
         name: "Best Festival Remixes & Epic EDM Beats",
@@ -14912,6 +14921,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Belgium",
       },
+    ],
+  },
+  {
+    name: "Y2K Throwbacks",
+    description: "Relive the early 2000s with these pop and R&B bangers.",
+    type: "Charts",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: ["electronic", "rock", "dance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Breathe",
         artist: "The Prodigy",
@@ -14920,7 +14941,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "6_PAHbqq-o4",
         imgUrl: "https://i.ytimg.com/vi/6_PAHbqq-o4/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Firestarter",
@@ -14940,7 +14961,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "XQEBzauVIlA",
         imgUrl: "https://i.ytimg.com/vi/XQEBzauVIlA/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Warrior's Dance Uncut",
@@ -14960,20 +14981,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "Tl7VfKYbRjg",
         imgUrl: "https://i.ytimg.com/vi/Tl7VfKYbRjg/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Decades",
-    genres: ["rock", "electronic", "dance"],
-    songs: [
       {
         name: "The Day Is My Enemy",
         artist: "The Prodigy",
@@ -14982,7 +14991,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "kFr8SdOS5ic",
         imgUrl: "https://i.ytimg.com/vi/kFr8SdOS5ic/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Smack My Bitch Up",
@@ -15024,6 +15033,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "50s Rock 'n' Roll",
+    description: "The birth of rock, featuring timeless tracks from the 1950s.",
+    type: "Charts",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["electronic", "dance", "pop", "soundtrack", "trance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "We Come 1",
         artist: "Faithless",
@@ -15074,27 +15095,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Mood",
-    genres: [
-      "electronic",
-      "pop",
-      "dance",
-      "soundtrack",
-      "trance",
-      "new wave",
-      "80s",
-      "acoustic",
-    ],
-    songs: [
       {
         name: "One Step Too Far",
         artist: "Faithless ft. Dido",
@@ -15123,7 +15123,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "uzgBD2wysuI",
         imgUrl: "https://i.ytimg.com/vi/uzgBD2wysuI/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "UK",
+        originCountry: "United Kingdom",
       },
       {
         name: "Above",
@@ -15145,6 +15145,27 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Feel Good Vibes",
+    description: "Uplifting tracks to boost your mood and energy.",
+    type: "Decades",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: [
+      "new wave",
+      "80s",
+      "acoustic",
+      "electronic",
+      "trance",
+      "rap",
+      "chill-out",
+      "dance",
+    ],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Our House",
         artist: "Madness",
@@ -15195,18 +15216,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Mood",
-    genres: ["rap", "chill-out", "electronic", "dance", "trance", "pop"],
-    songs: [
       {
         name: "ΣΕΙΡΗΝΕΣ",
         artist: "ABOVE THE HOOD",
@@ -15225,7 +15234,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "nIcNn--sG-E",
         imgUrl: "https://i.ytimg.com/vi/nIcNn--sG-E/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Global Underground: New York (CD1)",
@@ -15257,6 +15266,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Chill & Relax",
+    description: "Smooth, mellow tunes to help you unwind and de-stress.",
+    type: "Decades",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: ["electronic", "trance", "dance", "pop", "techno"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "epic house and nu-trance DJ set in The Lab LA",
         artist: "PAUL OAKENFOLD",
@@ -15307,18 +15328,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Mood",
-    genres: ["electronic", "dance", "trance", "techno", "pop"],
-    songs: [
       {
         name: "Southern Sun",
         artist: "Paul Oakenfold",
@@ -15369,6 +15378,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Germany",
       },
+    ],
+  },
+  {
+    name: "Melancholy Moments",
+    description: "Emotive songs for when you need to embrace the feels.",
+    type: "Decades",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: ["pop", "electronic", "trance", "dance"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Nothing But You",
         artist: "Paul van Dyk",
@@ -15417,20 +15438,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "HT5X1rZgng4",
         imgUrl: "https://i.ytimg.com/vi/HT5X1rZgng4/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "UK",
+        originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Mood",
-    genres: ["electronic", "dance", "trance"],
-    songs: [
       {
         name: "We Are Alive",
         artist: "Paul van Dyk",
@@ -15481,6 +15490,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Netherlands",
       },
+    ],
+  },
+  {
+    name: "Party Mood",
+    description: "High-energy tracks to get you hyped and ready to dance.",
+    type: "Decades",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: ["electronic", "dance", "trance", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Blah Blah Blah",
         artist: "Armin van Buuren",
@@ -15531,18 +15552,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Netherlands",
       },
-    ],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Mood",
-    genres: ["pop", "dance", "electronic"],
-    songs: [
       {
         name: "Call On Me",
         artist: "Eric Prydz",
@@ -15593,6 +15602,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Sweden",
       },
+    ],
+  },
+  {
+    name: "Romantic Evening",
+    description: "Smooth, sultry songs to set the mood for a romantic night.",
+    type: "Decades",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: ["electronic", "dance", "pop", "funk"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "NOPUS",
         artist: "Eric Prydz",
@@ -15643,18 +15664,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Mood",
-    genres: ["electronic", "funk", "dance"],
-    songs: [
       {
         name: "Weapon Of Choice",
         artist: "Fatboy Slim ft. Bootsy Collins",
@@ -15705,6 +15714,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Focus & Flow",
+    description:
+      "Ambient and instrumental beats to help you concentrate and stay productive.",
+    type: "Decades",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: ["electronic", "dance", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Live At Big Beach Boutique II, Brighton, 2002",
         artist: "Fatboy Slim",
@@ -15755,18 +15777,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Mood",
-    genres: ["electronic", "dance", "pop", "techno", "house"],
-    songs: [
       {
         name: "Natural Blues",
         artist: "Moby",
@@ -15815,8 +15825,29 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "ICjyAe9S54c",
         imgUrl: "https://i.ytimg.com/vi/ICjyAe9S54c/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Motivation Boost",
+    description:
+      "Powerful anthems to get you motivated and ready to conquer the day.",
+    type: "Decades",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: [
+      "electronic",
+      "dance",
+      "pop",
+      "techno",
+      "house",
+      "rock",
+      "alternative",
+    ],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Flower",
         artist: "Moby",
@@ -15865,20 +15896,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "4izZYfo58-E",
         imgUrl: "https://i.ytimg.com/vi/4izZYfo58-E/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Mood",
-    genres: ["electronic", "techno", "dance", "rock", "alternative", "pop"],
-    songs: [
       {
         name: "Two Months Off",
         artist: "Underworld",
@@ -15929,6 +15948,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Mellow Morning",
+    description: "Gentle tunes to start your day with calm and ease.",
+    type: "Decades",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: ["rock", "alternative", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Sextape",
         artist: "Deftones",
@@ -15977,20 +16008,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "mJlonKq9uew",
         imgUrl: "https://i.ytimg.com/vi/mJlonKq9uew/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Mood",
-    genres: ["rock", "alternative"],
-    songs: [
       {
         name: "Diamond Eyes",
         artist: "Deftones",
@@ -16041,6 +16060,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Heartbreak Anthems",
+    description: "Sad, soulful songs to help you process those tough emotions.",
+    type: "Decades",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: ["rock", "indie"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Little Sister",
         artist: "Queens Of The Stone Age",
@@ -16091,18 +16122,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Mood",
-    genres: ["rock", "indie", "folk"],
-    songs: [
       {
         name: "Do I Wanna Know?",
         artist: "Arctic Monkeys",
@@ -16153,6 +16172,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Energetic Workout",
+    description: "Upbeat and powerful tracks to fuel your workout sessions.",
+    type: "Decades",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["rock", "indie", "folk", "pop", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Why'd You Only Call Me When You're High?",
         artist: "Arctic Monkeys",
@@ -16203,18 +16234,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Live",
-    genres: ["rock", "folk", "pop", "alternative"],
-    songs: [
       {
         name: "Little Lion Man",
         artist: "Mumford & Sons",
@@ -16233,7 +16252,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "eCIHPdx1OAs",
         imgUrl: "https://i.ytimg.com/vi/eCIHPdx1OAs/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "United Kingdom, Senegal",
+        originCountry: "Senegal",
       },
       {
         name: "The Cave",
@@ -16265,6 +16284,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Live Concert Experience",
+    description:
+      "Feel the energy of live performances from your favorite artists.",
+    type: "Mood",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: ["rock", "folk", "alternative", "pop", "indie"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Guiding Light, Only Love, Woman",
         artist: "Mumford & Sons",
@@ -16315,18 +16347,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Live",
-    genres: ["pop", "indie", "alternative", "rock"],
-    songs: [
       {
         name: "This Life",
         artist: "Vampire Weekend",
@@ -16375,8 +16395,21 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "8lCmyFCj580",
         imgUrl: "https://i.ytimg.com/vi/8lCmyFCj580/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Unplugged Sessions",
+    description:
+      "Raw, acoustic live performances that showcase musical talent.",
+    type: "Mood",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: ["alternative", "rock", "pop", "indie", "psychedelic"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Unbelievers",
         artist: "Vampire Weekend",
@@ -16427,18 +16460,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Australia",
       },
-    ],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Live",
-    genres: ["alternative", "rock", "psychedelic", "pop"],
-    songs: [
       {
         name: "New Person, Same Old Mistakes",
         artist: "Tame Impala",
@@ -16477,7 +16498,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "0J2QdDbelmY",
         imgUrl: "https://i.ytimg.com/vi/0J2QdDbelmY/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "The Hardest Button To Button",
@@ -16489,6 +16510,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Festival Vibes",
+    description:
+      "Relive the excitement of festival performances with these live recordings.",
+    type: "Mood",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: ["rock"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Fell In Love With A Girl",
         artist: "The White Stripes",
@@ -16539,18 +16573,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Live",
-    genres: ["rock", "pop"],
-    songs: [
       {
         name: "We're Going To Be Friends",
         artist: "The White Stripes",
@@ -16601,6 +16623,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Live Rock Legends",
+    description:
+      "Epic live performances from the greatest rock bands of all time.",
+    type: "Mood",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: ["rock", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Fear Of The Dawn",
         artist: "Jack White",
@@ -16651,18 +16686,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Live",
-    genres: ["rock", "blues", "folk", "indie"],
-    songs: [
       {
         name: "Use Somebody",
         artist: "Kings Of Leon",
@@ -16713,6 +16736,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Jazz Live",
+    description:
+      "Smooth, improvisational live jazz sets from iconic musicians.",
+    type: "Mood",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: ["rock", "blues", "folk", "indie"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Sex is on fire/Motel Blues Original",
         artist: "Johnny Bootleg Trio",
@@ -16731,7 +16767,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "MC8QcaMMVQE",
         imgUrl: "https://i.ytimg.com/vi/MC8QcaMMVQE/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Sleep On The Floor",
@@ -16763,18 +16799,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Live",
-    genres: ["rock", "folk", "indie", "pop", "alternative"],
-    songs: [
       {
         name: "Full Performance (Live on KEXP)",
         artist: "The Lumineers",
@@ -16825,6 +16849,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Iceland",
       },
+    ],
+  },
+  {
+    name: "Live Acoustic Gems",
+    description: "Stripped-down, acoustic live versions of popular tracks.",
+    type: "Mood",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: ["indie", "folk", "pop", "alternative", "rock"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Dirty Paws",
         artist: "Of Monsters And Men",
@@ -16875,18 +16911,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Iceland",
       },
-    ],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Live",
-    genres: ["pop", "rock", "indie", "alternative"],
-    songs: [
       {
         name: "Yellow Light",
         artist: "Of Monsters And Men",
@@ -16935,8 +16959,21 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "rR1lgEMMJwo",
         imgUrl: "https://i.ytimg.com/vi/rR1lgEMMJwo/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "UK",
+        originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Front Row Pop",
+    description:
+      "Get up close with live pop performances that captivate the crowd.",
+    type: "Mood",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: ["pop", "indie", "rock", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Somebody Else",
         artist: "The 1975",
@@ -16987,18 +17024,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Live",
-    genres: ["pop", "indie", "alternative", "rock"],
-    songs: [
       {
         name: "Pompeii",
         artist: "Bastille",
@@ -17049,6 +17074,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Classic Concerts",
+    description:
+      "Timeless live performances from the biggest stars of the past.",
+    type: "Mood",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: ["pop", "rock", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Of The Night",
         artist: "Bastille",
@@ -17099,18 +17137,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Live",
-    genres: ["pop", "alternative", "rock"],
-    songs: [
       {
         name: "Backslide",
         artist: "Twenty One Pilots",
@@ -17161,6 +17187,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Indie Live Sessions",
+    description: "Authentic live performances from emerging indie artists.",
+    type: "Mood",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: ["rock", "pop", "alternative", "indie", "party"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Car Radio",
         artist: "twenty one pilots",
@@ -17211,18 +17249,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Live",
-    genres: ["pop", "rock", "alternative", "indie", "party"],
-    songs: [
       {
         name: "Nervous",
         artist: "The Neighbourhood",
@@ -17273,6 +17299,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Live EDM Experience",
+    description: "High-energy live sets from top electronic DJs and producers.",
+    type: "Mood",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["rock", "indie", "pop", "alternative", "electronic"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "The Suburbs",
         artist: "Arcade Fire",
@@ -17323,18 +17361,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Canada",
       },
-    ],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Driving",
-    genres: ["rock", "indie", "electronic", "alternative"],
-    songs: [
       {
         name: "We Used to Wait",
         artist: "Arcade Fire",
@@ -17385,6 +17411,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Road Trip Singalong",
+    description: "Sing-along hits for the ultimate road trip experience.",
+    type: "Live",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: ["electronic", "indie", "rock", "alternative", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "oh baby",
         artist: "LCD Soundsystem",
@@ -17435,18 +17473,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Driving",
-    genres: ["pop", "rock", "indie"],
-    songs: [
       {
         name: "Home",
         artist: "Machine Gun Kelly, X Ambassadors & Bebe Rexha",
@@ -17465,7 +17491,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "eC5OsxKjPlc",
         imgUrl: "https://i.ytimg.com/vi/eC5OsxKjPlc/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Phoenix",
@@ -17475,7 +17501,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "yH88qRmgkGI",
         imgUrl: "https://i.ytimg.com/vi/yH88qRmgkGI/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
       {
         name: "Fata verde",
@@ -17497,6 +17523,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "France",
       },
+    ],
+  },
+  {
+    name: "Cruise Control",
+    description: "Chill vibes for a smooth and relaxed drive.",
+    type: "Live",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: ["rock", "pop", "indie", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Lisztomania",
         artist: "Phoenix",
@@ -17547,18 +17585,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Driving",
-    genres: ["rock", "indie", "alternative"],
-    songs: [
       {
         name: "Bloodbuzz Ohio",
         artist: "The National",
@@ -17609,6 +17635,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Highway Rock",
+    description: "Classic rock anthems to keep you energized on long drives.",
+    type: "Live",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: ["alternative", "rock", "pop", "electronic"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Loser",
         artist: "Beck",
@@ -17657,20 +17695,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "SCl54khN9XM",
         imgUrl: "https://i.ytimg.com/vi/SCl54khN9XM/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Mixed",
+        originCountry: "International",
       },
-    ],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Driving",
-    genres: ["rock", "alternative", "pop", "electronic", "decades"],
-    songs: [
       {
         name: "Sexx Laws",
         artist: "Beck",
@@ -17721,6 +17747,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Night Drive",
+    description: "Atmospheric and moody tracks for late-night cruising.",
+    type: "Live",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: ["rock", "alternative", "decades", "electronic", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Do You Realize??",
         artist: "The Flaming Lips",
@@ -17769,20 +17807,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "uo6TrUZY_4E",
         imgUrl: "https://i.ytimg.com/vi/uo6TrUZY_4E/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Driving",
-    genres: ["rock", "alternative", "electronic", "pop"],
-    songs: [
       {
         name: "Race For The Prize",
         artist: "The Flaming Lips",
@@ -17831,8 +17857,20 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "M9SGYBHY0qs",
         imgUrl: "https://i.ytimg.com/vi/M9SGYBHY0qs/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "Various",
+        originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Fast Lane Beats",
+    description: "Upbeat and fast-paced tunes to match the rhythm of the road.",
+    type: "Live",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: ["pop", "electronic", "rock", "indie"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Shinigami Eyes",
         artist: "Grimes",
@@ -17883,18 +17921,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Canada",
       },
-    ],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Driving",
-    genres: ["rock", "indie", "pop"],
-    songs: [
       {
         name: "Sober to Death",
         artist: "Car Seat Headrest",
@@ -17923,7 +17949,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "NvsQPCbgJOA",
         imgUrl: "https://i.ytimg.com/vi/NvsQPCbgJOA/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Fill In The Blank",
@@ -17945,6 +17971,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Scenic Route Sounds",
+    description: "Relaxing melodies for enjoying the beauty of the journey.",
+    type: "Live",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: ["rock", "indie", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "My Boy (Twin Fantasy)",
         artist: "Car Seat Headrest",
@@ -17993,20 +18031,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "vkLOg252KRE",
         imgUrl: "https://i.ytimg.com/vi/vkLOg252KRE/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Driving",
-    genres: ["rock", "indie", "folk", "alternative"],
-    songs: [
       {
         name: "Red Eyes",
         artist: "The War on Drugs",
@@ -18015,7 +18041,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "1LmX5c7HoUw",
         imgUrl: "https://i.ytimg.com/vi/1LmX5c7HoUw/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Pain",
@@ -18025,7 +18051,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "J9LgHNf2Qy0",
         imgUrl: "https://i.ytimg.com/vi/J9LgHNf2Qy0/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Thinking Of A Place",
@@ -18055,8 +18081,20 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "bvmEYgFsgyg",
         imgUrl: "https://i.ytimg.com/vi/bvmEYgFsgyg/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Sunny Day Drive",
+    description: "Feel-good tracks perfect for a sunny day on the open road.",
+    type: "Live",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: ["rock", "indie", "folk", "alternative", "r&b"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Harmonia's Dream",
         artist: "The War on Drugs",
@@ -18107,18 +18145,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Driving",
-    genres: ["rock", "indie", "folk", "r&b", "alternative", "soundtrack"],
-    songs: [
       {
         name: "Full Concert",
         artist: "Bon Iver",
@@ -18169,6 +18195,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Drive & Focus",
+    description:
+      "Instrumental and electronic beats to keep you focused on the road.",
+    type: "Live",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: ["indie", "soundtrack", "folk", "alternative", "pop", "rock"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Mystery of Love",
         artist: "Sufjan Stevens",
@@ -18219,18 +18258,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Driving",
-    genres: ["pop", "soundtrack", "folk", "indie", "rock", "alternative"],
-    songs: [
       {
         name: "Visions of Gideon",
         artist: "Sufjan Stevens",
@@ -18281,6 +18308,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Rockin' Road",
+    description: "High-energy rock and alternative tracks to fuel your drive.",
+    type: "Live",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: ["rock", "indie", "folk", "psychedelic", "pop", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Mr. Tillman",
         artist: "Father John Misty",
@@ -18309,7 +18348,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "JubUIu-b1_8",
         imgUrl: "https://i.ytimg.com/vi/JubUIu-b1_8/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Real Love Baby",
@@ -18329,20 +18368,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "iS84BMFszW0",
         imgUrl: "https://i.ytimg.com/vi/iS84BMFszW0/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Driving",
-    genres: ["indie", "psychedelic", "rock", "pop", "alternative", "new wave"],
-    songs: [
       {
         name: "Chamber Of Reflection",
         artist: "Mac DeMarco",
@@ -18393,6 +18420,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Canada",
       },
+    ],
+  },
+  {
+    name: "Country Roads",
+    description:
+      "Laid-back country songs perfect for a long drive through the countryside.",
+    type: "Live",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["pop", "rock", "indie", "alternative", "new wave", "electronic"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Heart to Heart",
         artist: "Kenny Loggins",
@@ -18441,20 +18481,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "rtL5oMyBHPs",
         imgUrl: "https://i.ytimg.com/vi/rtL5oMyBHPs/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Chill Vibes",
-    description: "Relaxing tunes for unwinding after a long day.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Coding",
-    genres: ["pop", "electronic", "rock", "alternative", "indie"],
-    songs: [
       {
         name: "Electric Feel",
         artist: "MGMT",
@@ -18505,6 +18533,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Code & Chill",
+    description:
+      "Smooth, laid-back beats to help you stay relaxed and focused while coding.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    genres: ["pop", "indie", "alternative", "rock", "electronic"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Sit Next to Me",
         artist: "Foster The People",
@@ -18513,7 +18554,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "BKLVpDTZOPQ",
         imgUrl: "https://i.ytimg.com/vi/BKLVpDTZOPQ/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "Helena Beat",
@@ -18553,20 +18594,8 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "MBqzrj18S2w",
         imgUrl: "https://i.ytimg.com/vi/MBqzrj18S2w/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Workout Energy",
-    description: "High-energy tracks to keep you pumped during your workout.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Coding",
-    genres: ["alternative", "indie", "pop", "electronic"],
-    songs: [
       {
         name: "careless",
         artist: "d4vd",
@@ -18617,6 +18646,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
+    ],
+  },
+  {
+    name: "Focus Mode",
+    description:
+      "Ambient music to block distractions and keep you in the coding zone.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    genres: ["pop", "electronic", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Lies",
         artist: "CHVRCHES",
@@ -18667,18 +18709,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Throwback Hits",
-    description: "A collection of nostalgic songs from the 90s and 2000s.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Coding",
-    genres: ["pop", "electronic"],
-    songs: [
       {
         name: "Gun",
         artist: "CHVRCHES",
@@ -18729,6 +18759,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Canada",
       },
+    ],
+  },
+  {
+    name: "Programming Flow",
+    description: "Upbeat electronic tunes to get you into a productive rhythm.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    genres: ["pop", "electronic", "indie", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Better Off Alone (Alice Deejay Cover)",
         artist: "Purity Ring",
@@ -18779,18 +18821,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Canada",
       },
-    ],
-  },
-  {
-    name: "Focus Beats",
-    description: "Instrumental music to help you stay focused and productive.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Coding",
-    genres: ["electronic", "indie", "alternative", "pop"],
-    songs: [
       {
         name: "Empathy",
         artist: "Crystal Castles",
@@ -18841,6 +18871,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Canada",
       },
+    ],
+  },
+  {
+    name: "Coding Soundscapes",
+    description:
+      "Calming soundscapes and background music for deep focus sessions.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    genres: ["electronic", "indie", "alternative", "pop"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Crimewave",
         artist: "Crystal Castles",
@@ -18891,18 +18934,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Morning Motivation",
-    description: "Uplifting songs to kickstart your day with positive energy.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Coding",
-    genres: ["pop", "indie", "alternative", "electronic", "rock"],
-    songs: [
       {
         name: "Sleepyhead",
         artist: "Passion Pit",
@@ -18921,7 +18952,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "ScC_pi3PJ9k",
         imgUrl: "https://i.ytimg.com/vi/ScC_pi3PJ9k/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "The Reeling",
@@ -18953,6 +18984,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Lo-Fi Coding Beats",
+    description: "Chill lo-fi beats to create the perfect coding atmosphere.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    genres: ["pop", "electronic", "rock", "indie", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Where the Sky Hangs",
         artist: "Passion Pit",
@@ -19003,18 +19046,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Late Night Jazz",
-    description: "Smooth jazz tunes for a calm and peaceful evening.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Coding",
-    genres: ["rock", "indie", "pop", "alternative", "electronic", "chill-out"],
-    songs: [
       {
         name: "Modern Jesus",
         artist: "Portugal. The Man",
@@ -19023,7 +19054,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "q8e1sSNsf44",
         imgUrl: "https://i.ytimg.com/vi/q8e1sSNsf44/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "USA",
+        originCountry: "United States",
       },
       {
         name: "So Young",
@@ -19065,6 +19096,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Deep Work Beats",
+    description:
+      "Hypnotic, repetitive beats to help you stay in the zone while coding.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    genres: ["rock", "pop", "electronic", "chill-out", "indie", "alternative"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Crystalised",
         artist: "The xx",
@@ -19073,7 +19117,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "Pib8eYDSFEI",
         imgUrl: "https://i.ytimg.com/vi/Pib8eYDSFEI/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "UK",
+        originCountry: "United Kingdom",
       },
       {
         name: "Intro",
@@ -19083,7 +19127,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "xMV6l2y67rk",
         imgUrl: "https://i.ytimg.com/vi/xMV6l2y67rk/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Islands",
@@ -19103,7 +19147,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "TCaNwAYqVI4",
         imgUrl: "https://i.ytimg.com/vi/TCaNwAYqVI4/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Intro long version",
@@ -19115,18 +19159,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
       },
-    ],
-  },
-  {
-    name: "Party Anthems",
-    description: "Dance hits to get the party started and keep it going.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Coding",
-    genres: ["pop", "indie", "electronic", "alternative"],
-    songs: [
       {
         name: "On Hold",
         artist: "The xx",
@@ -19145,7 +19177,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "IYvEhgYy35I",
         imgUrl: "https://i.ytimg.com/vi/IYvEhgYy35I/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "I Dare You",
@@ -19155,7 +19187,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "qqflFMhkqHM",
         imgUrl: "https://i.ytimg.com/vi/qqflFMhkqHM/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "VCR",
@@ -19165,7 +19197,7 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         youtubeId: "gI2eO_mNM88",
         imgUrl: "https://i.ytimg.com/vi/gI2eO_mNM88/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
-        originCountry: "England",
+        originCountry: "United Kingdom",
       },
       {
         name: "Royals",
@@ -19177,6 +19209,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "New Zealand",
       },
+    ],
+  },
+  {
+    name: "Tech Beats",
+    description: "Futuristic electronic sounds to fuel your coding creativity.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    genres: ["pop", "alternative", "soundtrack", "indie"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Team",
         artist: "Lorde",
@@ -19227,18 +19271,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "New Zealand",
       },
-    ],
-  },
-  {
-    name: "Road Trip Classics",
-    description: "Timeless tracks for the perfect road trip playlist.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Coding",
-    genres: ["pop", "soundtrack", "indie", "folk"],
-    songs: [
       {
         name: "Perfect Places",
         artist: "Lorde",
@@ -19289,6 +19321,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Australia",
       },
+    ],
+  },
+  {
+    name: "Minimalist Coding",
+    description:
+      "Minimalistic music to keep your mind sharp and your code clean.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    genres: ["pop", "indie", "folk"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Missing Piece",
         artist: "Vance Joy",
@@ -19339,18 +19384,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Australia",
       },
-    ],
-  },
-  {
-    name: "Indie Discoveries",
-    description: "Fresh and emerging indie artists you need to hear.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Coding",
-    genres: ["pop", "electronic", "rock"],
-    songs: [
       {
         name: "Rush",
         artist: "Troye Sivan",
@@ -19401,6 +19434,18 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "Australia",
       },
+    ],
+  },
+  {
+    name: "Instrumental Coding",
+    description: "Instrumental tracks to keep your focus without distractions.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    genres: ["pop", "electronic", "rock"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Blue Neighbourhood Trilogy (Director’s Cut)",
         artist: "Troye Sivan",
@@ -19451,18 +19496,6 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
-    ],
-  },
-  {
-    name: "Summer Chill",
-    description: "Feel-good summer songs for beach days and barbecues.",
-    imgUrl:
-      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
-    ownerId: "352d9df2-5a00-4d23-8dfa-5455fd6910d0",
-    isPublic: true,
-    type: "Coding",
-    genres: ["rock", "pop"],
-    songs: [
       {
         name: "I Think We're Alone Now",
         artist: "Billie Joe Armstrong",
@@ -19514,6 +19547,19 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United States",
       },
+    ],
+  },
+  {
+    name: "Coding Marathon",
+    description:
+      "Extended tracks and mixes for long, uninterrupted coding sessions.",
+    type: "Driving",
+    imgUrl:
+      "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    genres: ["rock", "pop", "disco", "r&b"],
+    isPublic: true,
+    ownerId: "",
+    songs: [
       {
         name: "Edge of Seventeen",
         artist: "Stevie Nicks",
@@ -19563,6 +19609,56 @@ export const PLAYLIST_DATA_SONGS: IPlaylistSongs[] = [
         imgUrl: "https://i.ytimg.com/vi/mwgg1Pu6cNg/mqdefault.jpg",
         addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
         originCountry: "United Kingdom",
+      },
+      {
+        name: "Talk To Me",
+        artist: "Stevie Nicks",
+        genres: ["rock", "pop"],
+        duration: "04:20",
+        youtubeId: "UQl62w71Ets",
+        imgUrl: "https://i.ytimg.com/vi/UQl62w71Ets/mqdefault.jpg",
+        addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
+        originCountry: "United States",
+      },
+      {
+        name: "Seven Wonders",
+        artist: "Fleetwood Mac",
+        genres: ["rock", "pop"],
+        duration: "03:38",
+        youtubeId: "9b4F_ppjnKU",
+        imgUrl: "https://i.ytimg.com/vi/9b4F_ppjnKU/mqdefault.jpg",
+        addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
+        originCountry: "United Kingdom",
+      },
+      {
+        name: "Chain Reaction",
+        artist: "Diana Ross",
+        genres: ["pop", "disco"],
+        duration: "03:47",
+        youtubeId: "PcMD2Gs9fwU",
+        imgUrl: "https://i.ytimg.com/vi/PcMD2Gs9fwU/mqdefault.jpg",
+        addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
+        originCountry: "United States",
+      },
+      {
+        name: "I Will Survive",
+        artist: "Diana Ross",
+        genres: ["pop", "disco"],
+        duration: "05:31",
+        youtubeId: "TPpfSp40qy0",
+        imgUrl: "https://i.ytimg.com/vi/TPpfSp40qy0/mqdefault.jpg",
+        addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
+        originCountry: "United States",
+      },
+      {
+        name: "When You Tell Me That You Love Me",
+        artist: "Diana Ross",
+        genres: ["pop", "r&b"],
+        duration: "04:05",
+        youtubeId: "NdkU4MQBYKQ",
+        imgUrl: "https://i.ytimg.com/vi/NdkU4MQBYKQ/mqdefault.jpg",
+        addByUserId: "0f73ae1a-6b73-4e9a-be3b-764edeead046",
+        originCountry: "United States",
       },
     ],
   },

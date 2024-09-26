@@ -26,6 +26,7 @@ export interface IPlaylist extends IPlaylistSmall {
   owner: IUser;
   duration: string;
   type: TPlaylistType;
+  description?: string|null;
   songs: ISong[];
   genres: TGenres[];
   originCountry?: string;
