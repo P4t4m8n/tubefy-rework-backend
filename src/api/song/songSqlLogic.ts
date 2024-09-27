@@ -8,6 +8,27 @@ export const songSmallSqlLogic = {
   },
 };
 
+export const getSongSqlLogicNoLikes = () => {
+  return {
+    select: {
+      id: true,
+      name: true,
+      artist: true,
+      imgUrl: true,
+      duration: true,
+      genres: true,
+      youtubeId: true,
+      addedAt: true,
+      addedBy: {
+        select: {
+          id: true,
+          imgUrl: true,
+          username: true,
+        },
+      },
+    },
+  };
+};
 export const getSongSqlLogic = (userId: string) => {
   return {
     select: {

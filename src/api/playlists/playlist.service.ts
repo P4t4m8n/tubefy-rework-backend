@@ -15,6 +15,7 @@ import { playlistShareSqlLogic } from "./playlist.SqlLogic";
 import { IShareSelectSqlLogic } from "./sqlLogic.model";
 import { ShareStatus } from "@prisma/client";
 import { IFriend } from "../friends/friends.model";
+import { getSongSqlLogic, getSongSqlLogicNoLikes } from "../song/songSqlLogic";
 
 class PlaylistService {
   #shareSelectSqlLogic: IShareSelectSqlLogic;
@@ -51,6 +52,7 @@ class PlaylistService {
   }
 
   async getById(id: string, currentUserId?: string): Promise<IPlaylist | null> {
+    const songSql = getSongSqlLogic(currentUserId || "");
     const playlistData = await prisma.playlist.findUnique({
       relationLoadStrategy: "join",
       where: { id },
@@ -65,33 +67,7 @@ class PlaylistService {
         playlistSongs: {
           include: {
             song: {
-              select: {
-                id: true,
-                name: true,
-                artist: true,
-                imgUrl: true,
-                duration: true,
-                genres: true,
-                youtubeId: true,
-                addedAt: true,
-                addedBy: {
-                  select: {
-                    id: true,
-                    imgUrl: true,
-                    username: true,
-                  },
-                },
-                songLikes: {
-                  where: {
-                    userId: currentUserId,
-                  },
-                  select: {
-                    id: true,
-                    userId: true,
-                    songId: true,
-                  },
-                },
-              },
+              ...songSql,
             },
           },
         },
@@ -116,6 +92,7 @@ class PlaylistService {
     const { limit } = filters;
 
     const queryFilters = this.#buildQueryFilters(filters, userId);
+    const songSql = getSongSqlLogic(userId || "");
 
     const playlistsData = await prisma.playlist.findMany({
       relationLoadStrategy: "join",
@@ -131,33 +108,7 @@ class PlaylistService {
         playlistSongs: {
           include: {
             song: {
-              select: {
-                id: true,
-                name: true,
-                artist: true,
-                imgUrl: true,
-                duration: true,
-                genres: true,
-                youtubeId: true,
-                addedAt: true,
-                addedBy: {
-                  select: {
-                    id: true,
-                    imgUrl: true,
-                    username: true,
-                  },
-                },
-                songLikes: {
-                  where: {
-                    userId: userId,
-                  },
-                  select: {
-                    id: true,
-                    userId: true,
-                    songId: true,
-                  },
-                },
-              },
+              ...songSql,
             },
           },
         },
@@ -176,6 +127,7 @@ class PlaylistService {
     country: string,
     userId?: string
   ): Promise<IPlaylistsGroup[]> {
+    const songSql = getSongSqlLogic(userId || "");
     const playlistsByTypePromises = playlistTypes.map((type) =>
       prisma.playlist.findMany({
         relationLoadStrategy: "join",
@@ -198,33 +150,7 @@ class PlaylistService {
           playlistSongs: {
             select: {
               song: {
-                select: {
-                  id: true,
-                  name: true,
-                  artist: true,
-                  imgUrl: true,
-                  duration: true,
-                  genres: true,
-                  youtubeId: true,
-                  addedAt: true,
-                  addedBy: {
-                    select: {
-                      id: true,
-                      imgUrl: true,
-                      username: true,
-                    },
-                  },
-                  songLikes: {
-                    where: {
-                      userId: userId,
-                    },
-                    select: {
-                      id: true,
-                      userId: true,
-                      songId: true,
-                    },
-                  },
-                },
+                ...songSql,
               },
             },
           },
@@ -267,33 +193,7 @@ class PlaylistService {
         playlistSongs: {
           select: {
             song: {
-              select: {
-                id: true,
-                name: true,
-                artist: true,
-                imgUrl: true,
-                duration: true,
-                genres: true,
-                youtubeId: true,
-                addedAt: true,
-                addedBy: {
-                  select: {
-                    id: true,
-                    imgUrl: true,
-                    username: true,
-                  },
-                },
-                songLikes: {
-                  where: {
-                    userId: userId,
-                  },
-                  select: {
-                    id: true,
-                    userId: true,
-                    songId: true,
-                  },
-                },
-              },
+              ...songSql,
             },
           },
         },
@@ -343,33 +243,7 @@ class PlaylistService {
           playlistSongs: {
             select: {
               song: {
-                select: {
-                  id: true,
-                  name: true,
-                  artist: true,
-                  imgUrl: true,
-                  duration: true,
-                  genres: true,
-                  youtubeId: true,
-                  addedAt: true,
-                  addedBy: {
-                    select: {
-                      id: true,
-                      imgUrl: true,
-                      username: true,
-                    },
-                  },
-                  songLikes: {
-                    where: {
-                      userId: userId,
-                    },
-                    select: {
-                      id: true,
-                      userId: true,
-                      songId: true,
-                    },
-                  },
-                },
+                ...songSql,
               },
             },
           },
@@ -414,8 +288,6 @@ class PlaylistService {
       ...localPlaylists,
     ]);
 
-  
-
     const playlistsGroup = this.#playlistsToPlaylistsGroup(playlists);
 
     return playlistsGroup;
@@ -425,6 +297,7 @@ class PlaylistService {
     id: string,
     updateData: IPlaylistDTO
   ): Promise<IPlaylistDTO | null> {
+    const songSql = getSongSqlLogicNoLikes();
     const playlist = await prisma.playlist.update({
       where: { id },
       data: {
@@ -438,24 +311,7 @@ class PlaylistService {
         playlistSongs: {
           select: {
             song: {
-              select: {
-                id: true,
-                name: true,
-                artist: true,
-                imgUrl: true,
-                duration: true,
-                genres: true,
-                youtubeId: true,
-                addedAt: true,
-                itemType: true,
-                addedBy: {
-                  select: {
-                    id: true,
-                    imgUrl: true,
-                    username: true,
-                  },
-                },
-              },
+              ...songSql,
             },
           },
         },
@@ -606,6 +462,7 @@ class PlaylistService {
     playlistId: string;
     userId: string;
   }): Promise<IPlaylist> {
+    const songSql = getSongSqlLogic(userId);
     const playlistData = await prisma.playlistShare.update({
       where: { playlistId_userId: { playlistId, userId: userId } },
       data: { status: "ACCEPTED" },
@@ -630,33 +487,7 @@ class PlaylistService {
             playlistSongs: {
               include: {
                 song: {
-                  select: {
-                    id: true,
-                    name: true,
-                    artist: true,
-                    imgUrl: true,
-                    duration: true,
-                    genres: true,
-                    youtubeId: true,
-                    addedAt: true,
-                    addedBy: {
-                      select: {
-                        id: true,
-                        imgUrl: true,
-                        username: true,
-                      },
-                    },
-                    songLikes: {
-                      where: {
-                        userId,
-                      },
-                      select: {
-                        id: true,
-                        userId: true,
-                        songId: true,
-                      },
-                    },
-                  },
+                  ...songSql,
                 },
               },
             },
@@ -678,6 +509,8 @@ class PlaylistService {
   }
 
   async getUserLikedSongsPlaylist(userId: string): Promise<IPlaylist> {
+    const songSql = getSongSqlLogicNoLikes();
+
     const likedSongsPlaylistData = await prisma.playlist.findFirst({
       relationLoadStrategy: "join",
       where: { ownerId: userId, name: "Liked Songs" },
@@ -700,23 +533,7 @@ class PlaylistService {
               },
               select: {
                 song: {
-                  select: {
-                    id: true,
-                    name: true,
-                    artist: true,
-                    imgUrl: true,
-                    duration: true,
-                    genres: true,
-                    youtubeId: true,
-                    addedAt: true,
-                    addedBy: {
-                      select: {
-                        id: true,
-                        imgUrl: true,
-                        username: true,
-                      },
-                    },
-                  },
+                  ...songSql,
                 },
               },
             },
