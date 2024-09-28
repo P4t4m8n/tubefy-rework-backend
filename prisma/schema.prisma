@@ -177,10 +177,4 @@ model Notification {
   friend     Friend?          @relation(fields: [friendId], references: [id])
 }
 
-model LocationIP {
-  id          String @id @default(uuid())
-  startIp     String @db.Inet
-  endIp       String @db.Inet
-  countryCode String
-  countryName String
-}
+

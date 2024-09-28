@@ -22,6 +22,7 @@ class PlaylistService {
   constructor() {
     this.#shareSelectSqlLogic = playlistShareSqlLogic();
   }
+  
   async create(playlistData: IPlaylistDTO, owner: IUser): Promise<IPlaylist> {
     const { name, isPublic, imgUrl, type, genres } = playlistData;
 

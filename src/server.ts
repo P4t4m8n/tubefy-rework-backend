@@ -1,5 +1,5 @@
 import { setupAsyncLocalStorage } from "./middlewares/setupALs.middleware";
-import express from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
 import path from "path";
 import http from "http";
@@ -58,7 +58,7 @@ import { setUpSocketAPI } from "./services/socket.service";
 setUpSocketAPI(server);
 
 // Catch-all route
-app.get("/**", (req: express.Request, res: express.Response) => {
+app.get("/**", (req: Request, res: Response) => {
   res.sendFile(path.resolve("public/index.html"));
 });
 
