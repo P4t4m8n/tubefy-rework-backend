@@ -1,0 +1,2277 @@
+[
+  {
+    "name": "Chill Vibes",
+    "description": "Relaxing tunes for unwinding after a long day.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "60s",
+      "decades"
+    ],
+    "type": "New Music",
+    "ownerId": ""
+  },
+  {
+    "name": "Workout Energy",
+    "description": "High-energy tracks to keep you pumped during your workout.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b",
+      "80s",
+      "rock"
+    ],
+    "type": "New Music",
+    "ownerId": ""
+  },
+  {
+    "name": "Throwback Hits",
+    "description": "A collection of nostalgic songs from the 90s and 2000s.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "rock",
+      "50s",
+      "decades",
+      "oldies"
+    ],
+    "type": "New Music",
+    "ownerId": ""
+  },
+  {
+    "name": "Focus Beats",
+    "description": "Instrumental music to help you stay focused and productive.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "country",
+      "r&b"
+    ],
+    "type": "New Music",
+    "ownerId": ""
+  },
+  {
+    "name": "Morning Motivation",
+    "description": "Uplifting songs to kickstart your day with positive energy.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b",
+      "hip-hop",
+      "rap"
+    ],
+    "type": "New Music",
+    "ownerId": ""
+  },
+  {
+    "name": "Late Night Jazz",
+    "description": "Smooth jazz tunes for a calm and peaceful evening.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "hip-hop",
+      "rap",
+      "r&b",
+      "pop",
+      "rock",
+      "alternative"
+    ],
+    "type": "New Music",
+    "ownerId": ""
+  },
+  {
+    "name": "Party Anthems",
+    "description": "Dance hits to get the party started and keep it going.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "hip-hop",
+      "rap",
+      "r&b"
+    ],
+    "type": "New Music",
+    "ownerId": ""
+  },
+  {
+    "name": "Road Trip Classics",
+    "description": "Timeless tracks for the perfect road trip playlist.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "r&b",
+      "rock"
+    ],
+    "type": "New Music",
+    "ownerId": ""
+  },
+  {
+    "name": "Indie Discoveries",
+    "description": "Fresh and emerging indie artists you need to hear.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop"
+    ],
+    "type": "New Music",
+    "ownerId": ""
+  },
+  {
+    "name": "Summer Chill",
+    "description": "Feel-good summer songs for beach days and barbecues.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "r&b"
+    ],
+    "type": "New Music",
+    "ownerId": ""
+  },
+  {
+    "name": "Calm Waves",
+    "description": "Soothing sounds to relax by the ocean and unwind.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b",
+      "ballad",
+      "rock"
+    ],
+    "type": "Chill",
+    "ownerId": ""
+  },
+  {
+    "name": "Evening Chill",
+    "description": "Soft, mellow tracks to ease you into a peaceful night.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "rock",
+      "folk",
+      "acoustic",
+      "r&b",
+      "electronic"
+    ],
+    "type": "Chill",
+    "ownerId": ""
+  },
+  {
+    "name": "Lo-Fi Lounge",
+    "description": "Chilled-out lo-fi beats for studying, working, or just relaxing.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b",
+      "funk"
+    ],
+    "type": "Chill",
+    "ownerId": ""
+  },
+  {
+    "name": "Acoustic Serenity",
+    "description": "Acoustic melodies for a calm and peaceful atmosphere.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b"
+    ],
+    "type": "Chill",
+    "ownerId": ""
+  },
+  {
+    "name": "Chillout Vibes",
+    "description": "Easygoing tunes to help you de-stress and recharge.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b",
+      "soul",
+      "soundtrack",
+      "hip-hop",
+      "rap"
+    ],
+    "type": "Chill",
+    "ownerId": ""
+  },
+  {
+    "name": "Moonlight Chill",
+    "description": "Soft, dreamy music for a relaxed evening under the stars.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "hip-hop",
+      "rap",
+      "pop",
+      "latin"
+    ],
+    "type": "Chill",
+    "ownerId": ""
+  },
+  {
+    "name": "Sunday Slowdown",
+    "description": "Laid-back tracks perfect for a lazy Sunday.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "80s",
+      "dance",
+      "rock"
+    ],
+    "type": "Chill",
+    "ownerId": ""
+  },
+  {
+    "name": "Ambient Escape",
+    "description": "Deep, ambient sounds for total relaxation and meditation.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "decades",
+      "new wave"
+    ],
+    "type": "Chill",
+    "ownerId": ""
+  },
+  {
+    "name": "Coffeehouse Chill",
+    "description": "Indie and acoustic songs for a cozy coffeehouse vibe.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "r&b",
+      "funk",
+      "folk"
+    ],
+    "type": "Chill",
+    "ownerId": ""
+  },
+  {
+    "name": "Zen Moments",
+    "description": "Calming instrumental music to help you find your zen.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "hip-hop",
+      "rap",
+      "soul",
+      "pop",
+      "r&b",
+      "rock"
+    ],
+    "type": "Chill",
+    "ownerId": ""
+  },
+  {
+    "name": "Power Up",
+    "description": "High-energy tracks to boost your strength and stamina.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop"
+    ],
+    "type": "Workout",
+    "ownerId": ""
+  },
+  {
+    "name": "Cardio Crusher",
+    "description": "Fast-paced beats to keep you moving during cardio sessions.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "dance",
+      "soundtrack",
+      "rock"
+    ],
+    "type": "Workout",
+    "ownerId": ""
+  },
+  {
+    "name": "HIIT Hype",
+    "description": "Intense, upbeat songs for high-intensity interval training.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "rock",
+      "alternative",
+      "rap",
+      "hip-hop"
+    ],
+    "type": "Workout",
+    "ownerId": ""
+  },
+  {
+    "name": "Beast Mode",
+    "description": "Hard-hitting tracks to push through your toughest workouts.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "rap",
+      "hip-hop",
+      "pop",
+      "rock",
+      "country"
+    ],
+    "type": "Workout",
+    "ownerId": ""
+  },
+  {
+    "name": "Pump It Up",
+    "description": "Motivational anthems to keep your energy levels high.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "country",
+      "soundtrack",
+      "rap",
+      "rock"
+    ],
+    "type": "Workout",
+    "ownerId": ""
+  },
+  {
+    "name": "Run The Beat",
+    "description": "Pumping tracks to keep you in the zone on your next run.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "decades",
+      "alternative",
+      "90s"
+    ],
+    "type": "Workout",
+    "ownerId": ""
+  },
+  {
+    "name": "Lift Legends",
+    "description": "Heavy bass and powerful beats to match your lifting routine.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "rock",
+      "country",
+      "decades"
+    ],
+    "type": "Workout",
+    "ownerId": ""
+  },
+  {
+    "name": "Dance Workout",
+    "description": "Fun, rhythmic tunes for a dance-inspired workout.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "alternative"
+    ],
+    "type": "Workout",
+    "ownerId": ""
+  },
+  {
+    "name": "Adrenaline Rush",
+    "description": "Fast, heart-pounding tracks to fuel your adrenaline rush.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "alternative",
+      "folk"
+    ],
+    "type": "Workout",
+    "ownerId": ""
+  },
+  {
+    "name": "Endurance Boost",
+    "description": "Extended mixes and epic beats to power long workout sessions.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "folk",
+      "rock"
+    ],
+    "type": "Workout",
+    "ownerId": ""
+  },
+  {
+    "name": "Dancefloor Hits",
+    "description": "The biggest dance tracks to get everyone on the floor.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "decades",
+      "pop",
+      "ballad",
+      "r&b"
+    ],
+    "type": "Party",
+    "ownerId": ""
+  },
+  {
+    "name": "Party Starters",
+    "description": "Kick off the night with these electrifying anthems.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b",
+      "80s",
+      "ballad",
+      "rock",
+      "60s"
+    ],
+    "type": "Party",
+    "ownerId": ""
+  },
+  {
+    "name": "Club Bangers",
+    "description": "Non-stop hits that light up the club and keep the energy high.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "disco",
+      "70s"
+    ],
+    "type": "Party",
+    "ownerId": ""
+  },
+  {
+    "name": "Throwback Party",
+    "description": "Classic party jams from the 90s and 2000s to fuel nostalgia.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "jazz",
+      "pop",
+      "rock",
+      "metal"
+    ],
+    "type": "Party",
+    "ownerId": ""
+  },
+  {
+    "name": "House Party Vibes",
+    "description": "Upbeat tunes to keep the vibe alive at your house party.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "metal",
+      "pop",
+      "r&b"
+    ],
+    "type": "Party",
+    "ownerId": ""
+  },
+  {
+    "name": "Pop Party",
+    "description": "The latest pop hits for a fun and upbeat party playlist.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "rock",
+      "live",
+      "electronic"
+    ],
+    "type": "Party",
+    "ownerId": ""
+  },
+  {
+    "name": "Hip-Hop Party",
+    "description": "Banging hip-hop tracks to keep the crowd hyped all night long.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "rap",
+      "hip-hop",
+      "rock",
+      "pop"
+    ],
+    "type": "Party",
+    "ownerId": ""
+  },
+  {
+    "name": "Reggaeton Fiesta",
+    "description": "Latin beats and reggaeton hits to get everyone dancing.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "alternative"
+    ],
+    "type": "Party",
+    "ownerId": ""
+  },
+  {
+    "name": "Summer Party",
+    "description": "Feel-good summer tracks for those outdoor BBQ and pool parties.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "90s",
+      "alternative",
+      "mood",
+      "pop",
+      "dance"
+    ],
+    "type": "Party",
+    "ownerId": ""
+  },
+  {
+    "name": "All Night Long",
+    "description": "High-energy tracks to keep the party going until the early hours.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "dance",
+      "r&b",
+      "rock"
+    ],
+    "type": "Party",
+    "ownerId": ""
+  },
+  {
+    "name": "Dreamy Nights",
+    "description": "Gentle tunes to guide you into a deep and restful sleep.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "rap",
+      "hip-hop",
+      "r&b"
+    ],
+    "type": "Sleep",
+    "ownerId": ""
+  },
+  {
+    "name": "Sleepy Time",
+    "description": "Soothing melodies to help you relax and fall asleep faster.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "rap",
+      "hip-hop",
+      "r&b",
+      "latin"
+    ],
+    "type": "Sleep",
+    "ownerId": ""
+  },
+  {
+    "name": "Lullaby Dreams",
+    "description": "Soft, calming music designed for peaceful sleep.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "hip-hop",
+      "rap",
+      "pop",
+      "r&b",
+      "rock",
+      "60s"
+    ],
+    "type": "Sleep",
+    "ownerId": ""
+  },
+  {
+    "name": "Nighttime Serenity",
+    "description": "Tranquil sounds for a stress-free transition to sleep.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "decades"
+    ],
+    "type": "Sleep",
+    "ownerId": ""
+  },
+  {
+    "name": "Deep Sleep Ambience",
+    "description": "Ambient soundscapes for an uninterrupted night’s rest.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "alternative",
+      "pop"
+    ],
+    "type": "Sleep",
+    "ownerId": ""
+  },
+  {
+    "name": "Calm Sleep Waves",
+    "description": "Relaxing wave sounds for a peaceful and restorative sleep.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "dance"
+    ],
+    "type": "Sleep",
+    "ownerId": ""
+  },
+  {
+    "name": "Piano Sleep",
+    "description": "Soft piano melodies to lull you gently into slumber.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b",
+      "rock",
+      "indie",
+      "alternative",
+      "rap"
+    ],
+    "type": "Sleep",
+    "ownerId": ""
+  },
+  {
+    "name": "Nature Sleep",
+    "description": "Peaceful nature sounds to create a serene sleep environment.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "rock",
+      "alternative"
+    ],
+    "type": "Sleep",
+    "ownerId": ""
+  },
+  {
+    "name": "Zen Sleep",
+    "description": "Meditative sounds to quiet the mind and ease into sleep.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "decades",
+      "rock",
+      "new wave"
+    ],
+    "type": "Sleep",
+    "ownerId": ""
+  },
+  {
+    "name": "Healing Sleep",
+    "description": "Healing frequencies and calming tones for deep sleep recovery.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "alternative",
+      "indie"
+    ],
+    "type": "Sleep",
+    "ownerId": ""
+  },
+  {
+    "name": "Wanderlust Beats",
+    "description": "Upbeat tracks to fuel your adventurous spirit on the road.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "indie",
+      "pop",
+      "alternative",
+      "90s"
+    ],
+    "type": "Travel",
+    "ownerId": ""
+  },
+  {
+    "name": "Road Trip Anthems",
+    "description": "Classic tunes to make every mile of your journey memorable.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop"
+    ],
+    "type": "Travel",
+    "ownerId": ""
+  },
+  {
+    "name": "Jetsetter Vibes",
+    "description": "Chill beats for flying high or cruising through new cities.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "ballad",
+      "decades",
+      "rock",
+      "dance",
+      "70s"
+    ],
+    "type": "Travel",
+    "ownerId": ""
+  },
+  {
+    "name": "Scenic Routes",
+    "description": "Relaxing music for scenic drives and peaceful getaways.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "rock",
+      "soul"
+    ],
+    "type": "Travel",
+    "ownerId": ""
+  },
+  {
+    "name": "Urban Explorer",
+    "description": "Hip-hop and indie vibes for exploring the streets of a new city.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b",
+      "soundtrack",
+      "electronic",
+      "rock"
+    ],
+    "type": "Travel",
+    "ownerId": ""
+  },
+  {
+    "name": "Backpacker’s Journey",
+    "description": "Global beats to match your journey through different cultures.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "rock",
+      "alternative",
+      "punk"
+    ],
+    "type": "Travel",
+    "ownerId": ""
+  },
+  {
+    "name": "Highway Hits",
+    "description": "Energetic songs to keep the energy up during long road trips.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "punk",
+      "country"
+    ],
+    "type": "Travel",
+    "ownerId": ""
+  },
+  {
+    "name": "Destination Chill",
+    "description": "Calming tracks for unwinding at your travel destination.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "rock",
+      "r&b",
+      "soundtrack",
+      "rap"
+    ],
+    "type": "Travel",
+    "ownerId": ""
+  },
+  {
+    "name": "Cross-Country Classics",
+    "description": "Timeless tracks perfect for coast-to-coast adventures.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "country",
+      "rap",
+      "r&b",
+      "soul"
+    ],
+    "type": "Travel",
+    "ownerId": ""
+  },
+  {
+    "name": "Escape to Nature",
+    "description": "Ambient sounds and acoustic tunes for reconnecting with nature on your travels.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b",
+      "soul",
+      "rock",
+      "rap",
+      "hip-hop"
+    ],
+    "type": "Travel",
+    "ownerId": ""
+  },
+  {
+    "name": "Kitchen Grooves",
+    "description": "Smooth and funky tunes to keep you grooving while you cook.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "rap",
+      "hip-hop",
+      "pop",
+      "r&b"
+    ],
+    "type": "Cooking",
+    "ownerId": ""
+  },
+  {
+    "name": "Chef’s Playlist",
+    "description": "Upbeat tracks to inspire your culinary creations.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop"
+    ],
+    "type": "Cooking",
+    "ownerId": ""
+  },
+  {
+    "name": "Cooking Chill",
+    "description": "Relaxing music to enjoy while whipping up your favorite dishes.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "acoustic",
+      "new wave",
+      "punk"
+    ],
+    "type": "Cooking",
+    "ownerId": ""
+  },
+  {
+    "name": "Sizzle and Beats",
+    "description": "Fun, lively songs to match the rhythm of your cooking.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "punk",
+      "pop"
+    ],
+    "type": "Cooking",
+    "ownerId": ""
+  },
+  {
+    "name": "Sunday Brunch Vibes",
+    "description": "Laid-back tunes perfect for a leisurely Sunday in the kitchen.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "reggae",
+      "pop"
+    ],
+    "type": "Cooking",
+    "ownerId": ""
+  },
+  {
+    "name": "Flavorful Mix",
+    "description": "A mix of world music for adding flavor to your cooking sessions.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "reggae",
+      "dance",
+      "electronic",
+      "pop",
+      "rock",
+      "indie"
+    ],
+    "type": "Cooking",
+    "ownerId": ""
+  },
+  {
+    "name": "Jazz in the Kitchen",
+    "description": "Smooth jazz to create a sophisticated cooking atmosphere.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "electronic"
+    ],
+    "type": "Cooking",
+    "ownerId": ""
+  },
+  {
+    "name": "Dinner Party Prep",
+    "description": "Uplifting beats to get you ready for hosting the perfect dinner party.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "alternative",
+      "punk"
+    ],
+    "type": "Cooking",
+    "ownerId": ""
+  },
+  {
+    "name": "Acoustic Recipes",
+    "description": "Gentle acoustic songs to complement your relaxed cooking time.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "latin",
+      "world",
+      "rock"
+    ],
+    "type": "Cooking",
+    "ownerId": ""
+  },
+  {
+    "name": "Stir It Up",
+    "description": "Reggae and chill vibes for a fun and flavorful cooking experience.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "indie",
+      "alternative"
+    ],
+    "type": "Cooking",
+    "ownerId": ""
+  },
+  {
+    "name": "Focus Flow",
+    "description": "Instrumental beats to help you concentrate and stay productive.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "indie",
+      "alternative"
+    ],
+    "type": "Study",
+    "ownerId": ""
+  },
+  {
+    "name": "Study Vibes",
+    "description": "Chill background tunes to keep you calm and focused while you study.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "new wave",
+      "80s",
+      "pop"
+    ],
+    "type": "Study",
+    "ownerId": ""
+  },
+  {
+    "name": "Lo-Fi Study",
+    "description": "Lo-fi beats to create a relaxed and distraction-free study environment.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "new wave"
+    ],
+    "type": "Study",
+    "ownerId": ""
+  },
+  {
+    "name": "Deep Focus",
+    "description": "Minimalist and ambient sounds to boost concentration and block out distractions.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "r&b"
+    ],
+    "type": "Study",
+    "ownerId": ""
+  },
+  {
+    "name": "Brain Food",
+    "description": "A mix of soothing music to keep your brain engaged while studying.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "country",
+      "electronic"
+    ],
+    "type": "Study",
+    "ownerId": ""
+  },
+  {
+    "name": "Concentration Station",
+    "description": "A steady stream of peaceful tracks to enhance your concentration.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "rap",
+      "hip-hop"
+    ],
+    "type": "Study",
+    "ownerId": ""
+  },
+  {
+    "name": "Piano for Focus",
+    "description": "Soft piano melodies to create a serene study space.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "hip-hop",
+      "rap"
+    ],
+    "type": "Study",
+    "ownerId": ""
+  },
+  {
+    "name": "Classical Focus",
+    "description": "Classical compositions to sharpen your focus and improve cognitive flow.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b",
+      "rap",
+      "dance"
+    ],
+    "type": "Study",
+    "ownerId": ""
+  },
+  {
+    "name": "Study Chill",
+    "description": "Laid-back vibes to keep the stress away while you're hitting the books.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b",
+      "dance",
+      "hip-hop"
+    ],
+    "type": "Study",
+    "ownerId": ""
+  },
+  {
+    "name": "Electronic Focus",
+    "description": "Ambient electronic music to stimulate focus and maintain a productive flow.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "hip-hop",
+      "rap",
+      "r&b",
+      "electronic"
+    ],
+    "type": "Study",
+    "ownerId": ""
+  },
+  {
+    "name": "Retro Synths",
+    "description": "Classic New Wave synth beats that defined the 80s sound.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "hip-hop",
+      "rap",
+      "r&b",
+      "soul",
+      "jazz"
+    ],
+    "type": "New Wave",
+    "ownerId": ""
+  },
+  {
+    "name": "New Wave Essentials",
+    "description": "The quintessential tracks that shaped the New Wave era.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "r&b",
+      "soul",
+      "rock",
+      "pop"
+    ],
+    "type": "New Wave",
+    "ownerId": ""
+  },
+  {
+    "name": "Post-Punk Revival",
+    "description": "A blend of post-punk and New Wave for a moody, retro vibe.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "soul",
+      "funk",
+      "pop",
+      "r&b",
+      "rock"
+    ],
+    "type": "New Wave",
+    "ownerId": ""
+  },
+  {
+    "name": "Synthpop Dreams",
+    "description": "Catchy, synth-heavy tunes from the golden age of New Wave.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b",
+      "decades",
+      "rock",
+      "dance"
+    ],
+    "type": "New Wave",
+    "ownerId": ""
+  },
+  {
+    "name": "Alternative 80s",
+    "description": "Underground gems and alternative hits from the New Wave scene.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "rap",
+      "world",
+      "folk"
+    ],
+    "type": "New Wave",
+    "ownerId": ""
+  },
+  {
+    "name": "New Wave Nights",
+    "description": "Atmospheric tracks for a nostalgic night of retro sounds.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "dance"
+    ],
+    "type": "New Wave",
+    "ownerId": ""
+  },
+  {
+    "name": "Electric Echoes",
+    "description": "Experimental and electric tracks that defined the New Wave movement.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "soundtrack",
+      "rap",
+      "r&b",
+      "funk",
+      "hip-hop"
+    ],
+    "type": "New Wave",
+    "ownerId": ""
+  },
+  {
+    "name": "New Wave Romance",
+    "description": "Emotive and melodic New Wave songs perfect for the sentimental soul.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "hip-hop",
+      "r&b",
+      "pop",
+      "rap"
+    ],
+    "type": "New Wave",
+    "ownerId": ""
+  },
+  {
+    "name": "Dark Wave Beats",
+    "description": "The darker side of New Wave with a touch of goth and post-punk.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "hip-hop",
+      "rap",
+      "rock",
+      "alternative"
+    ],
+    "type": "New Wave",
+    "ownerId": ""
+  },
+  {
+    "name": "Synthwave Revival",
+    "description": "Modern artists inspired by the retro-futuristic sounds of New Wave.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "rap",
+      "pop",
+      "hip-hop",
+      "r&b",
+      "soul"
+    ],
+    "type": "New Wave",
+    "ownerId": ""
+  },
+  {
+    "name": "Today's Hits",
+    "description": "The biggest chart-toppers and trending songs right now.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "r&b",
+      "alternative",
+      "pop",
+      "rock",
+      "soul",
+      "rap",
+      "hip-hop"
+    ],
+    "type": "Other",
+    "ownerId": ""
+  },
+  {
+    "name": "Pop Powerhouse",
+    "description": "High-energy pop anthems from the world's biggest artists.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "hip-hop",
+      "rap",
+      "pop",
+      "r&b"
+    ],
+    "type": "Other",
+    "ownerId": ""
+  },
+  {
+    "name": "Global Top 50",
+    "description": "A mix of the most popular tracks from around the globe.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "rap",
+      "hip-hop"
+    ],
+    "type": "Other",
+    "ownerId": ""
+  },
+  {
+    "name": "Viral Vibes",
+    "description": "Songs that are making waves across social media and streaming platforms.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "hip-hop",
+      "rap",
+      "r&b",
+      "chill-out",
+      "electronic"
+    ],
+    "type": "Other",
+    "ownerId": ""
+  },
+  {
+    "name": "Pop Perfection",
+    "description": "Perfectly crafted pop hits to keep you singing along.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "hip-hop",
+      "rap",
+      "r&b",
+      "rock",
+      "alternative"
+    ],
+    "type": "Other",
+    "ownerId": ""
+  },
+  {
+    "name": "Top 40 Essentials",
+    "description": "The hottest hits from the current Top 40 charts.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "rock",
+      "alternative",
+      "hip-hop",
+      "remix",
+      "electronic",
+      "r&b"
+    ],
+    "type": "Other",
+    "ownerId": ""
+  },
+  {
+    "name": "Fresh Pop",
+    "description": "New releases from the biggest pop stars and up-and-coming artists.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b",
+      "soundtrack",
+      "latin"
+    ],
+    "type": "Other",
+    "ownerId": ""
+  },
+  {
+    "name": "Summer Smash Hits",
+    "description": "The biggest summer pop hits that dominate the airwaves.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "latin",
+      "r&b",
+      "dance",
+      "rock",
+      "ballad"
+    ],
+    "type": "Other",
+    "ownerId": ""
+  },
+  {
+    "name": "Feel-Good Pop",
+    "description": "Uplifting and fun pop tracks to brighten your day.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "ballad",
+      "acoustic",
+      "soundtrack",
+      "electronic",
+      "remix"
+    ],
+    "type": "Other",
+    "ownerId": ""
+  },
+  {
+    "name": "US Top 100",
+    "description": "The most popular songs in the U.S., straight from the Billboard charts.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "indie",
+      "dance"
+    ],
+    "type": "Other",
+    "ownerId": ""
+  },
+  {
+    "name": "Top 10 Hits",
+    "description": "The top 10 songs ruling the charts right now.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "r&b",
+      "electronic"
+    ],
+    "type": "Popular",
+    "ownerId": ""
+  },
+  {
+    "name": "Global Charts",
+    "description": "The most popular tracks from music charts around the world.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "remix",
+      "r&b",
+      "rap",
+      "hip-hop",
+      "reggae"
+    ],
+    "type": "Popular",
+    "ownerId": ""
+  },
+  {
+    "name": "Billboard Hot 100",
+    "description": "The biggest hits on the Billboard Hot 100 chart this week.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "hip-hop",
+      "rap",
+      "pop",
+      "electronic",
+      "dance",
+      "edm"
+    ],
+    "type": "Popular",
+    "ownerId": ""
+  },
+  {
+    "name": "UK Top 40",
+    "description": "The hottest tracks from the official UK music charts.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "dance",
+      "pop",
+      "edm"
+    ],
+    "type": "Popular",
+    "ownerId": ""
+  },
+  {
+    "name": "US Chart Toppers",
+    "description": "The most played and streamed songs in the U.S.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "dance",
+      "classical"
+    ],
+    "type": "Popular",
+    "ownerId": ""
+  },
+  {
+    "name": "Euro Chart Hits",
+    "description": "Chart-topping hits across Europe, featuring a mix of genres.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "edm",
+      "latin",
+      "dance"
+    ],
+    "type": "Popular",
+    "ownerId": ""
+  },
+  {
+    "name": "Trending Now",
+    "description": "The songs that are rising quickly up the charts this week.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "edm",
+      "electronic",
+      "dance"
+    ],
+    "type": "Popular",
+    "ownerId": ""
+  },
+  {
+    "name": "Chart Breakers",
+    "description": "The latest hits making big moves on music charts worldwide.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "dance",
+      "edm"
+    ],
+    "type": "Popular",
+    "ownerId": ""
+  },
+  {
+    "name": "Top Streaming Songs",
+    "description": "The most streamed songs across all major platforms.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "dance",
+      "r&b"
+    ],
+    "type": "Popular",
+    "ownerId": ""
+  },
+  {
+    "name": "Pop Chart Classics",
+    "description": "Timeless chart-topping hits from past decades.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "dance",
+      "house"
+    ],
+    "type": "Popular",
+    "ownerId": ""
+  },
+  {
+    "name": "70s Classics",
+    "description": "A collection of the best hits from the groovy 1970s.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "house",
+      "pop",
+      "edm",
+      "dance"
+    ],
+    "type": "Charts",
+    "ownerId": ""
+  },
+  {
+    "name": "80s Synthwave",
+    "description": "The iconic sounds of the 80s, filled with synths and neon vibes.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "dance",
+      "pop",
+      "rock",
+      "alternative"
+    ],
+    "type": "Charts",
+    "ownerId": ""
+  },
+  {
+    "name": "90s Pop Anthems",
+    "description": "The biggest pop hits that defined the 1990s.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "dance",
+      "rock",
+      "pop",
+      "house"
+    ],
+    "type": "Charts",
+    "ownerId": ""
+  },
+  {
+    "name": "Millennial Mix",
+    "description": "Chart-topping tracks from the early 2000s to mid-2010s.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "house",
+      "pop",
+      "dance"
+    ],
+    "type": "Charts",
+    "ownerId": ""
+  },
+  {
+    "name": "60s Rock Revolution",
+    "description": "The era of rock 'n' roll, filled with rebellious hits from the 1960s.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "dance",
+      "edm"
+    ],
+    "type": "Charts",
+    "ownerId": ""
+  },
+  {
+    "name": "90s Hip-Hop Legends",
+    "description": "The classic hip-hop tracks that shaped the 1990s.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "remix",
+      "dance"
+    ],
+    "type": "Charts",
+    "ownerId": ""
+  },
+  {
+    "name": "Disco Fever",
+    "description": "Get down to the funky and danceable sounds of 70s disco.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "dance"
+    ],
+    "type": "Charts",
+    "ownerId": ""
+  },
+  {
+    "name": "80s Power Ballads",
+    "description": "Emotive and anthemic ballads from the 1980s.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "dance",
+      "edm",
+      "latin"
+    ],
+    "type": "Charts",
+    "ownerId": ""
+  },
+  {
+    "name": "Y2K Throwbacks",
+    "description": "Relive the early 2000s with these pop and R&B bangers.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "rock",
+      "dance"
+    ],
+    "type": "Charts",
+    "ownerId": ""
+  },
+  {
+    "name": "50s Rock 'n' Roll",
+    "description": "The birth of rock, featuring timeless tracks from the 1950s.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "dance",
+      "pop",
+      "soundtrack",
+      "trance"
+    ],
+    "type": "Charts",
+    "ownerId": ""
+  },
+  {
+    "name": "Feel Good Vibes",
+    "description": "Uplifting tracks to boost your mood and energy.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "new wave",
+      "80s",
+      "acoustic",
+      "electronic",
+      "trance",
+      "rap",
+      "chill-out",
+      "dance"
+    ],
+    "type": "Decades",
+    "ownerId": ""
+  },
+  {
+    "name": "Chill & Relax",
+    "description": "Smooth, mellow tunes to help you unwind and de-stress.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "trance",
+      "dance",
+      "pop",
+      "techno"
+    ],
+    "type": "Decades",
+    "ownerId": ""
+  },
+  {
+    "name": "Melancholy Moments",
+    "description": "Emotive songs for when you need to embrace the feels.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "trance",
+      "dance"
+    ],
+    "type": "Decades",
+    "ownerId": ""
+  },
+  {
+    "name": "Party Mood",
+    "description": "High-energy tracks to get you hyped and ready to dance.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "dance",
+      "trance",
+      "pop"
+    ],
+    "type": "Decades",
+    "ownerId": ""
+  },
+  {
+    "name": "Romantic Evening",
+    "description": "Smooth, sultry songs to set the mood for a romantic night.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "dance",
+      "pop",
+      "funk"
+    ],
+    "type": "Decades",
+    "ownerId": ""
+  },
+  {
+    "name": "Focus & Flow",
+    "description": "Ambient and instrumental beats to help you concentrate and stay productive.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "dance",
+      "pop"
+    ],
+    "type": "Decades",
+    "ownerId": ""
+  },
+  {
+    "name": "Motivation Boost",
+    "description": "Powerful anthems to get you motivated and ready to conquer the day.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "dance",
+      "pop",
+      "techno",
+      "house",
+      "rock",
+      "alternative"
+    ],
+    "type": "Decades",
+    "ownerId": ""
+  },
+  {
+    "name": "Mellow Morning",
+    "description": "Gentle tunes to start your day with calm and ease.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "alternative",
+      "pop"
+    ],
+    "type": "Decades",
+    "ownerId": ""
+  },
+  {
+    "name": "Heartbreak Anthems",
+    "description": "Sad, soulful songs to help you process those tough emotions.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "indie"
+    ],
+    "type": "Decades",
+    "ownerId": ""
+  },
+  {
+    "name": "Energetic Workout",
+    "description": "Upbeat and powerful tracks to fuel your workout sessions.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "indie",
+      "folk",
+      "pop",
+      "alternative"
+    ],
+    "type": "Decades",
+    "ownerId": ""
+  },
+  {
+    "name": "Live Concert Experience",
+    "description": "Feel the energy of live performances from your favorite artists.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "folk",
+      "alternative",
+      "pop",
+      "indie"
+    ],
+    "type": "Mood",
+    "ownerId": ""
+  },
+  {
+    "name": "Unplugged Sessions",
+    "description": "Raw, acoustic live performances that showcase musical talent.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "alternative",
+      "rock",
+      "pop",
+      "indie",
+      "psychedelic"
+    ],
+    "type": "Mood",
+    "ownerId": ""
+  },
+  {
+    "name": "Festival Vibes",
+    "description": "Relive the excitement of festival performances with these live recordings.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock"
+    ],
+    "type": "Mood",
+    "ownerId": ""
+  },
+  {
+    "name": "Live Rock Legends",
+    "description": "Epic live performances from the greatest rock bands of all time.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop"
+    ],
+    "type": "Mood",
+    "ownerId": ""
+  },
+  {
+    "name": "Jazz Live",
+    "description": "Smooth, improvisational live jazz sets from iconic musicians.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "blues",
+      "folk",
+      "indie"
+    ],
+    "type": "Mood",
+    "ownerId": ""
+  },
+  {
+    "name": "Live Acoustic Gems",
+    "description": "Stripped-down, acoustic live versions of popular tracks.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "indie",
+      "folk",
+      "pop",
+      "alternative",
+      "rock"
+    ],
+    "type": "Mood",
+    "ownerId": ""
+  },
+  {
+    "name": "Front Row Pop",
+    "description": "Get up close with live pop performances that captivate the crowd.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "indie",
+      "rock",
+      "alternative"
+    ],
+    "type": "Mood",
+    "ownerId": ""
+  },
+  {
+    "name": "Classic Concerts",
+    "description": "Timeless live performances from the biggest stars of the past.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "rock",
+      "alternative"
+    ],
+    "type": "Mood",
+    "ownerId": ""
+  },
+  {
+    "name": "Indie Live Sessions",
+    "description": "Authentic live performances from emerging indie artists.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "alternative",
+      "indie",
+      "party"
+    ],
+    "type": "Mood",
+    "ownerId": ""
+  },
+  {
+    "name": "Live EDM Experience",
+    "description": "High-energy live sets from top electronic DJs and producers.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "indie",
+      "pop",
+      "alternative",
+      "electronic"
+    ],
+    "type": "Mood",
+    "ownerId": ""
+  },
+  {
+    "name": "Road Trip Singalong",
+    "description": "Sing-along hits for the ultimate road trip experience.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "indie",
+      "rock",
+      "alternative",
+      "pop"
+    ],
+    "type": "Live",
+    "ownerId": ""
+  },
+  {
+    "name": "Cruise Control",
+    "description": "Chill vibes for a smooth and relaxed drive.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "indie",
+      "alternative"
+    ],
+    "type": "Live",
+    "ownerId": ""
+  },
+  {
+    "name": "Highway Rock",
+    "description": "Classic rock anthems to keep you energized on long drives.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "alternative",
+      "rock",
+      "pop",
+      "electronic"
+    ],
+    "type": "Live",
+    "ownerId": ""
+  },
+  {
+    "name": "Night Drive",
+    "description": "Atmospheric and moody tracks for late-night cruising.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "alternative",
+      "decades",
+      "electronic",
+      "pop"
+    ],
+    "type": "Live",
+    "ownerId": ""
+  },
+  {
+    "name": "Fast Lane Beats",
+    "description": "Upbeat and fast-paced tunes to match the rhythm of the road.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "rock",
+      "indie"
+    ],
+    "type": "Live",
+    "ownerId": ""
+  },
+  {
+    "name": "Scenic Route Sounds",
+    "description": "Relaxing melodies for enjoying the beauty of the journey.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "indie",
+      "pop"
+    ],
+    "type": "Live",
+    "ownerId": ""
+  },
+  {
+    "name": "Sunny Day Drive",
+    "description": "Feel-good tracks perfect for a sunny day on the open road.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "indie",
+      "folk",
+      "alternative",
+      "r&b"
+    ],
+    "type": "Live",
+    "ownerId": ""
+  },
+  {
+    "name": "Drive & Focus",
+    "description": "Instrumental and electronic beats to keep you focused on the road.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "indie",
+      "soundtrack",
+      "folk",
+      "alternative",
+      "pop",
+      "rock"
+    ],
+    "type": "Live",
+    "ownerId": ""
+  },
+  {
+    "name": "Rockin' Road",
+    "description": "High-energy rock and alternative tracks to fuel your drive.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "indie",
+      "folk",
+      "psychedelic",
+      "pop",
+      "alternative"
+    ],
+    "type": "Live",
+    "ownerId": ""
+  },
+  {
+    "name": "Country Roads",
+    "description": "Laid-back country songs perfect for a long drive through the countryside.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "rock",
+      "indie",
+      "alternative",
+      "new wave",
+      "electronic"
+    ],
+    "type": "Live",
+    "ownerId": ""
+  },
+  {
+    "name": "Code & Chill",
+    "description": "Smooth, laid-back beats to help you stay relaxed and focused while coding.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915727/p5qkqoexv7qjeq5beljr.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "indie",
+      "alternative",
+      "rock",
+      "electronic"
+    ],
+    "type": "Driving",
+    "ownerId": ""
+  },
+  {
+    "name": "Focus Mode",
+    "description": "Ambient music to block distractions and keep you in the coding zone.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915731/vxgt9eoo1xzpzaf5wxev.png",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "alternative"
+    ],
+    "type": "Driving",
+    "ownerId": ""
+  },
+  {
+    "name": "Programming Flow",
+    "description": "Upbeat electronic tunes to get you into a productive rhythm.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915737/hsqq4m7bgwsj8iwb5yox.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "indie",
+      "alternative"
+    ],
+    "type": "Driving",
+    "ownerId": ""
+  },
+  {
+    "name": "Coding Soundscapes",
+    "description": "Calming soundscapes and background music for deep focus sessions.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915744/xlcidvkfmohhknnves9s.jpg",
+    "isPublic": true,
+    "genres": [
+      "electronic",
+      "indie",
+      "alternative",
+      "pop"
+    ],
+    "type": "Driving",
+    "ownerId": ""
+  },
+  {
+    "name": "Lo-Fi Coding Beats",
+    "description": "Chill lo-fi beats to create the perfect coding atmosphere.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915747/pv9fqmnsezsxsvujeslg.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "rock",
+      "indie",
+      "alternative"
+    ],
+    "type": "Driving",
+    "ownerId": ""
+  },
+  {
+    "name": "Deep Work Beats",
+    "description": "Hypnotic, repetitive beats to help you stay in the zone while coding.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915750/nns8snudlmtic1s06705.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "electronic",
+      "chill-out",
+      "indie",
+      "alternative"
+    ],
+    "type": "Driving",
+    "ownerId": ""
+  },
+  {
+    "name": "Tech Beats",
+    "description": "Futuristic electronic sounds to fuel your coding creativity.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915755/eefmhudadvv2jstj8xjr.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "alternative",
+      "soundtrack",
+      "indie"
+    ],
+    "type": "Driving",
+    "ownerId": ""
+  },
+  {
+    "name": "Minimalist Coding",
+    "description": "Minimalistic music to keep your mind sharp and your code clean.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915759/hzxdkfiqc5xtvmc5czfy.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "indie",
+      "folk"
+    ],
+    "type": "Driving",
+    "ownerId": ""
+  },
+  {
+    "name": "Instrumental Coding",
+    "description": "Instrumental tracks to keep your focus without distractions.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915762/uzkonyoqn2zyiofcdmgl.jpg",
+    "isPublic": true,
+    "genres": [
+      "pop",
+      "electronic",
+      "rock"
+    ],
+    "type": "Driving",
+    "ownerId": ""
+  },
+  {
+    "name": "Coding Marathon",
+    "description": "Extended tracks and mixes for long, uninterrupted coding sessions.",
+    "imgUrl": "https://res.cloudinary.com/dpnevk8db/image/upload/v1726915764/is5jyg0cwuwxdklqjgro.jpg",
+    "isPublic": true,
+    "genres": [
+      "rock",
+      "pop",
+      "disco",
+      "r&b"
+    ],
+    "type": "Driving",
+    "ownerId": ""
+  }
+]

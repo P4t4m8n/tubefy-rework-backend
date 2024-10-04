@@ -22,7 +22,7 @@ class PlaylistService {
   constructor() {
     this.#shareSelectSqlLogic = playlistShareSqlLogic();
   }
-  
+
   async create(playlistData: IPlaylistDTO, owner: IUser): Promise<IPlaylist> {
     const { name, isPublic, imgUrl, type, genres } = playlistData;
 
@@ -692,39 +692,86 @@ class PlaylistService {
   }
 
   #buildQueryFilters(filters: IPlaylistFilters, userId?: string) {
-    const { name, isPublic, ownerId, artist, genres, isLikedByUser } = filters;
+    const {
+      name,
+      isPublic,
+      ownerId,
+      artist,
+      genres,
+      isLikedByUser,
+      songName,
+      type,
+    } = filters;
 
     const queryFilters: any = {};
 
-    if (name) queryFilters.name = { contains: name };
-    if (isPublic !== undefined)
+    // Always apply the isPublic filter using AND
+    if (isPublic !== undefined) {
       queryFilters.isPublic = {
         equals: isPublic,
       };
-    if (ownerId) queryFilters.ownerId = ownerId;
-    if (artist)
-      queryFilters.playlistSongs = {
-        some: {
-          song: {
-            artist: {
-              contains: artist,
-              mode: "insensitive",
+    }
+
+    // Collect all other filters to combine them using OR
+    const orConditions = [];
+
+    if (name) {
+      orConditions.push({
+        name: {
+          contains: name,
+          mode: "insensitive",
+        },
+      });
+    }
+
+    if (ownerId) {
+      orConditions.push({ ownerId });
+    }
+
+    if (artist) {
+      orConditions.push({
+        playlistSongs: {
+          some: {
+            song: {
+              artist: {
+                contains: artist,
+                mode: "insensitive",
+              },
             },
           },
         },
-      };
-
-    if (genres && genres.length > 0)
-      queryFilters.genres = {
-        hasSome: genres,
-      };
-
-    if (isLikedByUser)
-      queryFilters.playlistLikes = {
-        some: {
-          userId: userId,
+      });
+    }
+    if (type) {
+      orConditions.push({
+        type: {
+          equals: type,
         },
-      };
+      });
+    }
+
+    if (genres && genres.length > 0) {
+      orConditions.push({
+        genres: {
+          hasSome: genres,
+        },
+      });
+    }
+
+    if (isLikedByUser) {
+      orConditions.push({
+        playlistLikes: {
+          some: {
+            userId: userId,
+          },
+        },
+      });
+    }
+
+    // Add the OR conditions to the main query filter
+    if (orConditions.length > 0) {
+      queryFilters.OR = orConditions;
+    }
 
     return queryFilters;
   }

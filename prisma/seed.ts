@@ -15,6 +15,7 @@ import {
 } from "./demo-data/playlists";
 import { prisma } from "./prismaClient";
 import fs from "fs";
+import { TGenres } from "../src/models/app.model";
 
 async function seed() {
   try {
@@ -62,9 +63,14 @@ const seedSongs = async (user: IUser) => {
 
 const seedPlaylists = async (user: IUser) => {
   try {
-    const playlists = PLAYLISTS_DATA_DTOS.map((p) => {
+    const playlists = PLAYLIST_DATA_SONGS.map((p) => {
       return {
-        ...p,
+        name: p.name,
+        description: p.description,
+        imgUrl: p.imgUrl,
+        isPublic: true,
+        genres: p.genres,
+        type: p.type,
         ownerId: user.id!,
       };
     });

@@ -84,11 +84,13 @@ export const getPlaylists = async (req: Request, res: Response) => {
     const filter: IPlaylistFilters = {
       name: (req.query.name as string) || "",
       isPublic: !!req.query.isPublic || true,
-      limit: req?.query?.limit ? +req.query.limit : 100,
+      limit: req?.query?.limit ? +req.query.limit : 5,
       ownerId: (req.query.ownerId as string) || "",
       artist: (req.query.artist as string) || "",
       genres: (req.query.genres as EGenres[]) || [],
       isLikedByUser: !!req.query.isLikedByUser || false,
+      songName: (req.query.songName as string) || "",
+      type: (req.query.type as TPlaylistType) || "",
     };
 
     const store = asyncLocalStorage.getStore();
@@ -98,6 +100,7 @@ export const getPlaylists = async (req: Request, res: Response) => {
     const playlists = await playlistService.query(id, filter);
     return res.json(playlists);
   } catch (error) {
+    loggerService.error("Failed to retrieve playlists", error as Error);
     return res
       .status(500)
       .json({ message: "Failed to retrieve playlists", error });

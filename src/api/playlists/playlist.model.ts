@@ -26,7 +26,7 @@ export interface IPlaylist extends IPlaylistSmall {
   owner: IUser;
   duration: string;
   type: TPlaylistType;
-  description?: string|null;
+  description?: string | null;
   songs: ISong[];
   genres: TGenres[];
   originCountry?: string;
@@ -41,6 +41,8 @@ export interface IPlaylistFilters {
   genres?: TGenres[];
   page?: number;
   isLikedByUser?: boolean;
+  songName?: string;
+  type?: TPlaylistType;
 }
 
 export interface IPlaylistsGroup {
