@@ -80,23 +80,7 @@ export class UserService {
 
     return true;
   }
-  // async query(filters: IUserFilters = {}): Promise<IUser[]> {
-  //   const users = await prisma.user.findMany({
-  //     where: {
-  //       OR: [
-  //         filters.email ? { email: filters.email } : undefined,
-  //         filters.username ? { username: filters.username } : undefined,
-  //       ].filter(Boolean) as any,
-  //     },
-  //     select: {
-  //       id: true,
-  //       imgUrl: true,
-  //       username: true,
-  //     },
-  //   });
 
-  //   return users;
-  // }
   async query(filters: IUserFilters = {}): Promise<IUser[]> {
     const hasFilters = Object.keys(filters).length > 0;
 
@@ -104,11 +88,15 @@ export class UserService {
       where: hasFilters
         ? {
             OR: [
-              filters.email ? { email: filters.email } : undefined,
-              filters.username ? { username: filters.username } : undefined,
+              filters.email
+                ? { email: { contains: filters.email } }
+                : undefined,
+              filters.username
+                ? { username: { contains: filters.username } }
+                : undefined,
             ].filter(Boolean) as any,
           }
-        : undefined, // No filters, return all users
+        : undefined, 
       select: {
         id: true,
         imgUrl: true,

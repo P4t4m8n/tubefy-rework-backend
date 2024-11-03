@@ -150,7 +150,8 @@ const seedUsers = async () => {
 
 const seedFriends = async () => {
   try {
-    const users = await userService.query();
+    const usersData = await userService.query();
+    const users = usersData.filter((u) => u.username !== "Artist");
 
     for (const user of users) {
       const friends = users.filter((u) => u.id !== user.id);

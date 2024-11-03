@@ -154,12 +154,14 @@ export const getUsers = async (req: Request, res: Response) => {
     const userId = store?.loggedinUser?.id;
 
     const { username, email } = req.query as IUserFilters;
+    console.log("username:", username)
 
     if (!username && !email) {
       return res.status(400).json({ message: "Username or email is required" });
     }
 
     const users = await userService.query({ username, email });
+    console.log("users:", users)
 
     if (!users) {
       return res.status(404).json({ message: "No users where found" });
